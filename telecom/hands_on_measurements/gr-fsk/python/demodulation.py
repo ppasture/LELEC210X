@@ -48,6 +48,30 @@ def demodulate(y, B, R, Fdev):
 
     # Initialize the array for the demodulated bits
     bits_hat = np.zeros(nb_syms, dtype=int)
+<<<<<<< HEAD
+=======
+
+    # Loop over each symbol and compute correlation with reference waveforms
+    for k in range(nb_syms):
+        # Get samples for the current symbol
+        symbol_samples = y[k]
+
+        # Compute the correlation with the two reference waveforms
+        r1 = (1 / R) * np.sum(
+            symbol_samples * np.exp(-1j * 2 * np.pi * Fdev * T * np.arange(R) / R)
+        )
+        r0 = (1 / R) * np.sum(
+            symbol_samples * np.exp(1j * 2 * np.pi * Fdev * T * np.arange(R) / R)
+        )
+
+        # Decision based on the magnitudes of the correlations
+        if np.abs(r1) > np.abs(r0):
+            bits_hat[k] = 1
+        else:
+            bits_hat[k] = 0
+
+    return bits_hat
+>>>>>>> ppasture/main
 
     # Loop over each symbol and compute correlation with reference waveforms
     for k in range(nb_syms):
