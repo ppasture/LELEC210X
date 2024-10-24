@@ -27,10 +27,48 @@ from gnuradio import gr
 def demodulate(y, B, R, Fdev):
     """
     Non-coherent demodulator.
+    
+    Args:
+        y: The received signal (array of complex samples).
+        B: Bit rate (symbol rate).
+        R: Oversampling rate (samples per symbol).
+        Fdev: Frequency deviation of the modulated signal.
+    
+    Returns:
+        bits_hat: The estimated bits after demodulation.
     """
-    nb_syms = int(len(y) / R)
+    # Compute the number of symbols
+    nb_syms = int(len(y) // R)
+    
+    # Reshape the signal into symbols, each symbol is a row of R samples
+    y = np.resize(y, (nb_syms, R))
+    
+    # Symbol duration in time
+    T = 1 / B
+
+    # Initialize the array for the demodulated bits
     bits_hat = np.zeros(nb_syms, dtype=int)
-    return bits_hat  # TODO
+
+    # Loop over each symbol and compute correlation with reference waveforms
+    for k in range(nb_syms):
+        # Get samples for the current symbol
+        symbol_samples = y[k]
+
+        # Compute the correlation with the two reference waveforms
+        r1 = (1 / R) * np.sum(
+            symbol_samples * np.exp(-1j * 2 * np.pi * Fdev * T * np.arange(R) / R)
+        )
+        r0 = (1 / R) * np.sum(
+            symbol_samples * np.exp(1j * 2 * np.pi * Fdev * T * np.arange(R) / R)
+        )
+
+        # Decision based on the magnitudes of the correlations
+        if np.abs(r1) > np.abs(r0):
+            bits_hat[k] = 1
+        else:
+            bits_hat[k] = 0
+
+    return bits_hat
 
 
 class demodulation(gr.basic_block):
