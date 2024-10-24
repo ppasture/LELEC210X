@@ -29,9 +29,40 @@ from .utils import logging, measurements_logger
 
 def cfo_estimation(y, B, R, Fdev):
     """
-    Estimate CFO using Moose algorithm, on first samples of preamble
+    Estimate Carrier Frequency Offset (CFO) using Moose algorithm.
+    
+    Args:
+        y: The received signal (array of complex samples).
+        B: Bit rate (symbol rate).
+        R: Oversampling rate (samples per symbol).
+        Fdev: Frequency deviation of the modulated signal.
+    
+    Returns:
+        cfo_est: The estimated CFO.
     """
-    return 0.0  # TODO
+    N = 4  # Number of CPFSK symbols used for the estimation
+    Nt = N * R  # Total number of samples used for estimation
+    T = 1 / B   # Symbol duration
+
+    # Extract two blocks of Nt samples from the received signal
+    blockL = y[:Nt]
+    blockNT = y[Nt:2*Nt]
+
+    # Compute the numerator and denominator for alpha_hat estimation
+    numerator = np.sum(blockNT * np.conjugate(blockL))
+    denominator = np.sum(np.abs(blockL) ** 2)
+
+    # Estimate alpha_hat and extract the phase difference
+    alpha_hat = numerator / denominator
+    phase_difference = np.angle(alpha_hat)
+
+    # Estimate CFO from the phase difference
+    cfo_est = phase_difference / ((2 * np.pi * Nt * T) / R)
+
+    cfo_est_tot = Fdev + cfo_est
+
+
+    return cfo_est_tot
 
 
 def sto_estimation(y, B, R, Fdev):

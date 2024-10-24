@@ -125,7 +125,7 @@ class BasicChain(Chain):
 
     cfo_val, sto_val = np.nan, np.nan  # CFO and STO are random
 
-    bypass_preamble_detect = True
+    bypass_preamble_detect = False
 
     def preamble_detect(self, y):
         """
@@ -157,7 +157,7 @@ class BasicChain(Chain):
         # pour ça qu'on prend pas N = 16
 
         R = self.osr_rx
-        N = 12
+        N = 4
         Nt = N * R
         T = 1 / self.bit_rate
 
@@ -175,7 +175,7 @@ class BasicChain(Chain):
 
         return cfo_est
 
-    bypass_sto_estimation = True
+    bypass_sto_estimation = False
 
     def sto_estimation(self, y):
         """
