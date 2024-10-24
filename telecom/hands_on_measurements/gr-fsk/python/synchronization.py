@@ -48,23 +48,7 @@ def cfo_estimation(y, B, R, Fdev):
     blockL = y[:Nt]
     blockNT = y[Nt:2*Nt]
 
-    # Compute the numerator and denominator for alpha_hat estimation
-    numerator = np.sum(blockNT * np.conjugate(blockL))
-    denominator = np.sum(np.abs(blockL) ** 2)
-
-    # Estimate alpha_hat and extract the phase difference
-    alpha_hat = numerator / denominator
-    phase_difference = np.angle(alpha_hat)
-
-    # Estimate CFO from the phase difference
     cfo_est = phase_difference / ((2 * np.pi * Nt * T) / R)
-
-    cfo_est_tot = Fdev + cfo_est
-
-
-    return cfo_est_tot
-
-
 def sto_estimation(y, B, R, Fdev):
     """
     Estimate symbol timing (fractional) based on phase shifts
