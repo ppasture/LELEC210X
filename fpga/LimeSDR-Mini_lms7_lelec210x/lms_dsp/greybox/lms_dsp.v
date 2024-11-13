@@ -14,9 +14,9 @@
 
 // VENDOR "Altera"
 // PROGRAM "Quartus Prime"
-// VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition"
+// VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 
-// DATE "11/08/2023 03:05:30"
+// DATE "11/13/2024 17:35:46"
 
 // 
 // Device: Altera 10M16SAU169C8G Package UFBGA169
@@ -66,27 +66,6 @@ assign vcc = 1'b1;
 assign unknown = 1'b0;
 
 wire \packet_presence_detection_0|counter_inst|count_reg[0]~q ;
-wire \packet_presence_detection_0|running_sum_inst|long_sum_reg[0]~q ;
-wire \packet_presence_detection_0|running_sum_inst|long_sum_reg[1]~q ;
-wire \packet_presence_detection_0|running_sum_inst|long_sum_reg[2]~q ;
-wire \packet_presence_detection_0|running_sum_inst|long_sum_reg[3]~q ;
-wire \packet_presence_detection_0|running_sum_inst|long_sum_reg[4]~q ;
-wire \packet_presence_detection_0|running_sum_inst|long_sum_reg[5]~q ;
-wire \packet_presence_detection_0|running_sum_inst|long_sum_reg[6]~q ;
-wire \packet_presence_detection_0|running_sum_inst|long_sum_reg[7]~q ;
-wire \packet_presence_detection_0|running_sum_inst|long_sum_reg[8]~q ;
-wire \packet_presence_detection_0|running_sum_inst|long_sum_reg[9]~q ;
-wire \packet_presence_detection_0|running_sum_inst|long_sum_reg[10]~q ;
-wire \packet_presence_detection_0|running_sum_inst|long_sum_reg[11]~q ;
-wire \packet_presence_detection_0|running_sum_inst|long_sum_reg[12]~q ;
-wire \packet_presence_detection_0|running_sum_inst|long_sum_reg[13]~q ;
-wire \packet_presence_detection_0|running_sum_inst|long_sum_reg[14]~q ;
-wire \packet_presence_detection_0|running_sum_inst|long_sum_reg[15]~q ;
-wire \packet_presence_detection_0|running_sum_inst|long_sum_reg[16]~q ;
-wire \packet_presence_detection_0|running_sum_inst|long_sum_reg[17]~q ;
-wire \packet_presence_detection_0|running_sum_inst|long_sum_reg[18]~q ;
-wire \packet_presence_detection_0|running_sum_inst|long_sum_reg[19]~q ;
-wire \packet_presence_detection_0|running_sum_inst|long_sum_reg[20]~q ;
 wire \packet_presence_detection_0|running_sum_inst|short_sum_reg[0]~q ;
 wire \packet_presence_detection_0|running_sum_inst|short_sum_reg[1]~q ;
 wire \packet_presence_detection_0|running_sum_inst|short_sum_reg[2]~q ;
@@ -169,6 +148,24 @@ wire \packet_presence_detection_0|counter_inst|count_reg[12]~q ;
 wire \packet_presence_detection_0|counter_inst|count_reg[13]~q ;
 wire \packet_presence_detection_0|counter_inst|count_reg[14]~q ;
 wire \packet_presence_detection_0|counter_inst|count_reg[15]~q ;
+wire \packet_presence_detection_0|running_sum_inst|intermediate_reg[0]~q ;
+wire \packet_presence_detection_0|running_sum_inst|intermediate_reg[1]~q ;
+wire \packet_presence_detection_0|running_sum_inst|intermediate_reg[2]~q ;
+wire \packet_presence_detection_0|running_sum_inst|intermediate_reg[3]~q ;
+wire \packet_presence_detection_0|running_sum_inst|intermediate_reg[4]~q ;
+wire \packet_presence_detection_0|running_sum_inst|intermediate_reg[5]~q ;
+wire \packet_presence_detection_0|running_sum_inst|intermediate_reg[6]~q ;
+wire \packet_presence_detection_0|running_sum_inst|intermediate_reg[7]~q ;
+wire \packet_presence_detection_0|running_sum_inst|intermediate_reg[8]~q ;
+wire \packet_presence_detection_0|running_sum_inst|intermediate_reg[9]~q ;
+wire \packet_presence_detection_0|running_sum_inst|intermediate_reg[10]~q ;
+wire \packet_presence_detection_0|running_sum_inst|intermediate_reg[11]~q ;
+wire \packet_presence_detection_0|running_sum_inst|intermediate_reg[12]~q ;
+wire \packet_presence_detection_0|running_sum_inst|intermediate_reg[13]~q ;
+wire \packet_presence_detection_0|running_sum_inst|intermediate_reg[14]~q ;
+wire \packet_presence_detection_0|running_sum_inst|intermediate_reg[15]~q ;
+wire \packet_presence_detection_0|running_sum_inst|intermediate_reg[16]~q ;
+wire \packet_presence_detection_0|running_sum_inst|intermediate_reg[17]~q ;
 wire \avalon_st_adapter|data_format_adapter_0|out_data[0]~q ;
 wire \rst_controller|alt_rst_sync_uq1|altera_reset_synchronizer_int_chain_out~q ;
 wire \avalon_st_adapter|data_format_adapter_0|out_data[1]~q ;
@@ -344,14 +341,6 @@ wire \fifo2avs_0|data_reg[47]~q ;
 wire \fifo2avs_0|data_reg[22]~q ;
 wire \fifo2avs_0|data_reg[46]~q ;
 wire \~GND~combout ;
-wire \ppd_cfg_threshold[0]~input_o ;
-wire \ppd_cfg_threshold[1]~input_o ;
-wire \ppd_cfg_threshold[2]~input_o ;
-wire \ppd_cfg_threshold[3]~input_o ;
-wire \ppd_cfg_threshold[4]~input_o ;
-wire \ppd_cfg_threshold[5]~input_o ;
-wire \ppd_cfg_threshold[6]~input_o ;
-wire \ppd_cfg_threshold[7]~input_o ;
 wire \clk_clk~input_o ;
 wire \ppd_cfg_passthrough_len[15]~input_o ;
 wire \ppd_cfg_passthrough_len[14]~input_o ;
@@ -371,6 +360,14 @@ wire \ppd_cfg_passthrough_len[1]~input_o ;
 wire \ppd_cfg_passthrough_len[0]~input_o ;
 wire \ppd_cfg_clear_rs~input_o ;
 wire \reset_reset_n~input_o ;
+wire \ppd_cfg_threshold[0]~input_o ;
+wire \ppd_cfg_threshold[1]~input_o ;
+wire \ppd_cfg_threshold[2]~input_o ;
+wire \ppd_cfg_threshold[3]~input_o ;
+wire \ppd_cfg_threshold[4]~input_o ;
+wire \ppd_cfg_threshold[5]~input_o ;
+wire \ppd_cfg_threshold[6]~input_o ;
+wire \ppd_cfg_threshold[7]~input_o ;
 wire \ppd_cfg_enable~input_o ;
 wire \fifo_in_wrreq~input_o ;
 wire \fifo_in_wdata[21]~input_o ;
@@ -423,88 +420,138 @@ wire \fifo_in_wdata[22]~input_o ;
 wire \fifo_in_wdata[46]~input_o ;
 
 
-lms_dsp_altera_reset_controller rst_controller(
+lms_dsp_packet_presence_detection packet_presence_detection_0(
+	.count_reg_0(\packet_presence_detection_0|counter_inst|count_reg[0]~q ),
+	.short_sum_reg_0(\packet_presence_detection_0|running_sum_inst|short_sum_reg[0]~q ),
+	.short_sum_reg_1(\packet_presence_detection_0|running_sum_inst|short_sum_reg[1]~q ),
+	.short_sum_reg_2(\packet_presence_detection_0|running_sum_inst|short_sum_reg[2]~q ),
+	.short_sum_reg_3(\packet_presence_detection_0|running_sum_inst|short_sum_reg[3]~q ),
+	.short_sum_reg_4(\packet_presence_detection_0|running_sum_inst|short_sum_reg[4]~q ),
+	.short_sum_reg_5(\packet_presence_detection_0|running_sum_inst|short_sum_reg[5]~q ),
+	.short_sum_reg_6(\packet_presence_detection_0|running_sum_inst|short_sum_reg[6]~q ),
+	.short_sum_reg_7(\packet_presence_detection_0|running_sum_inst|short_sum_reg[7]~q ),
+	.short_sum_reg_8(\packet_presence_detection_0|running_sum_inst|short_sum_reg[8]~q ),
+	.short_sum_reg_9(\packet_presence_detection_0|running_sum_inst|short_sum_reg[9]~q ),
+	.short_sum_reg_10(\packet_presence_detection_0|running_sum_inst|short_sum_reg[10]~q ),
+	.short_sum_reg_11(\packet_presence_detection_0|running_sum_inst|short_sum_reg[11]~q ),
+	.short_sum_reg_12(\packet_presence_detection_0|running_sum_inst|short_sum_reg[12]~q ),
+	.short_sum_reg_13(\packet_presence_detection_0|running_sum_inst|short_sum_reg[13]~q ),
+	.short_sum_reg_14(\packet_presence_detection_0|running_sum_inst|short_sum_reg[14]~q ),
+	.short_sum_reg_15(\packet_presence_detection_0|running_sum_inst|short_sum_reg[15]~q ),
+	.short_sum_reg_16(\packet_presence_detection_0|running_sum_inst|short_sum_reg[16]~q ),
+	.short_sum_reg_17(\packet_presence_detection_0|running_sum_inst|short_sum_reg[17]~q ),
+	.count_reg_1(\packet_presence_detection_0|counter_inst|count_reg[1]~q ),
+	.count_reg_2(\packet_presence_detection_0|counter_inst|count_reg[2]~q ),
+	.count_reg_3(\packet_presence_detection_0|counter_inst|count_reg[3]~q ),
+	.count_reg_4(\packet_presence_detection_0|counter_inst|count_reg[4]~q ),
+	.count_reg_5(\packet_presence_detection_0|counter_inst|count_reg[5]~q ),
+	.count_reg_6(\packet_presence_detection_0|counter_inst|count_reg[6]~q ),
+	.count_reg_7(\packet_presence_detection_0|counter_inst|count_reg[7]~q ),
+	.count_reg_8(\packet_presence_detection_0|counter_inst|count_reg[8]~q ),
+	.count_reg_9(\packet_presence_detection_0|counter_inst|count_reg[9]~q ),
+	.count_reg_10(\packet_presence_detection_0|counter_inst|count_reg[10]~q ),
+	.count_reg_11(\packet_presence_detection_0|counter_inst|count_reg[11]~q ),
+	.count_reg_12(\packet_presence_detection_0|counter_inst|count_reg[12]~q ),
+	.count_reg_13(\packet_presence_detection_0|counter_inst|count_reg[13]~q ),
+	.count_reg_14(\packet_presence_detection_0|counter_inst|count_reg[14]~q ),
+	.count_reg_15(\packet_presence_detection_0|counter_inst|count_reg[15]~q ),
+	.intermediate_reg_0(\packet_presence_detection_0|running_sum_inst|intermediate_reg[0]~q ),
+	.intermediate_reg_1(\packet_presence_detection_0|running_sum_inst|intermediate_reg[1]~q ),
+	.intermediate_reg_2(\packet_presence_detection_0|running_sum_inst|intermediate_reg[2]~q ),
+	.intermediate_reg_3(\packet_presence_detection_0|running_sum_inst|intermediate_reg[3]~q ),
+	.intermediate_reg_4(\packet_presence_detection_0|running_sum_inst|intermediate_reg[4]~q ),
+	.intermediate_reg_5(\packet_presence_detection_0|running_sum_inst|intermediate_reg[5]~q ),
+	.intermediate_reg_6(\packet_presence_detection_0|running_sum_inst|intermediate_reg[6]~q ),
+	.intermediate_reg_7(\packet_presence_detection_0|running_sum_inst|intermediate_reg[7]~q ),
+	.intermediate_reg_8(\packet_presence_detection_0|running_sum_inst|intermediate_reg[8]~q ),
+	.intermediate_reg_9(\packet_presence_detection_0|running_sum_inst|intermediate_reg[9]~q ),
+	.intermediate_reg_10(\packet_presence_detection_0|running_sum_inst|intermediate_reg[10]~q ),
+	.intermediate_reg_11(\packet_presence_detection_0|running_sum_inst|intermediate_reg[11]~q ),
+	.intermediate_reg_12(\packet_presence_detection_0|running_sum_inst|intermediate_reg[12]~q ),
+	.intermediate_reg_13(\packet_presence_detection_0|running_sum_inst|intermediate_reg[13]~q ),
+	.intermediate_reg_14(\packet_presence_detection_0|running_sum_inst|intermediate_reg[14]~q ),
+	.intermediate_reg_15(\packet_presence_detection_0|running_sum_inst|intermediate_reg[15]~q ),
+	.intermediate_reg_16(\packet_presence_detection_0|running_sum_inst|intermediate_reg[16]~q ),
+	.intermediate_reg_17(\packet_presence_detection_0|running_sum_inst|intermediate_reg[17]~q ),
 	.altera_reset_synchronizer_int_chain_out(\rst_controller|alt_rst_sync_uq1|altera_reset_synchronizer_int_chain_out~q ),
+	.data_valid(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_valid~q ),
+	.data_out_12(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[12]~q ),
+	.data_out_0(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[0]~q ),
+	.data_out_11(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[11]~q ),
+	.data_out_10(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[10]~q ),
+	.data_out_9(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[9]~q ),
+	.data_out_8(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[8]~q ),
+	.data_out_7(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[7]~q ),
+	.data_out_6(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[6]~q ),
+	.data_out_5(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[5]~q ),
+	.data_out_4(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[4]~q ),
+	.data_out_3(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[3]~q ),
+	.data_out_2(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[2]~q ),
+	.data_out_1(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[1]~q ),
+	.data_out_23(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[23]~q ),
+	.data_out_22(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[22]~q ),
+	.data_out_21(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[21]~q ),
+	.data_out_20(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[20]~q ),
+	.data_out_19(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[19]~q ),
+	.data_out_18(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[18]~q ),
+	.data_out_17(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[17]~q ),
+	.data_out_16(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[16]~q ),
+	.data_out_15(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[15]~q ),
+	.data_out_14(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[14]~q ),
+	.data_out_13(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[13]~q ),
+	.avalon_streaming_source_data_0(\packet_presence_detection_0|avalon_streaming_source_data[0]~1_combout ),
+	.avalon_streaming_source_data_1(\packet_presence_detection_0|avalon_streaming_source_data[1]~2_combout ),
+	.avalon_streaming_source_data_2(\packet_presence_detection_0|avalon_streaming_source_data[2]~3_combout ),
+	.avalon_streaming_source_data_3(\packet_presence_detection_0|avalon_streaming_source_data[3]~4_combout ),
+	.avalon_streaming_source_data_4(\packet_presence_detection_0|avalon_streaming_source_data[4]~5_combout ),
+	.avalon_streaming_source_data_5(\packet_presence_detection_0|avalon_streaming_source_data[5]~6_combout ),
+	.avalon_streaming_source_data_6(\packet_presence_detection_0|avalon_streaming_source_data[6]~7_combout ),
+	.avalon_streaming_source_data_7(\packet_presence_detection_0|avalon_streaming_source_data[7]~8_combout ),
+	.avalon_streaming_source_data_8(\packet_presence_detection_0|avalon_streaming_source_data[8]~9_combout ),
+	.avalon_streaming_source_data_9(\packet_presence_detection_0|avalon_streaming_source_data[9]~10_combout ),
+	.avalon_streaming_source_data_10(\packet_presence_detection_0|avalon_streaming_source_data[10]~11_combout ),
+	.avalon_streaming_source_data_11(\packet_presence_detection_0|avalon_streaming_source_data[11]~12_combout ),
+	.avalon_streaming_source_data_12(\packet_presence_detection_0|avalon_streaming_source_data[12]~13_combout ),
+	.avalon_streaming_source_data_13(\packet_presence_detection_0|avalon_streaming_source_data[13]~14_combout ),
+	.avalon_streaming_source_data_14(\packet_presence_detection_0|avalon_streaming_source_data[14]~15_combout ),
+	.avalon_streaming_source_data_15(\packet_presence_detection_0|avalon_streaming_source_data[15]~16_combout ),
+	.avalon_streaming_source_data_16(\packet_presence_detection_0|avalon_streaming_source_data[16]~17_combout ),
+	.avalon_streaming_source_data_17(\packet_presence_detection_0|avalon_streaming_source_data[17]~18_combout ),
+	.avalon_streaming_source_data_18(\packet_presence_detection_0|avalon_streaming_source_data[18]~19_combout ),
+	.avalon_streaming_source_data_19(\packet_presence_detection_0|avalon_streaming_source_data[19]~20_combout ),
+	.avalon_streaming_source_data_20(\packet_presence_detection_0|avalon_streaming_source_data[20]~21_combout ),
+	.avalon_streaming_source_data_21(\packet_presence_detection_0|avalon_streaming_source_data[21]~22_combout ),
+	.avalon_streaming_source_data_22(\packet_presence_detection_0|avalon_streaming_source_data[22]~23_combout ),
+	.avalon_streaming_source_data_23(\packet_presence_detection_0|avalon_streaming_source_data[23]~24_combout ),
+	.delay_reg_24_3(\packet_presence_detection_0|delay_line_inst|delay_reg[3][24]~q ),
+	.GND_port(\~GND~combout ),
 	.clk_clk(\clk_clk~input_o ),
-	.reset_reset_n(\reset_reset_n~input_o ));
-
-lms_dsp_lms_dsp_avalon_st_adapter_001 avalon_st_adapter_001(
-	.altera_reset_synchronizer_int_chain_out(\rst_controller|alt_rst_sync_uq1|altera_reset_synchronizer_int_chain_out~q ),
-	.out_valid(\avalon_st_adapter_001|data_format_adapter_0|out_valid~q ),
-	.valid_reg(\fifo2avs_0|valid_reg~q ),
-	.out_data_21(\avalon_st_adapter_001|data_format_adapter_0|out_data[21]~q ),
-	.out_data_20(\avalon_st_adapter_001|data_format_adapter_0|out_data[20]~q ),
-	.out_data_19(\avalon_st_adapter_001|data_format_adapter_0|out_data[19]~q ),
-	.out_data_18(\avalon_st_adapter_001|data_format_adapter_0|out_data[18]~q ),
-	.out_data_17(\avalon_st_adapter_001|data_format_adapter_0|out_data[17]~q ),
-	.out_data_16(\avalon_st_adapter_001|data_format_adapter_0|out_data[16]~q ),
-	.out_data_15(\avalon_st_adapter_001|data_format_adapter_0|out_data[15]~q ),
-	.out_data_14(\avalon_st_adapter_001|data_format_adapter_0|out_data[14]~q ),
-	.out_data_12(\avalon_st_adapter_001|data_format_adapter_0|out_data[12]~q ),
-	.out_data_13(\avalon_st_adapter_001|data_format_adapter_0|out_data[13]~q ),
-	.out_data_9(\avalon_st_adapter_001|data_format_adapter_0|out_data[9]~q ),
-	.out_data_8(\avalon_st_adapter_001|data_format_adapter_0|out_data[8]~q ),
-	.out_data_7(\avalon_st_adapter_001|data_format_adapter_0|out_data[7]~q ),
-	.out_data_6(\avalon_st_adapter_001|data_format_adapter_0|out_data[6]~q ),
-	.out_data_5(\avalon_st_adapter_001|data_format_adapter_0|out_data[5]~q ),
-	.out_data_4(\avalon_st_adapter_001|data_format_adapter_0|out_data[4]~q ),
-	.out_data_3(\avalon_st_adapter_001|data_format_adapter_0|out_data[3]~q ),
-	.out_data_2(\avalon_st_adapter_001|data_format_adapter_0|out_data[2]~q ),
-	.out_data_0(\avalon_st_adapter_001|data_format_adapter_0|out_data[0]~q ),
-	.out_data_1(\avalon_st_adapter_001|data_format_adapter_0|out_data[1]~q ),
-	.out_data_11(\avalon_st_adapter_001|data_format_adapter_0|out_data[11]~q ),
-	.out_data_10(\avalon_st_adapter_001|data_format_adapter_0|out_data[10]~q ),
-	.out_data_23(\avalon_st_adapter_001|data_format_adapter_0|out_data[23]~q ),
-	.out_data_22(\avalon_st_adapter_001|data_format_adapter_0|out_data[22]~q ),
-	.data_reg_21(\fifo2avs_0|data_reg[21]~q ),
-	.data_reg_45(\fifo2avs_0|data_reg[45]~q ),
-	.data_reg_20(\fifo2avs_0|data_reg[20]~q ),
-	.data_reg_44(\fifo2avs_0|data_reg[44]~q ),
-	.data_reg_19(\fifo2avs_0|data_reg[19]~q ),
-	.data_reg_43(\fifo2avs_0|data_reg[43]~q ),
-	.data_reg_18(\fifo2avs_0|data_reg[18]~q ),
-	.data_reg_42(\fifo2avs_0|data_reg[42]~q ),
-	.data_reg_17(\fifo2avs_0|data_reg[17]~q ),
-	.data_reg_41(\fifo2avs_0|data_reg[41]~q ),
-	.data_reg_16(\fifo2avs_0|data_reg[16]~q ),
-	.data_reg_40(\fifo2avs_0|data_reg[40]~q ),
-	.data_reg_15(\fifo2avs_0|data_reg[15]~q ),
-	.data_reg_39(\fifo2avs_0|data_reg[39]~q ),
-	.data_reg_14(\fifo2avs_0|data_reg[14]~q ),
-	.data_reg_38(\fifo2avs_0|data_reg[38]~q ),
-	.data_reg_12(\fifo2avs_0|data_reg[12]~q ),
-	.data_reg_36(\fifo2avs_0|data_reg[36]~q ),
-	.data_reg_13(\fifo2avs_0|data_reg[13]~q ),
-	.data_reg_37(\fifo2avs_0|data_reg[37]~q ),
-	.data_reg_9(\fifo2avs_0|data_reg[9]~q ),
-	.data_reg_33(\fifo2avs_0|data_reg[33]~q ),
-	.data_reg_8(\fifo2avs_0|data_reg[8]~q ),
-	.data_reg_32(\fifo2avs_0|data_reg[32]~q ),
-	.data_reg_7(\fifo2avs_0|data_reg[7]~q ),
-	.data_reg_31(\fifo2avs_0|data_reg[31]~q ),
-	.data_reg_6(\fifo2avs_0|data_reg[6]~q ),
-	.data_reg_30(\fifo2avs_0|data_reg[30]~q ),
-	.data_reg_5(\fifo2avs_0|data_reg[5]~q ),
-	.data_reg_29(\fifo2avs_0|data_reg[29]~q ),
-	.data_reg_4(\fifo2avs_0|data_reg[4]~q ),
-	.data_reg_28(\fifo2avs_0|data_reg[28]~q ),
-	.data_reg_3(\fifo2avs_0|data_reg[3]~q ),
-	.data_reg_27(\fifo2avs_0|data_reg[27]~q ),
-	.data_reg_2(\fifo2avs_0|data_reg[2]~q ),
-	.data_reg_26(\fifo2avs_0|data_reg[26]~q ),
-	.data_reg_0(\fifo2avs_0|data_reg[0]~q ),
-	.data_reg_24(\fifo2avs_0|data_reg[24]~q ),
-	.data_reg_1(\fifo2avs_0|data_reg[1]~q ),
-	.data_reg_25(\fifo2avs_0|data_reg[25]~q ),
-	.data_reg_11(\fifo2avs_0|data_reg[11]~q ),
-	.data_reg_35(\fifo2avs_0|data_reg[35]~q ),
-	.data_reg_10(\fifo2avs_0|data_reg[10]~q ),
-	.data_reg_34(\fifo2avs_0|data_reg[34]~q ),
-	.data_reg_23(\fifo2avs_0|data_reg[23]~q ),
-	.data_reg_47(\fifo2avs_0|data_reg[47]~q ),
-	.data_reg_22(\fifo2avs_0|data_reg[22]~q ),
-	.data_reg_46(\fifo2avs_0|data_reg[46]~q ),
-	.clk_clk(\clk_clk~input_o ));
+	.ppd_cfg_passthrough_len_15(\ppd_cfg_passthrough_len[15]~input_o ),
+	.ppd_cfg_passthrough_len_14(\ppd_cfg_passthrough_len[14]~input_o ),
+	.ppd_cfg_passthrough_len_13(\ppd_cfg_passthrough_len[13]~input_o ),
+	.ppd_cfg_passthrough_len_12(\ppd_cfg_passthrough_len[12]~input_o ),
+	.ppd_cfg_passthrough_len_11(\ppd_cfg_passthrough_len[11]~input_o ),
+	.ppd_cfg_passthrough_len_10(\ppd_cfg_passthrough_len[10]~input_o ),
+	.ppd_cfg_passthrough_len_9(\ppd_cfg_passthrough_len[9]~input_o ),
+	.ppd_cfg_passthrough_len_8(\ppd_cfg_passthrough_len[8]~input_o ),
+	.ppd_cfg_passthrough_len_7(\ppd_cfg_passthrough_len[7]~input_o ),
+	.ppd_cfg_passthrough_len_6(\ppd_cfg_passthrough_len[6]~input_o ),
+	.ppd_cfg_passthrough_len_5(\ppd_cfg_passthrough_len[5]~input_o ),
+	.ppd_cfg_passthrough_len_4(\ppd_cfg_passthrough_len[4]~input_o ),
+	.ppd_cfg_passthrough_len_3(\ppd_cfg_passthrough_len[3]~input_o ),
+	.ppd_cfg_passthrough_len_2(\ppd_cfg_passthrough_len[2]~input_o ),
+	.ppd_cfg_passthrough_len_1(\ppd_cfg_passthrough_len[1]~input_o ),
+	.ppd_cfg_passthrough_len_0(\ppd_cfg_passthrough_len[0]~input_o ),
+	.ppd_cfg_clear_rs(\ppd_cfg_clear_rs~input_o ),
+	.ppd_cfg_threshold_0(\ppd_cfg_threshold[0]~input_o ),
+	.ppd_cfg_threshold_1(\ppd_cfg_threshold[1]~input_o ),
+	.ppd_cfg_threshold_2(\ppd_cfg_threshold[2]~input_o ),
+	.ppd_cfg_threshold_3(\ppd_cfg_threshold[3]~input_o ),
+	.ppd_cfg_threshold_4(\ppd_cfg_threshold[4]~input_o ),
+	.ppd_cfg_threshold_5(\ppd_cfg_threshold[5]~input_o ),
+	.ppd_cfg_threshold_6(\ppd_cfg_threshold[6]~input_o ),
+	.ppd_cfg_threshold_7(\ppd_cfg_threshold[7]~input_o ),
+	.ppd_cfg_enable(\ppd_cfg_enable~input_o ));
 
 lms_dsp_lms_dsp_avalon_st_adapter avalon_st_adapter(
 	.out_data_0(\avalon_st_adapter|data_format_adapter_0|out_data[0]~q ),
@@ -584,133 +631,88 @@ lms_dsp_lms_dsp_avalon_st_adapter avalon_st_adapter(
 	.delay_reg_24_3(\packet_presence_detection_0|delay_line_inst|delay_reg[3][24]~q ),
 	.clk_clk(\clk_clk~input_o ));
 
-lms_dsp_packet_presence_detection packet_presence_detection_0(
-	.count_reg_0(\packet_presence_detection_0|counter_inst|count_reg[0]~q ),
-	.long_sum_reg_0(\packet_presence_detection_0|running_sum_inst|long_sum_reg[0]~q ),
-	.long_sum_reg_1(\packet_presence_detection_0|running_sum_inst|long_sum_reg[1]~q ),
-	.long_sum_reg_2(\packet_presence_detection_0|running_sum_inst|long_sum_reg[2]~q ),
-	.long_sum_reg_3(\packet_presence_detection_0|running_sum_inst|long_sum_reg[3]~q ),
-	.long_sum_reg_4(\packet_presence_detection_0|running_sum_inst|long_sum_reg[4]~q ),
-	.long_sum_reg_5(\packet_presence_detection_0|running_sum_inst|long_sum_reg[5]~q ),
-	.long_sum_reg_6(\packet_presence_detection_0|running_sum_inst|long_sum_reg[6]~q ),
-	.long_sum_reg_7(\packet_presence_detection_0|running_sum_inst|long_sum_reg[7]~q ),
-	.long_sum_reg_8(\packet_presence_detection_0|running_sum_inst|long_sum_reg[8]~q ),
-	.long_sum_reg_9(\packet_presence_detection_0|running_sum_inst|long_sum_reg[9]~q ),
-	.long_sum_reg_10(\packet_presence_detection_0|running_sum_inst|long_sum_reg[10]~q ),
-	.long_sum_reg_11(\packet_presence_detection_0|running_sum_inst|long_sum_reg[11]~q ),
-	.long_sum_reg_12(\packet_presence_detection_0|running_sum_inst|long_sum_reg[12]~q ),
-	.long_sum_reg_13(\packet_presence_detection_0|running_sum_inst|long_sum_reg[13]~q ),
-	.long_sum_reg_14(\packet_presence_detection_0|running_sum_inst|long_sum_reg[14]~q ),
-	.long_sum_reg_15(\packet_presence_detection_0|running_sum_inst|long_sum_reg[15]~q ),
-	.long_sum_reg_16(\packet_presence_detection_0|running_sum_inst|long_sum_reg[16]~q ),
-	.long_sum_reg_17(\packet_presence_detection_0|running_sum_inst|long_sum_reg[17]~q ),
-	.long_sum_reg_18(\packet_presence_detection_0|running_sum_inst|long_sum_reg[18]~q ),
-	.long_sum_reg_19(\packet_presence_detection_0|running_sum_inst|long_sum_reg[19]~q ),
-	.long_sum_reg_20(\packet_presence_detection_0|running_sum_inst|long_sum_reg[20]~q ),
-	.short_sum_reg_0(\packet_presence_detection_0|running_sum_inst|short_sum_reg[0]~q ),
-	.short_sum_reg_1(\packet_presence_detection_0|running_sum_inst|short_sum_reg[1]~q ),
-	.short_sum_reg_2(\packet_presence_detection_0|running_sum_inst|short_sum_reg[2]~q ),
-	.short_sum_reg_3(\packet_presence_detection_0|running_sum_inst|short_sum_reg[3]~q ),
-	.short_sum_reg_4(\packet_presence_detection_0|running_sum_inst|short_sum_reg[4]~q ),
-	.short_sum_reg_5(\packet_presence_detection_0|running_sum_inst|short_sum_reg[5]~q ),
-	.short_sum_reg_6(\packet_presence_detection_0|running_sum_inst|short_sum_reg[6]~q ),
-	.short_sum_reg_7(\packet_presence_detection_0|running_sum_inst|short_sum_reg[7]~q ),
-	.short_sum_reg_8(\packet_presence_detection_0|running_sum_inst|short_sum_reg[8]~q ),
-	.short_sum_reg_9(\packet_presence_detection_0|running_sum_inst|short_sum_reg[9]~q ),
-	.short_sum_reg_10(\packet_presence_detection_0|running_sum_inst|short_sum_reg[10]~q ),
-	.short_sum_reg_11(\packet_presence_detection_0|running_sum_inst|short_sum_reg[11]~q ),
-	.short_sum_reg_12(\packet_presence_detection_0|running_sum_inst|short_sum_reg[12]~q ),
-	.short_sum_reg_13(\packet_presence_detection_0|running_sum_inst|short_sum_reg[13]~q ),
-	.short_sum_reg_14(\packet_presence_detection_0|running_sum_inst|short_sum_reg[14]~q ),
-	.short_sum_reg_15(\packet_presence_detection_0|running_sum_inst|short_sum_reg[15]~q ),
-	.short_sum_reg_16(\packet_presence_detection_0|running_sum_inst|short_sum_reg[16]~q ),
-	.short_sum_reg_17(\packet_presence_detection_0|running_sum_inst|short_sum_reg[17]~q ),
-	.count_reg_1(\packet_presence_detection_0|counter_inst|count_reg[1]~q ),
-	.count_reg_2(\packet_presence_detection_0|counter_inst|count_reg[2]~q ),
-	.count_reg_3(\packet_presence_detection_0|counter_inst|count_reg[3]~q ),
-	.count_reg_4(\packet_presence_detection_0|counter_inst|count_reg[4]~q ),
-	.count_reg_5(\packet_presence_detection_0|counter_inst|count_reg[5]~q ),
-	.count_reg_6(\packet_presence_detection_0|counter_inst|count_reg[6]~q ),
-	.count_reg_7(\packet_presence_detection_0|counter_inst|count_reg[7]~q ),
-	.count_reg_8(\packet_presence_detection_0|counter_inst|count_reg[8]~q ),
-	.count_reg_9(\packet_presence_detection_0|counter_inst|count_reg[9]~q ),
-	.count_reg_10(\packet_presence_detection_0|counter_inst|count_reg[10]~q ),
-	.count_reg_11(\packet_presence_detection_0|counter_inst|count_reg[11]~q ),
-	.count_reg_12(\packet_presence_detection_0|counter_inst|count_reg[12]~q ),
-	.count_reg_13(\packet_presence_detection_0|counter_inst|count_reg[13]~q ),
-	.count_reg_14(\packet_presence_detection_0|counter_inst|count_reg[14]~q ),
-	.count_reg_15(\packet_presence_detection_0|counter_inst|count_reg[15]~q ),
+lms_dsp_lms_dsp_avalon_st_adapter_001 avalon_st_adapter_001(
 	.altera_reset_synchronizer_int_chain_out(\rst_controller|alt_rst_sync_uq1|altera_reset_synchronizer_int_chain_out~q ),
-	.data_valid(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_valid~q ),
-	.data_out_12(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[12]~q ),
-	.data_out_0(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[0]~q ),
-	.data_out_11(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[11]~q ),
-	.data_out_10(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[10]~q ),
-	.data_out_9(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[9]~q ),
-	.data_out_8(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[8]~q ),
-	.data_out_7(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[7]~q ),
-	.data_out_6(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[6]~q ),
-	.data_out_5(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[5]~q ),
-	.data_out_4(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[4]~q ),
-	.data_out_3(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[3]~q ),
-	.data_out_2(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[2]~q ),
-	.data_out_1(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[1]~q ),
-	.data_out_23(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[23]~q ),
-	.data_out_22(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[22]~q ),
-	.data_out_21(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[21]~q ),
-	.data_out_20(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[20]~q ),
-	.data_out_19(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[19]~q ),
-	.data_out_18(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[18]~q ),
-	.data_out_17(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[17]~q ),
-	.data_out_16(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[16]~q ),
-	.data_out_15(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[15]~q ),
-	.data_out_14(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[14]~q ),
-	.data_out_13(\fir_compiler_ii_0|lms_dsp_fir_compiler_ii_0_ast_inst|source|data_out[13]~q ),
-	.avalon_streaming_source_data_0(\packet_presence_detection_0|avalon_streaming_source_data[0]~1_combout ),
-	.avalon_streaming_source_data_1(\packet_presence_detection_0|avalon_streaming_source_data[1]~2_combout ),
-	.avalon_streaming_source_data_2(\packet_presence_detection_0|avalon_streaming_source_data[2]~3_combout ),
-	.avalon_streaming_source_data_3(\packet_presence_detection_0|avalon_streaming_source_data[3]~4_combout ),
-	.avalon_streaming_source_data_4(\packet_presence_detection_0|avalon_streaming_source_data[4]~5_combout ),
-	.avalon_streaming_source_data_5(\packet_presence_detection_0|avalon_streaming_source_data[5]~6_combout ),
-	.avalon_streaming_source_data_6(\packet_presence_detection_0|avalon_streaming_source_data[6]~7_combout ),
-	.avalon_streaming_source_data_7(\packet_presence_detection_0|avalon_streaming_source_data[7]~8_combout ),
-	.avalon_streaming_source_data_8(\packet_presence_detection_0|avalon_streaming_source_data[8]~9_combout ),
-	.avalon_streaming_source_data_9(\packet_presence_detection_0|avalon_streaming_source_data[9]~10_combout ),
-	.avalon_streaming_source_data_10(\packet_presence_detection_0|avalon_streaming_source_data[10]~11_combout ),
-	.avalon_streaming_source_data_11(\packet_presence_detection_0|avalon_streaming_source_data[11]~12_combout ),
-	.avalon_streaming_source_data_12(\packet_presence_detection_0|avalon_streaming_source_data[12]~13_combout ),
-	.avalon_streaming_source_data_13(\packet_presence_detection_0|avalon_streaming_source_data[13]~14_combout ),
-	.avalon_streaming_source_data_14(\packet_presence_detection_0|avalon_streaming_source_data[14]~15_combout ),
-	.avalon_streaming_source_data_15(\packet_presence_detection_0|avalon_streaming_source_data[15]~16_combout ),
-	.avalon_streaming_source_data_16(\packet_presence_detection_0|avalon_streaming_source_data[16]~17_combout ),
-	.avalon_streaming_source_data_17(\packet_presence_detection_0|avalon_streaming_source_data[17]~18_combout ),
-	.avalon_streaming_source_data_18(\packet_presence_detection_0|avalon_streaming_source_data[18]~19_combout ),
-	.avalon_streaming_source_data_19(\packet_presence_detection_0|avalon_streaming_source_data[19]~20_combout ),
-	.avalon_streaming_source_data_20(\packet_presence_detection_0|avalon_streaming_source_data[20]~21_combout ),
-	.avalon_streaming_source_data_21(\packet_presence_detection_0|avalon_streaming_source_data[21]~22_combout ),
-	.avalon_streaming_source_data_22(\packet_presence_detection_0|avalon_streaming_source_data[22]~23_combout ),
-	.avalon_streaming_source_data_23(\packet_presence_detection_0|avalon_streaming_source_data[23]~24_combout ),
-	.delay_reg_24_3(\packet_presence_detection_0|delay_line_inst|delay_reg[3][24]~q ),
-	.GND_port(\~GND~combout ),
+	.out_valid(\avalon_st_adapter_001|data_format_adapter_0|out_valid~q ),
+	.valid_reg(\fifo2avs_0|valid_reg~q ),
+	.out_data_21(\avalon_st_adapter_001|data_format_adapter_0|out_data[21]~q ),
+	.out_data_20(\avalon_st_adapter_001|data_format_adapter_0|out_data[20]~q ),
+	.out_data_19(\avalon_st_adapter_001|data_format_adapter_0|out_data[19]~q ),
+	.out_data_18(\avalon_st_adapter_001|data_format_adapter_0|out_data[18]~q ),
+	.out_data_17(\avalon_st_adapter_001|data_format_adapter_0|out_data[17]~q ),
+	.out_data_16(\avalon_st_adapter_001|data_format_adapter_0|out_data[16]~q ),
+	.out_data_15(\avalon_st_adapter_001|data_format_adapter_0|out_data[15]~q ),
+	.out_data_14(\avalon_st_adapter_001|data_format_adapter_0|out_data[14]~q ),
+	.out_data_12(\avalon_st_adapter_001|data_format_adapter_0|out_data[12]~q ),
+	.out_data_13(\avalon_st_adapter_001|data_format_adapter_0|out_data[13]~q ),
+	.out_data_9(\avalon_st_adapter_001|data_format_adapter_0|out_data[9]~q ),
+	.out_data_8(\avalon_st_adapter_001|data_format_adapter_0|out_data[8]~q ),
+	.out_data_7(\avalon_st_adapter_001|data_format_adapter_0|out_data[7]~q ),
+	.out_data_6(\avalon_st_adapter_001|data_format_adapter_0|out_data[6]~q ),
+	.out_data_5(\avalon_st_adapter_001|data_format_adapter_0|out_data[5]~q ),
+	.out_data_4(\avalon_st_adapter_001|data_format_adapter_0|out_data[4]~q ),
+	.out_data_3(\avalon_st_adapter_001|data_format_adapter_0|out_data[3]~q ),
+	.out_data_2(\avalon_st_adapter_001|data_format_adapter_0|out_data[2]~q ),
+	.out_data_0(\avalon_st_adapter_001|data_format_adapter_0|out_data[0]~q ),
+	.out_data_1(\avalon_st_adapter_001|data_format_adapter_0|out_data[1]~q ),
+	.out_data_11(\avalon_st_adapter_001|data_format_adapter_0|out_data[11]~q ),
+	.out_data_10(\avalon_st_adapter_001|data_format_adapter_0|out_data[10]~q ),
+	.out_data_23(\avalon_st_adapter_001|data_format_adapter_0|out_data[23]~q ),
+	.out_data_22(\avalon_st_adapter_001|data_format_adapter_0|out_data[22]~q ),
+	.data_reg_21(\fifo2avs_0|data_reg[21]~q ),
+	.data_reg_45(\fifo2avs_0|data_reg[45]~q ),
+	.data_reg_20(\fifo2avs_0|data_reg[20]~q ),
+	.data_reg_44(\fifo2avs_0|data_reg[44]~q ),
+	.data_reg_19(\fifo2avs_0|data_reg[19]~q ),
+	.data_reg_43(\fifo2avs_0|data_reg[43]~q ),
+	.data_reg_18(\fifo2avs_0|data_reg[18]~q ),
+	.data_reg_42(\fifo2avs_0|data_reg[42]~q ),
+	.data_reg_17(\fifo2avs_0|data_reg[17]~q ),
+	.data_reg_41(\fifo2avs_0|data_reg[41]~q ),
+	.data_reg_16(\fifo2avs_0|data_reg[16]~q ),
+	.data_reg_40(\fifo2avs_0|data_reg[40]~q ),
+	.data_reg_15(\fifo2avs_0|data_reg[15]~q ),
+	.data_reg_39(\fifo2avs_0|data_reg[39]~q ),
+	.data_reg_14(\fifo2avs_0|data_reg[14]~q ),
+	.data_reg_38(\fifo2avs_0|data_reg[38]~q ),
+	.data_reg_12(\fifo2avs_0|data_reg[12]~q ),
+	.data_reg_36(\fifo2avs_0|data_reg[36]~q ),
+	.data_reg_13(\fifo2avs_0|data_reg[13]~q ),
+	.data_reg_37(\fifo2avs_0|data_reg[37]~q ),
+	.data_reg_9(\fifo2avs_0|data_reg[9]~q ),
+	.data_reg_33(\fifo2avs_0|data_reg[33]~q ),
+	.data_reg_8(\fifo2avs_0|data_reg[8]~q ),
+	.data_reg_32(\fifo2avs_0|data_reg[32]~q ),
+	.data_reg_7(\fifo2avs_0|data_reg[7]~q ),
+	.data_reg_31(\fifo2avs_0|data_reg[31]~q ),
+	.data_reg_6(\fifo2avs_0|data_reg[6]~q ),
+	.data_reg_30(\fifo2avs_0|data_reg[30]~q ),
+	.data_reg_5(\fifo2avs_0|data_reg[5]~q ),
+	.data_reg_29(\fifo2avs_0|data_reg[29]~q ),
+	.data_reg_4(\fifo2avs_0|data_reg[4]~q ),
+	.data_reg_28(\fifo2avs_0|data_reg[28]~q ),
+	.data_reg_3(\fifo2avs_0|data_reg[3]~q ),
+	.data_reg_27(\fifo2avs_0|data_reg[27]~q ),
+	.data_reg_2(\fifo2avs_0|data_reg[2]~q ),
+	.data_reg_26(\fifo2avs_0|data_reg[26]~q ),
+	.data_reg_0(\fifo2avs_0|data_reg[0]~q ),
+	.data_reg_24(\fifo2avs_0|data_reg[24]~q ),
+	.data_reg_1(\fifo2avs_0|data_reg[1]~q ),
+	.data_reg_25(\fifo2avs_0|data_reg[25]~q ),
+	.data_reg_11(\fifo2avs_0|data_reg[11]~q ),
+	.data_reg_35(\fifo2avs_0|data_reg[35]~q ),
+	.data_reg_10(\fifo2avs_0|data_reg[10]~q ),
+	.data_reg_34(\fifo2avs_0|data_reg[34]~q ),
+	.data_reg_23(\fifo2avs_0|data_reg[23]~q ),
+	.data_reg_47(\fifo2avs_0|data_reg[47]~q ),
+	.data_reg_22(\fifo2avs_0|data_reg[22]~q ),
+	.data_reg_46(\fifo2avs_0|data_reg[46]~q ),
+	.clk_clk(\clk_clk~input_o ));
+
+lms_dsp_altera_reset_controller rst_controller(
+	.altera_reset_synchronizer_int_chain_out(\rst_controller|alt_rst_sync_uq1|altera_reset_synchronizer_int_chain_out~q ),
 	.clk_clk(\clk_clk~input_o ),
-	.ppd_cfg_passthrough_len_15(\ppd_cfg_passthrough_len[15]~input_o ),
-	.ppd_cfg_passthrough_len_14(\ppd_cfg_passthrough_len[14]~input_o ),
-	.ppd_cfg_passthrough_len_13(\ppd_cfg_passthrough_len[13]~input_o ),
-	.ppd_cfg_passthrough_len_12(\ppd_cfg_passthrough_len[12]~input_o ),
-	.ppd_cfg_passthrough_len_11(\ppd_cfg_passthrough_len[11]~input_o ),
-	.ppd_cfg_passthrough_len_10(\ppd_cfg_passthrough_len[10]~input_o ),
-	.ppd_cfg_passthrough_len_9(\ppd_cfg_passthrough_len[9]~input_o ),
-	.ppd_cfg_passthrough_len_8(\ppd_cfg_passthrough_len[8]~input_o ),
-	.ppd_cfg_passthrough_len_7(\ppd_cfg_passthrough_len[7]~input_o ),
-	.ppd_cfg_passthrough_len_6(\ppd_cfg_passthrough_len[6]~input_o ),
-	.ppd_cfg_passthrough_len_5(\ppd_cfg_passthrough_len[5]~input_o ),
-	.ppd_cfg_passthrough_len_4(\ppd_cfg_passthrough_len[4]~input_o ),
-	.ppd_cfg_passthrough_len_3(\ppd_cfg_passthrough_len[3]~input_o ),
-	.ppd_cfg_passthrough_len_2(\ppd_cfg_passthrough_len[2]~input_o ),
-	.ppd_cfg_passthrough_len_1(\ppd_cfg_passthrough_len[1]~input_o ),
-	.ppd_cfg_passthrough_len_0(\ppd_cfg_passthrough_len[0]~input_o ),
-	.ppd_cfg_clear_rs(\ppd_cfg_clear_rs~input_o ),
-	.ppd_cfg_enable(\ppd_cfg_enable~input_o ));
+	.reset_reset_n(\reset_reset_n~input_o ));
 
 lms_dsp_lms_dsp_fir_compiler_ii_0 fir_compiler_ii_0(
 	.reset_n(\rst_controller|alt_rst_sync_uq1|altera_reset_synchronizer_int_chain_out~q ),
@@ -940,6 +942,22 @@ assign \ppd_cfg_passthrough_len[0]~input_o  = ppd_cfg_passthrough_len[0];
 assign \ppd_cfg_clear_rs~input_o  = ppd_cfg_clear_rs;
 
 assign \reset_reset_n~input_o  = reset_reset_n;
+
+assign \ppd_cfg_threshold[0]~input_o  = ppd_cfg_threshold[0];
+
+assign \ppd_cfg_threshold[1]~input_o  = ppd_cfg_threshold[1];
+
+assign \ppd_cfg_threshold[2]~input_o  = ppd_cfg_threshold[2];
+
+assign \ppd_cfg_threshold[3]~input_o  = ppd_cfg_threshold[3];
+
+assign \ppd_cfg_threshold[4]~input_o  = ppd_cfg_threshold[4];
+
+assign \ppd_cfg_threshold[5]~input_o  = ppd_cfg_threshold[5];
+
+assign \ppd_cfg_threshold[6]~input_o  = ppd_cfg_threshold[6];
+
+assign \ppd_cfg_threshold[7]~input_o  = ppd_cfg_threshold[7];
 
 assign \ppd_cfg_enable~input_o  = ppd_cfg_enable;
 
@@ -1203,47 +1221,47 @@ assign ppd_debug_count[30] = gnd;
 
 assign ppd_debug_count[31] = gnd;
 
-assign ppd_debug_long_sum[0] = \packet_presence_detection_0|running_sum_inst|long_sum_reg[0]~q ;
+assign ppd_debug_long_sum[0] = \packet_presence_detection_0|running_sum_inst|intermediate_reg[0]~q ;
 
-assign ppd_debug_long_sum[1] = \packet_presence_detection_0|running_sum_inst|long_sum_reg[1]~q ;
+assign ppd_debug_long_sum[1] = \packet_presence_detection_0|running_sum_inst|intermediate_reg[1]~q ;
 
-assign ppd_debug_long_sum[2] = \packet_presence_detection_0|running_sum_inst|long_sum_reg[2]~q ;
+assign ppd_debug_long_sum[2] = \packet_presence_detection_0|running_sum_inst|intermediate_reg[2]~q ;
 
-assign ppd_debug_long_sum[3] = \packet_presence_detection_0|running_sum_inst|long_sum_reg[3]~q ;
+assign ppd_debug_long_sum[3] = \packet_presence_detection_0|running_sum_inst|intermediate_reg[3]~q ;
 
-assign ppd_debug_long_sum[4] = \packet_presence_detection_0|running_sum_inst|long_sum_reg[4]~q ;
+assign ppd_debug_long_sum[4] = \packet_presence_detection_0|running_sum_inst|intermediate_reg[4]~q ;
 
-assign ppd_debug_long_sum[5] = \packet_presence_detection_0|running_sum_inst|long_sum_reg[5]~q ;
+assign ppd_debug_long_sum[5] = \packet_presence_detection_0|running_sum_inst|intermediate_reg[5]~q ;
 
-assign ppd_debug_long_sum[6] = \packet_presence_detection_0|running_sum_inst|long_sum_reg[6]~q ;
+assign ppd_debug_long_sum[6] = \packet_presence_detection_0|running_sum_inst|intermediate_reg[6]~q ;
 
-assign ppd_debug_long_sum[7] = \packet_presence_detection_0|running_sum_inst|long_sum_reg[7]~q ;
+assign ppd_debug_long_sum[7] = \packet_presence_detection_0|running_sum_inst|intermediate_reg[7]~q ;
 
-assign ppd_debug_long_sum[8] = \packet_presence_detection_0|running_sum_inst|long_sum_reg[8]~q ;
+assign ppd_debug_long_sum[8] = \packet_presence_detection_0|running_sum_inst|intermediate_reg[8]~q ;
 
-assign ppd_debug_long_sum[9] = \packet_presence_detection_0|running_sum_inst|long_sum_reg[9]~q ;
+assign ppd_debug_long_sum[9] = \packet_presence_detection_0|running_sum_inst|intermediate_reg[9]~q ;
 
-assign ppd_debug_long_sum[10] = \packet_presence_detection_0|running_sum_inst|long_sum_reg[10]~q ;
+assign ppd_debug_long_sum[10] = \packet_presence_detection_0|running_sum_inst|intermediate_reg[10]~q ;
 
-assign ppd_debug_long_sum[11] = \packet_presence_detection_0|running_sum_inst|long_sum_reg[11]~q ;
+assign ppd_debug_long_sum[11] = \packet_presence_detection_0|running_sum_inst|intermediate_reg[11]~q ;
 
-assign ppd_debug_long_sum[12] = \packet_presence_detection_0|running_sum_inst|long_sum_reg[12]~q ;
+assign ppd_debug_long_sum[12] = \packet_presence_detection_0|running_sum_inst|intermediate_reg[12]~q ;
 
-assign ppd_debug_long_sum[13] = \packet_presence_detection_0|running_sum_inst|long_sum_reg[13]~q ;
+assign ppd_debug_long_sum[13] = \packet_presence_detection_0|running_sum_inst|intermediate_reg[13]~q ;
 
-assign ppd_debug_long_sum[14] = \packet_presence_detection_0|running_sum_inst|long_sum_reg[14]~q ;
+assign ppd_debug_long_sum[14] = \packet_presence_detection_0|running_sum_inst|intermediate_reg[14]~q ;
 
-assign ppd_debug_long_sum[15] = \packet_presence_detection_0|running_sum_inst|long_sum_reg[15]~q ;
+assign ppd_debug_long_sum[15] = \packet_presence_detection_0|running_sum_inst|intermediate_reg[15]~q ;
 
-assign ppd_debug_long_sum[16] = \packet_presence_detection_0|running_sum_inst|long_sum_reg[16]~q ;
+assign ppd_debug_long_sum[16] = \packet_presence_detection_0|running_sum_inst|intermediate_reg[16]~q ;
 
-assign ppd_debug_long_sum[17] = \packet_presence_detection_0|running_sum_inst|long_sum_reg[17]~q ;
+assign ppd_debug_long_sum[17] = \packet_presence_detection_0|running_sum_inst|intermediate_reg[17]~q ;
 
-assign ppd_debug_long_sum[18] = \packet_presence_detection_0|running_sum_inst|long_sum_reg[18]~q ;
+assign ppd_debug_long_sum[18] = gnd;
 
-assign ppd_debug_long_sum[19] = \packet_presence_detection_0|running_sum_inst|long_sum_reg[19]~q ;
+assign ppd_debug_long_sum[19] = gnd;
 
-assign ppd_debug_long_sum[20] = \packet_presence_detection_0|running_sum_inst|long_sum_reg[20]~q ;
+assign ppd_debug_long_sum[20] = gnd;
 
 assign ppd_debug_long_sum[21] = gnd;
 
@@ -1330,22 +1348,6 @@ assign ppd_debug_short_sum[29] = gnd;
 assign ppd_debug_short_sum[30] = gnd;
 
 assign ppd_debug_short_sum[31] = gnd;
-
-assign \ppd_cfg_threshold[0]~input_o  = ppd_cfg_threshold[0];
-
-assign \ppd_cfg_threshold[1]~input_o  = ppd_cfg_threshold[1];
-
-assign \ppd_cfg_threshold[2]~input_o  = ppd_cfg_threshold[2];
-
-assign \ppd_cfg_threshold[3]~input_o  = ppd_cfg_threshold[3];
-
-assign \ppd_cfg_threshold[4]~input_o  = ppd_cfg_threshold[4];
-
-assign \ppd_cfg_threshold[5]~input_o  = ppd_cfg_threshold[5];
-
-assign \ppd_cfg_threshold[6]~input_o  = ppd_cfg_threshold[6];
-
-assign \ppd_cfg_threshold[7]~input_o  = ppd_cfg_threshold[7];
 
 endmodule
 
@@ -12596,384 +12598,82 @@ wire \u1_m0_wo0_mtree_add4_0_o[11]~34_combout ;
 wire \u1_m0_wo0_mtree_add4_0_o[10]~32_combout ;
 
 
-lms_dsp_dspba_delay_71 u1_m0_wo0_wi0_r0_delayr18(
+lms_dsp_dspba_delay_81 u1_m0_wo0_wi0_r0_delayr4(
 	.aclr(areset),
 	.ena(xIn_v[0]),
-	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][6]~q ),
-	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][8]~q ),
-	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][9]~q ),
-	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][7]~q ),
-	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][1]~q ),
-	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][0]~q ),
-	.xin({\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][7]~q ,
-\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][2]~q ,
-\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][0]~q }),
-	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][10]~q ),
+	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr4|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr4|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr4|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr4|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr4|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr4|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr4|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr4|delay_signals[0][2]~q ),
+	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr4|delay_signals[0][0]~q ),
+	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr4|delay_signals[0][1]~q ),
+	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr4|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr4|delay_signals[0][10]~q ),
+	.xin({\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][7]~q ,
+\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][2]~q ,
+\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][0]~q }),
 	.clk(clk));
 
-lms_dsp_dspba_delay_28 d_u1_m0_wo0_wi0_r0_delayr17_q_11(
-	.aclr(areset),
-	.delay_signals_4_0(\d_u1_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\d_u1_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\d_u1_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\d_u1_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][1]~q ),
-	.delay_signals_11_0(\d_u1_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\d_u1_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][10]~q ),
-	.delay_signals_9_0(\d_u1_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\d_u1_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\d_u1_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\d_u1_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\d_u1_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][5]~q ),
-	.xin({\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][7]~q ,
-\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][2]~q ,
-\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][1]~q ,gnd}),
-	.clk(clk));
-
-lms_dsp_dspba_delay_70 u1_m0_wo0_wi0_r0_delayr17(
+lms_dsp_dspba_delay_80 u1_m0_wo0_wi0_r0_delayr3(
 	.aclr(areset),
 	.ena(xIn_v[0]),
-	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][4]~q ),
-	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][6]~q ),
-	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][9]~q ),
-	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][5]~q ),
-	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][7]~q ),
-	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][1]~q ),
-	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][0]~q ),
-	.xin({\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][7]~q ,
-\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][2]~q ,
-\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][0]~q }),
-	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][10]~q ),
+	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][2]~q ),
+	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][0]~q ),
+	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][1]~q ),
+	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][10]~q ),
+	.xin({\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][7]~q ,
+\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][2]~q ,
+\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][0]~q }),
 	.clk(clk));
 
-lms_dsp_dspba_delay_27 d_u1_m0_wo0_wi0_r0_delayr16_q_11(
-	.aclr(areset),
-	.delay_signals_4_0(\d_u1_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\d_u1_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\d_u1_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][2]~q ),
-	.delay_signals_11_0(\d_u1_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\d_u1_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][10]~q ),
-	.delay_signals_9_0(\d_u1_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\d_u1_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\d_u1_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\d_u1_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\d_u1_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][5]~q ),
-	.xin({\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][7]~q ,
-\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][2]~q ,gnd,gnd}),
-	.clk(clk));
-
-lms_dsp_dspba_delay_69 u1_m0_wo0_wi0_r0_delayr16(
+lms_dsp_dspba_delay_73 u1_m0_wo0_wi0_r0_delayr2(
 	.aclr(areset),
 	.ena(xIn_v[0]),
-	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][4]~q ),
-	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][7]~q ),
-	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][9]~q ),
-	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][6]~q ),
-	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][8]~q ),
-	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][5]~q ),
-	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][1]~q ),
-	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][0]~q ),
-	.xin({\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][7]~q ,
-\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][2]~q ,
-\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][0]~q }),
-	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][10]~q ),
+	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][2]~q ),
+	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][0]~q ),
+	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][1]~q ),
+	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][10]~q ),
+	.xin({\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][7]~q ,
+\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][2]~q ,
+\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][0]~q }),
 	.clk(clk));
 
-lms_dsp_dspba_delay_26 d_u1_m0_wo0_wi0_r0_delayr15_q_11(
-	.aclr(areset),
-	.delay_signals_2_0(\d_u1_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][2]~q ),
-	.delay_signals_9_0(\d_u1_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][9]~q ),
-	.delay_signals_1_0(\d_u1_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][1]~q ),
-	.delay_signals_8_0(\d_u1_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][8]~q ),
-	.delay_signals_0_0(\d_u1_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][0]~q ),
-	.delay_signals_7_0(\d_u1_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\d_u1_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\d_u1_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\d_u1_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\d_u1_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][3]~q ),
-	.delay_signals_10_0(\d_u1_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][10]~q ),
-	.delay_signals_11_0(\d_u1_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][11]~q ),
-	.xin({\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][7]~q ,
-\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][2]~q ,
-\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][0]~q }),
-	.clk(clk));
-
-lms_dsp_dspba_delay_68 u1_m0_wo0_wi0_r0_delayr15(
+lms_dsp_dspba_delay_62 u1_m0_wo0_wi0_r0_delayr1(
 	.aclr(areset),
 	.ena(xIn_v[0]),
-	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][2]~q ),
-	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][9]~q ),
-	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][1]~q ),
-	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][8]~q ),
-	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][0]~q ),
-	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][3]~q ),
-	.xin({\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][7]~q ,
-\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][2]~q ,
-\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][0]~q }),
-	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][10]~q ),
-	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][11]~q ),
-	.clk(clk));
-
-lms_dsp_dspba_delay_25 d_u1_m0_wo0_wi0_r0_delayr14_q_11(
-	.aclr(areset),
-	.delay_signals_4_0(\d_u1_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\d_u1_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\d_u1_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][2]~q ),
-	.delay_signals_11_0(\d_u1_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\d_u1_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][10]~q ),
-	.delay_signals_9_0(\d_u1_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\d_u1_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\d_u1_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\d_u1_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\d_u1_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][5]~q ),
-	.xin({\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][7]~q ,
-\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][2]~q ,gnd,gnd}),
-	.clk(clk));
-
-lms_dsp_dspba_delay_67 u1_m0_wo0_wi0_r0_delayr14(
-	.aclr(areset),
-	.ena(xIn_v[0]),
-	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][4]~q ),
-	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][7]~q ),
-	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][9]~q ),
-	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][6]~q ),
-	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][8]~q ),
-	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][5]~q ),
-	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][1]~q ),
-	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][0]~q ),
-	.xin({\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][7]~q ,
-\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][2]~q ,
-\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][0]~q }),
-	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][10]~q ),
-	.clk(clk));
-
-lms_dsp_dspba_delay_24 d_u1_m0_wo0_wi0_r0_delayr13_q_11(
-	.aclr(areset),
-	.delay_signals_4_0(\d_u1_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\d_u1_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\d_u1_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\d_u1_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][1]~q ),
-	.delay_signals_11_0(\d_u1_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\d_u1_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][10]~q ),
-	.delay_signals_9_0(\d_u1_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\d_u1_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\d_u1_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\d_u1_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\d_u1_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][5]~q ),
-	.xin({\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][7]~q ,
-\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][2]~q ,
-\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][1]~q ,gnd}),
-	.clk(clk));
-
-lms_dsp_dspba_delay_66 u1_m0_wo0_wi0_r0_delayr13(
-	.aclr(areset),
-	.ena(xIn_v[0]),
-	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][4]~q ),
-	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][6]~q ),
-	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][9]~q ),
-	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][5]~q ),
-	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][7]~q ),
-	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][1]~q ),
-	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][0]~q ),
-	.xin({\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][7]~q ,
-\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][2]~q ,
-\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][0]~q }),
-	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][10]~q ),
-	.clk(clk));
-
-lms_dsp_dspba_delay_23 d_u1_m0_wo0_wi0_r0_delayr12_q_12(
-	.aclr(areset),
-	.delay_signals_6_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][1]~q ),
-	.delay_signals_11_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][10]~q ),
-	.delay_signals_9_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][7]~q ),
-	.xin({\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][11]~q ,\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][10]~q ,\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][9]~q ,\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][8]~q ,
-\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][7]~q ,\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][6]~q ,\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][5]~q ,\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][4]~q ,
-\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][3]~q ,\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][2]~q ,\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][1]~q ,gnd}),
-	.clk(clk));
-
-lms_dsp_dspba_delay_22 d_u1_m0_wo0_wi0_r0_delayr12_q_11(
-	.aclr(areset),
-	.delay_signals_6_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][6]~q ),
-	.delay_signals_8_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][8]~q ),
-	.delay_signals_9_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][9]~q ),
-	.delay_signals_7_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][7]~q ),
-	.delay_signals_5_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][1]~q ),
-	.delay_signals_0_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][0]~q ),
-	.delay_signals_11_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][10]~q ),
-	.xin({\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][7]~q ,
-\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][2]~q ,
-\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][0]~q }),
-	.clk(clk));
-
-lms_dsp_dspba_delay_65 u1_m0_wo0_wi0_r0_delayr12(
-	.aclr(areset),
-	.ena(xIn_v[0]),
-	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][6]~q ),
-	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][8]~q ),
-	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][9]~q ),
-	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][7]~q ),
-	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][1]~q ),
-	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][0]~q ),
-	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][10]~q ),
-	.xin({\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][7]~q ,
-\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][2]~q ,
-\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][0]~q }),
-	.clk(clk));
-
-lms_dsp_dspba_delay_64 u1_m0_wo0_wi0_r0_delayr11(
-	.aclr(areset),
-	.ena(xIn_v[0]),
-	.xin({\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][7]~q ,
-\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][2]~q ,
-\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][0]~q }),
-	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][6]~q ),
-	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][8]~q ),
-	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][9]~q ),
-	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][7]~q ),
-	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][1]~q ),
-	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][0]~q ),
-	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][10]~q ),
-	.clk(clk));
-
-lms_dsp_dspba_delay_21 d_u1_m0_wo0_wi0_r0_delayr10_q_11(
-	.aclr(areset),
-	.delay_signals_7_0(\d_u1_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\d_u1_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\d_u1_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\d_u1_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\d_u1_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\d_u1_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\d_u1_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][1]~q ),
-	.delay_signals_11_0(\d_u1_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\d_u1_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][10]~q ),
-	.delay_signals_9_0(\d_u1_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\d_u1_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][8]~q ),
-	.xin({\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][7]~q ,
-\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][2]~q ,
-\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][1]~q ,gnd}),
-	.clk(clk));
-
-lms_dsp_dspba_delay_63 u1_m0_wo0_wi0_r0_delayr10(
-	.aclr(areset),
-	.ena(xIn_v[0]),
-	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][7]~q ),
-	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][8]~q ),
-	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][2]~q ),
-	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][0]~q ),
-	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][1]~q ),
-	.xin({\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][7]~q ,
-\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][2]~q ,
-\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][0]~q }),
-	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][10]~q ),
-	.clk(clk));
-
-lms_dsp_dspba_delay_36 d_u1_m0_wo0_wi0_r0_delayr9_q_11(
-	.aclr(areset),
-	.delay_signals_8_0(\d_u1_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\d_u1_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\d_u1_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\d_u1_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\d_u1_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\d_u1_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\d_u1_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\d_u1_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][1]~q ),
-	.delay_signals_0_0(\d_u1_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][0]~q ),
-	.delay_signals_11_0(\d_u1_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\d_u1_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][10]~q ),
-	.delay_signals_9_0(\d_u1_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][9]~q ),
-	.xin({\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][7]~q ,
-\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][2]~q ,
-\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][0]~q }),
-	.clk(clk));
-
-lms_dsp_dspba_delay_86 u1_m0_wo0_wi0_r0_delayr9(
-	.aclr(areset),
-	.ena(xIn_v[0]),
-	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][1]~q ),
-	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][0]~q ),
-	.xin({\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][7]~q ,
-\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][2]~q ,
-\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][0]~q }),
-	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][10]~q ),
-	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][9]~q ),
-	.clk(clk));
-
-lms_dsp_dspba_delay_35 d_u1_m0_wo0_wi0_r0_delayr8_q_12(
-	.aclr(areset),
-	.delay_signals_7_0(\d_u1_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][7]~q ),
-	.delay_signals_9_0(\d_u1_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][9]~q ),
-	.delay_signals_6_0(\d_u1_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][6]~q ),
-	.delay_signals_8_0(\d_u1_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][8]~q ),
-	.delay_signals_5_0(\d_u1_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\d_u1_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\d_u1_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\d_u1_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\d_u1_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][1]~q ),
-	.delay_signals_0_0(\d_u1_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][0]~q ),
-	.delay_signals_10_0(\d_u1_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][10]~q ),
-	.delay_signals_11_0(\d_u1_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][11]~q ),
-	.xin({\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][7]~q ,
-\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][2]~q ,
-\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][0]~q }),
+	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][2]~q ),
+	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][0]~q ),
+	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][1]~q ),
+	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][10]~q ),
+	.xin({xIn_1[11],xIn_1[10],xIn_1[9],xIn_1[8],xIn_1[7],xIn_1[6],xIn_1[5],xIn_1[4],xIn_1[3],xIn_1[2],xIn_1[1],xIn_1[0]}),
 	.clk(clk));
 
 lms_dsp_dspba_delay_85 u1_m0_wo0_wi0_r0_delayr8(
@@ -13094,701 +12794,667 @@ lms_dsp_dspba_delay_82 u1_m0_wo0_wi0_r0_delayr5(
 \u1_m0_wo0_wi0_r0_delayr4|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr4|delay_signals[0][0]~q }),
 	.clk(clk));
 
-lms_dsp_dspba_delay_81 u1_m0_wo0_wi0_r0_delayr4(
+lms_dsp_dspba_delay_21 d_u1_m0_wo0_wi0_r0_delayr10_q_11(
+	.aclr(areset),
+	.delay_signals_7_0(\d_u1_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\d_u1_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\d_u1_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\d_u1_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\d_u1_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\d_u1_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\d_u1_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][1]~q ),
+	.delay_signals_11_0(\d_u1_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\d_u1_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][10]~q ),
+	.delay_signals_9_0(\d_u1_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\d_u1_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][8]~q ),
+	.xin({\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][7]~q ,
+\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][2]~q ,
+\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][1]~q ,gnd}),
+	.clk(clk));
+
+lms_dsp_dspba_delay_63 u1_m0_wo0_wi0_r0_delayr10(
 	.aclr(areset),
 	.ena(xIn_v[0]),
-	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr4|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr4|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr4|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr4|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr4|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr4|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr4|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr4|delay_signals[0][2]~q ),
-	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr4|delay_signals[0][0]~q ),
-	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr4|delay_signals[0][1]~q ),
-	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr4|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr4|delay_signals[0][10]~q ),
-	.xin({\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][7]~q ,
-\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][2]~q ,
-\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][0]~q }),
+	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][7]~q ),
+	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][8]~q ),
+	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][2]~q ),
+	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][0]~q ),
+	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][1]~q ),
+	.xin({\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][7]~q ,
+\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][2]~q ,
+\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][0]~q }),
+	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][10]~q ),
 	.clk(clk));
 
-lms_dsp_dspba_delay_80 u1_m0_wo0_wi0_r0_delayr3(
+lms_dsp_dspba_delay_36 d_u1_m0_wo0_wi0_r0_delayr9_q_11(
+	.aclr(areset),
+	.delay_signals_8_0(\d_u1_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\d_u1_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\d_u1_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\d_u1_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\d_u1_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\d_u1_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\d_u1_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\d_u1_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][1]~q ),
+	.delay_signals_0_0(\d_u1_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][0]~q ),
+	.delay_signals_11_0(\d_u1_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\d_u1_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][10]~q ),
+	.delay_signals_9_0(\d_u1_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][9]~q ),
+	.xin({\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][7]~q ,
+\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][2]~q ,
+\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][0]~q }),
+	.clk(clk));
+
+lms_dsp_dspba_delay_86 u1_m0_wo0_wi0_r0_delayr9(
 	.aclr(areset),
 	.ena(xIn_v[0]),
-	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][2]~q ),
-	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][0]~q ),
-	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][1]~q ),
-	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr3|delay_signals[0][10]~q ),
-	.xin({\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][7]~q ,
-\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][2]~q ,
-\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][0]~q }),
+	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][1]~q ),
+	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][0]~q ),
+	.xin({\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][7]~q ,
+\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][2]~q ,
+\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][0]~q }),
+	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][10]~q ),
+	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr9|delay_signals[0][9]~q ),
 	.clk(clk));
 
-lms_dsp_dspba_delay_73 u1_m0_wo0_wi0_r0_delayr2(
+lms_dsp_dspba_delay_35 d_u1_m0_wo0_wi0_r0_delayr8_q_12(
+	.aclr(areset),
+	.delay_signals_7_0(\d_u1_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][7]~q ),
+	.delay_signals_9_0(\d_u1_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][9]~q ),
+	.delay_signals_6_0(\d_u1_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][6]~q ),
+	.delay_signals_8_0(\d_u1_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][8]~q ),
+	.delay_signals_5_0(\d_u1_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\d_u1_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\d_u1_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\d_u1_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\d_u1_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][1]~q ),
+	.delay_signals_0_0(\d_u1_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][0]~q ),
+	.delay_signals_10_0(\d_u1_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][10]~q ),
+	.delay_signals_11_0(\d_u1_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][11]~q ),
+	.xin({\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][7]~q ,
+\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][2]~q ,
+\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr8|delay_signals[0][0]~q }),
+	.clk(clk));
+
+lms_dsp_dspba_delay_66 u1_m0_wo0_wi0_r0_delayr13(
 	.aclr(areset),
 	.ena(xIn_v[0]),
-	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][2]~q ),
-	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][0]~q ),
-	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][1]~q ),
-	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr2|delay_signals[0][10]~q ),
-	.xin({\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][7]~q ,
-\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][2]~q ,
-\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][0]~q }),
+	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][4]~q ),
+	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][6]~q ),
+	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][9]~q ),
+	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][5]~q ),
+	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][7]~q ),
+	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][1]~q ),
+	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][0]~q ),
+	.xin({\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][7]~q ,
+\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][2]~q ,
+\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][0]~q }),
+	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][10]~q ),
 	.clk(clk));
 
-lms_dsp_dspba_delay_62 u1_m0_wo0_wi0_r0_delayr1(
+lms_dsp_dspba_delay_23 d_u1_m0_wo0_wi0_r0_delayr12_q_12(
+	.aclr(areset),
+	.delay_signals_6_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][1]~q ),
+	.delay_signals_11_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][10]~q ),
+	.delay_signals_9_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][7]~q ),
+	.xin({\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][11]~q ,\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][10]~q ,\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][9]~q ,\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][8]~q ,
+\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][7]~q ,\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][6]~q ,\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][5]~q ,\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][4]~q ,
+\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][3]~q ,\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][2]~q ,\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][1]~q ,gnd}),
+	.clk(clk));
+
+lms_dsp_dspba_delay_22 d_u1_m0_wo0_wi0_r0_delayr12_q_11(
+	.aclr(areset),
+	.delay_signals_6_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][6]~q ),
+	.delay_signals_8_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][8]~q ),
+	.delay_signals_9_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][9]~q ),
+	.delay_signals_7_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][7]~q ),
+	.delay_signals_5_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][1]~q ),
+	.delay_signals_0_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][0]~q ),
+	.delay_signals_11_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\d_u1_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][10]~q ),
+	.xin({\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][7]~q ,
+\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][2]~q ,
+\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][0]~q }),
+	.clk(clk));
+
+lms_dsp_dspba_delay_65 u1_m0_wo0_wi0_r0_delayr12(
 	.aclr(areset),
 	.ena(xIn_v[0]),
-	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][2]~q ),
-	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][0]~q ),
-	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][1]~q ),
-	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr1|delay_signals[0][10]~q ),
-	.xin({xIn_1[11],xIn_1[10],xIn_1[9],xIn_1[8],xIn_1[7],xIn_1[6],xIn_1[5],xIn_1[4],xIn_1[3],xIn_1[2],xIn_1[1],xIn_1[0]}),
+	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][6]~q ),
+	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][8]~q ),
+	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][9]~q ),
+	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][7]~q ),
+	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][1]~q ),
+	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][0]~q ),
+	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr12|delay_signals[0][10]~q ),
+	.xin({\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][7]~q ,
+\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][2]~q ,
+\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][0]~q }),
 	.clk(clk));
 
-lms_dsp_dspba_delay_2 d_u0_m0_wo0_compute_q_16(
+lms_dsp_dspba_delay_64 u1_m0_wo0_wi0_r0_delayr11(
 	.aclr(areset),
-	.delay_signals_0_0(\d_u0_m0_wo0_compute_q_16|delay_signals[0][0]~q ),
-	.xin({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,\d_u0_m0_wo0_compute_q_13|delay_signals[0][0]~q }),
+	.ena(xIn_v[0]),
+	.xin({\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][7]~q ,
+\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][2]~q ,
+\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr10|delay_signals[0][0]~q }),
+	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][6]~q ),
+	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][8]~q ),
+	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][9]~q ),
+	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][7]~q ),
+	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][1]~q ),
+	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][0]~q ),
+	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr11|delay_signals[0][10]~q ),
 	.clk(clk));
 
-lms_dsp_dspba_delay_54 u0_m0_wo0_wi0_r0_delayr25(
+lms_dsp_dspba_delay_26 d_u1_m0_wo0_wi0_r0_delayr15_q_11(
+	.aclr(areset),
+	.delay_signals_2_0(\d_u1_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][2]~q ),
+	.delay_signals_9_0(\d_u1_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][9]~q ),
+	.delay_signals_1_0(\d_u1_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][1]~q ),
+	.delay_signals_8_0(\d_u1_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][8]~q ),
+	.delay_signals_0_0(\d_u1_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][0]~q ),
+	.delay_signals_7_0(\d_u1_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\d_u1_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\d_u1_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\d_u1_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\d_u1_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][3]~q ),
+	.delay_signals_10_0(\d_u1_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][10]~q ),
+	.delay_signals_11_0(\d_u1_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][11]~q ),
+	.xin({\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][7]~q ,
+\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][2]~q ,
+\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][0]~q }),
+	.clk(clk));
+
+lms_dsp_dspba_delay_68 u1_m0_wo0_wi0_r0_delayr15(
+	.aclr(areset),
+	.ena(xIn_v[0]),
+	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][2]~q ),
+	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][9]~q ),
+	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][1]~q ),
+	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][8]~q ),
+	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][0]~q ),
+	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][3]~q ),
+	.xin({\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][7]~q ,
+\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][2]~q ,
+\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][0]~q }),
+	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][10]~q ),
+	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][11]~q ),
+	.clk(clk));
+
+lms_dsp_dspba_delay_25 d_u1_m0_wo0_wi0_r0_delayr14_q_11(
+	.aclr(areset),
+	.delay_signals_4_0(\d_u1_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\d_u1_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\d_u1_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][2]~q ),
+	.delay_signals_11_0(\d_u1_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\d_u1_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][10]~q ),
+	.delay_signals_9_0(\d_u1_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\d_u1_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\d_u1_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\d_u1_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\d_u1_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][5]~q ),
+	.xin({\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][7]~q ,
+\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][2]~q ,gnd,gnd}),
+	.clk(clk));
+
+lms_dsp_dspba_delay_67 u1_m0_wo0_wi0_r0_delayr14(
+	.aclr(areset),
+	.ena(xIn_v[0]),
+	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][4]~q ),
+	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][7]~q ),
+	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][9]~q ),
+	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][6]~q ),
+	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][8]~q ),
+	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][5]~q ),
+	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][1]~q ),
+	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][0]~q ),
+	.xin({\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][7]~q ,
+\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][2]~q ,
+\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][0]~q }),
+	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr14|delay_signals[0][10]~q ),
+	.clk(clk));
+
+lms_dsp_dspba_delay_24 d_u1_m0_wo0_wi0_r0_delayr13_q_11(
+	.aclr(areset),
+	.delay_signals_4_0(\d_u1_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\d_u1_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\d_u1_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\d_u1_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][1]~q ),
+	.delay_signals_11_0(\d_u1_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\d_u1_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][10]~q ),
+	.delay_signals_9_0(\d_u1_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\d_u1_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\d_u1_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\d_u1_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\d_u1_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][5]~q ),
+	.xin({\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][7]~q ,
+\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][2]~q ,
+\u1_m0_wo0_wi0_r0_delayr13|delay_signals[0][1]~q ,gnd}),
+	.clk(clk));
+
+lms_dsp_dspba_delay_71 u1_m0_wo0_wi0_r0_delayr18(
+	.aclr(areset),
+	.ena(xIn_v[0]),
+	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][6]~q ),
+	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][8]~q ),
+	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][9]~q ),
+	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][7]~q ),
+	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][1]~q ),
+	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][0]~q ),
+	.xin({\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][7]~q ,
+\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][2]~q ,
+\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][0]~q }),
+	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][10]~q ),
+	.clk(clk));
+
+lms_dsp_dspba_delay_28 d_u1_m0_wo0_wi0_r0_delayr17_q_11(
+	.aclr(areset),
+	.delay_signals_4_0(\d_u1_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\d_u1_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\d_u1_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\d_u1_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][1]~q ),
+	.delay_signals_11_0(\d_u1_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\d_u1_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][10]~q ),
+	.delay_signals_9_0(\d_u1_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\d_u1_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\d_u1_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\d_u1_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\d_u1_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][5]~q ),
+	.xin({\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][7]~q ,
+\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][2]~q ,
+\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][1]~q ,gnd}),
+	.clk(clk));
+
+lms_dsp_dspba_delay_70 u1_m0_wo0_wi0_r0_delayr17(
+	.aclr(areset),
+	.ena(xIn_v[0]),
+	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][4]~q ),
+	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][6]~q ),
+	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][9]~q ),
+	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][5]~q ),
+	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][7]~q ),
+	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][1]~q ),
+	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][0]~q ),
+	.xin({\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][7]~q ,
+\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][2]~q ,
+\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][0]~q }),
+	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr17|delay_signals[0][10]~q ),
+	.clk(clk));
+
+lms_dsp_dspba_delay_27 d_u1_m0_wo0_wi0_r0_delayr16_q_11(
+	.aclr(areset),
+	.delay_signals_4_0(\d_u1_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\d_u1_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\d_u1_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][2]~q ),
+	.delay_signals_11_0(\d_u1_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\d_u1_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][10]~q ),
+	.delay_signals_9_0(\d_u1_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\d_u1_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\d_u1_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\d_u1_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\d_u1_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][5]~q ),
+	.xin({\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][7]~q ,
+\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][2]~q ,gnd,gnd}),
+	.clk(clk));
+
+lms_dsp_dspba_delay_69 u1_m0_wo0_wi0_r0_delayr16(
+	.aclr(areset),
+	.ena(xIn_v[0]),
+	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][4]~q ),
+	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][7]~q ),
+	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][9]~q ),
+	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][6]~q ),
+	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][8]~q ),
+	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][5]~q ),
+	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][1]~q ),
+	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][0]~q ),
+	.xin({\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][7]~q ,
+\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][2]~q ,
+\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr15|delay_signals[0][0]~q }),
+	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr16|delay_signals[0][10]~q ),
+	.clk(clk));
+
+lms_dsp_dspba_delay_75 u1_m0_wo0_wi0_r0_delayr21(
+	.aclr(areset),
+	.ena(\d_u0_m0_wo0_compute_q_11|delay_signals[0][0]~q ),
+	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][1]~q ),
+	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][0]~q ),
+	.xin({\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][7]~q ,
+\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][2]~q ,
+\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][0]~q }),
+	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][10]~q ),
+	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][9]~q ),
+	.clk(clk));
+
+lms_dsp_dspba_delay_30 d_u1_m0_wo0_wi0_r0_delayr20_q_12(
+	.aclr(areset),
+	.delay_signals_7_0(\d_u1_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\d_u1_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\d_u1_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\d_u1_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\d_u1_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\d_u1_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\d_u1_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][1]~q ),
+	.delay_signals_11_0(\d_u1_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\d_u1_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][10]~q ),
+	.delay_signals_9_0(\d_u1_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\d_u1_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][8]~q ),
+	.xin({\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][7]~q ,
+\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][2]~q ,
+\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][1]~q ,gnd}),
+	.clk(clk));
+
+lms_dsp_dspba_delay_74 u1_m0_wo0_wi0_r0_delayr20(
+	.aclr(areset),
+	.ena(\d_u0_m0_wo0_compute_q_11|delay_signals[0][0]~q ),
+	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][7]~q ),
+	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][8]~q ),
+	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][2]~q ),
+	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][0]~q ),
+	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][1]~q ),
+	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][10]~q ),
+	.xin({\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][7]~q ,
+\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][2]~q ,
+\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][0]~q }),
+	.clk(clk));
+
+lms_dsp_dspba_delay_72 u1_m0_wo0_wi0_r0_delayr19(
+	.aclr(areset),
+	.ena(\d_u0_m0_wo0_compute_q_11|delay_signals[0][0]~q ),
+	.xin({\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][11]~q ,\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][10]~q ,\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][9]~q ,\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][8]~q ,
+\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][7]~q ,\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][6]~q ,\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][5]~q ,\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][4]~q ,
+\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][3]~q ,\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][2]~q ,\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][1]~q ,\u1_m0_wo0_mtree_mult1_12_add_1_o[0]~q }),
+	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][7]~q ),
+	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][8]~q ),
+	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][2]~q ),
+	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][0]~q ),
+	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][1]~q ),
+	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][10]~q ),
+	.clk(clk));
+
+lms_dsp_dspba_delay d_u0_m0_wo0_compute_q_11(
+	.aclr(areset),
+	.delay_signals_0_0(\d_u0_m0_wo0_compute_q_11|delay_signals[0][0]~q ),
+	.xin({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,xIn_v[0]}),
+	.clk(clk));
+
+lms_dsp_dspba_delay_29 d_u1_m0_wo0_wi0_r0_delayr18_q_11(
+	.aclr(areset),
+	.delay_signals_6_0(\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][1]~q ),
+	.delay_signals_11_0(\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][10]~q ),
+	.delay_signals_9_0(\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][7]~q ),
+	.xin({\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][7]~q ,
+\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][2]~q ,
+\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][1]~q ,gnd}),
+	.clk(clk));
+
+lms_dsp_dspba_delay_78 u1_m0_wo0_wi0_r0_delayr24(
 	.aclr(areset),
 	.ena(\d_u0_m0_wo0_compute_q_13|delay_signals[0][0]~q ),
-	.xin({\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][7]~q ,
-\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][2]~q ,
-\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][0]~q }),
-	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr25|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr25|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr25|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr25|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr25|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr25|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr25|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr25|delay_signals[0][2]~q ),
-	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr25|delay_signals[0][0]~q ),
-	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr25|delay_signals[0][1]~q ),
-	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr25|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr25|delay_signals[0][10]~q ),
+	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][1]~q ),
+	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][0]~q ),
+	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][10]~q ),
+	.xin({\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][7]~q ,
+\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][2]~q ,
+\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][0]~q }),
 	.clk(clk));
 
-lms_dsp_dspba_delay_16 d_u0_m0_wo0_wi0_r0_delayr24_q_14(
-	.aclr(areset),
-	.delay_signals_9_0(\d_u0_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\d_u0_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\d_u0_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\d_u0_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\d_u0_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\d_u0_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\d_u0_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\d_u0_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\d_u0_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][1]~q ),
-	.delay_signals_0_0(\d_u0_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][0]~q ),
-	.delay_signals_11_0(\d_u0_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\d_u0_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][10]~q ),
-	.xin({\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][7]~q ,
-\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][2]~q ,
-\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][0]~q }),
-	.clk(clk));
-
-lms_dsp_dspba_delay_53 u0_m0_wo0_wi0_r0_delayr24(
+lms_dsp_dspba_delay_77 u1_m0_wo0_wi0_r0_delayr23(
 	.aclr(areset),
 	.ena(\d_u0_m0_wo0_compute_q_13|delay_signals[0][0]~q ),
-	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][1]~q ),
-	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][0]~q ),
-	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][10]~q ),
-	.xin({\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][7]~q ,
-\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][2]~q ,
-\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][0]~q }),
+	.xin({\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][11]~q ,\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][10]~q ,\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][9]~q ,\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][8]~q ,
+\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][7]~q ,\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][6]~q ,\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][5]~q ,\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][4]~q ,
+\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][3]~q ,\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][2]~q ,\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][1]~q ,\u1_m0_wo0_mtree_add0_4_o[0]~q }),
+	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][1]~q ),
+	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][0]~q ),
+	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][10]~q ),
 	.clk(clk));
 
-lms_dsp_dspba_delay_52 u0_m0_wo0_wi0_r0_delayr23(
+lms_dsp_dspba_delay_31 d_u1_m0_wo0_wi0_r0_delayr22_q_13(
+	.aclr(areset),
+	.u1_m0_wo0_mtree_mult1_8_sub_1_o_1(\u1_m0_wo0_mtree_mult1_8_sub_1_o[1]~q ),
+	.delay_signals_9_0(\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][1]~q ),
+	.xin({\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][7]~q ,
+\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][2]~q ,gnd,gnd}),
+	.delay_signals_11_0(\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][10]~q ),
+	.clk(clk));
+
+lms_dsp_dspba_delay_1 d_u0_m0_wo0_compute_q_13(
+	.aclr(areset),
+	.delay_signals_0_0(\d_u0_m0_wo0_compute_q_13|delay_signals[0][0]~q ),
+	.xin({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,\d_u0_m0_wo0_compute_q_11|delay_signals[0][0]~q }),
+	.clk(clk));
+
+lms_dsp_dspba_delay_76 u1_m0_wo0_wi0_r0_delayr22(
+	.aclr(areset),
+	.ena(\d_u0_m0_wo0_compute_q_11|delay_signals[0][0]~q ),
+	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][7]~q ),
+	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][9]~q ),
+	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][6]~q ),
+	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][8]~q ),
+	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][1]~q ),
+	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][0]~q ),
+	.xin({\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][7]~q ,
+\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][2]~q ,
+\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][0]~q }),
+	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][10]~q ),
+	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][11]~q ),
+	.clk(clk));
+
+lms_dsp_dspba_delay_55 u0_m0_wo0_wi0_r0_delayr3(
+	.aclr(areset),
+	.ena(xIn_v[0]),
+	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr3|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr3|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr3|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr3|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr3|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr3|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr3|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr3|delay_signals[0][2]~q ),
+	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr3|delay_signals[0][0]~q ),
+	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr3|delay_signals[0][1]~q ),
+	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr3|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr3|delay_signals[0][10]~q ),
+	.xin({\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][7]~q ,
+\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][2]~q ,
+\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][0]~q }),
+	.clk(clk));
+
+lms_dsp_dspba_delay_48 u0_m0_wo0_wi0_r0_delayr2(
+	.aclr(areset),
+	.ena(xIn_v[0]),
+	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][2]~q ),
+	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][0]~q ),
+	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][1]~q ),
+	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][10]~q ),
+	.xin({\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][7]~q ,
+\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][2]~q ,
+\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][0]~q }),
+	.clk(clk));
+
+lms_dsp_dspba_delay_37 u0_m0_wo0_wi0_r0_delayr1(
+	.aclr(areset),
+	.ena(xIn_v[0]),
+	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][2]~q ),
+	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][0]~q ),
+	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][1]~q ),
+	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][10]~q ),
+	.xin({xIn_0[11],xIn_0[10],xIn_0[9],xIn_0[8],xIn_0[7],xIn_0[6],xIn_0[5],xIn_0[4],xIn_0[3],xIn_0[2],xIn_0[1],xIn_0[0]}),
+	.clk(clk));
+
+lms_dsp_dspba_delay_79 u1_m0_wo0_wi0_r0_delayr25(
 	.aclr(areset),
 	.ena(\d_u0_m0_wo0_compute_q_13|delay_signals[0][0]~q ),
-	.xin({\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][11]~q ,\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][10]~q ,\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][9]~q ,\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][8]~q ,
-\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][7]~q ,\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][6]~q ,\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][5]~q ,\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][4]~q ,
-\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][3]~q ,\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][2]~q ,\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][1]~q ,\u0_m0_wo0_mtree_add0_4_o[0]~q }),
-	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][1]~q ),
-	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][0]~q ),
-	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][10]~q ),
+	.xin({\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][7]~q ,
+\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][2]~q ,
+\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][0]~q }),
+	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr25|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr25|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr25|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr25|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr25|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr25|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr25|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr25|delay_signals[0][2]~q ),
+	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr25|delay_signals[0][0]~q ),
+	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr25|delay_signals[0][1]~q ),
+	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr25|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr25|delay_signals[0][10]~q ),
 	.clk(clk));
 
-lms_dsp_dspba_delay_15 d_u0_m0_wo0_wi0_r0_delayr22_q_13(
+lms_dsp_dspba_delay_32 d_u1_m0_wo0_wi0_r0_delayr24_q_14(
 	.aclr(areset),
-	.u0_m0_wo0_mtree_mult1_8_sub_1_o_1(\u0_m0_wo0_mtree_mult1_8_sub_1_o[1]~q ),
-	.delay_signals_9_0(\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][1]~q ),
-	.xin({\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][7]~q ,
-\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][2]~q ,gnd,gnd}),
-	.delay_signals_11_0(\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][10]~q ),
-	.clk(clk));
-
-lms_dsp_dspba_delay_51 u0_m0_wo0_wi0_r0_delayr22(
-	.aclr(areset),
-	.ena(\d_u0_m0_wo0_compute_q_11|delay_signals[0][0]~q ),
-	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][7]~q ),
-	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][9]~q ),
-	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][6]~q ),
-	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][8]~q ),
-	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][1]~q ),
-	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][0]~q ),
-	.xin({\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][7]~q ,
-\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][2]~q ,
-\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][0]~q }),
-	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][10]~q ),
-	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][11]~q ),
-	.clk(clk));
-
-lms_dsp_dspba_delay_50 u0_m0_wo0_wi0_r0_delayr21(
-	.aclr(areset),
-	.ena(\d_u0_m0_wo0_compute_q_11|delay_signals[0][0]~q ),
-	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][1]~q ),
-	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][0]~q ),
-	.xin({\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][7]~q ,
-\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][2]~q ,
-\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][0]~q }),
-	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][10]~q ),
-	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][9]~q ),
-	.clk(clk));
-
-lms_dsp_dspba_delay_14 d_u0_m0_wo0_wi0_r0_delayr20_q_12(
-	.aclr(areset),
-	.delay_signals_7_0(\d_u0_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\d_u0_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\d_u0_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\d_u0_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\d_u0_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\d_u0_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\d_u0_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][1]~q ),
-	.delay_signals_11_0(\d_u0_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\d_u0_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][10]~q ),
-	.delay_signals_9_0(\d_u0_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\d_u0_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][8]~q ),
-	.xin({\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][7]~q ,
-\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][2]~q ,
-\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][1]~q ,gnd}),
-	.clk(clk));
-
-lms_dsp_dspba_delay_49 u0_m0_wo0_wi0_r0_delayr20(
-	.aclr(areset),
-	.ena(\d_u0_m0_wo0_compute_q_11|delay_signals[0][0]~q ),
-	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][7]~q ),
-	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][8]~q ),
-	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][2]~q ),
-	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][0]~q ),
-	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][1]~q ),
-	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][10]~q ),
-	.xin({\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][7]~q ,
-\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][2]~q ,
-\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][0]~q }),
-	.clk(clk));
-
-lms_dsp_dspba_delay_47 u0_m0_wo0_wi0_r0_delayr19(
-	.aclr(areset),
-	.ena(\d_u0_m0_wo0_compute_q_11|delay_signals[0][0]~q ),
-	.xin({\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][11]~q ,\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][10]~q ,\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][9]~q ,\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][8]~q ,
-\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][7]~q ,\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][6]~q ,\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][5]~q ,\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][4]~q ,
-\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][3]~q ,\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][2]~q ,\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][1]~q ,\u0_m0_wo0_mtree_mult1_12_add_1_o[0]~q }),
-	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][7]~q ),
-	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][8]~q ),
-	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][2]~q ),
-	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][0]~q ),
-	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][1]~q ),
-	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][10]~q ),
-	.clk(clk));
-
-lms_dsp_dspba_delay_13 d_u0_m0_wo0_wi0_r0_delayr18_q_11(
-	.aclr(areset),
-	.delay_signals_6_0(\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][1]~q ),
-	.delay_signals_11_0(\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][10]~q ),
-	.delay_signals_9_0(\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][7]~q ),
-	.xin({\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][7]~q ,
-\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][2]~q ,
-\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][1]~q ,gnd}),
-	.clk(clk));
-
-lms_dsp_dspba_delay_46 u0_m0_wo0_wi0_r0_delayr18(
-	.aclr(areset),
-	.ena(xIn_v[0]),
-	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][6]~q ),
-	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][8]~q ),
-	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][9]~q ),
-	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][7]~q ),
-	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][1]~q ),
-	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][0]~q ),
-	.xin({\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][7]~q ,
-\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][2]~q ,
-\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][0]~q }),
-	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][10]~q ),
-	.clk(clk));
-
-lms_dsp_dspba_delay_12 d_u0_m0_wo0_wi0_r0_delayr17_q_11(
-	.aclr(areset),
-	.delay_signals_4_0(\d_u0_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\d_u0_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\d_u0_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\d_u0_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][1]~q ),
-	.delay_signals_11_0(\d_u0_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\d_u0_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][10]~q ),
-	.delay_signals_9_0(\d_u0_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\d_u0_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\d_u0_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\d_u0_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\d_u0_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][5]~q ),
-	.xin({\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][7]~q ,
-\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][2]~q ,
-\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][1]~q ,gnd}),
-	.clk(clk));
-
-lms_dsp_dspba_delay_45 u0_m0_wo0_wi0_r0_delayr17(
-	.aclr(areset),
-	.ena(xIn_v[0]),
-	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][4]~q ),
-	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][6]~q ),
-	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][9]~q ),
-	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][5]~q ),
-	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][7]~q ),
-	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][1]~q ),
-	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][0]~q ),
-	.xin({\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][7]~q ,
-\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][2]~q ,
-\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][0]~q }),
-	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][10]~q ),
-	.clk(clk));
-
-lms_dsp_dspba_delay_11 d_u0_m0_wo0_wi0_r0_delayr16_q_11(
-	.aclr(areset),
-	.delay_signals_4_0(\d_u0_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\d_u0_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\d_u0_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][2]~q ),
-	.delay_signals_11_0(\d_u0_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\d_u0_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][10]~q ),
-	.delay_signals_9_0(\d_u0_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\d_u0_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\d_u0_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\d_u0_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\d_u0_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][5]~q ),
-	.xin({\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][7]~q ,
-\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][2]~q ,gnd,gnd}),
-	.clk(clk));
-
-lms_dsp_dspba_delay_44 u0_m0_wo0_wi0_r0_delayr16(
-	.aclr(areset),
-	.ena(xIn_v[0]),
-	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][4]~q ),
-	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][7]~q ),
-	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][9]~q ),
-	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][6]~q ),
-	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][8]~q ),
-	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][5]~q ),
-	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][1]~q ),
-	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][0]~q ),
-	.xin({\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][7]~q ,
-\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][2]~q ,
-\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][0]~q }),
-	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][10]~q ),
-	.clk(clk));
-
-lms_dsp_dspba_delay_10 d_u0_m0_wo0_wi0_r0_delayr15_q_11(
-	.aclr(areset),
-	.delay_signals_2_0(\d_u0_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][2]~q ),
-	.delay_signals_9_0(\d_u0_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][9]~q ),
-	.delay_signals_1_0(\d_u0_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][1]~q ),
-	.delay_signals_8_0(\d_u0_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][8]~q ),
-	.delay_signals_0_0(\d_u0_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][0]~q ),
-	.delay_signals_7_0(\d_u0_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\d_u0_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\d_u0_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\d_u0_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\d_u0_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][3]~q ),
-	.delay_signals_10_0(\d_u0_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][10]~q ),
-	.delay_signals_11_0(\d_u0_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][11]~q ),
-	.xin({\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][7]~q ,
-\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][2]~q ,
-\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][0]~q }),
-	.clk(clk));
-
-lms_dsp_dspba_delay_43 u0_m0_wo0_wi0_r0_delayr15(
-	.aclr(areset),
-	.ena(xIn_v[0]),
-	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][2]~q ),
-	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][9]~q ),
-	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][1]~q ),
-	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][8]~q ),
-	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][0]~q ),
-	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][3]~q ),
-	.xin({\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][7]~q ,
-\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][2]~q ,
-\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][0]~q }),
-	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][10]~q ),
-	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][11]~q ),
-	.clk(clk));
-
-lms_dsp_dspba_delay_9 d_u0_m0_wo0_wi0_r0_delayr14_q_11(
-	.aclr(areset),
-	.delay_signals_4_0(\d_u0_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\d_u0_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\d_u0_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][2]~q ),
-	.delay_signals_11_0(\d_u0_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\d_u0_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][10]~q ),
-	.delay_signals_9_0(\d_u0_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\d_u0_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\d_u0_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\d_u0_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\d_u0_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][5]~q ),
-	.xin({\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][7]~q ,
-\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][2]~q ,gnd,gnd}),
-	.clk(clk));
-
-lms_dsp_dspba_delay_42 u0_m0_wo0_wi0_r0_delayr14(
-	.aclr(areset),
-	.ena(xIn_v[0]),
-	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][4]~q ),
-	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][7]~q ),
-	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][9]~q ),
-	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][6]~q ),
-	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][8]~q ),
-	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][5]~q ),
-	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][1]~q ),
-	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][0]~q ),
-	.xin({\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][7]~q ,
-\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][2]~q ,
-\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][0]~q }),
-	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][10]~q ),
-	.clk(clk));
-
-lms_dsp_dspba_delay_8 d_u0_m0_wo0_wi0_r0_delayr13_q_11(
-	.aclr(areset),
-	.delay_signals_4_0(\d_u0_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\d_u0_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\d_u0_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\d_u0_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][1]~q ),
-	.delay_signals_11_0(\d_u0_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\d_u0_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][10]~q ),
-	.delay_signals_9_0(\d_u0_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\d_u0_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\d_u0_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\d_u0_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\d_u0_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][5]~q ),
-	.xin({\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][7]~q ,
-\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][2]~q ,
-\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][1]~q ,gnd}),
-	.clk(clk));
-
-lms_dsp_dspba_delay_41 u0_m0_wo0_wi0_r0_delayr13(
-	.aclr(areset),
-	.ena(xIn_v[0]),
-	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][4]~q ),
-	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][6]~q ),
-	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][9]~q ),
-	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][5]~q ),
-	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][7]~q ),
-	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][1]~q ),
-	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][0]~q ),
-	.xin({\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][7]~q ,
-\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][2]~q ,
-\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][0]~q }),
-	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][10]~q ),
-	.clk(clk));
-
-lms_dsp_dspba_delay_7 d_u0_m0_wo0_wi0_r0_delayr12_q_12(
-	.aclr(areset),
-	.delay_signals_6_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][1]~q ),
-	.delay_signals_11_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][10]~q ),
-	.delay_signals_9_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][7]~q ),
-	.xin({\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][11]~q ,\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][10]~q ,\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][9]~q ,\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][8]~q ,
-\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][7]~q ,\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][6]~q ,\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][5]~q ,\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][4]~q ,
-\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][3]~q ,\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][2]~q ,\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][1]~q ,gnd}),
-	.clk(clk));
-
-lms_dsp_dspba_delay_6 d_u0_m0_wo0_wi0_r0_delayr12_q_11(
-	.aclr(areset),
-	.delay_signals_6_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][6]~q ),
-	.delay_signals_8_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][8]~q ),
-	.delay_signals_9_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][9]~q ),
-	.delay_signals_7_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][7]~q ),
-	.delay_signals_5_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][1]~q ),
-	.delay_signals_0_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][0]~q ),
-	.delay_signals_11_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][10]~q ),
-	.xin({\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][7]~q ,
-\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][2]~q ,
-\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][0]~q }),
-	.clk(clk));
-
-lms_dsp_dspba_delay_40 u0_m0_wo0_wi0_r0_delayr12(
-	.aclr(areset),
-	.ena(xIn_v[0]),
-	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][6]~q ),
-	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][8]~q ),
-	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][9]~q ),
-	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][7]~q ),
-	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][1]~q ),
-	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][0]~q ),
-	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][10]~q ),
-	.xin({\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][7]~q ,
-\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][2]~q ,
-\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][0]~q }),
-	.clk(clk));
-
-lms_dsp_dspba_delay_39 u0_m0_wo0_wi0_r0_delayr11(
-	.aclr(areset),
-	.ena(xIn_v[0]),
-	.xin({\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][7]~q ,
-\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][2]~q ,
-\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][0]~q }),
-	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][6]~q ),
-	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][8]~q ),
-	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][9]~q ),
-	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][7]~q ),
-	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][1]~q ),
-	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][0]~q ),
-	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][10]~q ),
-	.clk(clk));
-
-lms_dsp_dspba_delay_5 d_u0_m0_wo0_wi0_r0_delayr10_q_11(
-	.aclr(areset),
-	.delay_signals_7_0(\d_u0_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\d_u0_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\d_u0_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\d_u0_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\d_u0_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\d_u0_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\d_u0_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][1]~q ),
-	.delay_signals_11_0(\d_u0_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\d_u0_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][10]~q ),
-	.delay_signals_9_0(\d_u0_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\d_u0_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][8]~q ),
-	.xin({\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][7]~q ,
-\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][2]~q ,
-\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][1]~q ,gnd}),
-	.clk(clk));
-
-lms_dsp_dspba_delay_38 u0_m0_wo0_wi0_r0_delayr10(
-	.aclr(areset),
-	.ena(xIn_v[0]),
-	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][7]~q ),
-	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][8]~q ),
-	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][2]~q ),
-	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][0]~q ),
-	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][1]~q ),
-	.xin({\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][7]~q ,
-\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][2]~q ,
-\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][0]~q }),
-	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][10]~q ),
-	.clk(clk));
-
-lms_dsp_dspba_delay_20 d_u0_m0_wo0_wi0_r0_delayr9_q_11(
-	.aclr(areset),
-	.delay_signals_8_0(\d_u0_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\d_u0_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\d_u0_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\d_u0_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\d_u0_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\d_u0_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\d_u0_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\d_u0_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][1]~q ),
-	.delay_signals_0_0(\d_u0_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][0]~q ),
-	.delay_signals_11_0(\d_u0_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\d_u0_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][10]~q ),
-	.delay_signals_9_0(\d_u0_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][9]~q ),
-	.xin({\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][7]~q ,
-\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][2]~q ,
-\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][0]~q }),
-	.clk(clk));
-
-lms_dsp_dspba_delay_61 u0_m0_wo0_wi0_r0_delayr9(
-	.aclr(areset),
-	.ena(xIn_v[0]),
-	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][1]~q ),
-	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][0]~q ),
-	.xin({\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][7]~q ,
-\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][2]~q ,
-\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][0]~q }),
-	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][10]~q ),
-	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][9]~q ),
-	.clk(clk));
-
-lms_dsp_dspba_delay_19 d_u0_m0_wo0_wi0_r0_delayr8_q_12(
-	.aclr(areset),
-	.delay_signals_7_0(\d_u0_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][7]~q ),
-	.delay_signals_9_0(\d_u0_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][9]~q ),
-	.delay_signals_6_0(\d_u0_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][6]~q ),
-	.delay_signals_8_0(\d_u0_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][8]~q ),
-	.delay_signals_5_0(\d_u0_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\d_u0_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\d_u0_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\d_u0_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\d_u0_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][1]~q ),
-	.delay_signals_0_0(\d_u0_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][0]~q ),
-	.delay_signals_10_0(\d_u0_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][10]~q ),
-	.delay_signals_11_0(\d_u0_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][11]~q ),
-	.xin({\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][7]~q ,
-\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][2]~q ,
-\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][0]~q }),
-	.clk(clk));
-
-lms_dsp_dspba_delay_60 u0_m0_wo0_wi0_r0_delayr8(
-	.aclr(areset),
-	.ena(xIn_v[0]),
-	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][7]~q ),
-	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][9]~q ),
-	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][6]~q ),
-	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][8]~q ),
-	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][1]~q ),
-	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][0]~q ),
-	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][10]~q ),
-	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][11]~q ),
-	.xin({\u0_m0_wo0_wi0_r0_delayr7|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr7|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr7|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr7|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr7|delay_signals[0][7]~q ,
-\u0_m0_wo0_wi0_r0_delayr7|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr7|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr7|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr7|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr7|delay_signals[0][2]~q ,
-\u0_m0_wo0_wi0_r0_delayr7|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr7|delay_signals[0][0]~q }),
+	.delay_signals_9_0(\d_u1_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\d_u1_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\d_u1_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\d_u1_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\d_u1_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\d_u1_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\d_u1_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\d_u1_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\d_u1_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][1]~q ),
+	.delay_signals_0_0(\d_u1_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][0]~q ),
+	.delay_signals_11_0(\d_u1_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\d_u1_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][10]~q ),
+	.xin({\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][7]~q ,
+\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][2]~q ,
+\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][0]~q }),
 	.clk(clk));
 
 lms_dsp_dspba_delay_59 u0_m0_wo0_wi0_r0_delayr7(
@@ -13909,287 +13575,623 @@ lms_dsp_dspba_delay_56 u0_m0_wo0_wi0_r0_delayr4(
 \u0_m0_wo0_wi0_r0_delayr3|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr3|delay_signals[0][0]~q }),
 	.clk(clk));
 
-lms_dsp_dspba_delay_55 u0_m0_wo0_wi0_r0_delayr3(
+lms_dsp_dspba_delay_38 u0_m0_wo0_wi0_r0_delayr10(
 	.aclr(areset),
 	.ena(xIn_v[0]),
-	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr3|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr3|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr3|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr3|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr3|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr3|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr3|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr3|delay_signals[0][2]~q ),
-	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr3|delay_signals[0][0]~q ),
-	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr3|delay_signals[0][1]~q ),
-	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr3|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr3|delay_signals[0][10]~q ),
-	.xin({\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][7]~q ,
-\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][2]~q ,
-\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][0]~q }),
+	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][7]~q ),
+	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][8]~q ),
+	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][2]~q ),
+	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][0]~q ),
+	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][1]~q ),
+	.xin({\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][7]~q ,
+\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][2]~q ,
+\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][0]~q }),
+	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][10]~q ),
 	.clk(clk));
 
-lms_dsp_dspba_delay_48 u0_m0_wo0_wi0_r0_delayr2(
+lms_dsp_dspba_delay_20 d_u0_m0_wo0_wi0_r0_delayr9_q_11(
+	.aclr(areset),
+	.delay_signals_8_0(\d_u0_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\d_u0_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\d_u0_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\d_u0_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\d_u0_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\d_u0_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\d_u0_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\d_u0_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][1]~q ),
+	.delay_signals_0_0(\d_u0_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][0]~q ),
+	.delay_signals_11_0(\d_u0_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\d_u0_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][10]~q ),
+	.delay_signals_9_0(\d_u0_m0_wo0_wi0_r0_delayr9_q_11|delay_signals[0][9]~q ),
+	.xin({\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][7]~q ,
+\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][2]~q ,
+\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][0]~q }),
+	.clk(clk));
+
+lms_dsp_dspba_delay_61 u0_m0_wo0_wi0_r0_delayr9(
 	.aclr(areset),
 	.ena(xIn_v[0]),
-	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][2]~q ),
-	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][0]~q ),
-	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][1]~q ),
-	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr2|delay_signals[0][10]~q ),
-	.xin({\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][7]~q ,
-\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][2]~q ,
-\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][0]~q }),
+	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][1]~q ),
+	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][0]~q ),
+	.xin({\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][7]~q ,
+\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][2]~q ,
+\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][0]~q }),
+	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][10]~q ),
+	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr9|delay_signals[0][9]~q ),
 	.clk(clk));
 
-lms_dsp_dspba_delay_37 u0_m0_wo0_wi0_r0_delayr1(
+lms_dsp_dspba_delay_19 d_u0_m0_wo0_wi0_r0_delayr8_q_12(
+	.aclr(areset),
+	.delay_signals_7_0(\d_u0_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][7]~q ),
+	.delay_signals_9_0(\d_u0_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][9]~q ),
+	.delay_signals_6_0(\d_u0_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][6]~q ),
+	.delay_signals_8_0(\d_u0_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][8]~q ),
+	.delay_signals_5_0(\d_u0_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\d_u0_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\d_u0_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\d_u0_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\d_u0_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][1]~q ),
+	.delay_signals_0_0(\d_u0_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][0]~q ),
+	.delay_signals_10_0(\d_u0_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][10]~q ),
+	.delay_signals_11_0(\d_u0_m0_wo0_wi0_r0_delayr8_q_12|delay_signals[0][11]~q ),
+	.xin({\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][7]~q ,
+\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][2]~q ,
+\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][0]~q }),
+	.clk(clk));
+
+lms_dsp_dspba_delay_60 u0_m0_wo0_wi0_r0_delayr8(
 	.aclr(areset),
 	.ena(xIn_v[0]),
-	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][2]~q ),
-	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][0]~q ),
-	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][1]~q ),
-	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr1|delay_signals[0][10]~q ),
-	.xin({xIn_0[11],xIn_0[10],xIn_0[9],xIn_0[8],xIn_0[7],xIn_0[6],xIn_0[5],xIn_0[4],xIn_0[3],xIn_0[2],xIn_0[1],xIn_0[0]}),
+	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][7]~q ),
+	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][9]~q ),
+	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][6]~q ),
+	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][8]~q ),
+	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][1]~q ),
+	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][0]~q ),
+	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][10]~q ),
+	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr8|delay_signals[0][11]~q ),
+	.xin({\u0_m0_wo0_wi0_r0_delayr7|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr7|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr7|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr7|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr7|delay_signals[0][7]~q ,
+\u0_m0_wo0_wi0_r0_delayr7|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr7|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr7|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr7|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr7|delay_signals[0][2]~q ,
+\u0_m0_wo0_wi0_r0_delayr7|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr7|delay_signals[0][0]~q }),
 	.clk(clk));
 
-lms_dsp_dspba_delay_79 u1_m0_wo0_wi0_r0_delayr25(
+lms_dsp_dspba_delay_7 d_u0_m0_wo0_wi0_r0_delayr12_q_12(
+	.aclr(areset),
+	.delay_signals_6_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][1]~q ),
+	.delay_signals_11_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][10]~q ),
+	.delay_signals_9_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_12|delay_signals[0][7]~q ),
+	.xin({\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][11]~q ,\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][10]~q ,\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][9]~q ,\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][8]~q ,
+\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][7]~q ,\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][6]~q ,\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][5]~q ,\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][4]~q ,
+\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][3]~q ,\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][2]~q ,\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][1]~q ,gnd}),
+	.clk(clk));
+
+lms_dsp_dspba_delay_6 d_u0_m0_wo0_wi0_r0_delayr12_q_11(
+	.aclr(areset),
+	.delay_signals_6_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][6]~q ),
+	.delay_signals_8_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][8]~q ),
+	.delay_signals_9_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][9]~q ),
+	.delay_signals_7_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][7]~q ),
+	.delay_signals_5_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][1]~q ),
+	.delay_signals_0_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][0]~q ),
+	.delay_signals_11_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\d_u0_m0_wo0_wi0_r0_delayr12_q_11|delay_signals[0][10]~q ),
+	.xin({\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][7]~q ,
+\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][2]~q ,
+\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][0]~q }),
+	.clk(clk));
+
+lms_dsp_dspba_delay_40 u0_m0_wo0_wi0_r0_delayr12(
+	.aclr(areset),
+	.ena(xIn_v[0]),
+	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][6]~q ),
+	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][8]~q ),
+	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][9]~q ),
+	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][7]~q ),
+	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][1]~q ),
+	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][0]~q ),
+	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][10]~q ),
+	.xin({\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][7]~q ,
+\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][2]~q ,
+\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][0]~q }),
+	.clk(clk));
+
+lms_dsp_dspba_delay_39 u0_m0_wo0_wi0_r0_delayr11(
+	.aclr(areset),
+	.ena(xIn_v[0]),
+	.xin({\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][7]~q ,
+\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][2]~q ,
+\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][0]~q }),
+	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][6]~q ),
+	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][8]~q ),
+	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][9]~q ),
+	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][7]~q ),
+	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][1]~q ),
+	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][0]~q ),
+	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr11|delay_signals[0][10]~q ),
+	.clk(clk));
+
+lms_dsp_dspba_delay_5 d_u0_m0_wo0_wi0_r0_delayr10_q_11(
+	.aclr(areset),
+	.delay_signals_7_0(\d_u0_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\d_u0_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\d_u0_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\d_u0_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\d_u0_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\d_u0_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\d_u0_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][1]~q ),
+	.delay_signals_11_0(\d_u0_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\d_u0_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][10]~q ),
+	.delay_signals_9_0(\d_u0_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\d_u0_m0_wo0_wi0_r0_delayr10_q_11|delay_signals[0][8]~q ),
+	.xin({\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][7]~q ,
+\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][2]~q ,
+\u0_m0_wo0_wi0_r0_delayr10|delay_signals[0][1]~q ,gnd}),
+	.clk(clk));
+
+lms_dsp_dspba_delay_43 u0_m0_wo0_wi0_r0_delayr15(
+	.aclr(areset),
+	.ena(xIn_v[0]),
+	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][2]~q ),
+	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][9]~q ),
+	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][1]~q ),
+	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][8]~q ),
+	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][0]~q ),
+	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][3]~q ),
+	.xin({\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][7]~q ,
+\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][2]~q ,
+\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][0]~q }),
+	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][10]~q ),
+	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][11]~q ),
+	.clk(clk));
+
+lms_dsp_dspba_delay_9 d_u0_m0_wo0_wi0_r0_delayr14_q_11(
+	.aclr(areset),
+	.delay_signals_4_0(\d_u0_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\d_u0_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\d_u0_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][2]~q ),
+	.delay_signals_11_0(\d_u0_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\d_u0_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][10]~q ),
+	.delay_signals_9_0(\d_u0_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\d_u0_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\d_u0_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\d_u0_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\d_u0_m0_wo0_wi0_r0_delayr14_q_11|delay_signals[0][5]~q ),
+	.xin({\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][7]~q ,
+\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][2]~q ,gnd,gnd}),
+	.clk(clk));
+
+lms_dsp_dspba_delay_42 u0_m0_wo0_wi0_r0_delayr14(
+	.aclr(areset),
+	.ena(xIn_v[0]),
+	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][4]~q ),
+	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][7]~q ),
+	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][9]~q ),
+	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][6]~q ),
+	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][8]~q ),
+	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][5]~q ),
+	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][1]~q ),
+	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][0]~q ),
+	.xin({\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][7]~q ,
+\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][2]~q ,
+\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][0]~q }),
+	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr14|delay_signals[0][10]~q ),
+	.clk(clk));
+
+lms_dsp_dspba_delay_8 d_u0_m0_wo0_wi0_r0_delayr13_q_11(
+	.aclr(areset),
+	.delay_signals_4_0(\d_u0_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\d_u0_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\d_u0_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\d_u0_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][1]~q ),
+	.delay_signals_11_0(\d_u0_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\d_u0_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][10]~q ),
+	.delay_signals_9_0(\d_u0_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\d_u0_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\d_u0_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\d_u0_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\d_u0_m0_wo0_wi0_r0_delayr13_q_11|delay_signals[0][5]~q ),
+	.xin({\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][7]~q ,
+\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][2]~q ,
+\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][1]~q ,gnd}),
+	.clk(clk));
+
+lms_dsp_dspba_delay_41 u0_m0_wo0_wi0_r0_delayr13(
+	.aclr(areset),
+	.ena(xIn_v[0]),
+	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][4]~q ),
+	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][6]~q ),
+	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][9]~q ),
+	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][5]~q ),
+	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][7]~q ),
+	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][1]~q ),
+	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][0]~q ),
+	.xin({\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][7]~q ,
+\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][2]~q ,
+\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr12|delay_signals[0][0]~q }),
+	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr13|delay_signals[0][10]~q ),
+	.clk(clk));
+
+lms_dsp_dspba_delay_12 d_u0_m0_wo0_wi0_r0_delayr17_q_11(
+	.aclr(areset),
+	.delay_signals_4_0(\d_u0_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\d_u0_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\d_u0_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\d_u0_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][1]~q ),
+	.delay_signals_11_0(\d_u0_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\d_u0_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][10]~q ),
+	.delay_signals_9_0(\d_u0_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\d_u0_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\d_u0_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\d_u0_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\d_u0_m0_wo0_wi0_r0_delayr17_q_11|delay_signals[0][5]~q ),
+	.xin({\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][7]~q ,
+\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][2]~q ,
+\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][1]~q ,gnd}),
+	.clk(clk));
+
+lms_dsp_dspba_delay_45 u0_m0_wo0_wi0_r0_delayr17(
+	.aclr(areset),
+	.ena(xIn_v[0]),
+	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][4]~q ),
+	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][6]~q ),
+	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][9]~q ),
+	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][5]~q ),
+	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][7]~q ),
+	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][1]~q ),
+	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][0]~q ),
+	.xin({\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][7]~q ,
+\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][2]~q ,
+\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][0]~q }),
+	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][10]~q ),
+	.clk(clk));
+
+lms_dsp_dspba_delay_11 d_u0_m0_wo0_wi0_r0_delayr16_q_11(
+	.aclr(areset),
+	.delay_signals_4_0(\d_u0_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\d_u0_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\d_u0_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][2]~q ),
+	.delay_signals_11_0(\d_u0_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\d_u0_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][10]~q ),
+	.delay_signals_9_0(\d_u0_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\d_u0_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\d_u0_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\d_u0_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\d_u0_m0_wo0_wi0_r0_delayr16_q_11|delay_signals[0][5]~q ),
+	.xin({\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][7]~q ,
+\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][2]~q ,gnd,gnd}),
+	.clk(clk));
+
+lms_dsp_dspba_delay_44 u0_m0_wo0_wi0_r0_delayr16(
+	.aclr(areset),
+	.ena(xIn_v[0]),
+	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][4]~q ),
+	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][7]~q ),
+	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][9]~q ),
+	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][6]~q ),
+	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][8]~q ),
+	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][5]~q ),
+	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][1]~q ),
+	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][0]~q ),
+	.xin({\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][7]~q ,
+\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][2]~q ,
+\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][0]~q }),
+	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr16|delay_signals[0][10]~q ),
+	.clk(clk));
+
+lms_dsp_dspba_delay_10 d_u0_m0_wo0_wi0_r0_delayr15_q_11(
+	.aclr(areset),
+	.delay_signals_2_0(\d_u0_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][2]~q ),
+	.delay_signals_9_0(\d_u0_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][9]~q ),
+	.delay_signals_1_0(\d_u0_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][1]~q ),
+	.delay_signals_8_0(\d_u0_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][8]~q ),
+	.delay_signals_0_0(\d_u0_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][0]~q ),
+	.delay_signals_7_0(\d_u0_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\d_u0_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\d_u0_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\d_u0_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\d_u0_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][3]~q ),
+	.delay_signals_10_0(\d_u0_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][10]~q ),
+	.delay_signals_11_0(\d_u0_m0_wo0_wi0_r0_delayr15_q_11|delay_signals[0][11]~q ),
+	.xin({\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][7]~q ,
+\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][2]~q ,
+\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr15|delay_signals[0][0]~q }),
+	.clk(clk));
+
+lms_dsp_dspba_delay_14 d_u0_m0_wo0_wi0_r0_delayr20_q_12(
+	.aclr(areset),
+	.delay_signals_7_0(\d_u0_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\d_u0_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\d_u0_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\d_u0_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\d_u0_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\d_u0_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\d_u0_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][1]~q ),
+	.delay_signals_11_0(\d_u0_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\d_u0_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][10]~q ),
+	.delay_signals_9_0(\d_u0_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\d_u0_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][8]~q ),
+	.xin({\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][7]~q ,
+\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][2]~q ,
+\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][1]~q ,gnd}),
+	.clk(clk));
+
+lms_dsp_dspba_delay_49 u0_m0_wo0_wi0_r0_delayr20(
+	.aclr(areset),
+	.ena(\d_u0_m0_wo0_compute_q_11|delay_signals[0][0]~q ),
+	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][7]~q ),
+	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][8]~q ),
+	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][2]~q ),
+	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][0]~q ),
+	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][1]~q ),
+	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][10]~q ),
+	.xin({\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][7]~q ,
+\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][2]~q ,
+\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][0]~q }),
+	.clk(clk));
+
+lms_dsp_dspba_delay_47 u0_m0_wo0_wi0_r0_delayr19(
+	.aclr(areset),
+	.ena(\d_u0_m0_wo0_compute_q_11|delay_signals[0][0]~q ),
+	.xin({\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][11]~q ,\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][10]~q ,\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][9]~q ,\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][8]~q ,
+\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][7]~q ,\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][6]~q ,\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][5]~q ,\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][4]~q ,
+\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][3]~q ,\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][2]~q ,\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][1]~q ,\u0_m0_wo0_mtree_mult1_12_add_1_o[0]~q }),
+	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][7]~q ),
+	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][8]~q ),
+	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][2]~q ),
+	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][0]~q ),
+	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][1]~q ),
+	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr19|delay_signals[0][10]~q ),
+	.clk(clk));
+
+lms_dsp_dspba_delay_13 d_u0_m0_wo0_wi0_r0_delayr18_q_11(
+	.aclr(areset),
+	.delay_signals_6_0(\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][1]~q ),
+	.delay_signals_11_0(\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][10]~q ),
+	.delay_signals_9_0(\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\d_u0_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][7]~q ),
+	.xin({\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][7]~q ,
+\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][2]~q ,
+\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][1]~q ,gnd}),
+	.clk(clk));
+
+lms_dsp_dspba_delay_46 u0_m0_wo0_wi0_r0_delayr18(
+	.aclr(areset),
+	.ena(xIn_v[0]),
+	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][6]~q ),
+	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][8]~q ),
+	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][9]~q ),
+	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][7]~q ),
+	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][1]~q ),
+	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][0]~q ),
+	.xin({\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][7]~q ,
+\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][2]~q ,
+\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr17|delay_signals[0][0]~q }),
+	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr18|delay_signals[0][10]~q ),
+	.clk(clk));
+
+lms_dsp_dspba_delay_16 d_u0_m0_wo0_wi0_r0_delayr24_q_14(
+	.aclr(areset),
+	.delay_signals_9_0(\d_u0_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\d_u0_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\d_u0_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\d_u0_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\d_u0_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\d_u0_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\d_u0_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\d_u0_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\d_u0_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][1]~q ),
+	.delay_signals_0_0(\d_u0_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][0]~q ),
+	.delay_signals_11_0(\d_u0_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\d_u0_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][10]~q ),
+	.xin({\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][7]~q ,
+\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][2]~q ,
+\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][0]~q }),
+	.clk(clk));
+
+lms_dsp_dspba_delay_53 u0_m0_wo0_wi0_r0_delayr24(
 	.aclr(areset),
 	.ena(\d_u0_m0_wo0_compute_q_13|delay_signals[0][0]~q ),
-	.xin({\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][7]~q ,
-\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][2]~q ,
-\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][0]~q }),
-	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr25|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr25|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr25|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr25|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr25|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr25|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr25|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr25|delay_signals[0][2]~q ),
-	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr25|delay_signals[0][0]~q ),
-	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr25|delay_signals[0][1]~q ),
-	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr25|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr25|delay_signals[0][10]~q ),
+	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][1]~q ),
+	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][0]~q ),
+	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][10]~q ),
+	.xin({\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][7]~q ,
+\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][2]~q ,
+\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][0]~q }),
 	.clk(clk));
 
-lms_dsp_dspba_delay_32 d_u1_m0_wo0_wi0_r0_delayr24_q_14(
-	.aclr(areset),
-	.delay_signals_9_0(\d_u1_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\d_u1_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\d_u1_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\d_u1_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\d_u1_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\d_u1_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\d_u1_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\d_u1_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\d_u1_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][1]~q ),
-	.delay_signals_0_0(\d_u1_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][0]~q ),
-	.delay_signals_11_0(\d_u1_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\d_u1_m0_wo0_wi0_r0_delayr24_q_14|delay_signals[0][10]~q ),
-	.xin({\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][7]~q ,
-\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][2]~q ,
-\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][0]~q }),
-	.clk(clk));
-
-lms_dsp_dspba_delay_78 u1_m0_wo0_wi0_r0_delayr24(
+lms_dsp_dspba_delay_52 u0_m0_wo0_wi0_r0_delayr23(
 	.aclr(areset),
 	.ena(\d_u0_m0_wo0_compute_q_13|delay_signals[0][0]~q ),
-	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][1]~q ),
-	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][0]~q ),
-	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr24|delay_signals[0][10]~q ),
-	.xin({\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][7]~q ,
-\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][2]~q ,
-\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][0]~q }),
+	.xin({\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][11]~q ,\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][10]~q ,\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][9]~q ,\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][8]~q ,
+\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][7]~q ,\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][6]~q ,\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][5]~q ,\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][4]~q ,
+\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][3]~q ,\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][2]~q ,\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][1]~q ,\u0_m0_wo0_mtree_add0_4_o[0]~q }),
+	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][1]~q ),
+	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][0]~q ),
+	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr23|delay_signals[0][10]~q ),
 	.clk(clk));
 
-lms_dsp_dspba_delay_77 u1_m0_wo0_wi0_r0_delayr23(
+lms_dsp_dspba_delay_15 d_u0_m0_wo0_wi0_r0_delayr22_q_13(
+	.aclr(areset),
+	.u0_m0_wo0_mtree_mult1_8_sub_1_o_1(\u0_m0_wo0_mtree_mult1_8_sub_1_o[1]~q ),
+	.delay_signals_9_0(\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][1]~q ),
+	.xin({\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][7]~q ,
+\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][2]~q ,gnd,gnd}),
+	.delay_signals_11_0(\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\d_u0_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][10]~q ),
+	.clk(clk));
+
+lms_dsp_dspba_delay_51 u0_m0_wo0_wi0_r0_delayr22(
+	.aclr(areset),
+	.ena(\d_u0_m0_wo0_compute_q_11|delay_signals[0][0]~q ),
+	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][7]~q ),
+	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][9]~q ),
+	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][6]~q ),
+	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][8]~q ),
+	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][1]~q ),
+	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][0]~q ),
+	.xin({\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][7]~q ,
+\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][2]~q ,
+\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][0]~q }),
+	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][10]~q ),
+	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr22|delay_signals[0][11]~q ),
+	.clk(clk));
+
+lms_dsp_dspba_delay_50 u0_m0_wo0_wi0_r0_delayr21(
+	.aclr(areset),
+	.ena(\d_u0_m0_wo0_compute_q_11|delay_signals[0][0]~q ),
+	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][2]~q ),
+	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][1]~q ),
+	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][0]~q ),
+	.xin({\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][7]~q ,
+\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][2]~q ,
+\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr20|delay_signals[0][0]~q }),
+	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][10]~q ),
+	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr21|delay_signals[0][9]~q ),
+	.clk(clk));
+
+lms_dsp_dspba_delay_2 d_u0_m0_wo0_compute_q_16(
+	.aclr(areset),
+	.delay_signals_0_0(\d_u0_m0_wo0_compute_q_16|delay_signals[0][0]~q ),
+	.xin({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,\d_u0_m0_wo0_compute_q_13|delay_signals[0][0]~q }),
+	.clk(clk));
+
+lms_dsp_dspba_delay_54 u0_m0_wo0_wi0_r0_delayr25(
 	.aclr(areset),
 	.ena(\d_u0_m0_wo0_compute_q_13|delay_signals[0][0]~q ),
-	.xin({\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][11]~q ,\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][10]~q ,\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][9]~q ,\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][8]~q ,
-\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][7]~q ,\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][6]~q ,\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][5]~q ,\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][4]~q ,
-\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][3]~q ,\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][2]~q ,\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][1]~q ,\u1_m0_wo0_mtree_add0_4_o[0]~q }),
-	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][1]~q ),
-	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][0]~q ),
-	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr23|delay_signals[0][10]~q ),
-	.clk(clk));
-
-lms_dsp_dspba_delay_31 d_u1_m0_wo0_wi0_r0_delayr22_q_13(
-	.aclr(areset),
-	.u1_m0_wo0_mtree_mult1_8_sub_1_o_1(\u1_m0_wo0_mtree_mult1_8_sub_1_o[1]~q ),
-	.delay_signals_9_0(\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][1]~q ),
-	.xin({\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][7]~q ,
-\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][2]~q ,gnd,gnd}),
-	.delay_signals_11_0(\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\d_u1_m0_wo0_wi0_r0_delayr22_q_13|delay_signals[0][10]~q ),
-	.clk(clk));
-
-lms_dsp_dspba_delay_1 d_u0_m0_wo0_compute_q_13(
-	.aclr(areset),
-	.delay_signals_0_0(\d_u0_m0_wo0_compute_q_13|delay_signals[0][0]~q ),
-	.xin({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,\d_u0_m0_wo0_compute_q_11|delay_signals[0][0]~q }),
-	.clk(clk));
-
-lms_dsp_dspba_delay_76 u1_m0_wo0_wi0_r0_delayr22(
-	.aclr(areset),
-	.ena(\d_u0_m0_wo0_compute_q_11|delay_signals[0][0]~q ),
-	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][7]~q ),
-	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][9]~q ),
-	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][6]~q ),
-	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][8]~q ),
-	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][1]~q ),
-	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][0]~q ),
-	.xin({\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][7]~q ,
-\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][2]~q ,
-\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][0]~q }),
-	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][10]~q ),
-	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr22|delay_signals[0][11]~q ),
-	.clk(clk));
-
-lms_dsp_dspba_delay_75 u1_m0_wo0_wi0_r0_delayr21(
-	.aclr(areset),
-	.ena(\d_u0_m0_wo0_compute_q_11|delay_signals[0][0]~q ),
-	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][1]~q ),
-	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][0]~q ),
-	.xin({\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][7]~q ,
-\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][2]~q ,
-\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][0]~q }),
-	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][10]~q ),
-	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr21|delay_signals[0][9]~q ),
-	.clk(clk));
-
-lms_dsp_dspba_delay_30 d_u1_m0_wo0_wi0_r0_delayr20_q_12(
-	.aclr(areset),
-	.delay_signals_7_0(\d_u1_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][7]~q ),
-	.delay_signals_6_0(\d_u1_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\d_u1_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\d_u1_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\d_u1_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\d_u1_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\d_u1_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][1]~q ),
-	.delay_signals_11_0(\d_u1_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\d_u1_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][10]~q ),
-	.delay_signals_9_0(\d_u1_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\d_u1_m0_wo0_wi0_r0_delayr20_q_12|delay_signals[0][8]~q ),
-	.xin({\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][7]~q ,
-\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][2]~q ,
-\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][1]~q ,gnd}),
-	.clk(clk));
-
-lms_dsp_dspba_delay_74 u1_m0_wo0_wi0_r0_delayr20(
-	.aclr(areset),
-	.ena(\d_u0_m0_wo0_compute_q_11|delay_signals[0][0]~q ),
-	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][7]~q ),
-	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][8]~q ),
-	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][2]~q ),
-	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][0]~q ),
-	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][1]~q ),
-	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr20|delay_signals[0][10]~q ),
-	.xin({\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][7]~q ,
-\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][2]~q ,
-\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][1]~q ,\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][0]~q }),
-	.clk(clk));
-
-lms_dsp_dspba_delay_72 u1_m0_wo0_wi0_r0_delayr19(
-	.aclr(areset),
-	.ena(\d_u0_m0_wo0_compute_q_11|delay_signals[0][0]~q ),
-	.xin({\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][11]~q ,\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][10]~q ,\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][9]~q ,\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][8]~q ,
-\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][7]~q ,\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][6]~q ,\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][5]~q ,\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][4]~q ,
-\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][3]~q ,\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][2]~q ,\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][1]~q ,\u1_m0_wo0_mtree_mult1_12_add_1_o[0]~q }),
-	.delay_signals_7_0(\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][7]~q ),
-	.delay_signals_9_0(\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][8]~q ),
-	.delay_signals_6_0(\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][2]~q ),
-	.delay_signals_0_0(\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][0]~q ),
-	.delay_signals_1_0(\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][1]~q ),
-	.delay_signals_11_0(\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\u1_m0_wo0_wi0_r0_delayr19|delay_signals[0][10]~q ),
-	.clk(clk));
-
-lms_dsp_dspba_delay d_u0_m0_wo0_compute_q_11(
-	.aclr(areset),
-	.delay_signals_0_0(\d_u0_m0_wo0_compute_q_11|delay_signals[0][0]~q ),
-	.xin({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,xIn_v[0]}),
-	.clk(clk));
-
-lms_dsp_dspba_delay_29 d_u1_m0_wo0_wi0_r0_delayr18_q_11(
-	.aclr(areset),
-	.delay_signals_6_0(\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][6]~q ),
-	.delay_signals_5_0(\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][5]~q ),
-	.delay_signals_4_0(\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][4]~q ),
-	.delay_signals_3_0(\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][3]~q ),
-	.delay_signals_2_0(\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][2]~q ),
-	.delay_signals_1_0(\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][1]~q ),
-	.delay_signals_11_0(\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][11]~q ),
-	.delay_signals_10_0(\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][10]~q ),
-	.delay_signals_9_0(\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][9]~q ),
-	.delay_signals_8_0(\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][8]~q ),
-	.delay_signals_7_0(\d_u1_m0_wo0_wi0_r0_delayr18_q_11|delay_signals[0][7]~q ),
-	.xin({\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][11]~q ,\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][10]~q ,\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][9]~q ,\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][8]~q ,\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][7]~q ,
-\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][6]~q ,\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][5]~q ,\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][4]~q ,\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][3]~q ,\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][2]~q ,
-\u1_m0_wo0_wi0_r0_delayr18|delay_signals[0][1]~q ,gnd}),
+	.xin({\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][11]~q ,\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][10]~q ,\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][9]~q ,\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][8]~q ,\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][7]~q ,
+\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][6]~q ,\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][5]~q ,\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][4]~q ,\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][3]~q ,\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][2]~q ,
+\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][1]~q ,\u0_m0_wo0_wi0_r0_delayr24|delay_signals[0][0]~q }),
+	.delay_signals_9_0(\u0_m0_wo0_wi0_r0_delayr25|delay_signals[0][9]~q ),
+	.delay_signals_8_0(\u0_m0_wo0_wi0_r0_delayr25|delay_signals[0][8]~q ),
+	.delay_signals_7_0(\u0_m0_wo0_wi0_r0_delayr25|delay_signals[0][7]~q ),
+	.delay_signals_6_0(\u0_m0_wo0_wi0_r0_delayr25|delay_signals[0][6]~q ),
+	.delay_signals_5_0(\u0_m0_wo0_wi0_r0_delayr25|delay_signals[0][5]~q ),
+	.delay_signals_4_0(\u0_m0_wo0_wi0_r0_delayr25|delay_signals[0][4]~q ),
+	.delay_signals_3_0(\u0_m0_wo0_wi0_r0_delayr25|delay_signals[0][3]~q ),
+	.delay_signals_2_0(\u0_m0_wo0_wi0_r0_delayr25|delay_signals[0][2]~q ),
+	.delay_signals_0_0(\u0_m0_wo0_wi0_r0_delayr25|delay_signals[0][0]~q ),
+	.delay_signals_1_0(\u0_m0_wo0_wi0_r0_delayr25|delay_signals[0][1]~q ),
+	.delay_signals_11_0(\u0_m0_wo0_wi0_r0_delayr25|delay_signals[0][11]~q ),
+	.delay_signals_10_0(\u0_m0_wo0_wi0_r0_delayr25|delay_signals[0][10]~q ),
 	.clk(clk));
 
 dffeas \u1_m0_wo0_mtree_add4_0_o[9] (
@@ -65320,27 +65322,6 @@ endmodule
 
 module lms_dsp_packet_presence_detection (
 	count_reg_0,
-	long_sum_reg_0,
-	long_sum_reg_1,
-	long_sum_reg_2,
-	long_sum_reg_3,
-	long_sum_reg_4,
-	long_sum_reg_5,
-	long_sum_reg_6,
-	long_sum_reg_7,
-	long_sum_reg_8,
-	long_sum_reg_9,
-	long_sum_reg_10,
-	long_sum_reg_11,
-	long_sum_reg_12,
-	long_sum_reg_13,
-	long_sum_reg_14,
-	long_sum_reg_15,
-	long_sum_reg_16,
-	long_sum_reg_17,
-	long_sum_reg_18,
-	long_sum_reg_19,
-	long_sum_reg_20,
 	short_sum_reg_0,
 	short_sum_reg_1,
 	short_sum_reg_2,
@@ -65374,6 +65355,24 @@ module lms_dsp_packet_presence_detection (
 	count_reg_13,
 	count_reg_14,
 	count_reg_15,
+	intermediate_reg_0,
+	intermediate_reg_1,
+	intermediate_reg_2,
+	intermediate_reg_3,
+	intermediate_reg_4,
+	intermediate_reg_5,
+	intermediate_reg_6,
+	intermediate_reg_7,
+	intermediate_reg_8,
+	intermediate_reg_9,
+	intermediate_reg_10,
+	intermediate_reg_11,
+	intermediate_reg_12,
+	intermediate_reg_13,
+	intermediate_reg_14,
+	intermediate_reg_15,
+	intermediate_reg_16,
+	intermediate_reg_17,
 	altera_reset_synchronizer_int_chain_out,
 	data_valid,
 	data_out_12,
@@ -65444,29 +65443,16 @@ module lms_dsp_packet_presence_detection (
 	ppd_cfg_passthrough_len_1,
 	ppd_cfg_passthrough_len_0,
 	ppd_cfg_clear_rs,
+	ppd_cfg_threshold_0,
+	ppd_cfg_threshold_1,
+	ppd_cfg_threshold_2,
+	ppd_cfg_threshold_3,
+	ppd_cfg_threshold_4,
+	ppd_cfg_threshold_5,
+	ppd_cfg_threshold_6,
+	ppd_cfg_threshold_7,
 	ppd_cfg_enable)/* synthesis synthesis_greybox=0 */;
 output 	count_reg_0;
-output 	long_sum_reg_0;
-output 	long_sum_reg_1;
-output 	long_sum_reg_2;
-output 	long_sum_reg_3;
-output 	long_sum_reg_4;
-output 	long_sum_reg_5;
-output 	long_sum_reg_6;
-output 	long_sum_reg_7;
-output 	long_sum_reg_8;
-output 	long_sum_reg_9;
-output 	long_sum_reg_10;
-output 	long_sum_reg_11;
-output 	long_sum_reg_12;
-output 	long_sum_reg_13;
-output 	long_sum_reg_14;
-output 	long_sum_reg_15;
-output 	long_sum_reg_16;
-output 	long_sum_reg_17;
-output 	long_sum_reg_18;
-output 	long_sum_reg_19;
-output 	long_sum_reg_20;
 output 	short_sum_reg_0;
 output 	short_sum_reg_1;
 output 	short_sum_reg_2;
@@ -65500,6 +65486,24 @@ output 	count_reg_12;
 output 	count_reg_13;
 output 	count_reg_14;
 output 	count_reg_15;
+output 	intermediate_reg_0;
+output 	intermediate_reg_1;
+output 	intermediate_reg_2;
+output 	intermediate_reg_3;
+output 	intermediate_reg_4;
+output 	intermediate_reg_5;
+output 	intermediate_reg_6;
+output 	intermediate_reg_7;
+output 	intermediate_reg_8;
+output 	intermediate_reg_9;
+output 	intermediate_reg_10;
+output 	intermediate_reg_11;
+output 	intermediate_reg_12;
+output 	intermediate_reg_13;
+output 	intermediate_reg_14;
+output 	intermediate_reg_15;
+output 	intermediate_reg_16;
+output 	intermediate_reg_17;
 input 	altera_reset_synchronizer_int_chain_out;
 input 	data_valid;
 input 	data_out_12;
@@ -65570,6 +65574,14 @@ input 	ppd_cfg_passthrough_len_2;
 input 	ppd_cfg_passthrough_len_1;
 input 	ppd_cfg_passthrough_len_0;
 input 	ppd_cfg_clear_rs;
+input 	ppd_cfg_threshold_0;
+input 	ppd_cfg_threshold_1;
+input 	ppd_cfg_threshold_2;
+input 	ppd_cfg_threshold_3;
+input 	ppd_cfg_threshold_4;
+input 	ppd_cfg_threshold_5;
+input 	ppd_cfg_threshold_6;
+input 	ppd_cfg_threshold_7;
 input 	ppd_cfg_enable;
 
 wire gnd;
@@ -65596,8 +65608,8 @@ wire \cmplx2mag_inst|mag_reg[9]~q ;
 wire \cmplx2mag_inst|mag_reg[10]~q ;
 wire \cmplx2mag_inst|mag_reg[11]~q ;
 wire \cmplx2mag_inst|mag_reg[12]~q ;
-wire \running_sum_inst|launch~0_combout ;
-wire \running_sum_inst|launch~1_combout ;
+wire \running_sum_inst|short_to_long_arrived~q ;
+wire \running_sum_inst|launch~combout ;
 wire \delay_line_inst|delay_reg[1][24]~q ;
 wire \delay_line_inst|delay_reg[0][24]~q ;
 wire \running_sum_inst|Equal1~2_combout ;
@@ -65629,67 +65641,7 @@ wire \delay_line_inst|delay_reg[3][23]~q ;
 wire \avalon_streaming_source_data~0_combout ;
 
 
-lms_dsp_counter counter_inst(
-	.count_reg_0(count_reg_0),
-	.running_reg1(\counter_inst|running_reg~q ),
-	.count_reg_1(count_reg_1),
-	.count_reg_2(count_reg_2),
-	.count_reg_3(count_reg_3),
-	.count_reg_4(count_reg_4),
-	.count_reg_5(count_reg_5),
-	.count_reg_6(count_reg_6),
-	.count_reg_7(count_reg_7),
-	.count_reg_8(count_reg_8),
-	.count_reg_9(count_reg_9),
-	.count_reg_10(count_reg_10),
-	.count_reg_11(count_reg_11),
-	.count_reg_12(count_reg_12),
-	.count_reg_13(count_reg_13),
-	.count_reg_14(count_reg_14),
-	.count_reg_15(count_reg_15),
-	.altera_reset_synchronizer_int_chain_out(altera_reset_synchronizer_int_chain_out),
-	.launch(\running_sum_inst|launch~1_combout ),
-	.delay_reg_24_1(\delay_line_inst|delay_reg[1][24]~q ),
-	.clock(clk_clk),
-	.ppd_cfg_passthrough_len_15(ppd_cfg_passthrough_len_15),
-	.ppd_cfg_passthrough_len_14(ppd_cfg_passthrough_len_14),
-	.ppd_cfg_passthrough_len_13(ppd_cfg_passthrough_len_13),
-	.ppd_cfg_passthrough_len_12(ppd_cfg_passthrough_len_12),
-	.ppd_cfg_passthrough_len_11(ppd_cfg_passthrough_len_11),
-	.ppd_cfg_passthrough_len_10(ppd_cfg_passthrough_len_10),
-	.ppd_cfg_passthrough_len_9(ppd_cfg_passthrough_len_9),
-	.ppd_cfg_passthrough_len_8(ppd_cfg_passthrough_len_8),
-	.ppd_cfg_passthrough_len_7(ppd_cfg_passthrough_len_7),
-	.ppd_cfg_passthrough_len_6(ppd_cfg_passthrough_len_6),
-	.ppd_cfg_passthrough_len_5(ppd_cfg_passthrough_len_5),
-	.ppd_cfg_passthrough_len_4(ppd_cfg_passthrough_len_4),
-	.ppd_cfg_passthrough_len_3(ppd_cfg_passthrough_len_3),
-	.ppd_cfg_passthrough_len_2(ppd_cfg_passthrough_len_2),
-	.ppd_cfg_passthrough_len_1(ppd_cfg_passthrough_len_1),
-	.ppd_cfg_passthrough_len_0(ppd_cfg_passthrough_len_0));
-
 lms_dsp_dual_running_sum running_sum_inst(
-	.long_sum_reg_0(long_sum_reg_0),
-	.long_sum_reg_1(long_sum_reg_1),
-	.long_sum_reg_2(long_sum_reg_2),
-	.long_sum_reg_3(long_sum_reg_3),
-	.long_sum_reg_4(long_sum_reg_4),
-	.long_sum_reg_5(long_sum_reg_5),
-	.long_sum_reg_6(long_sum_reg_6),
-	.long_sum_reg_7(long_sum_reg_7),
-	.long_sum_reg_8(long_sum_reg_8),
-	.long_sum_reg_9(long_sum_reg_9),
-	.long_sum_reg_10(long_sum_reg_10),
-	.long_sum_reg_11(long_sum_reg_11),
-	.long_sum_reg_12(long_sum_reg_12),
-	.long_sum_reg_13(long_sum_reg_13),
-	.long_sum_reg_14(long_sum_reg_14),
-	.long_sum_reg_15(long_sum_reg_15),
-	.long_sum_reg_16(long_sum_reg_16),
-	.long_sum_reg_17(long_sum_reg_17),
-	.long_sum_reg_18(long_sum_reg_18),
-	.long_sum_reg_19(long_sum_reg_19),
-	.long_sum_reg_20(long_sum_reg_20),
 	.short_sum_reg_0(short_sum_reg_0),
 	.short_sum_reg_1(short_sum_reg_1),
 	.short_sum_reg_2(short_sum_reg_2),
@@ -65723,14 +65675,40 @@ lms_dsp_dual_running_sum running_sum_inst(
 	.mag_reg_10(\cmplx2mag_inst|mag_reg[10]~q ),
 	.mag_reg_11(\cmplx2mag_inst|mag_reg[11]~q ),
 	.mag_reg_12(\cmplx2mag_inst|mag_reg[12]~q ),
+	.intermediate_reg_0(intermediate_reg_0),
+	.intermediate_reg_1(intermediate_reg_1),
+	.intermediate_reg_2(intermediate_reg_2),
+	.intermediate_reg_3(intermediate_reg_3),
+	.intermediate_reg_4(intermediate_reg_4),
+	.intermediate_reg_5(intermediate_reg_5),
+	.intermediate_reg_6(intermediate_reg_6),
+	.intermediate_reg_7(intermediate_reg_7),
+	.intermediate_reg_8(intermediate_reg_8),
+	.intermediate_reg_9(intermediate_reg_9),
+	.intermediate_reg_10(intermediate_reg_10),
+	.intermediate_reg_11(intermediate_reg_11),
+	.intermediate_reg_12(intermediate_reg_12),
+	.intermediate_reg_13(intermediate_reg_13),
+	.intermediate_reg_14(intermediate_reg_14),
+	.intermediate_reg_15(intermediate_reg_15),
+	.intermediate_reg_16(intermediate_reg_16),
+	.intermediate_reg_17(intermediate_reg_17),
 	.altera_reset_synchronizer_int_chain_out(altera_reset_synchronizer_int_chain_out),
-	.launch(\running_sum_inst|launch~0_combout ),
-	.launch1(\running_sum_inst|launch~1_combout ),
+	.short_to_long_arrived1(\running_sum_inst|short_to_long_arrived~q ),
+	.launch1(\running_sum_inst|launch~combout ),
 	.delay_reg_24_0(\delay_line_inst|delay_reg[0][24]~q ),
 	.Equal1(\running_sum_inst|Equal1~2_combout ),
 	.GND_port(GND_port),
 	.clk_clk(clk_clk),
-	.ppd_cfg_clear_rs(ppd_cfg_clear_rs));
+	.ppd_cfg_clear_rs(ppd_cfg_clear_rs),
+	.ppd_cfg_threshold_0(ppd_cfg_threshold_0),
+	.ppd_cfg_threshold_1(ppd_cfg_threshold_1),
+	.ppd_cfg_threshold_2(ppd_cfg_threshold_2),
+	.ppd_cfg_threshold_3(ppd_cfg_threshold_3),
+	.ppd_cfg_threshold_4(ppd_cfg_threshold_4),
+	.ppd_cfg_threshold_5(ppd_cfg_threshold_5),
+	.ppd_cfg_threshold_6(ppd_cfg_threshold_6),
+	.ppd_cfg_threshold_7(ppd_cfg_threshold_7));
 
 lms_dsp_cmplx2mag cmplx2mag_inst(
 	.mag_reg_0(\cmplx2mag_inst|mag_reg[0]~q ),
@@ -65830,6 +65808,45 @@ lms_dsp_delay_line delay_line_inst(
 	.delay_reg_24_3(delay_reg_24_3),
 	.clock(clk_clk),
 	.ppd_cfg_enable(ppd_cfg_enable));
+
+lms_dsp_counter counter_inst(
+	.count_reg_0(count_reg_0),
+	.running_reg1(\counter_inst|running_reg~q ),
+	.count_reg_1(count_reg_1),
+	.count_reg_2(count_reg_2),
+	.count_reg_3(count_reg_3),
+	.count_reg_4(count_reg_4),
+	.count_reg_5(count_reg_5),
+	.count_reg_6(count_reg_6),
+	.count_reg_7(count_reg_7),
+	.count_reg_8(count_reg_8),
+	.count_reg_9(count_reg_9),
+	.count_reg_10(count_reg_10),
+	.count_reg_11(count_reg_11),
+	.count_reg_12(count_reg_12),
+	.count_reg_13(count_reg_13),
+	.count_reg_14(count_reg_14),
+	.count_reg_15(count_reg_15),
+	.altera_reset_synchronizer_int_chain_out(altera_reset_synchronizer_int_chain_out),
+	.launch(\running_sum_inst|launch~combout ),
+	.delay_reg_24_1(\delay_line_inst|delay_reg[1][24]~q ),
+	.clock(clk_clk),
+	.ppd_cfg_passthrough_len_15(ppd_cfg_passthrough_len_15),
+	.ppd_cfg_passthrough_len_14(ppd_cfg_passthrough_len_14),
+	.ppd_cfg_passthrough_len_13(ppd_cfg_passthrough_len_13),
+	.ppd_cfg_passthrough_len_12(ppd_cfg_passthrough_len_12),
+	.ppd_cfg_passthrough_len_11(ppd_cfg_passthrough_len_11),
+	.ppd_cfg_passthrough_len_10(ppd_cfg_passthrough_len_10),
+	.ppd_cfg_passthrough_len_9(ppd_cfg_passthrough_len_9),
+	.ppd_cfg_passthrough_len_8(ppd_cfg_passthrough_len_8),
+	.ppd_cfg_passthrough_len_7(ppd_cfg_passthrough_len_7),
+	.ppd_cfg_passthrough_len_6(ppd_cfg_passthrough_len_6),
+	.ppd_cfg_passthrough_len_5(ppd_cfg_passthrough_len_5),
+	.ppd_cfg_passthrough_len_4(ppd_cfg_passthrough_len_4),
+	.ppd_cfg_passthrough_len_3(ppd_cfg_passthrough_len_3),
+	.ppd_cfg_passthrough_len_2(ppd_cfg_passthrough_len_2),
+	.ppd_cfg_passthrough_len_1(ppd_cfg_passthrough_len_1),
+	.ppd_cfg_passthrough_len_0(ppd_cfg_passthrough_len_0));
 
 fiftyfivenm_lcell_comb \avalon_streaming_source_data[0]~1 (
 	.dataa(\avalon_streaming_source_data~0_combout ),
@@ -66097,8 +66114,8 @@ defparam \avalon_streaming_source_data[23]~24 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \avalon_streaming_source_data~0 (
 	.dataa(\running_sum_inst|Equal1~2_combout ),
-	.datab(\running_sum_inst|LessThan0~34_combout ),
-	.datac(\running_sum_inst|launch~0_combout ),
+	.datab(\running_sum_inst|short_to_long_arrived~q ),
+	.datac(\running_sum_inst|LessThan0~34_combout ),
 	.datad(\delay_line_inst|delay_reg[2][25]~q ),
 	.cin(gnd),
 	.combout(\avalon_streaming_source_data~0_combout ),
@@ -67653,7 +67670,7 @@ wire \always0~4_combout ;
 wire \count_reg~0_combout ;
 wire \running_reg~0_combout ;
 wire \running_reg~1_combout ;
-wire \count_reg[12]~1_combout ;
+wire \count_reg[13]~1_combout ;
 wire \Add0~1 ;
 wire \Add0~2_combout ;
 wire \count_reg~2_combout ;
@@ -68214,16 +68231,16 @@ fiftyfivenm_lcell_comb \running_reg~1 (
 defparam \running_reg~1 .lut_mask = 16'hAAEE;
 defparam \running_reg~1 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \count_reg[12]~1 (
+fiftyfivenm_lcell_comb \count_reg[13]~1 (
 	.dataa(altera_reset_synchronizer_int_chain_out),
 	.datab(launch),
 	.datac(\LessThan1~30_combout ),
 	.datad(\always0~4_combout ),
 	.cin(gnd),
-	.combout(\count_reg[12]~1_combout ),
+	.combout(\count_reg[13]~1_combout ),
 	.cout());
-defparam \count_reg[12]~1 .lut_mask = 16'h88A0;
-defparam \count_reg[12]~1 .sum_lutc_input = "datac";
+defparam \count_reg[13]~1 .lut_mask = 16'h88A0;
+defparam \count_reg[13]~1 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \Add0~2 (
 	.dataa(count_reg_1),
@@ -68237,7 +68254,7 @@ defparam \Add0~2 .lut_mask = 16'h5A5F;
 defparam \Add0~2 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \count_reg~2 (
-	.dataa(\count_reg[12]~1_combout ),
+	.dataa(\count_reg[13]~1_combout ),
 	.datab(\Add0~2_combout ),
 	.datac(gnd),
 	.datad(gnd),
@@ -68259,7 +68276,7 @@ defparam \Add0~4 .lut_mask = 16'hA50A;
 defparam \Add0~4 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \count_reg~3 (
-	.dataa(\count_reg[12]~1_combout ),
+	.dataa(\count_reg[13]~1_combout ),
 	.datab(\Add0~4_combout ),
 	.datac(gnd),
 	.datad(gnd),
@@ -68281,7 +68298,7 @@ defparam \Add0~6 .lut_mask = 16'h5A5F;
 defparam \Add0~6 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \count_reg~4 (
-	.dataa(\count_reg[12]~1_combout ),
+	.dataa(\count_reg[13]~1_combout ),
 	.datab(\Add0~6_combout ),
 	.datac(gnd),
 	.datad(gnd),
@@ -68303,7 +68320,7 @@ defparam \Add0~8 .lut_mask = 16'hA50A;
 defparam \Add0~8 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \count_reg~5 (
-	.dataa(\count_reg[12]~1_combout ),
+	.dataa(\count_reg[13]~1_combout ),
 	.datab(\Add0~8_combout ),
 	.datac(gnd),
 	.datad(gnd),
@@ -68325,7 +68342,7 @@ defparam \Add0~10 .lut_mask = 16'h5A5F;
 defparam \Add0~10 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \count_reg~6 (
-	.dataa(\count_reg[12]~1_combout ),
+	.dataa(\count_reg[13]~1_combout ),
 	.datab(\Add0~10_combout ),
 	.datac(gnd),
 	.datad(gnd),
@@ -68347,7 +68364,7 @@ defparam \Add0~12 .lut_mask = 16'hA50A;
 defparam \Add0~12 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \count_reg~7 (
-	.dataa(\count_reg[12]~1_combout ),
+	.dataa(\count_reg[13]~1_combout ),
 	.datab(\Add0~12_combout ),
 	.datac(gnd),
 	.datad(gnd),
@@ -68369,7 +68386,7 @@ defparam \Add0~14 .lut_mask = 16'h5A5F;
 defparam \Add0~14 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \count_reg~8 (
-	.dataa(\count_reg[12]~1_combout ),
+	.dataa(\count_reg[13]~1_combout ),
 	.datab(\Add0~14_combout ),
 	.datac(gnd),
 	.datad(gnd),
@@ -68391,7 +68408,7 @@ defparam \Add0~16 .lut_mask = 16'hA50A;
 defparam \Add0~16 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \count_reg~9 (
-	.dataa(\count_reg[12]~1_combout ),
+	.dataa(\count_reg[13]~1_combout ),
 	.datab(\Add0~16_combout ),
 	.datac(gnd),
 	.datad(gnd),
@@ -68413,7 +68430,7 @@ defparam \Add0~18 .lut_mask = 16'h5A5F;
 defparam \Add0~18 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \count_reg~10 (
-	.dataa(\count_reg[12]~1_combout ),
+	.dataa(\count_reg[13]~1_combout ),
 	.datab(\Add0~18_combout ),
 	.datac(gnd),
 	.datad(gnd),
@@ -68435,7 +68452,7 @@ defparam \Add0~20 .lut_mask = 16'hA50A;
 defparam \Add0~20 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \count_reg~11 (
-	.dataa(\count_reg[12]~1_combout ),
+	.dataa(\count_reg[13]~1_combout ),
 	.datab(\Add0~20_combout ),
 	.datac(gnd),
 	.datad(gnd),
@@ -68457,7 +68474,7 @@ defparam \Add0~22 .lut_mask = 16'h5A5F;
 defparam \Add0~22 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \count_reg~12 (
-	.dataa(\count_reg[12]~1_combout ),
+	.dataa(\count_reg[13]~1_combout ),
 	.datab(\Add0~22_combout ),
 	.datac(gnd),
 	.datad(gnd),
@@ -68479,7 +68496,7 @@ defparam \Add0~24 .lut_mask = 16'hA50A;
 defparam \Add0~24 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \count_reg~13 (
-	.dataa(\count_reg[12]~1_combout ),
+	.dataa(\count_reg[13]~1_combout ),
 	.datab(\Add0~24_combout ),
 	.datac(gnd),
 	.datad(gnd),
@@ -68501,7 +68518,7 @@ defparam \Add0~26 .lut_mask = 16'h5A5F;
 defparam \Add0~26 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \count_reg~14 (
-	.dataa(\count_reg[12]~1_combout ),
+	.dataa(\count_reg[13]~1_combout ),
 	.datab(\Add0~26_combout ),
 	.datac(gnd),
 	.datad(gnd),
@@ -68523,7 +68540,7 @@ defparam \Add0~28 .lut_mask = 16'hA50A;
 defparam \Add0~28 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \count_reg~15 (
-	.dataa(\count_reg[12]~1_combout ),
+	.dataa(\count_reg[13]~1_combout ),
 	.datab(\Add0~28_combout ),
 	.datac(gnd),
 	.datad(gnd),
@@ -68545,7 +68562,7 @@ defparam \Add0~30 .lut_mask = 16'h5A5A;
 defparam \Add0~30 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \count_reg~16 (
-	.dataa(\count_reg[12]~1_combout ),
+	.dataa(\count_reg[13]~1_combout ),
 	.datab(\Add0~30_combout ),
 	.datac(gnd),
 	.datad(gnd),
@@ -71438,27 +71455,6 @@ defparam \delay_reg~27 .sum_lutc_input = "datac";
 endmodule
 
 module lms_dsp_dual_running_sum (
-	long_sum_reg_0,
-	long_sum_reg_1,
-	long_sum_reg_2,
-	long_sum_reg_3,
-	long_sum_reg_4,
-	long_sum_reg_5,
-	long_sum_reg_6,
-	long_sum_reg_7,
-	long_sum_reg_8,
-	long_sum_reg_9,
-	long_sum_reg_10,
-	long_sum_reg_11,
-	long_sum_reg_12,
-	long_sum_reg_13,
-	long_sum_reg_14,
-	long_sum_reg_15,
-	long_sum_reg_16,
-	long_sum_reg_17,
-	long_sum_reg_18,
-	long_sum_reg_19,
-	long_sum_reg_20,
 	short_sum_reg_0,
 	short_sum_reg_1,
 	short_sum_reg_2,
@@ -71492,35 +71488,40 @@ module lms_dsp_dual_running_sum (
 	mag_reg_10,
 	mag_reg_11,
 	mag_reg_12,
+	intermediate_reg_0,
+	intermediate_reg_1,
+	intermediate_reg_2,
+	intermediate_reg_3,
+	intermediate_reg_4,
+	intermediate_reg_5,
+	intermediate_reg_6,
+	intermediate_reg_7,
+	intermediate_reg_8,
+	intermediate_reg_9,
+	intermediate_reg_10,
+	intermediate_reg_11,
+	intermediate_reg_12,
+	intermediate_reg_13,
+	intermediate_reg_14,
+	intermediate_reg_15,
+	intermediate_reg_16,
+	intermediate_reg_17,
 	altera_reset_synchronizer_int_chain_out,
-	launch,
+	short_to_long_arrived1,
 	launch1,
 	delay_reg_24_0,
 	Equal1,
 	GND_port,
 	clk_clk,
-	ppd_cfg_clear_rs)/* synthesis synthesis_greybox=0 */;
-output 	long_sum_reg_0;
-output 	long_sum_reg_1;
-output 	long_sum_reg_2;
-output 	long_sum_reg_3;
-output 	long_sum_reg_4;
-output 	long_sum_reg_5;
-output 	long_sum_reg_6;
-output 	long_sum_reg_7;
-output 	long_sum_reg_8;
-output 	long_sum_reg_9;
-output 	long_sum_reg_10;
-output 	long_sum_reg_11;
-output 	long_sum_reg_12;
-output 	long_sum_reg_13;
-output 	long_sum_reg_14;
-output 	long_sum_reg_15;
-output 	long_sum_reg_16;
-output 	long_sum_reg_17;
-output 	long_sum_reg_18;
-output 	long_sum_reg_19;
-output 	long_sum_reg_20;
+	ppd_cfg_clear_rs,
+	ppd_cfg_threshold_0,
+	ppd_cfg_threshold_1,
+	ppd_cfg_threshold_2,
+	ppd_cfg_threshold_3,
+	ppd_cfg_threshold_4,
+	ppd_cfg_threshold_5,
+	ppd_cfg_threshold_6,
+	ppd_cfg_threshold_7)/* synthesis synthesis_greybox=0 */;
 output 	short_sum_reg_0;
 output 	short_sum_reg_1;
 output 	short_sum_reg_2;
@@ -71554,14 +71555,40 @@ input 	mag_reg_9;
 input 	mag_reg_10;
 input 	mag_reg_11;
 input 	mag_reg_12;
+output 	intermediate_reg_0;
+output 	intermediate_reg_1;
+output 	intermediate_reg_2;
+output 	intermediate_reg_3;
+output 	intermediate_reg_4;
+output 	intermediate_reg_5;
+output 	intermediate_reg_6;
+output 	intermediate_reg_7;
+output 	intermediate_reg_8;
+output 	intermediate_reg_9;
+output 	intermediate_reg_10;
+output 	intermediate_reg_11;
+output 	intermediate_reg_12;
+output 	intermediate_reg_13;
+output 	intermediate_reg_14;
+output 	intermediate_reg_15;
+output 	intermediate_reg_16;
+output 	intermediate_reg_17;
 input 	altera_reset_synchronizer_int_chain_out;
-output 	launch;
+output 	short_to_long_arrived1;
 output 	launch1;
 input 	delay_reg_24_0;
 output 	Equal1;
 input 	GND_port;
 input 	clk_clk;
 input 	ppd_cfg_clear_rs;
+input 	ppd_cfg_threshold_0;
+input 	ppd_cfg_threshold_1;
+input 	ppd_cfg_threshold_2;
+input 	ppd_cfg_threshold_3;
+input 	ppd_cfg_threshold_4;
+input 	ppd_cfg_threshold_5;
+input 	ppd_cfg_threshold_6;
+input 	ppd_cfg_threshold_7;
 
 wire gnd;
 wire vcc;
@@ -71572,150 +71599,58 @@ assign vcc = 1'b1;
 // unknown value (1'bx) is not needed for this tool. Default to 1'b0
 assign unknown = 1'b0;
 
+wire \Mult0|auto_generated|w138w[0] ;
+wire \Mult0|auto_generated|w138w[1] ;
+wire \Mult0|auto_generated|w138w[2] ;
+wire \Mult0|auto_generated|mac_out2~DATAOUT21 ;
+wire \Mult0|auto_generated|mac_out2~DATAOUT22 ;
+wire \Mult0|auto_generated|mac_out2~DATAOUT23 ;
+wire \Mult0|auto_generated|mac_out2~DATAOUT24 ;
+wire \Mult0|auto_generated|mac_out2~DATAOUT25 ;
+wire \Mult0|auto_generated|mac_out4~DATAOUT3 ;
+wire \Mult0|auto_generated|mac_out4~DATAOUT4 ;
+wire \Mult0|auto_generated|mac_out4~DATAOUT5 ;
+wire \Mult0|auto_generated|mac_out4~DATAOUT6 ;
+wire \Mult0|auto_generated|mac_out4~DATAOUT7 ;
+wire \Mult0|auto_generated|mac_out4~DATAOUT8 ;
+wire \Mult0|auto_generated|mac_out4~DATAOUT9 ;
+wire \Mult0|auto_generated|mac_out4~DATAOUT10 ;
 wire \short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[0] ;
-wire \long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[0] ;
 wire \short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[1] ;
-wire \long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[1] ;
 wire \short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[2] ;
-wire \long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[2] ;
 wire \short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[3] ;
-wire \long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[3] ;
 wire \short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[4] ;
-wire \long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[4] ;
 wire \short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[5] ;
-wire \long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[5] ;
 wire \short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[6] ;
-wire \long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[6] ;
 wire \short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[7] ;
-wire \long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[7] ;
 wire \short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[8] ;
-wire \long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[8] ;
 wire \short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[9] ;
-wire \long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[9] ;
 wire \short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[10] ;
-wire \long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[10] ;
 wire \short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[11] ;
-wire \long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[11] ;
 wire \short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[12] ;
-wire \long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[12] ;
 wire \short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[13] ;
-wire \long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[13] ;
 wire \short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[14] ;
-wire \long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[14] ;
 wire \short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[15] ;
+wire \long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[0] ;
+wire \long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[1] ;
+wire \long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[2] ;
+wire \long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[3] ;
+wire \long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[4] ;
+wire \long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[5] ;
+wire \long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[6] ;
+wire \long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[7] ;
+wire \long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[8] ;
+wire \long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[9] ;
+wire \long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[10] ;
+wire \long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[11] ;
+wire \long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[12] ;
+wire \long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[13] ;
+wire \long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[14] ;
 wire \long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[15] ;
-wire \Add3~0_combout ;
-wire \long_sum_reg[0]~21_combout ;
-wire \always0~0_combout ;
-wire \short_counter[0]~5_combout ;
-wire \short_to_long_arrived~0_combout ;
-wire \always0~1_combout ;
-wire \always0~2_combout ;
-wire \short_to_long_arrived~1_combout ;
-wire \short_to_long_arrived~q ;
-wire \short_counter[0]~15_combout ;
-wire \Equal0~0_combout ;
-wire \short_counter[0]~16_combout ;
-wire \short_counter[0]~17_combout ;
-wire \short_counter[0]~q ;
-wire \short_counter[0]~6 ;
-wire \short_counter[1]~7_combout ;
-wire \short_counter[1]~q ;
-wire \short_counter[1]~8 ;
-wire \short_counter[2]~9_combout ;
-wire \short_counter[2]~q ;
-wire \short_counter[2]~10 ;
-wire \short_counter[3]~11_combout ;
-wire \short_counter[3]~q ;
-wire \short_counter[3]~12 ;
-wire \short_counter[4]~13_combout ;
-wire \short_counter[4]~q ;
-wire \Equal0~1_combout ;
-wire \short_shift_full~0_combout ;
-wire \short_shift_full~q ;
-wire \long_sum_reg[3]~23_combout ;
-wire \Add3~1 ;
-wire \Add3~2_combout ;
-wire \long_sum_reg[0]~22 ;
-wire \long_sum_reg[1]~24_combout ;
-wire \Add3~3 ;
-wire \Add3~4_combout ;
-wire \long_sum_reg[1]~25 ;
-wire \long_sum_reg[2]~26_combout ;
-wire \Add3~5 ;
-wire \Add3~6_combout ;
-wire \long_sum_reg[2]~27 ;
-wire \long_sum_reg[3]~28_combout ;
-wire \Add3~7 ;
-wire \Add3~8_combout ;
-wire \long_sum_reg[3]~29 ;
-wire \long_sum_reg[4]~30_combout ;
-wire \Add3~9 ;
-wire \Add3~10_combout ;
-wire \long_sum_reg[4]~31 ;
-wire \long_sum_reg[5]~32_combout ;
-wire \Add3~11 ;
-wire \Add3~12_combout ;
-wire \long_sum_reg[5]~33 ;
-wire \long_sum_reg[6]~34_combout ;
-wire \Add3~13 ;
-wire \Add3~14_combout ;
-wire \long_sum_reg[6]~35 ;
-wire \long_sum_reg[7]~36_combout ;
-wire \Add3~15 ;
-wire \Add3~16_combout ;
-wire \long_sum_reg[7]~37 ;
-wire \long_sum_reg[8]~38_combout ;
-wire \Add3~17 ;
-wire \Add3~18_combout ;
-wire \long_sum_reg[8]~39 ;
-wire \long_sum_reg[9]~40_combout ;
-wire \Add3~19 ;
-wire \Add3~20_combout ;
-wire \long_sum_reg[9]~41 ;
-wire \long_sum_reg[10]~42_combout ;
-wire \Add3~21 ;
-wire \Add3~22_combout ;
-wire \long_sum_reg[10]~43 ;
-wire \long_sum_reg[11]~44_combout ;
-wire \Add3~23 ;
-wire \Add3~24_combout ;
-wire \long_sum_reg[11]~45 ;
-wire \long_sum_reg[12]~46_combout ;
-wire \Add3~25 ;
-wire \Add3~26_combout ;
-wire \long_sum_reg[12]~47 ;
-wire \long_sum_reg[13]~48_combout ;
-wire \Add3~27 ;
-wire \Add3~28_combout ;
-wire \long_sum_reg[13]~49 ;
-wire \long_sum_reg[14]~50_combout ;
-wire \Add3~29 ;
-wire \Add3~30_combout ;
-wire \long_sum_reg[14]~51 ;
-wire \long_sum_reg[15]~52_combout ;
-wire \Add3~31 ;
-wire \Add3~32_combout ;
-wire \long_sum_reg[15]~53 ;
-wire \long_sum_reg[16]~54_combout ;
-wire \Add3~33 ;
-wire \Add3~34_combout ;
-wire \long_sum_reg[16]~55 ;
-wire \long_sum_reg[17]~56_combout ;
-wire \Add3~35 ;
-wire \Add3~36_combout ;
-wire \long_sum_reg[17]~57 ;
-wire \long_sum_reg[18]~58_combout ;
-wire \Add3~37 ;
-wire \Add3~38_combout ;
-wire \long_sum_reg[18]~59 ;
-wire \long_sum_reg[19]~60_combout ;
-wire \Add3~39 ;
-wire \Add3~40_combout ;
-wire \long_sum_reg[19]~61 ;
-wire \long_sum_reg[20]~62_combout ;
 wire \Add0~0_combout ;
 wire \short_sum_reg[0]~18_combout ;
+wire \always0~1_combout ;
+wire \always0~2_combout ;
 wire \short_sum_reg[1]~20_combout ;
 wire \Add0~1 ;
 wire \Add0~2_combout ;
@@ -71802,6 +71737,215 @@ wire \LessThan0~27_cout ;
 wire \LessThan0~29_cout ;
 wire \LessThan0~31_cout ;
 wire \LessThan0~33_cout ;
+wire \Add3~0_combout ;
+wire \long_sum_reg[0]~21_combout ;
+wire \always0~0_combout ;
+wire \short_counter[0]~7_combout ;
+wire \short_counter[0]~19_combout ;
+wire \short_counter[0]~17_combout ;
+wire \short_counter[0]~18_combout ;
+wire \short_counter[0]~q ;
+wire \short_counter[0]~8 ;
+wire \short_counter[1]~9_combout ;
+wire \short_counter[1]~q ;
+wire \short_counter[1]~10 ;
+wire \short_counter[2]~11_combout ;
+wire \short_counter[2]~q ;
+wire \short_counter[2]~12 ;
+wire \short_counter[3]~13_combout ;
+wire \short_counter[3]~q ;
+wire \short_counter[3]~14 ;
+wire \short_counter[4]~15_combout ;
+wire \short_counter[4]~q ;
+wire \Equal0~0_combout ;
+wire \Equal0~1_combout ;
+wire \short_shift_full~0_combout ;
+wire \short_shift_full~q ;
+wire \intermediate_reg[3]~7_combout ;
+wire \long_sum_reg[0]~q ;
+wire \Add3~1 ;
+wire \Add3~2_combout ;
+wire \long_sum_reg[0]~22 ;
+wire \long_sum_reg[1]~23_combout ;
+wire \long_sum_reg[1]~q ;
+wire \Add3~3 ;
+wire \Add3~4_combout ;
+wire \long_sum_reg[1]~24 ;
+wire \long_sum_reg[2]~25_combout ;
+wire \long_sum_reg[2]~q ;
+wire \Add3~5 ;
+wire \Add3~6_combout ;
+wire \long_sum_reg[2]~26 ;
+wire \long_sum_reg[3]~27_combout ;
+wire \long_sum_reg[3]~q ;
+wire \Add3~7 ;
+wire \Add3~8_combout ;
+wire \long_sum_reg[3]~28 ;
+wire \long_sum_reg[4]~29_combout ;
+wire \long_sum_reg[4]~q ;
+wire \Add3~9 ;
+wire \Add3~10_combout ;
+wire \long_sum_reg[4]~30 ;
+wire \long_sum_reg[5]~31_combout ;
+wire \long_sum_reg[5]~q ;
+wire \Add3~11 ;
+wire \Add3~12_combout ;
+wire \long_sum_reg[5]~32 ;
+wire \long_sum_reg[6]~33_combout ;
+wire \long_sum_reg[6]~q ;
+wire \Add3~13 ;
+wire \Add3~14_combout ;
+wire \long_sum_reg[6]~34 ;
+wire \long_sum_reg[7]~35_combout ;
+wire \long_sum_reg[7]~q ;
+wire \Add3~15 ;
+wire \Add3~16_combout ;
+wire \long_sum_reg[7]~36 ;
+wire \long_sum_reg[8]~37_combout ;
+wire \long_sum_reg[8]~q ;
+wire \Add3~17 ;
+wire \Add3~18_combout ;
+wire \long_sum_reg[8]~38 ;
+wire \long_sum_reg[9]~39_combout ;
+wire \long_sum_reg[9]~q ;
+wire \Add3~19 ;
+wire \Add3~20_combout ;
+wire \long_sum_reg[9]~40 ;
+wire \long_sum_reg[10]~41_combout ;
+wire \long_sum_reg[10]~q ;
+wire \Add3~21 ;
+wire \Add3~22_combout ;
+wire \long_sum_reg[10]~42 ;
+wire \long_sum_reg[11]~43_combout ;
+wire \long_sum_reg[11]~q ;
+wire \Add3~23 ;
+wire \Add3~24_combout ;
+wire \long_sum_reg[11]~44 ;
+wire \long_sum_reg[12]~45_combout ;
+wire \long_sum_reg[12]~q ;
+wire \Add3~25 ;
+wire \Add3~26_combout ;
+wire \long_sum_reg[12]~46 ;
+wire \long_sum_reg[13]~47_combout ;
+wire \long_sum_reg[13]~q ;
+wire \Add3~27 ;
+wire \Add3~28_combout ;
+wire \long_sum_reg[13]~48 ;
+wire \long_sum_reg[14]~49_combout ;
+wire \long_sum_reg[14]~q ;
+wire \Add3~29 ;
+wire \Add3~30_combout ;
+wire \long_sum_reg[14]~50 ;
+wire \long_sum_reg[15]~51_combout ;
+wire \long_sum_reg[15]~q ;
+wire \Add3~31 ;
+wire \Add3~32_combout ;
+wire \long_sum_reg[15]~52 ;
+wire \long_sum_reg[16]~53_combout ;
+wire \long_sum_reg[16]~q ;
+wire \Add3~33 ;
+wire \Add3~34_combout ;
+wire \long_sum_reg[16]~54 ;
+wire \long_sum_reg[17]~55_combout ;
+wire \long_sum_reg[17]~q ;
+wire \Mult0|auto_generated|mac_mult1~dataout ;
+wire \Mult0|auto_generated|mac_mult1~DATAOUT1 ;
+wire \Mult0|auto_generated|mac_mult1~DATAOUT2 ;
+wire \Mult0|auto_generated|mac_mult1~DATAOUT3 ;
+wire \Mult0|auto_generated|mac_mult1~DATAOUT4 ;
+wire \Mult0|auto_generated|mac_mult1~DATAOUT5 ;
+wire \Mult0|auto_generated|mac_mult1~DATAOUT6 ;
+wire \Mult0|auto_generated|mac_mult1~DATAOUT7 ;
+wire \Mult0|auto_generated|mac_mult1~DATAOUT8 ;
+wire \Mult0|auto_generated|mac_mult1~DATAOUT9 ;
+wire \Mult0|auto_generated|mac_mult1~DATAOUT10 ;
+wire \Mult0|auto_generated|mac_mult1~DATAOUT11 ;
+wire \Mult0|auto_generated|mac_mult1~DATAOUT12 ;
+wire \Mult0|auto_generated|mac_mult1~DATAOUT13 ;
+wire \Mult0|auto_generated|mac_mult1~DATAOUT14 ;
+wire \Mult0|auto_generated|mac_mult1~DATAOUT15 ;
+wire \Mult0|auto_generated|mac_mult1~DATAOUT16 ;
+wire \Mult0|auto_generated|mac_mult1~DATAOUT17 ;
+wire \Mult0|auto_generated|mac_mult1~DATAOUT18 ;
+wire \Mult0|auto_generated|mac_mult1~DATAOUT19 ;
+wire \Mult0|auto_generated|mac_mult1~DATAOUT20 ;
+wire \Mult0|auto_generated|mac_mult1~DATAOUT21 ;
+wire \Mult0|auto_generated|mac_mult1~DATAOUT22 ;
+wire \Mult0|auto_generated|mac_mult1~DATAOUT23 ;
+wire \Mult0|auto_generated|mac_mult1~DATAOUT24 ;
+wire \Mult0|auto_generated|mac_mult1~DATAOUT25 ;
+wire \Mult0|auto_generated|w138w[3] ;
+wire \intermediate_reg~6_combout ;
+wire \Mult0|auto_generated|w138w[4] ;
+wire \intermediate_reg~8_combout ;
+wire \Mult0|auto_generated|w138w[5] ;
+wire \intermediate_reg~9_combout ;
+wire \Mult0|auto_generated|w138w[6] ;
+wire \intermediate_reg~10_combout ;
+wire \Mult0|auto_generated|w138w[7] ;
+wire \intermediate_reg~11_combout ;
+wire \Mult0|auto_generated|w138w[8] ;
+wire \intermediate_reg~12_combout ;
+wire \Mult0|auto_generated|w138w[9] ;
+wire \intermediate_reg~13_combout ;
+wire \Mult0|auto_generated|w138w[10] ;
+wire \intermediate_reg~14_combout ;
+wire \Mult0|auto_generated|w138w[11] ;
+wire \intermediate_reg~15_combout ;
+wire \Mult0|auto_generated|w138w[12] ;
+wire \intermediate_reg~16_combout ;
+wire \Mult0|auto_generated|w138w[13] ;
+wire \intermediate_reg~17_combout ;
+wire \Mult0|auto_generated|w138w[14] ;
+wire \intermediate_reg~18_combout ;
+wire \Mult0|auto_generated|w138w[15] ;
+wire \intermediate_reg~19_combout ;
+wire \Mult0|auto_generated|w138w[16] ;
+wire \intermediate_reg~20_combout ;
+wire \Mult0|auto_generated|w138w[17] ;
+wire \intermediate_reg~21_combout ;
+wire \Add3~35 ;
+wire \Add3~36_combout ;
+wire \long_sum_reg[17]~56 ;
+wire \long_sum_reg[18]~57_combout ;
+wire \long_sum_reg[18]~q ;
+wire \Add3~37 ;
+wire \Add3~38_combout ;
+wire \long_sum_reg[18]~58 ;
+wire \long_sum_reg[19]~59_combout ;
+wire \long_sum_reg[19]~q ;
+wire \Add3~39 ;
+wire \Add3~40_combout ;
+wire \long_sum_reg[19]~60 ;
+wire \long_sum_reg[20]~61_combout ;
+wire \long_sum_reg[20]~q ;
+wire \Mult0|auto_generated|mac_mult3~dataout ;
+wire \Mult0|auto_generated|mac_mult3~DATAOUT1 ;
+wire \Mult0|auto_generated|mac_mult3~DATAOUT2 ;
+wire \Mult0|auto_generated|mac_mult3~DATAOUT3 ;
+wire \Mult0|auto_generated|mac_mult3~DATAOUT4 ;
+wire \Mult0|auto_generated|mac_mult3~DATAOUT5 ;
+wire \Mult0|auto_generated|mac_mult3~DATAOUT6 ;
+wire \Mult0|auto_generated|mac_mult3~DATAOUT7 ;
+wire \Mult0|auto_generated|mac_mult3~DATAOUT8 ;
+wire \Mult0|auto_generated|mac_mult3~DATAOUT9 ;
+wire \Mult0|auto_generated|mac_mult3~DATAOUT10 ;
+wire \Mult0|auto_generated|mac_out4~dataout ;
+wire \Mult0|auto_generated|mac_out2~DATAOUT18 ;
+wire \Mult0|auto_generated|op_1~0_combout ;
+wire \intermediate_reg~22_combout ;
+wire \Mult0|auto_generated|mac_out4~DATAOUT1 ;
+wire \Mult0|auto_generated|mac_out2~DATAOUT19 ;
+wire \Mult0|auto_generated|op_1~1 ;
+wire \Mult0|auto_generated|op_1~2_combout ;
+wire \intermediate_reg~23_combout ;
+wire \Mult0|auto_generated|mac_out4~DATAOUT2 ;
+wire \Mult0|auto_generated|mac_out2~DATAOUT20 ;
+wire \Mult0|auto_generated|op_1~3 ;
+wire \Mult0|auto_generated|op_1~4_combout ;
+wire \intermediate_reg~24_combout ;
+wire \short_to_long_arrived~0_combout ;
+wire \short_to_long_arrived~1_combout ;
 wire \long_counter[0]~8_combout ;
 wire \long_counter[0]~9 ;
 wire \long_counter[1]~11_combout ;
@@ -71825,52 +71969,129 @@ wire \long_counter[6]~22 ;
 wire \long_counter[7]~23_combout ;
 wire \long_counter[7]~q ;
 wire \Equal1~1_combout ;
-wire \long_counter[4]~10_combout ;
+wire \long_counter[0]~10_combout ;
 wire \long_counter[0]~q ;
 wire \Equal1~0_combout ;
 
+wire [35:0] \Mult0|auto_generated|mac_out2_DATAOUT_bus ;
+wire [35:0] \Mult0|auto_generated|mac_out4_DATAOUT_bus ;
+wire [35:0] \Mult0|auto_generated|mac_mult1_DATAOUT_bus ;
+wire [35:0] \Mult0|auto_generated|mac_mult3_DATAOUT_bus ;
 
-lms_dsp_long_shift long_shift_inst(
+assign \Mult0|auto_generated|w138w[0]  = \Mult0|auto_generated|mac_out2_DATAOUT_bus [0];
+assign \Mult0|auto_generated|w138w[1]  = \Mult0|auto_generated|mac_out2_DATAOUT_bus [1];
+assign \Mult0|auto_generated|w138w[2]  = \Mult0|auto_generated|mac_out2_DATAOUT_bus [2];
+assign \Mult0|auto_generated|w138w[3]  = \Mult0|auto_generated|mac_out2_DATAOUT_bus [3];
+assign \Mult0|auto_generated|w138w[4]  = \Mult0|auto_generated|mac_out2_DATAOUT_bus [4];
+assign \Mult0|auto_generated|w138w[5]  = \Mult0|auto_generated|mac_out2_DATAOUT_bus [5];
+assign \Mult0|auto_generated|w138w[6]  = \Mult0|auto_generated|mac_out2_DATAOUT_bus [6];
+assign \Mult0|auto_generated|w138w[7]  = \Mult0|auto_generated|mac_out2_DATAOUT_bus [7];
+assign \Mult0|auto_generated|w138w[8]  = \Mult0|auto_generated|mac_out2_DATAOUT_bus [8];
+assign \Mult0|auto_generated|w138w[9]  = \Mult0|auto_generated|mac_out2_DATAOUT_bus [9];
+assign \Mult0|auto_generated|w138w[10]  = \Mult0|auto_generated|mac_out2_DATAOUT_bus [10];
+assign \Mult0|auto_generated|w138w[11]  = \Mult0|auto_generated|mac_out2_DATAOUT_bus [11];
+assign \Mult0|auto_generated|w138w[12]  = \Mult0|auto_generated|mac_out2_DATAOUT_bus [12];
+assign \Mult0|auto_generated|w138w[13]  = \Mult0|auto_generated|mac_out2_DATAOUT_bus [13];
+assign \Mult0|auto_generated|w138w[14]  = \Mult0|auto_generated|mac_out2_DATAOUT_bus [14];
+assign \Mult0|auto_generated|w138w[15]  = \Mult0|auto_generated|mac_out2_DATAOUT_bus [15];
+assign \Mult0|auto_generated|w138w[16]  = \Mult0|auto_generated|mac_out2_DATAOUT_bus [16];
+assign \Mult0|auto_generated|w138w[17]  = \Mult0|auto_generated|mac_out2_DATAOUT_bus [17];
+assign \Mult0|auto_generated|mac_out2~DATAOUT18  = \Mult0|auto_generated|mac_out2_DATAOUT_bus [18];
+assign \Mult0|auto_generated|mac_out2~DATAOUT19  = \Mult0|auto_generated|mac_out2_DATAOUT_bus [19];
+assign \Mult0|auto_generated|mac_out2~DATAOUT20  = \Mult0|auto_generated|mac_out2_DATAOUT_bus [20];
+assign \Mult0|auto_generated|mac_out2~DATAOUT21  = \Mult0|auto_generated|mac_out2_DATAOUT_bus [21];
+assign \Mult0|auto_generated|mac_out2~DATAOUT22  = \Mult0|auto_generated|mac_out2_DATAOUT_bus [22];
+assign \Mult0|auto_generated|mac_out2~DATAOUT23  = \Mult0|auto_generated|mac_out2_DATAOUT_bus [23];
+assign \Mult0|auto_generated|mac_out2~DATAOUT24  = \Mult0|auto_generated|mac_out2_DATAOUT_bus [24];
+assign \Mult0|auto_generated|mac_out2~DATAOUT25  = \Mult0|auto_generated|mac_out2_DATAOUT_bus [25];
+
+assign \Mult0|auto_generated|mac_out4~dataout  = \Mult0|auto_generated|mac_out4_DATAOUT_bus [0];
+assign \Mult0|auto_generated|mac_out4~DATAOUT1  = \Mult0|auto_generated|mac_out4_DATAOUT_bus [1];
+assign \Mult0|auto_generated|mac_out4~DATAOUT2  = \Mult0|auto_generated|mac_out4_DATAOUT_bus [2];
+assign \Mult0|auto_generated|mac_out4~DATAOUT3  = \Mult0|auto_generated|mac_out4_DATAOUT_bus [3];
+assign \Mult0|auto_generated|mac_out4~DATAOUT4  = \Mult0|auto_generated|mac_out4_DATAOUT_bus [4];
+assign \Mult0|auto_generated|mac_out4~DATAOUT5  = \Mult0|auto_generated|mac_out4_DATAOUT_bus [5];
+assign \Mult0|auto_generated|mac_out4~DATAOUT6  = \Mult0|auto_generated|mac_out4_DATAOUT_bus [6];
+assign \Mult0|auto_generated|mac_out4~DATAOUT7  = \Mult0|auto_generated|mac_out4_DATAOUT_bus [7];
+assign \Mult0|auto_generated|mac_out4~DATAOUT8  = \Mult0|auto_generated|mac_out4_DATAOUT_bus [8];
+assign \Mult0|auto_generated|mac_out4~DATAOUT9  = \Mult0|auto_generated|mac_out4_DATAOUT_bus [9];
+assign \Mult0|auto_generated|mac_out4~DATAOUT10  = \Mult0|auto_generated|mac_out4_DATAOUT_bus [10];
+
+assign \Mult0|auto_generated|mac_mult1~dataout  = \Mult0|auto_generated|mac_mult1_DATAOUT_bus [0];
+assign \Mult0|auto_generated|mac_mult1~DATAOUT1  = \Mult0|auto_generated|mac_mult1_DATAOUT_bus [1];
+assign \Mult0|auto_generated|mac_mult1~DATAOUT2  = \Mult0|auto_generated|mac_mult1_DATAOUT_bus [2];
+assign \Mult0|auto_generated|mac_mult1~DATAOUT3  = \Mult0|auto_generated|mac_mult1_DATAOUT_bus [3];
+assign \Mult0|auto_generated|mac_mult1~DATAOUT4  = \Mult0|auto_generated|mac_mult1_DATAOUT_bus [4];
+assign \Mult0|auto_generated|mac_mult1~DATAOUT5  = \Mult0|auto_generated|mac_mult1_DATAOUT_bus [5];
+assign \Mult0|auto_generated|mac_mult1~DATAOUT6  = \Mult0|auto_generated|mac_mult1_DATAOUT_bus [6];
+assign \Mult0|auto_generated|mac_mult1~DATAOUT7  = \Mult0|auto_generated|mac_mult1_DATAOUT_bus [7];
+assign \Mult0|auto_generated|mac_mult1~DATAOUT8  = \Mult0|auto_generated|mac_mult1_DATAOUT_bus [8];
+assign \Mult0|auto_generated|mac_mult1~DATAOUT9  = \Mult0|auto_generated|mac_mult1_DATAOUT_bus [9];
+assign \Mult0|auto_generated|mac_mult1~DATAOUT10  = \Mult0|auto_generated|mac_mult1_DATAOUT_bus [10];
+assign \Mult0|auto_generated|mac_mult1~DATAOUT11  = \Mult0|auto_generated|mac_mult1_DATAOUT_bus [11];
+assign \Mult0|auto_generated|mac_mult1~DATAOUT12  = \Mult0|auto_generated|mac_mult1_DATAOUT_bus [12];
+assign \Mult0|auto_generated|mac_mult1~DATAOUT13  = \Mult0|auto_generated|mac_mult1_DATAOUT_bus [13];
+assign \Mult0|auto_generated|mac_mult1~DATAOUT14  = \Mult0|auto_generated|mac_mult1_DATAOUT_bus [14];
+assign \Mult0|auto_generated|mac_mult1~DATAOUT15  = \Mult0|auto_generated|mac_mult1_DATAOUT_bus [15];
+assign \Mult0|auto_generated|mac_mult1~DATAOUT16  = \Mult0|auto_generated|mac_mult1_DATAOUT_bus [16];
+assign \Mult0|auto_generated|mac_mult1~DATAOUT17  = \Mult0|auto_generated|mac_mult1_DATAOUT_bus [17];
+assign \Mult0|auto_generated|mac_mult1~DATAOUT18  = \Mult0|auto_generated|mac_mult1_DATAOUT_bus [18];
+assign \Mult0|auto_generated|mac_mult1~DATAOUT19  = \Mult0|auto_generated|mac_mult1_DATAOUT_bus [19];
+assign \Mult0|auto_generated|mac_mult1~DATAOUT20  = \Mult0|auto_generated|mac_mult1_DATAOUT_bus [20];
+assign \Mult0|auto_generated|mac_mult1~DATAOUT21  = \Mult0|auto_generated|mac_mult1_DATAOUT_bus [21];
+assign \Mult0|auto_generated|mac_mult1~DATAOUT22  = \Mult0|auto_generated|mac_mult1_DATAOUT_bus [22];
+assign \Mult0|auto_generated|mac_mult1~DATAOUT23  = \Mult0|auto_generated|mac_mult1_DATAOUT_bus [23];
+assign \Mult0|auto_generated|mac_mult1~DATAOUT24  = \Mult0|auto_generated|mac_mult1_DATAOUT_bus [24];
+assign \Mult0|auto_generated|mac_mult1~DATAOUT25  = \Mult0|auto_generated|mac_mult1_DATAOUT_bus [25];
+
+assign \Mult0|auto_generated|mac_mult3~dataout  = \Mult0|auto_generated|mac_mult3_DATAOUT_bus [0];
+assign \Mult0|auto_generated|mac_mult3~DATAOUT1  = \Mult0|auto_generated|mac_mult3_DATAOUT_bus [1];
+assign \Mult0|auto_generated|mac_mult3~DATAOUT2  = \Mult0|auto_generated|mac_mult3_DATAOUT_bus [2];
+assign \Mult0|auto_generated|mac_mult3~DATAOUT3  = \Mult0|auto_generated|mac_mult3_DATAOUT_bus [3];
+assign \Mult0|auto_generated|mac_mult3~DATAOUT4  = \Mult0|auto_generated|mac_mult3_DATAOUT_bus [4];
+assign \Mult0|auto_generated|mac_mult3~DATAOUT5  = \Mult0|auto_generated|mac_mult3_DATAOUT_bus [5];
+assign \Mult0|auto_generated|mac_mult3~DATAOUT6  = \Mult0|auto_generated|mac_mult3_DATAOUT_bus [6];
+assign \Mult0|auto_generated|mac_mult3~DATAOUT7  = \Mult0|auto_generated|mac_mult3_DATAOUT_bus [7];
+assign \Mult0|auto_generated|mac_mult3~DATAOUT8  = \Mult0|auto_generated|mac_mult3_DATAOUT_bus [8];
+assign \Mult0|auto_generated|mac_mult3~DATAOUT9  = \Mult0|auto_generated|mac_mult3_DATAOUT_bus [9];
+assign \Mult0|auto_generated|mac_mult3~DATAOUT10  = \Mult0|auto_generated|mac_mult3_DATAOUT_bus [10];
+
+lms_dsp_short_shift short_shift_inst(
+	.mag_reg_0(mag_reg_0),
 	.q_b_0(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[0] ),
-	.q_b_01(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[0] ),
+	.mag_reg_1(mag_reg_1),
 	.q_b_1(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[1] ),
-	.q_b_11(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[1] ),
+	.mag_reg_2(mag_reg_2),
 	.q_b_2(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[2] ),
-	.q_b_21(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[2] ),
+	.mag_reg_3(mag_reg_3),
 	.q_b_3(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[3] ),
-	.q_b_31(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[3] ),
+	.mag_reg_4(mag_reg_4),
 	.q_b_4(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[4] ),
-	.q_b_41(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[4] ),
+	.mag_reg_5(mag_reg_5),
 	.q_b_5(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[5] ),
-	.q_b_51(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[5] ),
+	.mag_reg_6(mag_reg_6),
 	.q_b_6(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[6] ),
-	.q_b_61(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[6] ),
+	.mag_reg_7(mag_reg_7),
 	.q_b_7(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[7] ),
-	.q_b_71(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[7] ),
+	.mag_reg_8(mag_reg_8),
 	.q_b_8(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[8] ),
-	.q_b_81(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[8] ),
+	.mag_reg_9(mag_reg_9),
 	.q_b_9(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[9] ),
-	.q_b_91(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[9] ),
+	.mag_reg_10(mag_reg_10),
 	.q_b_10(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[10] ),
-	.q_b_101(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[10] ),
-	.q_b_111(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[11] ),
-	.q_b_112(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[11] ),
+	.mag_reg_11(mag_reg_11),
+	.q_b_11(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[11] ),
+	.mag_reg_12(mag_reg_12),
 	.q_b_12(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[12] ),
-	.q_b_121(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[12] ),
 	.q_b_13(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[13] ),
-	.q_b_131(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[13] ),
 	.q_b_14(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[14] ),
-	.q_b_141(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[14] ),
 	.q_b_15(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[15] ),
-	.q_b_151(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[15] ),
-	.always0(\always0~0_combout ),
 	.delay_reg_24_0(delay_reg_24_0),
-	.short_shift_full(\short_shift_full~q ),
-	.short_to_long_arrived(\short_to_long_arrived~0_combout ),
+	.always0(\always0~2_combout ),
 	.GND_port(GND_port),
 	.clk_clk(clk_clk));
 
-lms_dsp_short_shift short_shift_inst(
+lms_dsp_long_shift long_shift_inst(
 	.q_b_0(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[0] ),
 	.q_b_1(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[1] ),
 	.q_b_2(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[2] ),
@@ -71887,317 +72108,28 @@ lms_dsp_short_shift short_shift_inst(
 	.q_b_13(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[13] ),
 	.q_b_14(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[14] ),
 	.q_b_15(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[15] ),
-	.mag_reg_0(mag_reg_0),
-	.mag_reg_1(mag_reg_1),
-	.mag_reg_2(mag_reg_2),
-	.mag_reg_3(mag_reg_3),
-	.mag_reg_4(mag_reg_4),
-	.mag_reg_5(mag_reg_5),
-	.mag_reg_6(mag_reg_6),
-	.mag_reg_7(mag_reg_7),
-	.mag_reg_8(mag_reg_8),
-	.mag_reg_9(mag_reg_9),
-	.mag_reg_10(mag_reg_10),
-	.mag_reg_11(mag_reg_11),
-	.mag_reg_12(mag_reg_12),
+	.q_b_01(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[0] ),
+	.q_b_16(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[1] ),
+	.q_b_21(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[2] ),
+	.q_b_31(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[3] ),
+	.q_b_41(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[4] ),
+	.q_b_51(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[5] ),
+	.q_b_61(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[6] ),
+	.q_b_71(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[7] ),
+	.q_b_81(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[8] ),
+	.q_b_91(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[9] ),
+	.q_b_101(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[10] ),
+	.q_b_111(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[11] ),
+	.q_b_121(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[12] ),
+	.q_b_131(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[13] ),
+	.q_b_141(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[14] ),
+	.q_b_151(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[15] ),
 	.delay_reg_24_0(delay_reg_24_0),
-	.always0(\always0~2_combout ),
+	.short_shift_full(\short_shift_full~q ),
+	.always0(\always0~0_combout ),
+	.short_to_long_arrived(\short_to_long_arrived~0_combout ),
 	.GND_port(GND_port),
 	.clk_clk(clk_clk));
-
-dffeas \long_sum_reg[0] (
-	.clk(clk_clk),
-	.d(\long_sum_reg[0]~21_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\always0~0_combout ),
-	.sload(gnd),
-	.ena(\long_sum_reg[3]~23_combout ),
-	.q(long_sum_reg_0),
-	.prn(vcc));
-defparam \long_sum_reg[0] .is_wysiwyg = "true";
-defparam \long_sum_reg[0] .power_up = "low";
-
-dffeas \long_sum_reg[1] (
-	.clk(clk_clk),
-	.d(\long_sum_reg[1]~24_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\always0~0_combout ),
-	.sload(gnd),
-	.ena(\long_sum_reg[3]~23_combout ),
-	.q(long_sum_reg_1),
-	.prn(vcc));
-defparam \long_sum_reg[1] .is_wysiwyg = "true";
-defparam \long_sum_reg[1] .power_up = "low";
-
-dffeas \long_sum_reg[2] (
-	.clk(clk_clk),
-	.d(\long_sum_reg[2]~26_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\always0~0_combout ),
-	.sload(gnd),
-	.ena(\long_sum_reg[3]~23_combout ),
-	.q(long_sum_reg_2),
-	.prn(vcc));
-defparam \long_sum_reg[2] .is_wysiwyg = "true";
-defparam \long_sum_reg[2] .power_up = "low";
-
-dffeas \long_sum_reg[3] (
-	.clk(clk_clk),
-	.d(\long_sum_reg[3]~28_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\always0~0_combout ),
-	.sload(gnd),
-	.ena(\long_sum_reg[3]~23_combout ),
-	.q(long_sum_reg_3),
-	.prn(vcc));
-defparam \long_sum_reg[3] .is_wysiwyg = "true";
-defparam \long_sum_reg[3] .power_up = "low";
-
-dffeas \long_sum_reg[4] (
-	.clk(clk_clk),
-	.d(\long_sum_reg[4]~30_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\always0~0_combout ),
-	.sload(gnd),
-	.ena(\long_sum_reg[3]~23_combout ),
-	.q(long_sum_reg_4),
-	.prn(vcc));
-defparam \long_sum_reg[4] .is_wysiwyg = "true";
-defparam \long_sum_reg[4] .power_up = "low";
-
-dffeas \long_sum_reg[5] (
-	.clk(clk_clk),
-	.d(\long_sum_reg[5]~32_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\always0~0_combout ),
-	.sload(gnd),
-	.ena(\long_sum_reg[3]~23_combout ),
-	.q(long_sum_reg_5),
-	.prn(vcc));
-defparam \long_sum_reg[5] .is_wysiwyg = "true";
-defparam \long_sum_reg[5] .power_up = "low";
-
-dffeas \long_sum_reg[6] (
-	.clk(clk_clk),
-	.d(\long_sum_reg[6]~34_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\always0~0_combout ),
-	.sload(gnd),
-	.ena(\long_sum_reg[3]~23_combout ),
-	.q(long_sum_reg_6),
-	.prn(vcc));
-defparam \long_sum_reg[6] .is_wysiwyg = "true";
-defparam \long_sum_reg[6] .power_up = "low";
-
-dffeas \long_sum_reg[7] (
-	.clk(clk_clk),
-	.d(\long_sum_reg[7]~36_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\always0~0_combout ),
-	.sload(gnd),
-	.ena(\long_sum_reg[3]~23_combout ),
-	.q(long_sum_reg_7),
-	.prn(vcc));
-defparam \long_sum_reg[7] .is_wysiwyg = "true";
-defparam \long_sum_reg[7] .power_up = "low";
-
-dffeas \long_sum_reg[8] (
-	.clk(clk_clk),
-	.d(\long_sum_reg[8]~38_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\always0~0_combout ),
-	.sload(gnd),
-	.ena(\long_sum_reg[3]~23_combout ),
-	.q(long_sum_reg_8),
-	.prn(vcc));
-defparam \long_sum_reg[8] .is_wysiwyg = "true";
-defparam \long_sum_reg[8] .power_up = "low";
-
-dffeas \long_sum_reg[9] (
-	.clk(clk_clk),
-	.d(\long_sum_reg[9]~40_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\always0~0_combout ),
-	.sload(gnd),
-	.ena(\long_sum_reg[3]~23_combout ),
-	.q(long_sum_reg_9),
-	.prn(vcc));
-defparam \long_sum_reg[9] .is_wysiwyg = "true";
-defparam \long_sum_reg[9] .power_up = "low";
-
-dffeas \long_sum_reg[10] (
-	.clk(clk_clk),
-	.d(\long_sum_reg[10]~42_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\always0~0_combout ),
-	.sload(gnd),
-	.ena(\long_sum_reg[3]~23_combout ),
-	.q(long_sum_reg_10),
-	.prn(vcc));
-defparam \long_sum_reg[10] .is_wysiwyg = "true";
-defparam \long_sum_reg[10] .power_up = "low";
-
-dffeas \long_sum_reg[11] (
-	.clk(clk_clk),
-	.d(\long_sum_reg[11]~44_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\always0~0_combout ),
-	.sload(gnd),
-	.ena(\long_sum_reg[3]~23_combout ),
-	.q(long_sum_reg_11),
-	.prn(vcc));
-defparam \long_sum_reg[11] .is_wysiwyg = "true";
-defparam \long_sum_reg[11] .power_up = "low";
-
-dffeas \long_sum_reg[12] (
-	.clk(clk_clk),
-	.d(\long_sum_reg[12]~46_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\always0~0_combout ),
-	.sload(gnd),
-	.ena(\long_sum_reg[3]~23_combout ),
-	.q(long_sum_reg_12),
-	.prn(vcc));
-defparam \long_sum_reg[12] .is_wysiwyg = "true";
-defparam \long_sum_reg[12] .power_up = "low";
-
-dffeas \long_sum_reg[13] (
-	.clk(clk_clk),
-	.d(\long_sum_reg[13]~48_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\always0~0_combout ),
-	.sload(gnd),
-	.ena(\long_sum_reg[3]~23_combout ),
-	.q(long_sum_reg_13),
-	.prn(vcc));
-defparam \long_sum_reg[13] .is_wysiwyg = "true";
-defparam \long_sum_reg[13] .power_up = "low";
-
-dffeas \long_sum_reg[14] (
-	.clk(clk_clk),
-	.d(\long_sum_reg[14]~50_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\always0~0_combout ),
-	.sload(gnd),
-	.ena(\long_sum_reg[3]~23_combout ),
-	.q(long_sum_reg_14),
-	.prn(vcc));
-defparam \long_sum_reg[14] .is_wysiwyg = "true";
-defparam \long_sum_reg[14] .power_up = "low";
-
-dffeas \long_sum_reg[15] (
-	.clk(clk_clk),
-	.d(\long_sum_reg[15]~52_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\always0~0_combout ),
-	.sload(gnd),
-	.ena(\long_sum_reg[3]~23_combout ),
-	.q(long_sum_reg_15),
-	.prn(vcc));
-defparam \long_sum_reg[15] .is_wysiwyg = "true";
-defparam \long_sum_reg[15] .power_up = "low";
-
-dffeas \long_sum_reg[16] (
-	.clk(clk_clk),
-	.d(\long_sum_reg[16]~54_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\always0~0_combout ),
-	.sload(gnd),
-	.ena(\long_sum_reg[3]~23_combout ),
-	.q(long_sum_reg_16),
-	.prn(vcc));
-defparam \long_sum_reg[16] .is_wysiwyg = "true";
-defparam \long_sum_reg[16] .power_up = "low";
-
-dffeas \long_sum_reg[17] (
-	.clk(clk_clk),
-	.d(\long_sum_reg[17]~56_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\always0~0_combout ),
-	.sload(gnd),
-	.ena(\long_sum_reg[3]~23_combout ),
-	.q(long_sum_reg_17),
-	.prn(vcc));
-defparam \long_sum_reg[17] .is_wysiwyg = "true";
-defparam \long_sum_reg[17] .power_up = "low";
-
-dffeas \long_sum_reg[18] (
-	.clk(clk_clk),
-	.d(\long_sum_reg[18]~58_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\always0~0_combout ),
-	.sload(gnd),
-	.ena(\long_sum_reg[3]~23_combout ),
-	.q(long_sum_reg_18),
-	.prn(vcc));
-defparam \long_sum_reg[18] .is_wysiwyg = "true";
-defparam \long_sum_reg[18] .power_up = "low";
-
-dffeas \long_sum_reg[19] (
-	.clk(clk_clk),
-	.d(\long_sum_reg[19]~60_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\always0~0_combout ),
-	.sload(gnd),
-	.ena(\long_sum_reg[3]~23_combout ),
-	.q(long_sum_reg_19),
-	.prn(vcc));
-defparam \long_sum_reg[19] .is_wysiwyg = "true";
-defparam \long_sum_reg[19] .power_up = "low";
-
-dffeas \long_sum_reg[20] (
-	.clk(clk_clk),
-	.d(\long_sum_reg[20]~62_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\always0~0_combout ),
-	.sload(gnd),
-	.ena(\long_sum_reg[3]~23_combout ),
-	.q(long_sum_reg_20),
-	.prn(vcc));
-defparam \long_sum_reg[20] .is_wysiwyg = "true";
-defparam \long_sum_reg[20] .power_up = "low";
 
 dffeas \short_sum_reg[0] (
 	.clk(clk_clk),
@@ -72452,7 +72384,7 @@ defparam \short_sum_reg[17] .is_wysiwyg = "true";
 defparam \short_sum_reg[17] .power_up = "low";
 
 fiftyfivenm_lcell_comb \LessThan0~34 (
-	.dataa(long_sum_reg_17),
+	.dataa(intermediate_reg_17),
 	.datab(short_sum_reg_17),
 	.datac(gnd),
 	.datad(gnd),
@@ -72462,27 +72394,282 @@ fiftyfivenm_lcell_comb \LessThan0~34 (
 defparam \LessThan0~34 .lut_mask = 16'hD4D4;
 defparam \LessThan0~34 .sum_lutc_input = "cin";
 
-fiftyfivenm_lcell_comb \launch~0 (
-	.dataa(\short_to_long_arrived~q ),
-	.datab(long_sum_reg_18),
-	.datac(long_sum_reg_19),
-	.datad(long_sum_reg_20),
-	.cin(gnd),
-	.combout(launch),
-	.cout());
-defparam \launch~0 .lut_mask = 16'h0002;
-defparam \launch~0 .sum_lutc_input = "datac";
+dffeas \intermediate_reg[0] (
+	.clk(clk_clk),
+	.d(\intermediate_reg~6_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(intermediate_reg_0),
+	.prn(vcc));
+defparam \intermediate_reg[0] .is_wysiwyg = "true";
+defparam \intermediate_reg[0] .power_up = "low";
 
-fiftyfivenm_lcell_comb \launch~1 (
+dffeas \intermediate_reg[1] (
+	.clk(clk_clk),
+	.d(\intermediate_reg~8_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(intermediate_reg_1),
+	.prn(vcc));
+defparam \intermediate_reg[1] .is_wysiwyg = "true";
+defparam \intermediate_reg[1] .power_up = "low";
+
+dffeas \intermediate_reg[2] (
+	.clk(clk_clk),
+	.d(\intermediate_reg~9_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(intermediate_reg_2),
+	.prn(vcc));
+defparam \intermediate_reg[2] .is_wysiwyg = "true";
+defparam \intermediate_reg[2] .power_up = "low";
+
+dffeas \intermediate_reg[3] (
+	.clk(clk_clk),
+	.d(\intermediate_reg~10_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(intermediate_reg_3),
+	.prn(vcc));
+defparam \intermediate_reg[3] .is_wysiwyg = "true";
+defparam \intermediate_reg[3] .power_up = "low";
+
+dffeas \intermediate_reg[4] (
+	.clk(clk_clk),
+	.d(\intermediate_reg~11_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(intermediate_reg_4),
+	.prn(vcc));
+defparam \intermediate_reg[4] .is_wysiwyg = "true";
+defparam \intermediate_reg[4] .power_up = "low";
+
+dffeas \intermediate_reg[5] (
+	.clk(clk_clk),
+	.d(\intermediate_reg~12_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(intermediate_reg_5),
+	.prn(vcc));
+defparam \intermediate_reg[5] .is_wysiwyg = "true";
+defparam \intermediate_reg[5] .power_up = "low";
+
+dffeas \intermediate_reg[6] (
+	.clk(clk_clk),
+	.d(\intermediate_reg~13_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(intermediate_reg_6),
+	.prn(vcc));
+defparam \intermediate_reg[6] .is_wysiwyg = "true";
+defparam \intermediate_reg[6] .power_up = "low";
+
+dffeas \intermediate_reg[7] (
+	.clk(clk_clk),
+	.d(\intermediate_reg~14_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(intermediate_reg_7),
+	.prn(vcc));
+defparam \intermediate_reg[7] .is_wysiwyg = "true";
+defparam \intermediate_reg[7] .power_up = "low";
+
+dffeas \intermediate_reg[8] (
+	.clk(clk_clk),
+	.d(\intermediate_reg~15_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(intermediate_reg_8),
+	.prn(vcc));
+defparam \intermediate_reg[8] .is_wysiwyg = "true";
+defparam \intermediate_reg[8] .power_up = "low";
+
+dffeas \intermediate_reg[9] (
+	.clk(clk_clk),
+	.d(\intermediate_reg~16_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(intermediate_reg_9),
+	.prn(vcc));
+defparam \intermediate_reg[9] .is_wysiwyg = "true";
+defparam \intermediate_reg[9] .power_up = "low";
+
+dffeas \intermediate_reg[10] (
+	.clk(clk_clk),
+	.d(\intermediate_reg~17_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(intermediate_reg_10),
+	.prn(vcc));
+defparam \intermediate_reg[10] .is_wysiwyg = "true";
+defparam \intermediate_reg[10] .power_up = "low";
+
+dffeas \intermediate_reg[11] (
+	.clk(clk_clk),
+	.d(\intermediate_reg~18_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(intermediate_reg_11),
+	.prn(vcc));
+defparam \intermediate_reg[11] .is_wysiwyg = "true";
+defparam \intermediate_reg[11] .power_up = "low";
+
+dffeas \intermediate_reg[12] (
+	.clk(clk_clk),
+	.d(\intermediate_reg~19_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(intermediate_reg_12),
+	.prn(vcc));
+defparam \intermediate_reg[12] .is_wysiwyg = "true";
+defparam \intermediate_reg[12] .power_up = "low";
+
+dffeas \intermediate_reg[13] (
+	.clk(clk_clk),
+	.d(\intermediate_reg~20_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(intermediate_reg_13),
+	.prn(vcc));
+defparam \intermediate_reg[13] .is_wysiwyg = "true";
+defparam \intermediate_reg[13] .power_up = "low";
+
+dffeas \intermediate_reg[14] (
+	.clk(clk_clk),
+	.d(\intermediate_reg~21_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(intermediate_reg_14),
+	.prn(vcc));
+defparam \intermediate_reg[14] .is_wysiwyg = "true";
+defparam \intermediate_reg[14] .power_up = "low";
+
+dffeas \intermediate_reg[15] (
+	.clk(clk_clk),
+	.d(\intermediate_reg~22_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(intermediate_reg_15),
+	.prn(vcc));
+defparam \intermediate_reg[15] .is_wysiwyg = "true";
+defparam \intermediate_reg[15] .power_up = "low";
+
+dffeas \intermediate_reg[16] (
+	.clk(clk_clk),
+	.d(\intermediate_reg~23_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(intermediate_reg_16),
+	.prn(vcc));
+defparam \intermediate_reg[16] .is_wysiwyg = "true";
+defparam \intermediate_reg[16] .power_up = "low";
+
+dffeas \intermediate_reg[17] (
+	.clk(clk_clk),
+	.d(\intermediate_reg~24_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(intermediate_reg_17),
+	.prn(vcc));
+defparam \intermediate_reg[17] .is_wysiwyg = "true";
+defparam \intermediate_reg[17] .power_up = "low";
+
+dffeas short_to_long_arrived(
+	.clk(clk_clk),
+	.d(\short_to_long_arrived~1_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.q(short_to_long_arrived1),
+	.prn(vcc));
+defparam short_to_long_arrived.is_wysiwyg = "true";
+defparam short_to_long_arrived.power_up = "low";
+
+fiftyfivenm_lcell_comb launch(
 	.dataa(\Equal1~0_combout ),
 	.datab(\Equal1~1_combout ),
-	.datac(LessThan0),
-	.datad(launch),
+	.datac(short_to_long_arrived1),
+	.datad(LessThan0),
 	.cin(gnd),
 	.combout(launch1),
 	.cout());
-defparam \launch~1 .lut_mask = 16'h8000;
-defparam \launch~1 .sum_lutc_input = "datac";
+defparam launch.lut_mask = 16'h8000;
+defparam launch.sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \Equal1~2 (
 	.dataa(\Equal1~0_combout ),
@@ -72494,753 +72681,6 @@ fiftyfivenm_lcell_comb \Equal1~2 (
 	.cout());
 defparam \Equal1~2 .lut_mask = 16'h8888;
 defparam \Equal1~2 .sum_lutc_input = "datac";
-
-fiftyfivenm_lcell_comb \Add3~0 (
-	.dataa(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[0] ),
-	.datab(long_sum_reg_0),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(gnd),
-	.combout(\Add3~0_combout ),
-	.cout(\Add3~1 ));
-defparam \Add3~0 .lut_mask = 16'h6688;
-defparam \Add3~0 .sum_lutc_input = "datac";
-
-fiftyfivenm_lcell_comb \long_sum_reg[0]~21 (
-	.dataa(\Add3~0_combout ),
-	.datab(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[0] ),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(gnd),
-	.combout(\long_sum_reg[0]~21_combout ),
-	.cout(\long_sum_reg[0]~22 ));
-defparam \long_sum_reg[0]~21 .lut_mask = 16'h66BB;
-defparam \long_sum_reg[0]~21 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \always0~0 (
-	.dataa(altera_reset_synchronizer_int_chain_out),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(ppd_cfg_clear_rs),
-	.cin(gnd),
-	.combout(\always0~0_combout ),
-	.cout());
-defparam \always0~0 .lut_mask = 16'hFF55;
-defparam \always0~0 .sum_lutc_input = "datac";
-
-fiftyfivenm_lcell_comb \short_counter[0]~5 (
-	.dataa(\short_counter[0]~q ),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(gnd),
-	.combout(\short_counter[0]~5_combout ),
-	.cout(\short_counter[0]~6 ));
-defparam \short_counter[0]~5 .lut_mask = 16'h55AA;
-defparam \short_counter[0]~5 .sum_lutc_input = "datac";
-
-fiftyfivenm_lcell_comb \short_to_long_arrived~0 (
-	.dataa(delay_reg_24_0),
-	.datab(\short_shift_full~q ),
-	.datac(gnd),
-	.datad(gnd),
-	.cin(gnd),
-	.combout(\short_to_long_arrived~0_combout ),
-	.cout());
-defparam \short_to_long_arrived~0 .lut_mask = 16'h8888;
-defparam \short_to_long_arrived~0 .sum_lutc_input = "datac";
-
-fiftyfivenm_lcell_comb \always0~1 (
-	.dataa(ppd_cfg_clear_rs),
-	.datab(running_reg),
-	.datac(gnd),
-	.datad(altera_reset_synchronizer_int_chain_out),
-	.cin(gnd),
-	.combout(\always0~1_combout ),
-	.cout());
-defparam \always0~1 .lut_mask = 16'hEEFF;
-defparam \always0~1 .sum_lutc_input = "datac";
-
-fiftyfivenm_lcell_comb \always0~2 (
-	.dataa(\always0~1_combout ),
-	.datab(Equal1),
-	.datac(LessThan0),
-	.datad(launch),
-	.cin(gnd),
-	.combout(\always0~2_combout ),
-	.cout());
-defparam \always0~2 .lut_mask = 16'hEAAA;
-defparam \always0~2 .sum_lutc_input = "datac";
-
-fiftyfivenm_lcell_comb \short_to_long_arrived~1 (
-	.dataa(\short_to_long_arrived~q ),
-	.datab(\short_to_long_arrived~0_combout ),
-	.datac(\Equal0~1_combout ),
-	.datad(\always0~2_combout ),
-	.cin(gnd),
-	.combout(\short_to_long_arrived~1_combout ),
-	.cout());
-defparam \short_to_long_arrived~1 .lut_mask = 16'h00EA;
-defparam \short_to_long_arrived~1 .sum_lutc_input = "datac";
-
-dffeas short_to_long_arrived(
-	.clk(clk_clk),
-	.d(\short_to_long_arrived~1_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(gnd),
-	.sload(gnd),
-	.ena(vcc),
-	.q(\short_to_long_arrived~q ),
-	.prn(vcc));
-defparam short_to_long_arrived.is_wysiwyg = "true";
-defparam short_to_long_arrived.power_up = "low";
-
-fiftyfivenm_lcell_comb \short_counter[0]~15 (
-	.dataa(\short_to_long_arrived~q ),
-	.datab(\always0~2_combout ),
-	.datac(gnd),
-	.datad(gnd),
-	.cin(gnd),
-	.combout(\short_counter[0]~15_combout ),
-	.cout());
-defparam \short_counter[0]~15 .lut_mask = 16'hEEEE;
-defparam \short_counter[0]~15 .sum_lutc_input = "datac";
-
-fiftyfivenm_lcell_comb \Equal0~0 (
-	.dataa(\short_counter[0]~q ),
-	.datab(\short_counter[1]~q ),
-	.datac(\short_counter[2]~q ),
-	.datad(\short_counter[3]~q ),
-	.cin(gnd),
-	.combout(\Equal0~0_combout ),
-	.cout());
-defparam \Equal0~0 .lut_mask = 16'h8000;
-defparam \Equal0~0 .sum_lutc_input = "datac";
-
-fiftyfivenm_lcell_comb \short_counter[0]~16 (
-	.dataa(\short_to_long_arrived~q ),
-	.datab(\short_shift_full~q ),
-	.datac(\short_counter[4]~q ),
-	.datad(\Equal0~0_combout ),
-	.cin(gnd),
-	.combout(\short_counter[0]~16_combout ),
-	.cout());
-defparam \short_counter[0]~16 .lut_mask = 16'h8AAA;
-defparam \short_counter[0]~16 .sum_lutc_input = "datac";
-
-fiftyfivenm_lcell_comb \short_counter[0]~17 (
-	.dataa(\short_counter[0]~16_combout ),
-	.datab(gnd),
-	.datac(delay_reg_24_0),
-	.datad(\always0~2_combout ),
-	.cin(gnd),
-	.combout(\short_counter[0]~17_combout ),
-	.cout());
-defparam \short_counter[0]~17 .lut_mask = 16'hFF50;
-defparam \short_counter[0]~17 .sum_lutc_input = "datac";
-
-dffeas \short_counter[0] (
-	.clk(clk_clk),
-	.d(\short_counter[0]~5_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\short_counter[0]~15_combout ),
-	.sload(gnd),
-	.ena(\short_counter[0]~17_combout ),
-	.q(\short_counter[0]~q ),
-	.prn(vcc));
-defparam \short_counter[0] .is_wysiwyg = "true";
-defparam \short_counter[0] .power_up = "low";
-
-fiftyfivenm_lcell_comb \short_counter[1]~7 (
-	.dataa(\short_counter[1]~q ),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\short_counter[0]~6 ),
-	.combout(\short_counter[1]~7_combout ),
-	.cout(\short_counter[1]~8 ));
-defparam \short_counter[1]~7 .lut_mask = 16'h5A5F;
-defparam \short_counter[1]~7 .sum_lutc_input = "cin";
-
-dffeas \short_counter[1] (
-	.clk(clk_clk),
-	.d(\short_counter[1]~7_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\short_counter[0]~15_combout ),
-	.sload(gnd),
-	.ena(\short_counter[0]~17_combout ),
-	.q(\short_counter[1]~q ),
-	.prn(vcc));
-defparam \short_counter[1] .is_wysiwyg = "true";
-defparam \short_counter[1] .power_up = "low";
-
-fiftyfivenm_lcell_comb \short_counter[2]~9 (
-	.dataa(\short_counter[2]~q ),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\short_counter[1]~8 ),
-	.combout(\short_counter[2]~9_combout ),
-	.cout(\short_counter[2]~10 ));
-defparam \short_counter[2]~9 .lut_mask = 16'hA50A;
-defparam \short_counter[2]~9 .sum_lutc_input = "cin";
-
-dffeas \short_counter[2] (
-	.clk(clk_clk),
-	.d(\short_counter[2]~9_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\short_counter[0]~15_combout ),
-	.sload(gnd),
-	.ena(\short_counter[0]~17_combout ),
-	.q(\short_counter[2]~q ),
-	.prn(vcc));
-defparam \short_counter[2] .is_wysiwyg = "true";
-defparam \short_counter[2] .power_up = "low";
-
-fiftyfivenm_lcell_comb \short_counter[3]~11 (
-	.dataa(\short_counter[3]~q ),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\short_counter[2]~10 ),
-	.combout(\short_counter[3]~11_combout ),
-	.cout(\short_counter[3]~12 ));
-defparam \short_counter[3]~11 .lut_mask = 16'h5A5F;
-defparam \short_counter[3]~11 .sum_lutc_input = "cin";
-
-dffeas \short_counter[3] (
-	.clk(clk_clk),
-	.d(\short_counter[3]~11_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\short_counter[0]~15_combout ),
-	.sload(gnd),
-	.ena(\short_counter[0]~17_combout ),
-	.q(\short_counter[3]~q ),
-	.prn(vcc));
-defparam \short_counter[3] .is_wysiwyg = "true";
-defparam \short_counter[3] .power_up = "low";
-
-fiftyfivenm_lcell_comb \short_counter[4]~13 (
-	.dataa(\short_counter[4]~q ),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(gnd),
-	.cin(\short_counter[3]~12 ),
-	.combout(\short_counter[4]~13_combout ),
-	.cout());
-defparam \short_counter[4]~13 .lut_mask = 16'hA5A5;
-defparam \short_counter[4]~13 .sum_lutc_input = "cin";
-
-dffeas \short_counter[4] (
-	.clk(clk_clk),
-	.d(\short_counter[4]~13_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\short_counter[0]~15_combout ),
-	.sload(gnd),
-	.ena(\short_counter[0]~17_combout ),
-	.q(\short_counter[4]~q ),
-	.prn(vcc));
-defparam \short_counter[4] .is_wysiwyg = "true";
-defparam \short_counter[4] .power_up = "low";
-
-fiftyfivenm_lcell_comb \Equal0~1 (
-	.dataa(\short_counter[4]~q ),
-	.datab(\Equal0~0_combout ),
-	.datac(gnd),
-	.datad(gnd),
-	.cin(gnd),
-	.combout(\Equal0~1_combout ),
-	.cout());
-defparam \Equal0~1 .lut_mask = 16'h8888;
-defparam \Equal0~1 .sum_lutc_input = "datac";
-
-fiftyfivenm_lcell_comb \short_shift_full~0 (
-	.dataa(\short_shift_full~q ),
-	.datab(delay_reg_24_0),
-	.datac(\Equal0~1_combout ),
-	.datad(\always0~2_combout ),
-	.cin(gnd),
-	.combout(\short_shift_full~0_combout ),
-	.cout());
-defparam \short_shift_full~0 .lut_mask = 16'h00EA;
-defparam \short_shift_full~0 .sum_lutc_input = "datac";
-
-dffeas short_shift_full(
-	.clk(clk_clk),
-	.d(\short_shift_full~0_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(gnd),
-	.sload(gnd),
-	.ena(vcc),
-	.q(\short_shift_full~q ),
-	.prn(vcc));
-defparam short_shift_full.is_wysiwyg = "true";
-defparam short_shift_full.power_up = "low";
-
-fiftyfivenm_lcell_comb \long_sum_reg[3]~23 (
-	.dataa(altera_reset_synchronizer_int_chain_out),
-	.datab(delay_reg_24_0),
-	.datac(\short_shift_full~q ),
-	.datad(ppd_cfg_clear_rs),
-	.cin(gnd),
-	.combout(\long_sum_reg[3]~23_combout ),
-	.cout());
-defparam \long_sum_reg[3]~23 .lut_mask = 16'hFFD5;
-defparam \long_sum_reg[3]~23 .sum_lutc_input = "datac";
-
-fiftyfivenm_lcell_comb \Add3~2 (
-	.dataa(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[1] ),
-	.datab(long_sum_reg_1),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\Add3~1 ),
-	.combout(\Add3~2_combout ),
-	.cout(\Add3~3 ));
-defparam \Add3~2 .lut_mask = 16'h9617;
-defparam \Add3~2 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \long_sum_reg[1]~24 (
-	.dataa(\Add3~2_combout ),
-	.datab(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[1] ),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\long_sum_reg[0]~22 ),
-	.combout(\long_sum_reg[1]~24_combout ),
-	.cout(\long_sum_reg[1]~25 ));
-defparam \long_sum_reg[1]~24 .lut_mask = 16'h694D;
-defparam \long_sum_reg[1]~24 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \Add3~4 (
-	.dataa(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[2] ),
-	.datab(long_sum_reg_2),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\Add3~3 ),
-	.combout(\Add3~4_combout ),
-	.cout(\Add3~5 ));
-defparam \Add3~4 .lut_mask = 16'h698E;
-defparam \Add3~4 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \long_sum_reg[2]~26 (
-	.dataa(\Add3~4_combout ),
-	.datab(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[2] ),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\long_sum_reg[1]~25 ),
-	.combout(\long_sum_reg[2]~26_combout ),
-	.cout(\long_sum_reg[2]~27 ));
-defparam \long_sum_reg[2]~26 .lut_mask = 16'h962B;
-defparam \long_sum_reg[2]~26 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \Add3~6 (
-	.dataa(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[3] ),
-	.datab(long_sum_reg_3),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\Add3~5 ),
-	.combout(\Add3~6_combout ),
-	.cout(\Add3~7 ));
-defparam \Add3~6 .lut_mask = 16'h9617;
-defparam \Add3~6 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \long_sum_reg[3]~28 (
-	.dataa(\Add3~6_combout ),
-	.datab(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[3] ),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\long_sum_reg[2]~27 ),
-	.combout(\long_sum_reg[3]~28_combout ),
-	.cout(\long_sum_reg[3]~29 ));
-defparam \long_sum_reg[3]~28 .lut_mask = 16'h694D;
-defparam \long_sum_reg[3]~28 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \Add3~8 (
-	.dataa(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[4] ),
-	.datab(long_sum_reg_4),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\Add3~7 ),
-	.combout(\Add3~8_combout ),
-	.cout(\Add3~9 ));
-defparam \Add3~8 .lut_mask = 16'h698E;
-defparam \Add3~8 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \long_sum_reg[4]~30 (
-	.dataa(\Add3~8_combout ),
-	.datab(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[4] ),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\long_sum_reg[3]~29 ),
-	.combout(\long_sum_reg[4]~30_combout ),
-	.cout(\long_sum_reg[4]~31 ));
-defparam \long_sum_reg[4]~30 .lut_mask = 16'h962B;
-defparam \long_sum_reg[4]~30 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \Add3~10 (
-	.dataa(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[5] ),
-	.datab(long_sum_reg_5),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\Add3~9 ),
-	.combout(\Add3~10_combout ),
-	.cout(\Add3~11 ));
-defparam \Add3~10 .lut_mask = 16'h9617;
-defparam \Add3~10 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \long_sum_reg[5]~32 (
-	.dataa(\Add3~10_combout ),
-	.datab(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[5] ),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\long_sum_reg[4]~31 ),
-	.combout(\long_sum_reg[5]~32_combout ),
-	.cout(\long_sum_reg[5]~33 ));
-defparam \long_sum_reg[5]~32 .lut_mask = 16'h694D;
-defparam \long_sum_reg[5]~32 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \Add3~12 (
-	.dataa(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[6] ),
-	.datab(long_sum_reg_6),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\Add3~11 ),
-	.combout(\Add3~12_combout ),
-	.cout(\Add3~13 ));
-defparam \Add3~12 .lut_mask = 16'h698E;
-defparam \Add3~12 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \long_sum_reg[6]~34 (
-	.dataa(\Add3~12_combout ),
-	.datab(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[6] ),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\long_sum_reg[5]~33 ),
-	.combout(\long_sum_reg[6]~34_combout ),
-	.cout(\long_sum_reg[6]~35 ));
-defparam \long_sum_reg[6]~34 .lut_mask = 16'h962B;
-defparam \long_sum_reg[6]~34 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \Add3~14 (
-	.dataa(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[7] ),
-	.datab(long_sum_reg_7),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\Add3~13 ),
-	.combout(\Add3~14_combout ),
-	.cout(\Add3~15 ));
-defparam \Add3~14 .lut_mask = 16'h9617;
-defparam \Add3~14 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \long_sum_reg[7]~36 (
-	.dataa(\Add3~14_combout ),
-	.datab(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[7] ),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\long_sum_reg[6]~35 ),
-	.combout(\long_sum_reg[7]~36_combout ),
-	.cout(\long_sum_reg[7]~37 ));
-defparam \long_sum_reg[7]~36 .lut_mask = 16'h694D;
-defparam \long_sum_reg[7]~36 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \Add3~16 (
-	.dataa(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[8] ),
-	.datab(long_sum_reg_8),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\Add3~15 ),
-	.combout(\Add3~16_combout ),
-	.cout(\Add3~17 ));
-defparam \Add3~16 .lut_mask = 16'h698E;
-defparam \Add3~16 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \long_sum_reg[8]~38 (
-	.dataa(\Add3~16_combout ),
-	.datab(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[8] ),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\long_sum_reg[7]~37 ),
-	.combout(\long_sum_reg[8]~38_combout ),
-	.cout(\long_sum_reg[8]~39 ));
-defparam \long_sum_reg[8]~38 .lut_mask = 16'h962B;
-defparam \long_sum_reg[8]~38 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \Add3~18 (
-	.dataa(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[9] ),
-	.datab(long_sum_reg_9),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\Add3~17 ),
-	.combout(\Add3~18_combout ),
-	.cout(\Add3~19 ));
-defparam \Add3~18 .lut_mask = 16'h9617;
-defparam \Add3~18 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \long_sum_reg[9]~40 (
-	.dataa(\Add3~18_combout ),
-	.datab(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[9] ),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\long_sum_reg[8]~39 ),
-	.combout(\long_sum_reg[9]~40_combout ),
-	.cout(\long_sum_reg[9]~41 ));
-defparam \long_sum_reg[9]~40 .lut_mask = 16'h694D;
-defparam \long_sum_reg[9]~40 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \Add3~20 (
-	.dataa(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[10] ),
-	.datab(long_sum_reg_10),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\Add3~19 ),
-	.combout(\Add3~20_combout ),
-	.cout(\Add3~21 ));
-defparam \Add3~20 .lut_mask = 16'h698E;
-defparam \Add3~20 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \long_sum_reg[10]~42 (
-	.dataa(\Add3~20_combout ),
-	.datab(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[10] ),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\long_sum_reg[9]~41 ),
-	.combout(\long_sum_reg[10]~42_combout ),
-	.cout(\long_sum_reg[10]~43 ));
-defparam \long_sum_reg[10]~42 .lut_mask = 16'h962B;
-defparam \long_sum_reg[10]~42 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \Add3~22 (
-	.dataa(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[11] ),
-	.datab(long_sum_reg_11),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\Add3~21 ),
-	.combout(\Add3~22_combout ),
-	.cout(\Add3~23 ));
-defparam \Add3~22 .lut_mask = 16'h9617;
-defparam \Add3~22 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \long_sum_reg[11]~44 (
-	.dataa(\Add3~22_combout ),
-	.datab(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[11] ),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\long_sum_reg[10]~43 ),
-	.combout(\long_sum_reg[11]~44_combout ),
-	.cout(\long_sum_reg[11]~45 ));
-defparam \long_sum_reg[11]~44 .lut_mask = 16'h694D;
-defparam \long_sum_reg[11]~44 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \Add3~24 (
-	.dataa(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[12] ),
-	.datab(long_sum_reg_12),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\Add3~23 ),
-	.combout(\Add3~24_combout ),
-	.cout(\Add3~25 ));
-defparam \Add3~24 .lut_mask = 16'h698E;
-defparam \Add3~24 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \long_sum_reg[12]~46 (
-	.dataa(\Add3~24_combout ),
-	.datab(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[12] ),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\long_sum_reg[11]~45 ),
-	.combout(\long_sum_reg[12]~46_combout ),
-	.cout(\long_sum_reg[12]~47 ));
-defparam \long_sum_reg[12]~46 .lut_mask = 16'h962B;
-defparam \long_sum_reg[12]~46 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \Add3~26 (
-	.dataa(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[13] ),
-	.datab(long_sum_reg_13),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\Add3~25 ),
-	.combout(\Add3~26_combout ),
-	.cout(\Add3~27 ));
-defparam \Add3~26 .lut_mask = 16'h9617;
-defparam \Add3~26 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \long_sum_reg[13]~48 (
-	.dataa(\Add3~26_combout ),
-	.datab(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[13] ),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\long_sum_reg[12]~47 ),
-	.combout(\long_sum_reg[13]~48_combout ),
-	.cout(\long_sum_reg[13]~49 ));
-defparam \long_sum_reg[13]~48 .lut_mask = 16'h694D;
-defparam \long_sum_reg[13]~48 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \Add3~28 (
-	.dataa(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[14] ),
-	.datab(long_sum_reg_14),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\Add3~27 ),
-	.combout(\Add3~28_combout ),
-	.cout(\Add3~29 ));
-defparam \Add3~28 .lut_mask = 16'h698E;
-defparam \Add3~28 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \long_sum_reg[14]~50 (
-	.dataa(\Add3~28_combout ),
-	.datab(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[14] ),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\long_sum_reg[13]~49 ),
-	.combout(\long_sum_reg[14]~50_combout ),
-	.cout(\long_sum_reg[14]~51 ));
-defparam \long_sum_reg[14]~50 .lut_mask = 16'h962B;
-defparam \long_sum_reg[14]~50 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \Add3~30 (
-	.dataa(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[15] ),
-	.datab(long_sum_reg_15),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\Add3~29 ),
-	.combout(\Add3~30_combout ),
-	.cout(\Add3~31 ));
-defparam \Add3~30 .lut_mask = 16'h9617;
-defparam \Add3~30 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \long_sum_reg[15]~52 (
-	.dataa(\Add3~30_combout ),
-	.datab(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[15] ),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\long_sum_reg[14]~51 ),
-	.combout(\long_sum_reg[15]~52_combout ),
-	.cout(\long_sum_reg[15]~53 ));
-defparam \long_sum_reg[15]~52 .lut_mask = 16'h694D;
-defparam \long_sum_reg[15]~52 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \Add3~32 (
-	.dataa(long_sum_reg_16),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\Add3~31 ),
-	.combout(\Add3~32_combout ),
-	.cout(\Add3~33 ));
-defparam \Add3~32 .lut_mask = 16'hA50A;
-defparam \Add3~32 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \long_sum_reg[16]~54 (
-	.dataa(\Add3~32_combout ),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\long_sum_reg[15]~53 ),
-	.combout(\long_sum_reg[16]~54_combout ),
-	.cout(\long_sum_reg[16]~55 ));
-defparam \long_sum_reg[16]~54 .lut_mask = 16'h5AAF;
-defparam \long_sum_reg[16]~54 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \Add3~34 (
-	.dataa(long_sum_reg_17),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\Add3~33 ),
-	.combout(\Add3~34_combout ),
-	.cout(\Add3~35 ));
-defparam \Add3~34 .lut_mask = 16'h5A5F;
-defparam \Add3~34 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \long_sum_reg[17]~56 (
-	.dataa(\Add3~34_combout ),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\long_sum_reg[16]~55 ),
-	.combout(\long_sum_reg[17]~56_combout ),
-	.cout(\long_sum_reg[17]~57 ));
-defparam \long_sum_reg[17]~56 .lut_mask = 16'hA505;
-defparam \long_sum_reg[17]~56 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \Add3~36 (
-	.dataa(long_sum_reg_18),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\Add3~35 ),
-	.combout(\Add3~36_combout ),
-	.cout(\Add3~37 ));
-defparam \Add3~36 .lut_mask = 16'hA50A;
-defparam \Add3~36 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \long_sum_reg[18]~58 (
-	.dataa(\Add3~36_combout ),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\long_sum_reg[17]~57 ),
-	.combout(\long_sum_reg[18]~58_combout ),
-	.cout(\long_sum_reg[18]~59 ));
-defparam \long_sum_reg[18]~58 .lut_mask = 16'h5AAF;
-defparam \long_sum_reg[18]~58 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \Add3~38 (
-	.dataa(long_sum_reg_19),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\Add3~37 ),
-	.combout(\Add3~38_combout ),
-	.cout(\Add3~39 ));
-defparam \Add3~38 .lut_mask = 16'h5A5F;
-defparam \Add3~38 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \long_sum_reg[19]~60 (
-	.dataa(\Add3~38_combout ),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(vcc),
-	.cin(\long_sum_reg[18]~59 ),
-	.combout(\long_sum_reg[19]~60_combout ),
-	.cout(\long_sum_reg[19]~61 ));
-defparam \long_sum_reg[19]~60 .lut_mask = 16'hA505;
-defparam \long_sum_reg[19]~60 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \Add3~40 (
-	.dataa(long_sum_reg_20),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(gnd),
-	.cin(\Add3~39 ),
-	.combout(\Add3~40_combout ),
-	.cout());
-defparam \Add3~40 .lut_mask = 16'hA5A5;
-defparam \Add3~40 .sum_lutc_input = "cin";
-
-fiftyfivenm_lcell_comb \long_sum_reg[20]~62 (
-	.dataa(\Add3~40_combout ),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(gnd),
-	.cin(\long_sum_reg[19]~61 ),
-	.combout(\long_sum_reg[20]~62_combout ),
-	.cout());
-defparam \long_sum_reg[20]~62 .lut_mask = 16'h5A5A;
-defparam \long_sum_reg[20]~62 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \Add0~0 (
 	.dataa(short_sum_reg_0),
@@ -73263,6 +72703,28 @@ fiftyfivenm_lcell_comb \short_sum_reg[0]~18 (
 	.cout(\short_sum_reg[0]~19 ));
 defparam \short_sum_reg[0]~18 .lut_mask = 16'h66BB;
 defparam \short_sum_reg[0]~18 .sum_lutc_input = "cin";
+
+fiftyfivenm_lcell_comb \always0~1 (
+	.dataa(ppd_cfg_clear_rs),
+	.datab(running_reg),
+	.datac(gnd),
+	.datad(altera_reset_synchronizer_int_chain_out),
+	.cin(gnd),
+	.combout(\always0~1_combout ),
+	.cout());
+defparam \always0~1 .lut_mask = 16'hEEFF;
+defparam \always0~1 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \always0~2 (
+	.dataa(\always0~1_combout ),
+	.datab(Equal1),
+	.datac(short_to_long_arrived1),
+	.datad(LessThan0),
+	.cin(gnd),
+	.combout(\always0~2_combout ),
+	.cout());
+defparam \always0~2 .lut_mask = 16'hEAAA;
+defparam \always0~2 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \short_sum_reg[1]~20 (
 	.dataa(delay_reg_24_0),
@@ -73650,7 +73112,7 @@ defparam \short_sum_reg[17]~53 .lut_mask = 16'hA5A5;
 defparam \short_sum_reg[17]~53 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \LessThan0~1 (
-	.dataa(long_sum_reg_0),
+	.dataa(intermediate_reg_0),
 	.datab(short_sum_reg_0),
 	.datac(gnd),
 	.datad(vcc),
@@ -73661,7 +73123,7 @@ defparam \LessThan0~1 .lut_mask = 16'h0044;
 defparam \LessThan0~1 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \LessThan0~3 (
-	.dataa(long_sum_reg_1),
+	.dataa(intermediate_reg_1),
 	.datab(short_sum_reg_1),
 	.datac(gnd),
 	.datad(vcc),
@@ -73672,7 +73134,7 @@ defparam \LessThan0~3 .lut_mask = 16'h002B;
 defparam \LessThan0~3 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \LessThan0~5 (
-	.dataa(long_sum_reg_2),
+	.dataa(intermediate_reg_2),
 	.datab(short_sum_reg_2),
 	.datac(gnd),
 	.datad(vcc),
@@ -73683,7 +73145,7 @@ defparam \LessThan0~5 .lut_mask = 16'h004D;
 defparam \LessThan0~5 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \LessThan0~7 (
-	.dataa(long_sum_reg_3),
+	.dataa(intermediate_reg_3),
 	.datab(short_sum_reg_3),
 	.datac(gnd),
 	.datad(vcc),
@@ -73694,7 +73156,7 @@ defparam \LessThan0~7 .lut_mask = 16'h002B;
 defparam \LessThan0~7 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \LessThan0~9 (
-	.dataa(long_sum_reg_4),
+	.dataa(intermediate_reg_4),
 	.datab(short_sum_reg_4),
 	.datac(gnd),
 	.datad(vcc),
@@ -73705,7 +73167,7 @@ defparam \LessThan0~9 .lut_mask = 16'h004D;
 defparam \LessThan0~9 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \LessThan0~11 (
-	.dataa(long_sum_reg_5),
+	.dataa(intermediate_reg_5),
 	.datab(short_sum_reg_5),
 	.datac(gnd),
 	.datad(vcc),
@@ -73716,7 +73178,7 @@ defparam \LessThan0~11 .lut_mask = 16'h002B;
 defparam \LessThan0~11 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \LessThan0~13 (
-	.dataa(long_sum_reg_6),
+	.dataa(intermediate_reg_6),
 	.datab(short_sum_reg_6),
 	.datac(gnd),
 	.datad(vcc),
@@ -73727,7 +73189,7 @@ defparam \LessThan0~13 .lut_mask = 16'h004D;
 defparam \LessThan0~13 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \LessThan0~15 (
-	.dataa(long_sum_reg_7),
+	.dataa(intermediate_reg_7),
 	.datab(short_sum_reg_7),
 	.datac(gnd),
 	.datad(vcc),
@@ -73738,7 +73200,7 @@ defparam \LessThan0~15 .lut_mask = 16'h002B;
 defparam \LessThan0~15 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \LessThan0~17 (
-	.dataa(long_sum_reg_8),
+	.dataa(intermediate_reg_8),
 	.datab(short_sum_reg_8),
 	.datac(gnd),
 	.datad(vcc),
@@ -73749,7 +73211,7 @@ defparam \LessThan0~17 .lut_mask = 16'h004D;
 defparam \LessThan0~17 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \LessThan0~19 (
-	.dataa(long_sum_reg_9),
+	.dataa(intermediate_reg_9),
 	.datab(short_sum_reg_9),
 	.datac(gnd),
 	.datad(vcc),
@@ -73760,7 +73222,7 @@ defparam \LessThan0~19 .lut_mask = 16'h002B;
 defparam \LessThan0~19 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \LessThan0~21 (
-	.dataa(long_sum_reg_10),
+	.dataa(intermediate_reg_10),
 	.datab(short_sum_reg_10),
 	.datac(gnd),
 	.datad(vcc),
@@ -73771,7 +73233,7 @@ defparam \LessThan0~21 .lut_mask = 16'h004D;
 defparam \LessThan0~21 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \LessThan0~23 (
-	.dataa(long_sum_reg_11),
+	.dataa(intermediate_reg_11),
 	.datab(short_sum_reg_11),
 	.datac(gnd),
 	.datad(vcc),
@@ -73782,7 +73244,7 @@ defparam \LessThan0~23 .lut_mask = 16'h002B;
 defparam \LessThan0~23 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \LessThan0~25 (
-	.dataa(long_sum_reg_12),
+	.dataa(intermediate_reg_12),
 	.datab(short_sum_reg_12),
 	.datac(gnd),
 	.datad(vcc),
@@ -73793,7 +73255,7 @@ defparam \LessThan0~25 .lut_mask = 16'h004D;
 defparam \LessThan0~25 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \LessThan0~27 (
-	.dataa(long_sum_reg_13),
+	.dataa(intermediate_reg_13),
 	.datab(short_sum_reg_13),
 	.datac(gnd),
 	.datad(vcc),
@@ -73804,7 +73266,7 @@ defparam \LessThan0~27 .lut_mask = 16'h002B;
 defparam \LessThan0~27 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \LessThan0~29 (
-	.dataa(long_sum_reg_14),
+	.dataa(intermediate_reg_14),
 	.datab(short_sum_reg_14),
 	.datac(gnd),
 	.datad(vcc),
@@ -73815,7 +73277,7 @@ defparam \LessThan0~29 .lut_mask = 16'h004D;
 defparam \LessThan0~29 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \LessThan0~31 (
-	.dataa(long_sum_reg_15),
+	.dataa(intermediate_reg_15),
 	.datab(short_sum_reg_15),
 	.datac(gnd),
 	.datad(vcc),
@@ -73826,7 +73288,7 @@ defparam \LessThan0~31 .lut_mask = 16'h002B;
 defparam \LessThan0~31 .sum_lutc_input = "cin";
 
 fiftyfivenm_lcell_comb \LessThan0~33 (
-	.dataa(long_sum_reg_16),
+	.dataa(intermediate_reg_16),
 	.datab(short_sum_reg_16),
 	.datac(gnd),
 	.datad(vcc),
@@ -73835,6 +73297,1299 @@ fiftyfivenm_lcell_comb \LessThan0~33 (
 	.cout(\LessThan0~33_cout ));
 defparam \LessThan0~33 .lut_mask = 16'h004D;
 defparam \LessThan0~33 .sum_lutc_input = "cin";
+
+fiftyfivenm_lcell_comb \Add3~0 (
+	.dataa(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[0] ),
+	.datab(\long_sum_reg[0]~q ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(gnd),
+	.combout(\Add3~0_combout ),
+	.cout(\Add3~1 ));
+defparam \Add3~0 .lut_mask = 16'h6688;
+defparam \Add3~0 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \long_sum_reg[0]~21 (
+	.dataa(\Add3~0_combout ),
+	.datab(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[0] ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(gnd),
+	.combout(\long_sum_reg[0]~21_combout ),
+	.cout(\long_sum_reg[0]~22 ));
+defparam \long_sum_reg[0]~21 .lut_mask = 16'h66BB;
+defparam \long_sum_reg[0]~21 .sum_lutc_input = "cin";
+
+fiftyfivenm_lcell_comb \always0~0 (
+	.dataa(altera_reset_synchronizer_int_chain_out),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(ppd_cfg_clear_rs),
+	.cin(gnd),
+	.combout(\always0~0_combout ),
+	.cout());
+defparam \always0~0 .lut_mask = 16'hFF55;
+defparam \always0~0 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \short_counter[0]~7 (
+	.dataa(\short_counter[0]~q ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(gnd),
+	.combout(\short_counter[0]~7_combout ),
+	.cout(\short_counter[0]~8 ));
+defparam \short_counter[0]~7 .lut_mask = 16'h55AA;
+defparam \short_counter[0]~7 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \short_counter[0]~19 (
+	.dataa(ppd_cfg_clear_rs),
+	.datab(running_reg),
+	.datac(altera_reset_synchronizer_int_chain_out),
+	.datad(short_to_long_arrived1),
+	.cin(gnd),
+	.combout(\short_counter[0]~19_combout ),
+	.cout());
+defparam \short_counter[0]~19 .lut_mask = 16'hFFEF;
+defparam \short_counter[0]~19 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \short_counter[0]~17 (
+	.dataa(short_to_long_arrived1),
+	.datab(\short_shift_full~q ),
+	.datac(\Equal0~1_combout ),
+	.datad(delay_reg_24_0),
+	.cin(gnd),
+	.combout(\short_counter[0]~17_combout ),
+	.cout());
+defparam \short_counter[0]~17 .lut_mask = 16'h8AFF;
+defparam \short_counter[0]~17 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \short_counter[0]~18 (
+	.dataa(\short_counter[0]~17_combout ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\always0~2_combout ),
+	.cin(gnd),
+	.combout(\short_counter[0]~18_combout ),
+	.cout());
+defparam \short_counter[0]~18 .lut_mask = 16'hFF55;
+defparam \short_counter[0]~18 .sum_lutc_input = "datac";
+
+dffeas \short_counter[0] (
+	.clk(clk_clk),
+	.d(\short_counter[0]~7_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\short_counter[0]~19_combout ),
+	.sload(gnd),
+	.ena(\short_counter[0]~18_combout ),
+	.q(\short_counter[0]~q ),
+	.prn(vcc));
+defparam \short_counter[0] .is_wysiwyg = "true";
+defparam \short_counter[0] .power_up = "low";
+
+fiftyfivenm_lcell_comb \short_counter[1]~9 (
+	.dataa(\short_counter[1]~q ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\short_counter[0]~8 ),
+	.combout(\short_counter[1]~9_combout ),
+	.cout(\short_counter[1]~10 ));
+defparam \short_counter[1]~9 .lut_mask = 16'h5A5F;
+defparam \short_counter[1]~9 .sum_lutc_input = "cin";
+
+dffeas \short_counter[1] (
+	.clk(clk_clk),
+	.d(\short_counter[1]~9_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\short_counter[0]~19_combout ),
+	.sload(gnd),
+	.ena(\short_counter[0]~18_combout ),
+	.q(\short_counter[1]~q ),
+	.prn(vcc));
+defparam \short_counter[1] .is_wysiwyg = "true";
+defparam \short_counter[1] .power_up = "low";
+
+fiftyfivenm_lcell_comb \short_counter[2]~11 (
+	.dataa(\short_counter[2]~q ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\short_counter[1]~10 ),
+	.combout(\short_counter[2]~11_combout ),
+	.cout(\short_counter[2]~12 ));
+defparam \short_counter[2]~11 .lut_mask = 16'hA50A;
+defparam \short_counter[2]~11 .sum_lutc_input = "cin";
+
+dffeas \short_counter[2] (
+	.clk(clk_clk),
+	.d(\short_counter[2]~11_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\short_counter[0]~19_combout ),
+	.sload(gnd),
+	.ena(\short_counter[0]~18_combout ),
+	.q(\short_counter[2]~q ),
+	.prn(vcc));
+defparam \short_counter[2] .is_wysiwyg = "true";
+defparam \short_counter[2] .power_up = "low";
+
+fiftyfivenm_lcell_comb \short_counter[3]~13 (
+	.dataa(\short_counter[3]~q ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\short_counter[2]~12 ),
+	.combout(\short_counter[3]~13_combout ),
+	.cout(\short_counter[3]~14 ));
+defparam \short_counter[3]~13 .lut_mask = 16'h5A5F;
+defparam \short_counter[3]~13 .sum_lutc_input = "cin";
+
+dffeas \short_counter[3] (
+	.clk(clk_clk),
+	.d(\short_counter[3]~13_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\short_counter[0]~19_combout ),
+	.sload(gnd),
+	.ena(\short_counter[0]~18_combout ),
+	.q(\short_counter[3]~q ),
+	.prn(vcc));
+defparam \short_counter[3] .is_wysiwyg = "true";
+defparam \short_counter[3] .power_up = "low";
+
+fiftyfivenm_lcell_comb \short_counter[4]~15 (
+	.dataa(\short_counter[4]~q ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.cin(\short_counter[3]~14 ),
+	.combout(\short_counter[4]~15_combout ),
+	.cout());
+defparam \short_counter[4]~15 .lut_mask = 16'hA5A5;
+defparam \short_counter[4]~15 .sum_lutc_input = "cin";
+
+dffeas \short_counter[4] (
+	.clk(clk_clk),
+	.d(\short_counter[4]~15_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\short_counter[0]~19_combout ),
+	.sload(gnd),
+	.ena(\short_counter[0]~18_combout ),
+	.q(\short_counter[4]~q ),
+	.prn(vcc));
+defparam \short_counter[4] .is_wysiwyg = "true";
+defparam \short_counter[4] .power_up = "low";
+
+fiftyfivenm_lcell_comb \Equal0~0 (
+	.dataa(\short_counter[0]~q ),
+	.datab(\short_counter[1]~q ),
+	.datac(\short_counter[2]~q ),
+	.datad(\short_counter[3]~q ),
+	.cin(gnd),
+	.combout(\Equal0~0_combout ),
+	.cout());
+defparam \Equal0~0 .lut_mask = 16'h8000;
+defparam \Equal0~0 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \Equal0~1 (
+	.dataa(\short_counter[4]~q ),
+	.datab(\Equal0~0_combout ),
+	.datac(gnd),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\Equal0~1_combout ),
+	.cout());
+defparam \Equal0~1 .lut_mask = 16'h8888;
+defparam \Equal0~1 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \short_shift_full~0 (
+	.dataa(\short_shift_full~q ),
+	.datab(delay_reg_24_0),
+	.datac(\Equal0~1_combout ),
+	.datad(\always0~2_combout ),
+	.cin(gnd),
+	.combout(\short_shift_full~0_combout ),
+	.cout());
+defparam \short_shift_full~0 .lut_mask = 16'h00EA;
+defparam \short_shift_full~0 .sum_lutc_input = "datac";
+
+dffeas short_shift_full(
+	.clk(clk_clk),
+	.d(\short_shift_full~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.q(\short_shift_full~q ),
+	.prn(vcc));
+defparam short_shift_full.is_wysiwyg = "true";
+defparam short_shift_full.power_up = "low";
+
+fiftyfivenm_lcell_comb \intermediate_reg[3]~7 (
+	.dataa(altera_reset_synchronizer_int_chain_out),
+	.datab(delay_reg_24_0),
+	.datac(\short_shift_full~q ),
+	.datad(ppd_cfg_clear_rs),
+	.cin(gnd),
+	.combout(\intermediate_reg[3]~7_combout ),
+	.cout());
+defparam \intermediate_reg[3]~7 .lut_mask = 16'hFFD5;
+defparam \intermediate_reg[3]~7 .sum_lutc_input = "datac";
+
+dffeas \long_sum_reg[0] (
+	.clk(clk_clk),
+	.d(\long_sum_reg[0]~21_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\always0~0_combout ),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(\long_sum_reg[0]~q ),
+	.prn(vcc));
+defparam \long_sum_reg[0] .is_wysiwyg = "true";
+defparam \long_sum_reg[0] .power_up = "low";
+
+fiftyfivenm_lcell_comb \Add3~2 (
+	.dataa(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[1] ),
+	.datab(\long_sum_reg[1]~q ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\Add3~1 ),
+	.combout(\Add3~2_combout ),
+	.cout(\Add3~3 ));
+defparam \Add3~2 .lut_mask = 16'h9617;
+defparam \Add3~2 .sum_lutc_input = "cin";
+
+fiftyfivenm_lcell_comb \long_sum_reg[1]~23 (
+	.dataa(\Add3~2_combout ),
+	.datab(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[1] ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\long_sum_reg[0]~22 ),
+	.combout(\long_sum_reg[1]~23_combout ),
+	.cout(\long_sum_reg[1]~24 ));
+defparam \long_sum_reg[1]~23 .lut_mask = 16'h694D;
+defparam \long_sum_reg[1]~23 .sum_lutc_input = "cin";
+
+dffeas \long_sum_reg[1] (
+	.clk(clk_clk),
+	.d(\long_sum_reg[1]~23_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\always0~0_combout ),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(\long_sum_reg[1]~q ),
+	.prn(vcc));
+defparam \long_sum_reg[1] .is_wysiwyg = "true";
+defparam \long_sum_reg[1] .power_up = "low";
+
+fiftyfivenm_lcell_comb \Add3~4 (
+	.dataa(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[2] ),
+	.datab(\long_sum_reg[2]~q ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\Add3~3 ),
+	.combout(\Add3~4_combout ),
+	.cout(\Add3~5 ));
+defparam \Add3~4 .lut_mask = 16'h698E;
+defparam \Add3~4 .sum_lutc_input = "cin";
+
+fiftyfivenm_lcell_comb \long_sum_reg[2]~25 (
+	.dataa(\Add3~4_combout ),
+	.datab(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[2] ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\long_sum_reg[1]~24 ),
+	.combout(\long_sum_reg[2]~25_combout ),
+	.cout(\long_sum_reg[2]~26 ));
+defparam \long_sum_reg[2]~25 .lut_mask = 16'h962B;
+defparam \long_sum_reg[2]~25 .sum_lutc_input = "cin";
+
+dffeas \long_sum_reg[2] (
+	.clk(clk_clk),
+	.d(\long_sum_reg[2]~25_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\always0~0_combout ),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(\long_sum_reg[2]~q ),
+	.prn(vcc));
+defparam \long_sum_reg[2] .is_wysiwyg = "true";
+defparam \long_sum_reg[2] .power_up = "low";
+
+fiftyfivenm_lcell_comb \Add3~6 (
+	.dataa(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[3] ),
+	.datab(\long_sum_reg[3]~q ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\Add3~5 ),
+	.combout(\Add3~6_combout ),
+	.cout(\Add3~7 ));
+defparam \Add3~6 .lut_mask = 16'h9617;
+defparam \Add3~6 .sum_lutc_input = "cin";
+
+fiftyfivenm_lcell_comb \long_sum_reg[3]~27 (
+	.dataa(\Add3~6_combout ),
+	.datab(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[3] ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\long_sum_reg[2]~26 ),
+	.combout(\long_sum_reg[3]~27_combout ),
+	.cout(\long_sum_reg[3]~28 ));
+defparam \long_sum_reg[3]~27 .lut_mask = 16'h694D;
+defparam \long_sum_reg[3]~27 .sum_lutc_input = "cin";
+
+dffeas \long_sum_reg[3] (
+	.clk(clk_clk),
+	.d(\long_sum_reg[3]~27_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\always0~0_combout ),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(\long_sum_reg[3]~q ),
+	.prn(vcc));
+defparam \long_sum_reg[3] .is_wysiwyg = "true";
+defparam \long_sum_reg[3] .power_up = "low";
+
+fiftyfivenm_lcell_comb \Add3~8 (
+	.dataa(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[4] ),
+	.datab(\long_sum_reg[4]~q ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\Add3~7 ),
+	.combout(\Add3~8_combout ),
+	.cout(\Add3~9 ));
+defparam \Add3~8 .lut_mask = 16'h698E;
+defparam \Add3~8 .sum_lutc_input = "cin";
+
+fiftyfivenm_lcell_comb \long_sum_reg[4]~29 (
+	.dataa(\Add3~8_combout ),
+	.datab(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[4] ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\long_sum_reg[3]~28 ),
+	.combout(\long_sum_reg[4]~29_combout ),
+	.cout(\long_sum_reg[4]~30 ));
+defparam \long_sum_reg[4]~29 .lut_mask = 16'h962B;
+defparam \long_sum_reg[4]~29 .sum_lutc_input = "cin";
+
+dffeas \long_sum_reg[4] (
+	.clk(clk_clk),
+	.d(\long_sum_reg[4]~29_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\always0~0_combout ),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(\long_sum_reg[4]~q ),
+	.prn(vcc));
+defparam \long_sum_reg[4] .is_wysiwyg = "true";
+defparam \long_sum_reg[4] .power_up = "low";
+
+fiftyfivenm_lcell_comb \Add3~10 (
+	.dataa(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[5] ),
+	.datab(\long_sum_reg[5]~q ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\Add3~9 ),
+	.combout(\Add3~10_combout ),
+	.cout(\Add3~11 ));
+defparam \Add3~10 .lut_mask = 16'h9617;
+defparam \Add3~10 .sum_lutc_input = "cin";
+
+fiftyfivenm_lcell_comb \long_sum_reg[5]~31 (
+	.dataa(\Add3~10_combout ),
+	.datab(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[5] ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\long_sum_reg[4]~30 ),
+	.combout(\long_sum_reg[5]~31_combout ),
+	.cout(\long_sum_reg[5]~32 ));
+defparam \long_sum_reg[5]~31 .lut_mask = 16'h694D;
+defparam \long_sum_reg[5]~31 .sum_lutc_input = "cin";
+
+dffeas \long_sum_reg[5] (
+	.clk(clk_clk),
+	.d(\long_sum_reg[5]~31_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\always0~0_combout ),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(\long_sum_reg[5]~q ),
+	.prn(vcc));
+defparam \long_sum_reg[5] .is_wysiwyg = "true";
+defparam \long_sum_reg[5] .power_up = "low";
+
+fiftyfivenm_lcell_comb \Add3~12 (
+	.dataa(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[6] ),
+	.datab(\long_sum_reg[6]~q ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\Add3~11 ),
+	.combout(\Add3~12_combout ),
+	.cout(\Add3~13 ));
+defparam \Add3~12 .lut_mask = 16'h698E;
+defparam \Add3~12 .sum_lutc_input = "cin";
+
+fiftyfivenm_lcell_comb \long_sum_reg[6]~33 (
+	.dataa(\Add3~12_combout ),
+	.datab(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[6] ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\long_sum_reg[5]~32 ),
+	.combout(\long_sum_reg[6]~33_combout ),
+	.cout(\long_sum_reg[6]~34 ));
+defparam \long_sum_reg[6]~33 .lut_mask = 16'h962B;
+defparam \long_sum_reg[6]~33 .sum_lutc_input = "cin";
+
+dffeas \long_sum_reg[6] (
+	.clk(clk_clk),
+	.d(\long_sum_reg[6]~33_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\always0~0_combout ),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(\long_sum_reg[6]~q ),
+	.prn(vcc));
+defparam \long_sum_reg[6] .is_wysiwyg = "true";
+defparam \long_sum_reg[6] .power_up = "low";
+
+fiftyfivenm_lcell_comb \Add3~14 (
+	.dataa(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[7] ),
+	.datab(\long_sum_reg[7]~q ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\Add3~13 ),
+	.combout(\Add3~14_combout ),
+	.cout(\Add3~15 ));
+defparam \Add3~14 .lut_mask = 16'h9617;
+defparam \Add3~14 .sum_lutc_input = "cin";
+
+fiftyfivenm_lcell_comb \long_sum_reg[7]~35 (
+	.dataa(\Add3~14_combout ),
+	.datab(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[7] ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\long_sum_reg[6]~34 ),
+	.combout(\long_sum_reg[7]~35_combout ),
+	.cout(\long_sum_reg[7]~36 ));
+defparam \long_sum_reg[7]~35 .lut_mask = 16'h694D;
+defparam \long_sum_reg[7]~35 .sum_lutc_input = "cin";
+
+dffeas \long_sum_reg[7] (
+	.clk(clk_clk),
+	.d(\long_sum_reg[7]~35_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\always0~0_combout ),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(\long_sum_reg[7]~q ),
+	.prn(vcc));
+defparam \long_sum_reg[7] .is_wysiwyg = "true";
+defparam \long_sum_reg[7] .power_up = "low";
+
+fiftyfivenm_lcell_comb \Add3~16 (
+	.dataa(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[8] ),
+	.datab(\long_sum_reg[8]~q ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\Add3~15 ),
+	.combout(\Add3~16_combout ),
+	.cout(\Add3~17 ));
+defparam \Add3~16 .lut_mask = 16'h698E;
+defparam \Add3~16 .sum_lutc_input = "cin";
+
+fiftyfivenm_lcell_comb \long_sum_reg[8]~37 (
+	.dataa(\Add3~16_combout ),
+	.datab(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[8] ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\long_sum_reg[7]~36 ),
+	.combout(\long_sum_reg[8]~37_combout ),
+	.cout(\long_sum_reg[8]~38 ));
+defparam \long_sum_reg[8]~37 .lut_mask = 16'h962B;
+defparam \long_sum_reg[8]~37 .sum_lutc_input = "cin";
+
+dffeas \long_sum_reg[8] (
+	.clk(clk_clk),
+	.d(\long_sum_reg[8]~37_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\always0~0_combout ),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(\long_sum_reg[8]~q ),
+	.prn(vcc));
+defparam \long_sum_reg[8] .is_wysiwyg = "true";
+defparam \long_sum_reg[8] .power_up = "low";
+
+fiftyfivenm_lcell_comb \Add3~18 (
+	.dataa(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[9] ),
+	.datab(\long_sum_reg[9]~q ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\Add3~17 ),
+	.combout(\Add3~18_combout ),
+	.cout(\Add3~19 ));
+defparam \Add3~18 .lut_mask = 16'h9617;
+defparam \Add3~18 .sum_lutc_input = "cin";
+
+fiftyfivenm_lcell_comb \long_sum_reg[9]~39 (
+	.dataa(\Add3~18_combout ),
+	.datab(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[9] ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\long_sum_reg[8]~38 ),
+	.combout(\long_sum_reg[9]~39_combout ),
+	.cout(\long_sum_reg[9]~40 ));
+defparam \long_sum_reg[9]~39 .lut_mask = 16'h694D;
+defparam \long_sum_reg[9]~39 .sum_lutc_input = "cin";
+
+dffeas \long_sum_reg[9] (
+	.clk(clk_clk),
+	.d(\long_sum_reg[9]~39_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\always0~0_combout ),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(\long_sum_reg[9]~q ),
+	.prn(vcc));
+defparam \long_sum_reg[9] .is_wysiwyg = "true";
+defparam \long_sum_reg[9] .power_up = "low";
+
+fiftyfivenm_lcell_comb \Add3~20 (
+	.dataa(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[10] ),
+	.datab(\long_sum_reg[10]~q ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\Add3~19 ),
+	.combout(\Add3~20_combout ),
+	.cout(\Add3~21 ));
+defparam \Add3~20 .lut_mask = 16'h698E;
+defparam \Add3~20 .sum_lutc_input = "cin";
+
+fiftyfivenm_lcell_comb \long_sum_reg[10]~41 (
+	.dataa(\Add3~20_combout ),
+	.datab(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[10] ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\long_sum_reg[9]~40 ),
+	.combout(\long_sum_reg[10]~41_combout ),
+	.cout(\long_sum_reg[10]~42 ));
+defparam \long_sum_reg[10]~41 .lut_mask = 16'h962B;
+defparam \long_sum_reg[10]~41 .sum_lutc_input = "cin";
+
+dffeas \long_sum_reg[10] (
+	.clk(clk_clk),
+	.d(\long_sum_reg[10]~41_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\always0~0_combout ),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(\long_sum_reg[10]~q ),
+	.prn(vcc));
+defparam \long_sum_reg[10] .is_wysiwyg = "true";
+defparam \long_sum_reg[10] .power_up = "low";
+
+fiftyfivenm_lcell_comb \Add3~22 (
+	.dataa(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[11] ),
+	.datab(\long_sum_reg[11]~q ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\Add3~21 ),
+	.combout(\Add3~22_combout ),
+	.cout(\Add3~23 ));
+defparam \Add3~22 .lut_mask = 16'h9617;
+defparam \Add3~22 .sum_lutc_input = "cin";
+
+fiftyfivenm_lcell_comb \long_sum_reg[11]~43 (
+	.dataa(\Add3~22_combout ),
+	.datab(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[11] ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\long_sum_reg[10]~42 ),
+	.combout(\long_sum_reg[11]~43_combout ),
+	.cout(\long_sum_reg[11]~44 ));
+defparam \long_sum_reg[11]~43 .lut_mask = 16'h694D;
+defparam \long_sum_reg[11]~43 .sum_lutc_input = "cin";
+
+dffeas \long_sum_reg[11] (
+	.clk(clk_clk),
+	.d(\long_sum_reg[11]~43_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\always0~0_combout ),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(\long_sum_reg[11]~q ),
+	.prn(vcc));
+defparam \long_sum_reg[11] .is_wysiwyg = "true";
+defparam \long_sum_reg[11] .power_up = "low";
+
+fiftyfivenm_lcell_comb \Add3~24 (
+	.dataa(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[12] ),
+	.datab(\long_sum_reg[12]~q ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\Add3~23 ),
+	.combout(\Add3~24_combout ),
+	.cout(\Add3~25 ));
+defparam \Add3~24 .lut_mask = 16'h698E;
+defparam \Add3~24 .sum_lutc_input = "cin";
+
+fiftyfivenm_lcell_comb \long_sum_reg[12]~45 (
+	.dataa(\Add3~24_combout ),
+	.datab(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[12] ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\long_sum_reg[11]~44 ),
+	.combout(\long_sum_reg[12]~45_combout ),
+	.cout(\long_sum_reg[12]~46 ));
+defparam \long_sum_reg[12]~45 .lut_mask = 16'h962B;
+defparam \long_sum_reg[12]~45 .sum_lutc_input = "cin";
+
+dffeas \long_sum_reg[12] (
+	.clk(clk_clk),
+	.d(\long_sum_reg[12]~45_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\always0~0_combout ),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(\long_sum_reg[12]~q ),
+	.prn(vcc));
+defparam \long_sum_reg[12] .is_wysiwyg = "true";
+defparam \long_sum_reg[12] .power_up = "low";
+
+fiftyfivenm_lcell_comb \Add3~26 (
+	.dataa(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[13] ),
+	.datab(\long_sum_reg[13]~q ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\Add3~25 ),
+	.combout(\Add3~26_combout ),
+	.cout(\Add3~27 ));
+defparam \Add3~26 .lut_mask = 16'h9617;
+defparam \Add3~26 .sum_lutc_input = "cin";
+
+fiftyfivenm_lcell_comb \long_sum_reg[13]~47 (
+	.dataa(\Add3~26_combout ),
+	.datab(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[13] ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\long_sum_reg[12]~46 ),
+	.combout(\long_sum_reg[13]~47_combout ),
+	.cout(\long_sum_reg[13]~48 ));
+defparam \long_sum_reg[13]~47 .lut_mask = 16'h694D;
+defparam \long_sum_reg[13]~47 .sum_lutc_input = "cin";
+
+dffeas \long_sum_reg[13] (
+	.clk(clk_clk),
+	.d(\long_sum_reg[13]~47_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\always0~0_combout ),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(\long_sum_reg[13]~q ),
+	.prn(vcc));
+defparam \long_sum_reg[13] .is_wysiwyg = "true";
+defparam \long_sum_reg[13] .power_up = "low";
+
+fiftyfivenm_lcell_comb \Add3~28 (
+	.dataa(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[14] ),
+	.datab(\long_sum_reg[14]~q ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\Add3~27 ),
+	.combout(\Add3~28_combout ),
+	.cout(\Add3~29 ));
+defparam \Add3~28 .lut_mask = 16'h698E;
+defparam \Add3~28 .sum_lutc_input = "cin";
+
+fiftyfivenm_lcell_comb \long_sum_reg[14]~49 (
+	.dataa(\Add3~28_combout ),
+	.datab(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[14] ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\long_sum_reg[13]~48 ),
+	.combout(\long_sum_reg[14]~49_combout ),
+	.cout(\long_sum_reg[14]~50 ));
+defparam \long_sum_reg[14]~49 .lut_mask = 16'h962B;
+defparam \long_sum_reg[14]~49 .sum_lutc_input = "cin";
+
+dffeas \long_sum_reg[14] (
+	.clk(clk_clk),
+	.d(\long_sum_reg[14]~49_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\always0~0_combout ),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(\long_sum_reg[14]~q ),
+	.prn(vcc));
+defparam \long_sum_reg[14] .is_wysiwyg = "true";
+defparam \long_sum_reg[14] .power_up = "low";
+
+fiftyfivenm_lcell_comb \Add3~30 (
+	.dataa(\short_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[15] ),
+	.datab(\long_sum_reg[15]~q ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\Add3~29 ),
+	.combout(\Add3~30_combout ),
+	.cout(\Add3~31 ));
+defparam \Add3~30 .lut_mask = 16'h9617;
+defparam \Add3~30 .sum_lutc_input = "cin";
+
+fiftyfivenm_lcell_comb \long_sum_reg[15]~51 (
+	.dataa(\Add3~30_combout ),
+	.datab(\long_shift_inst|ALTSHIFT_TAPS_component|auto_generated|altsyncram2|q_b[15] ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\long_sum_reg[14]~50 ),
+	.combout(\long_sum_reg[15]~51_combout ),
+	.cout(\long_sum_reg[15]~52 ));
+defparam \long_sum_reg[15]~51 .lut_mask = 16'h694D;
+defparam \long_sum_reg[15]~51 .sum_lutc_input = "cin";
+
+dffeas \long_sum_reg[15] (
+	.clk(clk_clk),
+	.d(\long_sum_reg[15]~51_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\always0~0_combout ),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(\long_sum_reg[15]~q ),
+	.prn(vcc));
+defparam \long_sum_reg[15] .is_wysiwyg = "true";
+defparam \long_sum_reg[15] .power_up = "low";
+
+fiftyfivenm_lcell_comb \Add3~32 (
+	.dataa(\long_sum_reg[16]~q ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\Add3~31 ),
+	.combout(\Add3~32_combout ),
+	.cout(\Add3~33 ));
+defparam \Add3~32 .lut_mask = 16'hA50A;
+defparam \Add3~32 .sum_lutc_input = "cin";
+
+fiftyfivenm_lcell_comb \long_sum_reg[16]~53 (
+	.dataa(\Add3~32_combout ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\long_sum_reg[15]~52 ),
+	.combout(\long_sum_reg[16]~53_combout ),
+	.cout(\long_sum_reg[16]~54 ));
+defparam \long_sum_reg[16]~53 .lut_mask = 16'h5AAF;
+defparam \long_sum_reg[16]~53 .sum_lutc_input = "cin";
+
+dffeas \long_sum_reg[16] (
+	.clk(clk_clk),
+	.d(\long_sum_reg[16]~53_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\always0~0_combout ),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(\long_sum_reg[16]~q ),
+	.prn(vcc));
+defparam \long_sum_reg[16] .is_wysiwyg = "true";
+defparam \long_sum_reg[16] .power_up = "low";
+
+fiftyfivenm_lcell_comb \Add3~34 (
+	.dataa(\long_sum_reg[17]~q ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\Add3~33 ),
+	.combout(\Add3~34_combout ),
+	.cout(\Add3~35 ));
+defparam \Add3~34 .lut_mask = 16'h5A5F;
+defparam \Add3~34 .sum_lutc_input = "cin";
+
+fiftyfivenm_lcell_comb \long_sum_reg[17]~55 (
+	.dataa(\Add3~34_combout ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\long_sum_reg[16]~54 ),
+	.combout(\long_sum_reg[17]~55_combout ),
+	.cout(\long_sum_reg[17]~56 ));
+defparam \long_sum_reg[17]~55 .lut_mask = 16'hA505;
+defparam \long_sum_reg[17]~55 .sum_lutc_input = "cin";
+
+dffeas \long_sum_reg[17] (
+	.clk(clk_clk),
+	.d(\long_sum_reg[17]~55_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\always0~0_combout ),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(\long_sum_reg[17]~q ),
+	.prn(vcc));
+defparam \long_sum_reg[17] .is_wysiwyg = "true";
+defparam \long_sum_reg[17] .power_up = "low";
+
+fiftyfivenm_mac_mult \Mult0|auto_generated|mac_mult1 (
+	.signa(gnd),
+	.signb(gnd),
+	.clk(gnd),
+	.aclr(gnd),
+	.ena(vcc),
+	.dataa({\long_sum_reg[17]~q ,\long_sum_reg[16]~q ,\long_sum_reg[15]~q ,\long_sum_reg[14]~q ,\long_sum_reg[13]~q ,\long_sum_reg[12]~q ,\long_sum_reg[11]~q ,\long_sum_reg[10]~q ,\long_sum_reg[9]~q ,\long_sum_reg[8]~q ,\long_sum_reg[7]~q ,\long_sum_reg[6]~q ,\long_sum_reg[5]~q ,
+\long_sum_reg[4]~q ,\long_sum_reg[3]~q ,\long_sum_reg[2]~q ,\long_sum_reg[1]~q ,\long_sum_reg[0]~q }),
+	.datab({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,ppd_cfg_threshold_7,ppd_cfg_threshold_6,ppd_cfg_threshold_5,ppd_cfg_threshold_4,ppd_cfg_threshold_3,ppd_cfg_threshold_2,ppd_cfg_threshold_1,ppd_cfg_threshold_0}),
+	.dataout(\Mult0|auto_generated|mac_mult1_DATAOUT_bus ));
+defparam \Mult0|auto_generated|mac_mult1 .dataa_clock = "none";
+defparam \Mult0|auto_generated|mac_mult1 .dataa_width = 18;
+defparam \Mult0|auto_generated|mac_mult1 .datab_clock = "none";
+defparam \Mult0|auto_generated|mac_mult1 .datab_width = 8;
+defparam \Mult0|auto_generated|mac_mult1 .signa_clock = "none";
+defparam \Mult0|auto_generated|mac_mult1 .signb_clock = "none";
+
+fiftyfivenm_mac_out \Mult0|auto_generated|mac_out2 (
+	.clk(gnd),
+	.aclr(gnd),
+	.ena(vcc),
+	.dataa({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,\Mult0|auto_generated|mac_mult1~DATAOUT25 ,\Mult0|auto_generated|mac_mult1~DATAOUT24 ,\Mult0|auto_generated|mac_mult1~DATAOUT23 ,\Mult0|auto_generated|mac_mult1~DATAOUT22 ,\Mult0|auto_generated|mac_mult1~DATAOUT21 ,
+\Mult0|auto_generated|mac_mult1~DATAOUT20 ,\Mult0|auto_generated|mac_mult1~DATAOUT19 ,\Mult0|auto_generated|mac_mult1~DATAOUT18 ,\Mult0|auto_generated|mac_mult1~DATAOUT17 ,\Mult0|auto_generated|mac_mult1~DATAOUT16 ,\Mult0|auto_generated|mac_mult1~DATAOUT15 ,
+\Mult0|auto_generated|mac_mult1~DATAOUT14 ,\Mult0|auto_generated|mac_mult1~DATAOUT13 ,\Mult0|auto_generated|mac_mult1~DATAOUT12 ,\Mult0|auto_generated|mac_mult1~DATAOUT11 ,\Mult0|auto_generated|mac_mult1~DATAOUT10 ,\Mult0|auto_generated|mac_mult1~DATAOUT9 ,
+\Mult0|auto_generated|mac_mult1~DATAOUT8 ,\Mult0|auto_generated|mac_mult1~DATAOUT7 ,\Mult0|auto_generated|mac_mult1~DATAOUT6 ,\Mult0|auto_generated|mac_mult1~DATAOUT5 ,\Mult0|auto_generated|mac_mult1~DATAOUT4 ,\Mult0|auto_generated|mac_mult1~DATAOUT3 ,
+\Mult0|auto_generated|mac_mult1~DATAOUT2 ,\Mult0|auto_generated|mac_mult1~DATAOUT1 ,\Mult0|auto_generated|mac_mult1~dataout }),
+	.dataout(\Mult0|auto_generated|mac_out2_DATAOUT_bus ));
+defparam \Mult0|auto_generated|mac_out2 .dataa_width = 26;
+defparam \Mult0|auto_generated|mac_out2 .output_clock = "none";
+
+fiftyfivenm_lcell_comb \intermediate_reg~6 (
+	.dataa(altera_reset_synchronizer_int_chain_out),
+	.datab(\Mult0|auto_generated|w138w[3] ),
+	.datac(gnd),
+	.datad(ppd_cfg_clear_rs),
+	.cin(gnd),
+	.combout(\intermediate_reg~6_combout ),
+	.cout());
+defparam \intermediate_reg~6 .lut_mask = 16'h0088;
+defparam \intermediate_reg~6 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \intermediate_reg~8 (
+	.dataa(altera_reset_synchronizer_int_chain_out),
+	.datab(\Mult0|auto_generated|w138w[4] ),
+	.datac(gnd),
+	.datad(ppd_cfg_clear_rs),
+	.cin(gnd),
+	.combout(\intermediate_reg~8_combout ),
+	.cout());
+defparam \intermediate_reg~8 .lut_mask = 16'h0088;
+defparam \intermediate_reg~8 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \intermediate_reg~9 (
+	.dataa(altera_reset_synchronizer_int_chain_out),
+	.datab(\Mult0|auto_generated|w138w[5] ),
+	.datac(gnd),
+	.datad(ppd_cfg_clear_rs),
+	.cin(gnd),
+	.combout(\intermediate_reg~9_combout ),
+	.cout());
+defparam \intermediate_reg~9 .lut_mask = 16'h0088;
+defparam \intermediate_reg~9 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \intermediate_reg~10 (
+	.dataa(altera_reset_synchronizer_int_chain_out),
+	.datab(\Mult0|auto_generated|w138w[6] ),
+	.datac(gnd),
+	.datad(ppd_cfg_clear_rs),
+	.cin(gnd),
+	.combout(\intermediate_reg~10_combout ),
+	.cout());
+defparam \intermediate_reg~10 .lut_mask = 16'h0088;
+defparam \intermediate_reg~10 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \intermediate_reg~11 (
+	.dataa(altera_reset_synchronizer_int_chain_out),
+	.datab(\Mult0|auto_generated|w138w[7] ),
+	.datac(gnd),
+	.datad(ppd_cfg_clear_rs),
+	.cin(gnd),
+	.combout(\intermediate_reg~11_combout ),
+	.cout());
+defparam \intermediate_reg~11 .lut_mask = 16'h0088;
+defparam \intermediate_reg~11 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \intermediate_reg~12 (
+	.dataa(altera_reset_synchronizer_int_chain_out),
+	.datab(\Mult0|auto_generated|w138w[8] ),
+	.datac(gnd),
+	.datad(ppd_cfg_clear_rs),
+	.cin(gnd),
+	.combout(\intermediate_reg~12_combout ),
+	.cout());
+defparam \intermediate_reg~12 .lut_mask = 16'h0088;
+defparam \intermediate_reg~12 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \intermediate_reg~13 (
+	.dataa(altera_reset_synchronizer_int_chain_out),
+	.datab(\Mult0|auto_generated|w138w[9] ),
+	.datac(gnd),
+	.datad(ppd_cfg_clear_rs),
+	.cin(gnd),
+	.combout(\intermediate_reg~13_combout ),
+	.cout());
+defparam \intermediate_reg~13 .lut_mask = 16'h0088;
+defparam \intermediate_reg~13 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \intermediate_reg~14 (
+	.dataa(altera_reset_synchronizer_int_chain_out),
+	.datab(\Mult0|auto_generated|w138w[10] ),
+	.datac(gnd),
+	.datad(ppd_cfg_clear_rs),
+	.cin(gnd),
+	.combout(\intermediate_reg~14_combout ),
+	.cout());
+defparam \intermediate_reg~14 .lut_mask = 16'h0088;
+defparam \intermediate_reg~14 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \intermediate_reg~15 (
+	.dataa(altera_reset_synchronizer_int_chain_out),
+	.datab(\Mult0|auto_generated|w138w[11] ),
+	.datac(gnd),
+	.datad(ppd_cfg_clear_rs),
+	.cin(gnd),
+	.combout(\intermediate_reg~15_combout ),
+	.cout());
+defparam \intermediate_reg~15 .lut_mask = 16'h0088;
+defparam \intermediate_reg~15 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \intermediate_reg~16 (
+	.dataa(altera_reset_synchronizer_int_chain_out),
+	.datab(\Mult0|auto_generated|w138w[12] ),
+	.datac(gnd),
+	.datad(ppd_cfg_clear_rs),
+	.cin(gnd),
+	.combout(\intermediate_reg~16_combout ),
+	.cout());
+defparam \intermediate_reg~16 .lut_mask = 16'h0088;
+defparam \intermediate_reg~16 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \intermediate_reg~17 (
+	.dataa(altera_reset_synchronizer_int_chain_out),
+	.datab(\Mult0|auto_generated|w138w[13] ),
+	.datac(gnd),
+	.datad(ppd_cfg_clear_rs),
+	.cin(gnd),
+	.combout(\intermediate_reg~17_combout ),
+	.cout());
+defparam \intermediate_reg~17 .lut_mask = 16'h0088;
+defparam \intermediate_reg~17 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \intermediate_reg~18 (
+	.dataa(altera_reset_synchronizer_int_chain_out),
+	.datab(\Mult0|auto_generated|w138w[14] ),
+	.datac(gnd),
+	.datad(ppd_cfg_clear_rs),
+	.cin(gnd),
+	.combout(\intermediate_reg~18_combout ),
+	.cout());
+defparam \intermediate_reg~18 .lut_mask = 16'h0088;
+defparam \intermediate_reg~18 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \intermediate_reg~19 (
+	.dataa(altera_reset_synchronizer_int_chain_out),
+	.datab(\Mult0|auto_generated|w138w[15] ),
+	.datac(gnd),
+	.datad(ppd_cfg_clear_rs),
+	.cin(gnd),
+	.combout(\intermediate_reg~19_combout ),
+	.cout());
+defparam \intermediate_reg~19 .lut_mask = 16'h0088;
+defparam \intermediate_reg~19 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \intermediate_reg~20 (
+	.dataa(altera_reset_synchronizer_int_chain_out),
+	.datab(\Mult0|auto_generated|w138w[16] ),
+	.datac(gnd),
+	.datad(ppd_cfg_clear_rs),
+	.cin(gnd),
+	.combout(\intermediate_reg~20_combout ),
+	.cout());
+defparam \intermediate_reg~20 .lut_mask = 16'h0088;
+defparam \intermediate_reg~20 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \intermediate_reg~21 (
+	.dataa(altera_reset_synchronizer_int_chain_out),
+	.datab(\Mult0|auto_generated|w138w[17] ),
+	.datac(gnd),
+	.datad(ppd_cfg_clear_rs),
+	.cin(gnd),
+	.combout(\intermediate_reg~21_combout ),
+	.cout());
+defparam \intermediate_reg~21 .lut_mask = 16'h0088;
+defparam \intermediate_reg~21 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \Add3~36 (
+	.dataa(\long_sum_reg[18]~q ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\Add3~35 ),
+	.combout(\Add3~36_combout ),
+	.cout(\Add3~37 ));
+defparam \Add3~36 .lut_mask = 16'hA50A;
+defparam \Add3~36 .sum_lutc_input = "cin";
+
+fiftyfivenm_lcell_comb \long_sum_reg[18]~57 (
+	.dataa(\Add3~36_combout ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\long_sum_reg[17]~56 ),
+	.combout(\long_sum_reg[18]~57_combout ),
+	.cout(\long_sum_reg[18]~58 ));
+defparam \long_sum_reg[18]~57 .lut_mask = 16'h5AAF;
+defparam \long_sum_reg[18]~57 .sum_lutc_input = "cin";
+
+dffeas \long_sum_reg[18] (
+	.clk(clk_clk),
+	.d(\long_sum_reg[18]~57_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\always0~0_combout ),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(\long_sum_reg[18]~q ),
+	.prn(vcc));
+defparam \long_sum_reg[18] .is_wysiwyg = "true";
+defparam \long_sum_reg[18] .power_up = "low";
+
+fiftyfivenm_lcell_comb \Add3~38 (
+	.dataa(\long_sum_reg[19]~q ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\Add3~37 ),
+	.combout(\Add3~38_combout ),
+	.cout(\Add3~39 ));
+defparam \Add3~38 .lut_mask = 16'h5A5F;
+defparam \Add3~38 .sum_lutc_input = "cin";
+
+fiftyfivenm_lcell_comb \long_sum_reg[19]~59 (
+	.dataa(\Add3~38_combout ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\long_sum_reg[18]~58 ),
+	.combout(\long_sum_reg[19]~59_combout ),
+	.cout(\long_sum_reg[19]~60 ));
+defparam \long_sum_reg[19]~59 .lut_mask = 16'hA505;
+defparam \long_sum_reg[19]~59 .sum_lutc_input = "cin";
+
+dffeas \long_sum_reg[19] (
+	.clk(clk_clk),
+	.d(\long_sum_reg[19]~59_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\always0~0_combout ),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(\long_sum_reg[19]~q ),
+	.prn(vcc));
+defparam \long_sum_reg[19] .is_wysiwyg = "true";
+defparam \long_sum_reg[19] .power_up = "low";
+
+fiftyfivenm_lcell_comb \Add3~40 (
+	.dataa(\long_sum_reg[20]~q ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.cin(\Add3~39 ),
+	.combout(\Add3~40_combout ),
+	.cout());
+defparam \Add3~40 .lut_mask = 16'hA5A5;
+defparam \Add3~40 .sum_lutc_input = "cin";
+
+fiftyfivenm_lcell_comb \long_sum_reg[20]~61 (
+	.dataa(\Add3~40_combout ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.cin(\long_sum_reg[19]~60 ),
+	.combout(\long_sum_reg[20]~61_combout ),
+	.cout());
+defparam \long_sum_reg[20]~61 .lut_mask = 16'h5A5A;
+defparam \long_sum_reg[20]~61 .sum_lutc_input = "cin";
+
+dffeas \long_sum_reg[20] (
+	.clk(clk_clk),
+	.d(\long_sum_reg[20]~61_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\always0~0_combout ),
+	.sload(gnd),
+	.ena(\intermediate_reg[3]~7_combout ),
+	.q(\long_sum_reg[20]~q ),
+	.prn(vcc));
+defparam \long_sum_reg[20] .is_wysiwyg = "true";
+defparam \long_sum_reg[20] .power_up = "low";
+
+fiftyfivenm_mac_mult \Mult0|auto_generated|mac_mult3 (
+	.signa(gnd),
+	.signb(gnd),
+	.clk(gnd),
+	.aclr(gnd),
+	.ena(vcc),
+	.dataa({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,\long_sum_reg[20]~q ,\long_sum_reg[19]~q ,\long_sum_reg[18]~q }),
+	.datab({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,ppd_cfg_threshold_7,ppd_cfg_threshold_6,ppd_cfg_threshold_5,ppd_cfg_threshold_4,ppd_cfg_threshold_3,ppd_cfg_threshold_2,ppd_cfg_threshold_1,ppd_cfg_threshold_0}),
+	.dataout(\Mult0|auto_generated|mac_mult3_DATAOUT_bus ));
+defparam \Mult0|auto_generated|mac_mult3 .dataa_clock = "none";
+defparam \Mult0|auto_generated|mac_mult3 .dataa_width = 3;
+defparam \Mult0|auto_generated|mac_mult3 .datab_clock = "none";
+defparam \Mult0|auto_generated|mac_mult3 .datab_width = 8;
+defparam \Mult0|auto_generated|mac_mult3 .signa_clock = "none";
+defparam \Mult0|auto_generated|mac_mult3 .signb_clock = "none";
+
+fiftyfivenm_mac_out \Mult0|auto_generated|mac_out4 (
+	.clk(gnd),
+	.aclr(gnd),
+	.ena(vcc),
+	.dataa({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,\Mult0|auto_generated|mac_mult3~DATAOUT10 ,\Mult0|auto_generated|mac_mult3~DATAOUT9 ,\Mult0|auto_generated|mac_mult3~DATAOUT8 ,\Mult0|auto_generated|mac_mult3~DATAOUT7 ,
+\Mult0|auto_generated|mac_mult3~DATAOUT6 ,\Mult0|auto_generated|mac_mult3~DATAOUT5 ,\Mult0|auto_generated|mac_mult3~DATAOUT4 ,\Mult0|auto_generated|mac_mult3~DATAOUT3 ,\Mult0|auto_generated|mac_mult3~DATAOUT2 ,\Mult0|auto_generated|mac_mult3~DATAOUT1 ,
+\Mult0|auto_generated|mac_mult3~dataout }),
+	.dataout(\Mult0|auto_generated|mac_out4_DATAOUT_bus ));
+defparam \Mult0|auto_generated|mac_out4 .dataa_width = 11;
+defparam \Mult0|auto_generated|mac_out4 .output_clock = "none";
+
+fiftyfivenm_lcell_comb \Mult0|auto_generated|op_1~0 (
+	.dataa(\Mult0|auto_generated|mac_out4~dataout ),
+	.datab(\Mult0|auto_generated|mac_out2~DATAOUT18 ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(gnd),
+	.combout(\Mult0|auto_generated|op_1~0_combout ),
+	.cout(\Mult0|auto_generated|op_1~1 ));
+defparam \Mult0|auto_generated|op_1~0 .lut_mask = 16'h6688;
+defparam \Mult0|auto_generated|op_1~0 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \intermediate_reg~22 (
+	.dataa(altera_reset_synchronizer_int_chain_out),
+	.datab(ppd_cfg_clear_rs),
+	.datac(\Mult0|auto_generated|op_1~0_combout ),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\intermediate_reg~22_combout ),
+	.cout());
+defparam \intermediate_reg~22 .lut_mask = 16'h2020;
+defparam \intermediate_reg~22 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \Mult0|auto_generated|op_1~2 (
+	.dataa(\Mult0|auto_generated|mac_out4~DATAOUT1 ),
+	.datab(\Mult0|auto_generated|mac_out2~DATAOUT19 ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\Mult0|auto_generated|op_1~1 ),
+	.combout(\Mult0|auto_generated|op_1~2_combout ),
+	.cout(\Mult0|auto_generated|op_1~3 ));
+defparam \Mult0|auto_generated|op_1~2 .lut_mask = 16'h9617;
+defparam \Mult0|auto_generated|op_1~2 .sum_lutc_input = "cin";
+
+fiftyfivenm_lcell_comb \intermediate_reg~23 (
+	.dataa(altera_reset_synchronizer_int_chain_out),
+	.datab(ppd_cfg_clear_rs),
+	.datac(\Mult0|auto_generated|op_1~2_combout ),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\intermediate_reg~23_combout ),
+	.cout());
+defparam \intermediate_reg~23 .lut_mask = 16'h2020;
+defparam \intermediate_reg~23 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \Mult0|auto_generated|op_1~4 (
+	.dataa(\Mult0|auto_generated|mac_out4~DATAOUT2 ),
+	.datab(\Mult0|auto_generated|mac_out2~DATAOUT20 ),
+	.datac(gnd),
+	.datad(gnd),
+	.cin(\Mult0|auto_generated|op_1~3 ),
+	.combout(\Mult0|auto_generated|op_1~4_combout ),
+	.cout());
+defparam \Mult0|auto_generated|op_1~4 .lut_mask = 16'h6969;
+defparam \Mult0|auto_generated|op_1~4 .sum_lutc_input = "cin";
+
+fiftyfivenm_lcell_comb \intermediate_reg~24 (
+	.dataa(altera_reset_synchronizer_int_chain_out),
+	.datab(ppd_cfg_clear_rs),
+	.datac(\Mult0|auto_generated|op_1~4_combout ),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\intermediate_reg~24_combout ),
+	.cout());
+defparam \intermediate_reg~24 .lut_mask = 16'h2020;
+defparam \intermediate_reg~24 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \short_to_long_arrived~0 (
+	.dataa(delay_reg_24_0),
+	.datab(\short_shift_full~q ),
+	.datac(gnd),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\short_to_long_arrived~0_combout ),
+	.cout());
+defparam \short_to_long_arrived~0 .lut_mask = 16'h8888;
+defparam \short_to_long_arrived~0 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \short_to_long_arrived~1 (
+	.dataa(short_to_long_arrived1),
+	.datab(\short_to_long_arrived~0_combout ),
+	.datac(\Equal0~1_combout ),
+	.datad(\always0~2_combout ),
+	.cin(gnd),
+	.combout(\short_to_long_arrived~1_combout ),
+	.cout());
+defparam \short_to_long_arrived~1 .lut_mask = 16'h00EA;
+defparam \short_to_long_arrived~1 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \long_counter[0]~8 (
 	.dataa(\long_counter[0]~q ),
@@ -73866,7 +74621,7 @@ dffeas \long_counter[1] (
 	.aload(gnd),
 	.sclr(\always0~0_combout ),
 	.sload(gnd),
-	.ena(\long_counter[4]~10_combout ),
+	.ena(\long_counter[0]~10_combout ),
 	.q(\long_counter[1]~q ),
 	.prn(vcc));
 defparam \long_counter[1] .is_wysiwyg = "true";
@@ -73891,7 +74646,7 @@ dffeas \long_counter[2] (
 	.aload(gnd),
 	.sclr(\always0~0_combout ),
 	.sload(gnd),
-	.ena(\long_counter[4]~10_combout ),
+	.ena(\long_counter[0]~10_combout ),
 	.q(\long_counter[2]~q ),
 	.prn(vcc));
 defparam \long_counter[2] .is_wysiwyg = "true";
@@ -73916,7 +74671,7 @@ dffeas \long_counter[3] (
 	.aload(gnd),
 	.sclr(\always0~0_combout ),
 	.sload(gnd),
-	.ena(\long_counter[4]~10_combout ),
+	.ena(\long_counter[0]~10_combout ),
 	.q(\long_counter[3]~q ),
 	.prn(vcc));
 defparam \long_counter[3] .is_wysiwyg = "true";
@@ -73941,7 +74696,7 @@ dffeas \long_counter[4] (
 	.aload(gnd),
 	.sclr(\always0~0_combout ),
 	.sload(gnd),
-	.ena(\long_counter[4]~10_combout ),
+	.ena(\long_counter[0]~10_combout ),
 	.q(\long_counter[4]~q ),
 	.prn(vcc));
 defparam \long_counter[4] .is_wysiwyg = "true";
@@ -73966,7 +74721,7 @@ dffeas \long_counter[5] (
 	.aload(gnd),
 	.sclr(\always0~0_combout ),
 	.sload(gnd),
-	.ena(\long_counter[4]~10_combout ),
+	.ena(\long_counter[0]~10_combout ),
 	.q(\long_counter[5]~q ),
 	.prn(vcc));
 defparam \long_counter[5] .is_wysiwyg = "true";
@@ -73991,7 +74746,7 @@ dffeas \long_counter[6] (
 	.aload(gnd),
 	.sclr(\always0~0_combout ),
 	.sload(gnd),
-	.ena(\long_counter[4]~10_combout ),
+	.ena(\long_counter[0]~10_combout ),
 	.q(\long_counter[6]~q ),
 	.prn(vcc));
 defparam \long_counter[6] .is_wysiwyg = "true";
@@ -74016,7 +74771,7 @@ dffeas \long_counter[7] (
 	.aload(gnd),
 	.sclr(\always0~0_combout ),
 	.sload(gnd),
-	.ena(\long_counter[4]~10_combout ),
+	.ena(\long_counter[0]~10_combout ),
 	.q(\long_counter[7]~q ),
 	.prn(vcc));
 defparam \long_counter[7] .is_wysiwyg = "true";
@@ -74033,16 +74788,16 @@ fiftyfivenm_lcell_comb \Equal1~1 (
 defparam \Equal1~1 .lut_mask = 16'h8000;
 defparam \Equal1~1 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \long_counter[4]~10 (
+fiftyfivenm_lcell_comb \long_counter[0]~10 (
 	.dataa(\always0~0_combout ),
 	.datab(\Equal1~0_combout ),
 	.datac(\Equal1~1_combout ),
 	.datad(\short_to_long_arrived~0_combout ),
 	.cin(gnd),
-	.combout(\long_counter[4]~10_combout ),
+	.combout(\long_counter[0]~10_combout ),
 	.cout());
-defparam \long_counter[4]~10 .lut_mask = 16'hBFAA;
-defparam \long_counter[4]~10 .sum_lutc_input = "datac";
+defparam \long_counter[0]~10 .lut_mask = 16'hBFAA;
+defparam \long_counter[0]~10 .sum_lutc_input = "datac";
 
 dffeas \long_counter[0] (
 	.clk(clk_clk),
@@ -74052,7 +74807,7 @@ dffeas \long_counter[0] (
 	.aload(gnd),
 	.sclr(\always0~0_combout ),
 	.sload(gnd),
-	.ena(\long_counter[4]~10_combout ),
+	.ena(\long_counter[0]~10_combout ),
 	.q(\long_counter[0]~q ),
 	.prn(vcc));
 defparam \long_counter[0] .is_wysiwyg = "true";
@@ -74073,78 +74828,78 @@ endmodule
 
 module lms_dsp_long_shift (
 	q_b_0,
-	q_b_01,
 	q_b_1,
-	q_b_11,
 	q_b_2,
-	q_b_21,
 	q_b_3,
-	q_b_31,
 	q_b_4,
-	q_b_41,
 	q_b_5,
-	q_b_51,
 	q_b_6,
-	q_b_61,
 	q_b_7,
-	q_b_71,
 	q_b_8,
-	q_b_81,
 	q_b_9,
-	q_b_91,
 	q_b_10,
+	q_b_11,
+	q_b_12,
+	q_b_13,
+	q_b_14,
+	q_b_15,
+	q_b_01,
+	q_b_16,
+	q_b_21,
+	q_b_31,
+	q_b_41,
+	q_b_51,
+	q_b_61,
+	q_b_71,
+	q_b_81,
+	q_b_91,
 	q_b_101,
 	q_b_111,
-	q_b_112,
-	q_b_12,
 	q_b_121,
-	q_b_13,
 	q_b_131,
-	q_b_14,
 	q_b_141,
-	q_b_15,
 	q_b_151,
-	always0,
 	delay_reg_24_0,
 	short_shift_full,
+	always0,
 	short_to_long_arrived,
 	GND_port,
 	clk_clk)/* synthesis synthesis_greybox=0 */;
 input 	q_b_0;
-output 	q_b_01;
 input 	q_b_1;
-output 	q_b_11;
 input 	q_b_2;
-output 	q_b_21;
 input 	q_b_3;
-output 	q_b_31;
 input 	q_b_4;
-output 	q_b_41;
 input 	q_b_5;
-output 	q_b_51;
 input 	q_b_6;
-output 	q_b_61;
 input 	q_b_7;
-output 	q_b_71;
 input 	q_b_8;
-output 	q_b_81;
 input 	q_b_9;
-output 	q_b_91;
 input 	q_b_10;
-output 	q_b_101;
-input 	q_b_111;
-output 	q_b_112;
+input 	q_b_11;
 input 	q_b_12;
-output 	q_b_121;
 input 	q_b_13;
-output 	q_b_131;
 input 	q_b_14;
-output 	q_b_141;
 input 	q_b_15;
+output 	q_b_01;
+output 	q_b_16;
+output 	q_b_21;
+output 	q_b_31;
+output 	q_b_41;
+output 	q_b_51;
+output 	q_b_61;
+output 	q_b_71;
+output 	q_b_81;
+output 	q_b_91;
+output 	q_b_101;
+output 	q_b_111;
+output 	q_b_121;
+output 	q_b_131;
+output 	q_b_141;
 output 	q_b_151;
-input 	always0;
 input 	delay_reg_24_0;
 input 	short_shift_full;
+input 	always0;
 input 	short_to_long_arrived;
 input 	GND_port;
 input 	clk_clk;
@@ -74161,11 +74916,11 @@ assign unknown = 1'b0;
 
 
 lms_dsp_altshift_taps_1 ALTSHIFT_TAPS_component(
-	.shiftin({q_b_15,q_b_14,q_b_13,q_b_12,q_b_111,q_b_10,q_b_9,q_b_8,q_b_7,q_b_6,q_b_5,q_b_4,q_b_3,q_b_2,q_b_1,q_b_0}),
-	.shiftout({q_b_151,q_b_141,q_b_131,q_b_121,q_b_112,q_b_101,q_b_91,q_b_81,q_b_71,q_b_61,q_b_51,q_b_41,q_b_31,q_b_21,q_b_11,q_b_01}),
-	.always0(always0),
+	.shiftin({q_b_15,q_b_14,q_b_13,q_b_12,q_b_11,q_b_10,q_b_9,q_b_8,q_b_7,q_b_6,q_b_5,q_b_4,q_b_3,q_b_2,q_b_1,q_b_0}),
+	.shiftout({q_b_151,q_b_141,q_b_131,q_b_121,q_b_111,q_b_101,q_b_91,q_b_81,q_b_71,q_b_61,q_b_51,q_b_41,q_b_31,q_b_21,q_b_16,q_b_01}),
 	.delay_reg_24_0(delay_reg_24_0),
 	.short_shift_full(short_shift_full),
+	.always0(always0),
 	.clken(short_to_long_arrived),
 	.GND_port(GND_port),
 	.clock(clk_clk));
@@ -74175,17 +74930,17 @@ endmodule
 module lms_dsp_altshift_taps_1 (
 	shiftin,
 	shiftout,
-	always0,
 	delay_reg_24_0,
 	short_shift_full,
+	always0,
 	clken,
 	GND_port,
 	clock)/* synthesis synthesis_greybox=0 */;
 input 	[15:0] shiftin;
 output 	[15:0] shiftout;
-input 	always0;
 input 	delay_reg_24_0;
 input 	short_shift_full;
+input 	always0;
 input 	clken;
 input 	GND_port;
 input 	clock;
@@ -74204,9 +74959,9 @@ assign unknown = 1'b0;
 lms_dsp_shift_taps_60v auto_generated(
 	.shiftin({shiftin[15],shiftin[14],shiftin[13],shiftin[12],shiftin[11],shiftin[10],shiftin[9],shiftin[8],shiftin[7],shiftin[6],shiftin[5],shiftin[4],shiftin[3],shiftin[2],shiftin[1],shiftin[0]}),
 	.shiftout({shiftout[15],shiftout[14],shiftout[13],shiftout[12],shiftout[11],shiftout[10],shiftout[9],shiftout[8],shiftout[7],shiftout[6],shiftout[5],shiftout[4],shiftout[3],shiftout[2],shiftout[1],shiftout[0]}),
-	.always0(always0),
 	.delay_reg_24_0(delay_reg_24_0),
 	.short_shift_full(short_shift_full),
+	.always0(always0),
 	.clken(clken),
 	.GND_port(GND_port),
 	.clock(clock));
@@ -74216,17 +74971,17 @@ endmodule
 module lms_dsp_shift_taps_60v (
 	shiftin,
 	shiftout,
-	always0,
 	delay_reg_24_0,
 	short_shift_full,
+	always0,
 	clken,
 	GND_port,
 	clock)/* synthesis synthesis_greybox=0 */;
 input 	[15:0] shiftin;
 output 	[15:0] shiftout;
-input 	always0;
 input 	delay_reg_24_0;
 input 	short_shift_full;
+input 	always0;
 input 	clken;
 input 	GND_port;
 input 	clock;
@@ -74254,9 +75009,9 @@ wire \dffe4~q ;
 
 lms_dsp_cntr_0ng cntr3(
 	.counter_comb_bita71(\cntr3|counter_comb_bita7~0_combout ),
-	.always0(always0),
 	.delay_reg_24_0(delay_reg_24_0),
 	.short_shift_full(short_shift_full),
+	.always0(always0),
 	.clock(clock));
 
 lms_dsp_cntr_a7f cntr1(
@@ -75304,14 +76059,14 @@ endmodule
 
 module lms_dsp_cntr_0ng (
 	counter_comb_bita71,
-	always0,
 	delay_reg_24_0,
 	short_shift_full,
+	always0,
 	clock)/* synthesis synthesis_greybox=0 */;
 output 	counter_comb_bita71;
-input 	always0;
 input 	delay_reg_24_0;
 input 	short_shift_full;
+input 	always0;
 input 	clock;
 
 wire gnd;
@@ -75923,68 +76678,68 @@ defparam \aneb_result_wire[0]~1 .sum_lutc_input = "datac";
 endmodule
 
 module lms_dsp_short_shift (
+	mag_reg_0,
 	q_b_0,
+	mag_reg_1,
 	q_b_1,
+	mag_reg_2,
 	q_b_2,
+	mag_reg_3,
 	q_b_3,
+	mag_reg_4,
 	q_b_4,
+	mag_reg_5,
 	q_b_5,
+	mag_reg_6,
 	q_b_6,
+	mag_reg_7,
 	q_b_7,
+	mag_reg_8,
 	q_b_8,
+	mag_reg_9,
 	q_b_9,
+	mag_reg_10,
 	q_b_10,
+	mag_reg_11,
 	q_b_11,
+	mag_reg_12,
 	q_b_12,
 	q_b_13,
 	q_b_14,
 	q_b_15,
-	mag_reg_0,
-	mag_reg_1,
-	mag_reg_2,
-	mag_reg_3,
-	mag_reg_4,
-	mag_reg_5,
-	mag_reg_6,
-	mag_reg_7,
-	mag_reg_8,
-	mag_reg_9,
-	mag_reg_10,
-	mag_reg_11,
-	mag_reg_12,
 	delay_reg_24_0,
 	always0,
 	GND_port,
 	clk_clk)/* synthesis synthesis_greybox=0 */;
+input 	mag_reg_0;
 output 	q_b_0;
+input 	mag_reg_1;
 output 	q_b_1;
+input 	mag_reg_2;
 output 	q_b_2;
+input 	mag_reg_3;
 output 	q_b_3;
+input 	mag_reg_4;
 output 	q_b_4;
+input 	mag_reg_5;
 output 	q_b_5;
+input 	mag_reg_6;
 output 	q_b_6;
+input 	mag_reg_7;
 output 	q_b_7;
+input 	mag_reg_8;
 output 	q_b_8;
+input 	mag_reg_9;
 output 	q_b_9;
+input 	mag_reg_10;
 output 	q_b_10;
+input 	mag_reg_11;
 output 	q_b_11;
+input 	mag_reg_12;
 output 	q_b_12;
 output 	q_b_13;
 output 	q_b_14;
 output 	q_b_15;
-input 	mag_reg_0;
-input 	mag_reg_1;
-input 	mag_reg_2;
-input 	mag_reg_3;
-input 	mag_reg_4;
-input 	mag_reg_5;
-input 	mag_reg_6;
-input 	mag_reg_7;
-input 	mag_reg_8;
-input 	mag_reg_9;
-input 	mag_reg_10;
-input 	mag_reg_11;
-input 	mag_reg_12;
 input 	delay_reg_24_0;
 input 	always0;
 input 	GND_port;
@@ -76002,8 +76757,8 @@ assign unknown = 1'b0;
 
 
 lms_dsp_altshift_taps_2 ALTSHIFT_TAPS_component(
-	.shiftout({q_b_15,q_b_14,q_b_13,q_b_12,q_b_11,q_b_10,q_b_9,q_b_8,q_b_7,q_b_6,q_b_5,q_b_4,q_b_3,q_b_2,q_b_1,q_b_0}),
 	.shiftin({gnd,gnd,GND_port,mag_reg_12,mag_reg_11,mag_reg_10,mag_reg_9,mag_reg_8,mag_reg_7,mag_reg_6,mag_reg_5,mag_reg_4,mag_reg_3,mag_reg_2,mag_reg_1,mag_reg_0}),
+	.shiftout({q_b_15,q_b_14,q_b_13,q_b_12,q_b_11,q_b_10,q_b_9,q_b_8,q_b_7,q_b_6,q_b_5,q_b_4,q_b_3,q_b_2,q_b_1,q_b_0}),
 	.clken(delay_reg_24_0),
 	.always0(always0),
 	.clock(clk_clk));
@@ -76011,13 +76766,13 @@ lms_dsp_altshift_taps_2 ALTSHIFT_TAPS_component(
 endmodule
 
 module lms_dsp_altshift_taps_2 (
-	shiftout,
 	shiftin,
+	shiftout,
 	clken,
 	always0,
 	clock)/* synthesis synthesis_greybox=0 */;
-output 	[15:0] shiftout;
 input 	[15:0] shiftin;
+output 	[15:0] shiftout;
 input 	clken;
 input 	always0;
 input 	clock;
@@ -76034,8 +76789,8 @@ assign unknown = 1'b0;
 
 
 lms_dsp_shift_taps_euu auto_generated(
-	.shiftout({shiftout[15],shiftout[14],shiftout[13],shiftout[12],shiftout[11],shiftout[10],shiftout[9],shiftout[8],shiftout[7],shiftout[6],shiftout[5],shiftout[4],shiftout[3],shiftout[2],shiftout[1],shiftout[0]}),
 	.shiftin({gnd,gnd,shiftin[13],shiftin[12],shiftin[11],shiftin[10],shiftin[9],shiftin[8],shiftin[7],shiftin[6],shiftin[5],shiftin[4],shiftin[3],shiftin[2],shiftin[1],shiftin[0]}),
+	.shiftout({shiftout[15],shiftout[14],shiftout[13],shiftout[12],shiftout[11],shiftout[10],shiftout[9],shiftout[8],shiftout[7],shiftout[6],shiftout[5],shiftout[4],shiftout[3],shiftout[2],shiftout[1],shiftout[0]}),
 	.clken(clken),
 	.always0(always0),
 	.clock(clock));
@@ -76043,13 +76798,13 @@ lms_dsp_shift_taps_euu auto_generated(
 endmodule
 
 module lms_dsp_shift_taps_euu (
-	shiftout,
 	shiftin,
+	shiftout,
 	clken,
 	always0,
 	clock)/* synthesis synthesis_greybox=0 */;
-output 	[15:0] shiftout;
 input 	[15:0] shiftin;
+output 	[15:0] shiftout;
 input 	clken;
 input 	always0;
 input 	clock;
@@ -76089,8 +76844,8 @@ lms_dsp_cntr_f5f cntr1(
 	.clock(clock));
 
 lms_dsp_altsyncram_pbc1 altsyncram2(
-	.q_b({shiftout[15],shiftout[14],shiftout[13],shiftout[12],shiftout[11],shiftout[10],shiftout[9],shiftout[8],shiftout[7],shiftout[6],shiftout[5],shiftout[4],shiftout[3],shiftout[2],shiftout[1],shiftout[0]}),
 	.data_a({shiftin[13],shiftin[13],shiftin[13],shiftin[12],shiftin[11],shiftin[10],shiftin[9],shiftin[8],shiftin[7],shiftin[6],shiftin[5],shiftin[4],shiftin[3],shiftin[2],shiftin[1],shiftin[0]}),
+	.q_b({shiftout[15],shiftout[14],shiftout[13],shiftout[12],shiftout[11],shiftout[10],shiftout[9],shiftout[8],shiftout[7],shiftout[6],shiftout[5],shiftout[4],shiftout[3],shiftout[2],shiftout[1],shiftout[0]}),
 	.address_b({\cntr1|counter_reg_bit[4]~q ,\cntr1|counter_reg_bit[3]~q ,\cntr1|counter_reg_bit[2]~q ,\cntr1|counter_reg_bit[1]~q ,\cntr1|counter_reg_bit[0]~q }),
 	.address_a({\cntr1|counter_reg_bit[4]~q ,\cntr1|counter_reg_bit[3]~q ,\cntr1|counter_reg_bit[2]~q ,\cntr1|counter_reg_bit[1]~q ,\cntr1|counter_reg_bit[0]~q }),
 	.clocken0(clken),
@@ -76114,15 +76869,15 @@ defparam dffe4.power_up = "low";
 endmodule
 
 module lms_dsp_altsyncram_pbc1 (
-	q_b,
 	data_a,
+	q_b,
 	address_b,
 	address_a,
 	clocken0,
 	aclr0,
 	clock0)/* synthesis synthesis_greybox=0 */;
-output 	[15:0] q_b;
 input 	[15:0] data_a;
+output 	[15:0] q_b;
 input 	[4:0] address_b;
 input 	[4:0] address_a;
 input 	clocken0;
