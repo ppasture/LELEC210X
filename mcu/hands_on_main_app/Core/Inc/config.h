@@ -11,7 +11,7 @@
 #define MAIN_APP 0
 #define EVAL_RADIO 1
 
-#define RUN_CONFIG EVAL_RADIO
+#define RUN_CONFIG MAIN_APP // EVAL_RADIO normally, here we changed it for the test of h2c
 
 // Radio parameters
 #define ENABLE_RADIO 1
