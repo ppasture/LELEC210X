@@ -20,9 +20,24 @@ void tag_cbc_mac(uint8_t *tag, const uint8_t *msg, size_t msg_len) {
 	uint32_t statew[4] = {0};
 	// state is a pointer to the start of the buffer
 	uint8_t *state = (uint8_t*) statew;
-    size_t i;
 
+    const uint8_t *key = AES_Key; // Assuming AES_Key is defined globally as the secret key
 
+    // Initialize the state to 16 zero bytes
+    memset(state, 0, 16);
+
+    // Process the message in 16-byte blocks
+    size_t num_blocks = (msg_len + 15) / 16; // Calculate the number of 16-byte blocks
+    for (size_t i = 0; i < num_blocks; i++) {
+        // XOR the current block with the state
+        for (size_t j = 0; j < 16; j++) {
+            if (i * 16 + j < msg_len) {
+                state[j] ^= msg[i * 16 + j];
+            }
+        }
+        // Encrypt the state using AES
+        AES128_encrypt(state, key);
+    }
     // TO DO : Complete the CBC-MAC_AES
 
     // Copy the result of CBC-MAC-AES to the tag.
@@ -34,10 +49,16 @@ void tag_cbc_mac(uint8_t *tag, const uint8_t *msg, size_t msg_len) {
 // Assumes payload is already in place in the packet
 int make_packet(uint8_t *packet, size_t payload_len, uint8_t sender_id, uint32_t serial) {
     size_t packet_len = payload_len + PACKET_HEADER_LENGTH + PACKET_TAG_LENGTH;
-    // Initially, the whole packet header is set to 0s
-    memset(packet, 0, PACKET_HEADER_LENGTH);
-    // So is the tag
-	memset(packet + payload_len + PACKET_HEADER_LENGTH, 0, PACKET_TAG_LENGTH);
+
+	packet[0] = 0x00;
+	packet[1] = sender_id;
+	packet[2] = (payload_len >> 8) & 0xFF; // Higher byte
+    packet[3] = payload_len & 0xFF;        // Lower byte
+    packet[4] = (serial >> 24) & 0xFF;     // Most significant byte
+    packet[5] = (serial >> 16) & 0xFF;
+    packet[6] = (serial >> 8) & 0xFF;
+    packet[7] = serial & 0xFF;             // Least significant byte
+
 
 	// TO DO :  replace the two previous command by properly
 	//			setting the packet header with the following structure :

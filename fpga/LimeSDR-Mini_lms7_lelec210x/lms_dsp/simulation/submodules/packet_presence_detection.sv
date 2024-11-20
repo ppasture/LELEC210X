@@ -112,7 +112,8 @@ module dual_running_sum #(
 
 	reg  [(SHORT_SUM_WIDTH-1):0] short_sum_reg;
 	reg  [(LONG_SUM_WIDTH -1):0]  long_sum_reg;
-	
+	reg  [(LONG_SUM_WIDTH -1):0]  intermediate_reg; // New register takes the value
+
 	reg  [($clog2(LONG_SUM_LEN ) -1) :0]  long_counter;
 	reg  [($clog2(SHORT_SUM_LEN) -1) :0] short_counter;
 
@@ -120,6 +121,7 @@ module dual_running_sum #(
 	reg  short_shift_full;
 	
 
+	
 	wire [15:0] short_altshift_taps;
 	wire [15:0]  long_altshift_taps;
 	
@@ -179,30 +181,30 @@ module dual_running_sum #(
 	.taps ( long_altshift_taps )
 	);
 	
-
 	always @(posedge clock) begin
 		if (reset | clear_rs) begin
-			long_sum_reg        <= 'b0;		// We clear the sum on a system reset or on a clear request from GNU Radio
-			long_counter 		<= 'b0;
+			// Reset all registers to their initial state
+			long_sum_reg        <= 'b0;		
+			long_counter        <= 'b0;
+			intermediate_reg    <= 'b0;       // Ensure intermediate_reg is reset correctly
 		end
 		else if (enable & short_shift_full) begin
-			long_sum_reg  <= long_sum_reg  + short_shift_out -  long_shift_out; // Accumulated long term value : we add the most recent sample energy and remove the oldest one
-
+			// Update the long_sum_reg and long_counter when enabled
+			long_sum_reg <= long_sum_reg + short_shift_out - long_shift_out;
 			if (!long_shift_full)
-				long_counter       <= long_counter + 1;
+				long_counter <= long_counter + 1;
+				
+			// Calculate and store the intermediate value
+			intermediate_reg <= (long_sum_reg * K) >>> 3;
 		end
 	end
+		
 	
-	
-	wire  [(LONG_SUM_WIDTH+8 -1):0] long_shift_rescale;
-	
-	assign long_shift_rescale  = long_sum_reg ;
-
 	assign long_shift_full = (long_counter==LONG_SHIFT_LEN);
 	
-	assign launch = short_to_long_arrived & long_shift_full &  (short_sum_reg  > long_shift_rescale);
+	assign launch = short_to_long_arrived & long_shift_full &  (short_sum_reg  > intermediate_reg);
 	
-	assign  long_sum = long_shift_rescale  ;
+	assign  long_sum = intermediate_reg  ;
 	assign short_sum = short_sum_reg ;
 	
 endmodule
