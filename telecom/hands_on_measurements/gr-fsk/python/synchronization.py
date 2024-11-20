@@ -38,17 +38,32 @@ def cfo_estimation(y, B, R, Fdev):
         Fdev: Frequency deviation of the modulated signal.
     
     Returns:
-        cfo_est: The estimated CFO.
+        cfo_est: The estimated Carrier Frequency Offset (CFO).
     """
-    N = 4  # Number of CPFSK symbols used for the estimation
-    Nt = N * R  # Total number of samples used for estimation
-    T = 1 / B   # Symbol duration
+    # Paramètres de la CFO estimation
+    N = 2  # Nombre de symboles pour la CFO estimation (ajustable selon le préambule attendu)
+    Nt = N * R  # Nombre total d'échantillons pour le préambule
+    T = 1 / B  # Durée d'un symbole
 
-    # Extract two blocks of Nt samples from the received signal
-    blockL = y[:Nt]
-    blockNT = y[Nt:2*Nt]
+    # Séparation du signal en deux blocs : le bloc initial et le bloc décalé
+    blockL = y[:Nt]         # Bloc initial de Nt échantillons
+    blockNT = y[Nt:2 * Nt]  # Bloc suivant de Nt échantillons
 
+    # Calcul de l'estimation d'offset de phase via Moose
+    numerator = np.sum(blockNT * np.conjugate(blockL))
+    denominator = np.sum(np.abs(blockL) ** 2)
+    alpha_hat = numerator / denominator  # Estimation du facteur de décalage
+
+    # Calcul de la différence de phase
+    phase_difference = np.angle(alpha_hat)
+
+    # Estimation de l'offset de fréquence (CFO)
     cfo_est = phase_difference / ((2 * np.pi * Nt * T) / R)
+
+    return cfo_est
+
+
+    
 def sto_estimation(y, B, R, Fdev):
     """
     Estimate symbol timing (fractional) based on phase shifts

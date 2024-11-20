@@ -68,6 +68,13 @@ class AudioUtil:
 
         ### TO COMPLETE
 
+        # Check if resampling is needed
+        if sr == newsr:
+            return (sig, newsr)
+
+        # Use librosa to perform the resampling
+        resig = librosa.resample(sig, orig_sr=sr, target_sr=newsr)
+
         return (resig, newsr)
 
     def pad_trunc(audio, max_ms) -> Tuple[ndarray, int]:
@@ -112,6 +119,8 @@ class AudioUtil:
         sig_len = len(sig)
         shift_amt = int(random.random() * shift_limit * sig_len)
         return (np.roll(sig, shift_amt), sr)
+    
+
 
     def scaling(audio, scaling_limit=5) -> Tuple[ndarray, int]:
         """
@@ -124,7 +133,15 @@ class AudioUtil:
 
         ### TO COMPLETE
 
-        return audio
+        # Generate a random scaling factor between 1/scaling_limit and scaling_limit
+        scale_factor = random.uniform(1 / scaling_limit, scaling_limit)
+
+        # Apply the scaling to the signal
+        scaled_sig = sig * scale_factor
+
+        return (scaled_sig, sr)
+    
+
 
     def add_noise(audio, sigma=0.05) -> Tuple[ndarray, int]:
         """
@@ -137,7 +154,15 @@ class AudioUtil:
 
         ### TO COMPLETE
 
-        return audio
+        # Generate Gaussian noise with mean 0 and standard deviation `sigma`
+        noise = np.random.normal(0, sigma, size=sig.shape)
+
+        # Add the noise to the original signal
+        noisy_sig = sig + noise
+
+        return (noisy_sig, sr)
+    
+
 
     def echo(audio, nechos=2) -> Tuple[ndarray, int]:
         """
@@ -156,6 +181,9 @@ class AudioUtil:
 
         sig = fftconvolve(sig, echo_sig, mode="full")[:sig_len]
         return (sig, sr)
+    
+
+
 
     def filter(audio, filt) -> Tuple[ndarray, int]:
         """
@@ -168,7 +196,21 @@ class AudioUtil:
 
         ### TO COMPLETE
 
+        # Perform FFT on the signal
+        fft_sig = np.fft.fft(sig)
+
+        # Symmetrize the filter for negative frequencies
+        filt_full = np.concatenate((filt, filt[::-1]))
+
+        # Apply the filter in the frequency domain
+        filtered_fft = fft_sig * filt_full
+
+        # Perform inverse FFT to get back to the time domain
+        filtered_sig = np.fft.ifft(filtered_fft).real
+
         return (sig, sr)
+    
+
 
     def add_bg(
         audio, dataset, num_sources=1, max_ms=5000, amplitude_limit=0.1
@@ -185,6 +227,35 @@ class AudioUtil:
         sig, sr = audio
 
         ### TO COMPLETE
+
+        # Convert max_ms to samples
+        max_samples = int(max_ms * sr / 1000)
+
+        # Create a buffer to store the final signal with background noises
+        final_sig = np.copy(sig)
+
+        for _ in range(num_sources):
+            # Select a random sound from the dataset
+            bg_audio = random.choice(dataset)
+
+            # Load and process the background audio
+            bg_sig, bg_sr = AudioUtil.open(bg_audio)
+
+            # Resample if needed to match the target sample rate
+            if bg_sr != sr:
+                bg_sig, _ = AudioUtil.resample((bg_sig, bg_sr), sr)
+
+            # Trim or pad the background signal to max_samples
+            bg_sig, _ = AudioUtil.pad_trunc((bg_sig, sr), max_ms)
+
+            # Scale the amplitude of the background signal
+            bg_sig *= random.uniform(0, amplitude_limit)
+
+            # Add the background signal to the original signal
+            final_sig += bg_sig[: len(final_sig)]
+
+        # Normalize the final signal to prevent clipping
+        final_sig = final_sig / np.max(np.abs(final_sig))
 
         return audio
 

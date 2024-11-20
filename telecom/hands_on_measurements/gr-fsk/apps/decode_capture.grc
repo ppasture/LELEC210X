@@ -37,7 +37,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: 868e6
+    value: 866e6
   states:
     bus_sink: false
     bus_source: false
@@ -160,7 +160,7 @@ blocks:
     alias: ''
     begin_tag: pmt.PMT_NIL
     comment: ''
-    file: telecom/hands_on_measurements/gr-fsk/misc/fsk_capture.mat
+    file: /home/loic/Documents/UCL/Master_Q1/LELEC_210X/LELEC210X/telecom/hands_on_measurements/gr-fsk/misc/fsk_capture.mat
     length: '0'
     maxoutbuf: '0'
     minoutbuf: '0'
