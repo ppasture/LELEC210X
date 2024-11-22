@@ -58,17 +58,11 @@ def cfo_estimation(y, B, R, Fdev):
 
     # Estimate CFO from the phase difference
     cfo_est = phase_difference / ((2 * np.pi * Nt * T) / R)
-<<<<<<< HEAD
 
     cfo_est_tot = Fdev + cfo_est
 
 
     return cfo_est_tot
-=======
-    cfo_est_correction = cfo_est + Fdev
-
-    return cfo_est_correction
->>>>>>> ppasture/main
 
 
 def sto_estimation(y, B, R, Fdev):

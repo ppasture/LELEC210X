@@ -8,6 +8,7 @@ import sounddevice as sd
 import soundfile as sf
 from numpy import ndarray
 from scipy.signal import fftconvolve
+from scipy import signal
 
 # -----------------------------------------------------------------------------
 """
@@ -67,8 +68,10 @@ class AudioUtil:
         sig, sr = audio
 
         ### TO COMPLETE
-
+        time_duration = len(sig)/sr
+        resig = signal.resample(sig, int(newsr*time_duration))
         return (resig, newsr)
+
 
     def pad_trunc(audio, max_ms) -> Tuple[ndarray, int]:
         """
@@ -123,8 +126,10 @@ class AudioUtil:
         sig, sr = audio
 
         ### TO COMPLETE
+        scaling_factor = random.uniform(1.0 / scaling_limit, scaling_limit)
 
-        return audio
+        scaled_sig = sig * scaling_factor
+        return (scaled_sig, sr)
 
     def add_noise(audio, sigma=0.05) -> Tuple[ndarray, int]:
         """
@@ -136,8 +141,12 @@ class AudioUtil:
         sig, sr = audio
 
         ### TO COMPLETE
+        noise = np.random.normal(0, sigma, sig.shape)
+    
+        noisy_sig = sig + noise
+    
+        return (noisy_sig, sr)
 
-        return audio
 
     def echo(audio, nechos=2) -> Tuple[ndarray, int]:
         """
@@ -167,8 +176,11 @@ class AudioUtil:
         sig, sr = audio
 
         ### TO COMPLETE
-
-        return (sig, sr)
+        # Symmetrize the filter
+        filt = np.concatenate((filt, filt[::-1]))
+        # Apply the filter
+        filtered_sig = np.convolve(sig, filt, mode='full')
+        return (filtered_sig, sr)
 
     def add_bg(
         audio, dataset, num_sources=1, max_ms=5000, amplitude_limit=0.1
@@ -183,10 +195,17 @@ class AudioUtil:
         :param amplitude_limit: The maximum amplitude of the added sounds.
         """
         sig, sr = audio
+       ### TO COMPLETE
 
-        ### TO COMPLETE
+        class_name = dataset.list_classes()[random.randint(0,len(dataset.list_classes())-1)] #gets a random sound class
+        random_soundidx = random.randint(0,len(dataset)//len(dataset.list_classes())-1)
+        add_audio = AudioUtil.open(dataset[class_name,random_soundidx])#gets a random sound in the class
+        add_audio = AudioUtil.resample(add_audio,sr) #ensure both sounds are at the same sample rate
+        add_audio = AudioUtil.pad_trunc(add_audio,max_ms=max_ms)  #limit the duration of the sound
+        add_sound = add_audio[0]*amplitude_limit/max(add_audio[0]) #limit the amplitude
+        new_sound = sig + add_sound
+        return new_sound,sr
 
-        return audio
 
     def specgram(audio, Nft=512, fs2=11025) -> ndarray:
         """
@@ -198,7 +217,17 @@ class AudioUtil:
         """
         ### TO COMPLETE
         # stft /= float(2**8)
-        return stft
+        audio = AudioUtil.resample(audio, fs2)
+        y = audio[0]
+        y = y[: len(y) - len(y) % Nft]
+        audiomat = np.reshape(y, (len(y) // Nft, Nft))
+        audioham = audiomat * np.hamming(Nft)
+        stft = np.fft.fft(audioham, axis=1)
+        stft_mag = np.abs(stft[:, : Nft // 2].T)
+
+        
+
+        return stft_mag
 
     def get_hz2mel(fs2=11025, Nft=512, Nmel=20) -> ndarray:
         """
@@ -224,7 +253,12 @@ class AudioUtil:
         :param fs2: The sampling frequency.
         """
         ### TO COMPLETE
+        stft = AudioUtil.specgram(audio, Nft=Nft, fs2=fs2)
+        mels = AudioUtil.get_hz2mel(fs2=fs2, Nft=Nft, Nmel=Nmel)
+        melspec = np.dot(mels, stft)
 
+
+        
         return melspec
 
     def spectro_aug_timefreq_masking(
