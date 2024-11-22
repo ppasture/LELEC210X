@@ -1,0 +1,3 @@
+	component packet_presence_detection_tb_gen_tb is
+	end component packet_presence_detection_tb_gen_tb;
+

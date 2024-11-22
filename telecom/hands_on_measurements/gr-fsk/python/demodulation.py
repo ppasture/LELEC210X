@@ -37,23 +37,23 @@ def demodulate(y, B, R, Fdev):
     Returns:
         bits_hat: The estimated bits after demodulation.
     """
-    # Compute the number of symbols
-    nb_syms = int(len(y) // R)
-    
-    # Reshape the signal into symbols, each symbol is a row of R samples
+    # Calcul du nombre de symboles
+    nb_syms = len(y) // R  # Nombre de symboles CPFSK dans y
+
+    # Reshape du signal en une matrice où chaque ligne contient les R échantillons d'une période de symbole
     y = np.resize(y, (nb_syms, R))
-    
-    # Symbol duration in time
+
+    # Durée du symbole en secondes
     T = 1 / B
 
-    # Initialize the array for the demodulated bits
+    # Tableau des bits démodulés, initialisé à zéro
     bits_hat = np.zeros(nb_syms, dtype=int)
 
-    # Loop over each symbol and compute correlation with reference waveforms
+    # Boucle sur chaque symbole et calcul de la corrélation avec les deux formes d'onde de référence
     for k in range(nb_syms):
-        # Get samples for the current symbol
         symbol_samples = y[k]
 
+<<<<<<< HEAD
         # Compute the correlation with the two reference waveforms
         r1 = (1 / R) * np.sum(
             symbol_samples * np.exp(-1j * 2 * np.pi * Fdev * T * np.arange(R) / R)
@@ -61,6 +61,27 @@ def demodulate(y, B, R, Fdev):
         r0 = (1 / R) * np.sum(
             symbol_samples * np.exp(1j * 2 * np.pi * Fdev * T * np.arange(R) / R)
         )
+=======
+        # Corrélation avec la forme d'onde r1 (bit = 1)
+        r1 = (1 / R) * np.sum(
+            symbol_samples * np.exp(-1j * 2 * np.pi * Fdev * T * np.arange(R) / R)
+        )
+        
+        # Corrélation avec la forme d'onde r0 (bit = 0)
+        r0 = (1 / R) * np.sum(
+            symbol_samples * np.exp(1j * 2 * np.pi * Fdev * T * np.arange(R) / R)
+        )
+
+        # Décision basée sur les corrélations
+        if np.abs(r1) > np.abs(r0):
+            bits_hat[k] = 1
+        else:
+            bits_hat[k] = 0
+
+    return bits_hat
+
+
+>>>>>>> ppasture/main
 
         # Decision based on the magnitudes of the correlations
         if np.abs(r1) > np.abs(r0):
