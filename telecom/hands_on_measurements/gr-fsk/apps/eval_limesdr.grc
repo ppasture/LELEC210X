@@ -54,7 +54,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: 866e6
+    value: 868e6
   states:
     bus_sink: false
     bus_source: false
@@ -105,7 +105,7 @@ blocks:
     gui_hint: ''
     label: Detection Threshold
     type: real
-    value: '0.1'
+    value: 1e-3
   states:
     bus_sink: false
     bus_source: false
@@ -365,6 +365,7 @@ blocks:
     analog_bandw_ch1: 1.5e6
     calibr_bandw_ch0: 2.5e6
     calibr_bandw_ch1: 2.5e6
+    ch_align: 'False'
     channel_mode: '0'
     comment: ''
     dacVal: '180'
