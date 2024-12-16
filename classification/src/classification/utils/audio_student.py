@@ -116,7 +116,7 @@ class AudioUtil:
         shift_amt = int(random.random() * shift_limit * sig_len)
         return (np.roll(sig, shift_amt), sr)
 
-    def scaling(audio, scaling_limit=5) -> Tuple[ndarray, int]:
+    def scaling(audio, scaling_limit=10) -> Tuple[ndarray, int]:
         """
         Augment the audio signal by scaling it by a random factor.
 
@@ -318,7 +318,7 @@ class Feature_vector_DS:
         self.data_aug = data_aug
         self.data_aug_factor = 1
         if isinstance(self.data_aug, list):
-            self.data_aug_factor += len(self.data_aug)
+            self.data_aug_factor += len(self.data_aug) +1
         else:
             self.data_aug = [self.data_aug]
         self.ncol = int(
@@ -332,38 +332,49 @@ class Feature_vector_DS:
         """
         return len(self.dataset) * self.data_aug_factor
 
-    def get_audiosignal(self, cls_index: Tuple[str, int]) -> Tuple[ndarray, int]:
+    def get_audiosignal(self, cls_index: Tuple[str, int, str]) -> Tuple[ndarray, int]:
         """
         Get temporal signal of i'th item in dataset.
 
         :param cls_index: Class name and index.
         """
+        aug = cls_index[2]
+        cls_index = cls_index[:2]
         audio_file = self.dataset[cls_index]
         aud = AudioUtil.open(audio_file)
         aud = AudioUtil.resample(aud, self.sr)
         aud = AudioUtil.time_shift(aud, self.shift_pct)
         aud = AudioUtil.pad_trunc(aud, self.duration)
-        if self.data_aug is not None:
-            if "add_bg" in self.data_aug:
-                aud = AudioUtil.add_bg(
-                    aud,
-                    self.dataset,
-                    num_sources=1,
-                    max_ms=self.duration,
-                    amplitude_limit=0.1,
-                )
-            if "echo" in self.data_aug:
-                aud = AudioUtil.add_echo(aud)
-            if "noise" in self.data_aug:
+        x = 0
+        if aug != "":
+            if aug == "add_bg":
+                aud = AudioUtil.add_bg(aud, self.dataset, num_sources=1, max_ms=self.duration, amplitude_limit=0.04)
+                x += 1
+            if aug == "echo":
+                aud = AudioUtil.echo(aud, nechos=2)
+                x += 1
+            if aug == "noise":
                 aud = AudioUtil.add_noise(aud, sigma=0.05)
-            if "scaling" in self.data_aug:
-                aud = AudioUtil.scaling(aud, scaling_limit=5)
-
-        # aud = AudioUtil.normalize(aud, target_dB=10)
-        aud = (aud[0] / np.max(np.abs(aud[0])), aud[1])
+                x += 1
+            if aug == "filter":
+                filt = np.array([1, -1])
+                aud = AudioUtil.filter(aud, filt)
+                x += 1
+            if aug == "scaling":
+                aud = AudioUtil.scaling(aud, scaling_limit=10)
+                x += 1
+            if aug == "time_shift":
+                aud = AudioUtil.time_shift(aud, shift_limit=0.4)
+                x += 1
+            for num_str in map(str, range(0, 22)):  # Generate strings "1" to "20"
+                if aug == num_str:   
+                    amplitude_limit = int(num_str) * 0.02
+                    aud = AudioUtil.add_bg(aud, self.dataset, num_sources=1, max_ms=self.duration, amplitude_limit=amplitude_limit)
+        if (x>1):
+            print("Warning: More than one augmentation applied") 
         return aud
 
-    def __getitem__(self, cls_index: Tuple[str, int]) -> Tuple[ndarray, int]:
+    def __getitem__(self, cls_index: Tuple[str, int, str]) -> Tuple[ndarray, int]:
         """
         Get i'th item in dataset.
 
@@ -371,18 +382,13 @@ class Feature_vector_DS:
         """
         aud = self.get_audiosignal(cls_index)
         sgram = AudioUtil.melspectrogram(aud, Nmel=self.nmel, Nft=self.Nft)
-        if self.data_aug is not None:
-            if "aug_sgram" in self.data_aug:
-                sgram = AudioUtil.spectro_aug_timefreq_masking(
-                    sgram, max_mask_pct=0.1, n_freq_masks=2, n_time_masks=2
-                )
+        aug = cls_index[2]
+        if aug == "aug_sgram":
+            sgram = AudioUtil.spectro_aug_timefreq_masking(sgram, max_mask_pct=0.1, n_freq_masks=2, n_time_masks=2)
 
         sgram_crop = sgram[:, : self.ncol]
         fv = sgram_crop.flatten()  # feature vector
-        if self.normalize:
-            fv /= np.linalg.norm(fv)
-        if self.pca is not None:
-            fv = self.pca.transform([fv])[0]
+        fv /= np.linalg.norm(fv)
         return fv
 
     def display(self, cls_index: Tuple[str, int]):
