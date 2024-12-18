@@ -61,7 +61,7 @@ if __name__ == "__main__":
         msg_counter = 0
 
         # Load the model from pickle file
-        model_rf = pickle.load(open("../../classification/data/models/augmented_model.pickle", "rb"))
+        model_rf = pickle.load(open("../../classification/data/models/FINALMODEL.pickle", "rb"))
         print(f"Model {type(model_rf).__name__} has been loaded from pickle file.\n")
 
         plt.figure(figsize=(8, 6))
