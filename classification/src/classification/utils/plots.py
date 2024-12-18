@@ -171,3 +171,59 @@ def plot_decision_boundaries(
     ax.set_ylabel("$x_2$")
     handles, labels = scatterd.legend_elements(prop="colors")
     ax.legend(handles, legend)
+
+
+def plot_specgram_textlabel(
+    specgram,
+    ax,
+    is_mel=False,
+    title=None,
+    xlabel="Time [s]",
+    ylabel="Frequency [Hz]",
+    textlabel = "",
+    cmap="jet",
+    cb=True,
+    tf=None,
+    invert=True,
+):
+    """
+    Plot a spectrogram (2D matrix) in a chosen axis of a figure.
+    Inputs:
+        - specgram = spectrogram (2D array)
+        - ax       = current axis in figure
+        - title
+        - xlabel
+        - ylabel
+        - cmap
+        - cb       = show colorbar if True
+        - tf       = final time in xaxis of specgram
+    """
+    if tf is None:
+        tf = specgram.shape[1]
+
+    if is_mel:
+        ylabel = "Frequency [Mel]"
+        im = ax.imshow(
+            specgram, cmap=cmap, aspect="auto", extent=[0, tf, specgram.shape[0], 0]
+        )
+    else:
+        im = ax.imshow(
+            specgram,
+            cmap=cmap,
+            aspect="auto",
+            extent=[0, tf, int(specgram.size / tf), 0],
+        )
+    if invert:
+        ax.invert_yaxis()
+    fig = plt.gcf()
+    if cb:
+        fig.colorbar(im, ax=ax)
+    # cbar.set_label('log scale', rotation=270)
+    ax.set_xlabel(xlabel)
+    ax.set_ylabel(ylabel)
+    ax.set_title(title)
+    
+    plt.subplots_adjust(bottom=0.3)
+    ax.text(0, -0.15, f'{textlabel}', ha='left', va='top', transform=ax.transAxes, family='monospace')
+
+    return None

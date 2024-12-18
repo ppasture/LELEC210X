@@ -82,7 +82,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Audio playback tool for selected .wav files in a directory.")
     parser.add_argument("--random", action="store_true", help="Enable random playback order.")
     parser.add_argument("--delay", type=float, default=0, help="Pause duration between playback (default: 0 seconds).")
-    parser.add_argument("--log", type=str, default="classification/history_of_played_sounds.txt", help="Path to the log file (default: classification/history_of_played_sounds.txt).")
+    parser.add_argument("--log", type=str, default="classification/data/played_sounds/history_of_played_sounds.txt", help="Path to the log file (default: classification/history_of_played_sounds.txt).")
 
     args = parser.parse_args()
 

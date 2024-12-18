@@ -1,0 +1,110 @@
+# Predicted Classes for Played Sounds
+BIRDS 
+
+Sound #1: Predicted class: handsaw
+Sound #2: Predicted class: birds
+Sound #3: Predicted class: handsaw
+Sound #4: Predicted class: fire
+Sound #5: Predicted class: birds
+Sound #6: Predicted class: handsaw
+Sound #7: Predicted class: birds
+Sound #8: Predicted class: fire
+Sound #9: Predicted class: fire
+Sound #10: Predicted class: chainsaw
+Sound #11: Predicted class: handsaw
+Sound #12: Predicted class: handsaw
+Sound #13: Predicted class: birds
+Sound #14: Predicted class: handsaw
+Sound #15: Predicted class: fire
+Sound #16: Predicted class: birds
+Sound #17: Predicted class: birds
+Sound #18: Predicted class: fire
+Sound #19: Predicted class: birds
+Sound #20: Predicted class: birds
+
+chainsaw
+Sound #21: Predicted class: handsaw
+Sound #22: Predicted class: birds
+Sound #23: Predicted class: handsaw
+Sound #24: Predicted class: birds
+Sound #25: Predicted class: birds
+Sound #26: Predicted class: handsaw
+Sound #27: Predicted class: birds
+Sound #28: Predicted class: handsaw
+Sound #29: Predicted class: handsaw
+Sound #30: Predicted class: handsaw
+Sound #31: Predicted class: handsaw
+Sound #32: Predicted class: birds
+Sound #33: Predicted class: handsaw
+Sound #34: Predicted class: handsaw
+Sound #35: Predicted class: birds
+Sound #36: Predicted class: handsaw
+Sound #37: Predicted class: handsaw
+Sound #38: Predicted class: handsaw
+Sound #39: Predicted class: handsaw
+Sound #40: Predicted class: handsaw
+
+FIRE 
+Sound #44: Predicted class: fire
+Sound #45: Predicted class: fire
+Sound #46: Predicted class: birds
+Sound #48: Predicted class: fire
+Sound #49: Predicted class: fire
+Sound #50: Predicted class: helicopter
+Sound #51: Predicted class: fire
+Sound #52: Predicted class: fire
+Sound #53: Predicted class: helicopter
+Sound #54: Predicted class: birds
+Sound #55: Predicted class: fire
+Sound #56: Predicted class: fire
+Sound #57: Predicted class: chainsaw
+Sound #58: Predicted class: birds
+Sound #59: Predicted class: fire
+Sound #60: Predicted class: birds
+
+HANDSAW
+Sound #61: Predicted class: chainsaw
+Sound #62: Predicted class: fire
+Sound #63: Predicted class: fire
+Sound #64: Predicted class: handsaw
+Sound #65: Predicted class: birds
+Sound #66: Predicted class: birds
+Sound #67: Predicted class: birds
+Sound #68: Predicted class: chainsaw
+Sound #69: Predicted class: birds
+Sound #70: Predicted class: birds
+Sound #71: Predicted class: handsaw
+Sound #72: Predicted class: birds
+Sound #73: Predicted class: chainsaw
+Sound #74: Predicted class: handsaw
+Sound #75: Predicted class: birds
+Sound #76: Predicted class: birds
+Sound #77: Predicted class: birds
+Sound #78: Predicted class: fire
+Sound #79: Predicted class: fire
+Sound #80: Predicted class: fire
+
+HELICLOPTER
+Sound #82: Predicted class: birds
+Sound #83: Predicted class: birds
+Sound #84: Predicted class: birds
+Sound #85: Predicted class: birds
+Sound #86: Predicted class: birds
+Sound #87: Predicted class: birds
+Sound #88: Predicted class: birds
+Sound #89: Predicted class: birds
+Sound #90: Predicted class: handsaw
+Sound #91: Predicted class: birds
+Sound #92: Predicted class: chainsaw
+Sound #93: Predicted class: fire
+Sound #94: Predicted class: birds
+Sound #95: Predicted class: birds
+Sound #96: Predicted class: birds
+Sound #97: Predicted class: birds
+Sound #98: Predicted class: birds
+Sound #99: Predicted class: birds
+Sound #100: Predicted class: birds
+Sound #101: Predicted class: birds
+Sound #102: Predicted class: birds
+Sound #103: Predicted class: birds
+Sound #104: Predicted class: chainsaw
