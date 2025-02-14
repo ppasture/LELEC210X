@@ -221,19 +221,15 @@ class BasicChain(Chain):
         T = 1 / B
         bits_hat = np.zeros(nb_syms, dtype=int)  # Default value, all bits=0. TO CHANGE!
 
-        for k in range(nb_syms):
-            symbol_samples = y[k]
+        t = np.arange(R) / R
+        ref_waveform_1 = np.exp(-1j * 2 * np.pi * fd * T * t)
+        ref_waveform_0 = np.exp(1j * 2 * np.pi * fd * T * t)
 
-            r1 = (1 / R) * np.sum(
-                symbol_samples * np.exp(-1j * 2 * np.pi * fd * T * np.arange(R) / R)
-            )
-            r0 = (1 / R) * np.sum(
-                symbol_samples * np.exp(1j * 2 * np.pi * fd * T * np.arange(R) / R)
-            )
+        # Compute correlations for all symbols at once
+        r1 = (1 / R) * np.sum(y * ref_waveform_1, axis=1)
+        r0 = (1 / R) * np.sum(y * ref_waveform_0, axis=1)
 
-            if np.abs(r1) > np.abs(r0):
-                bits_hat[k] = 1
-            else:
-                bits_hat[k] = 0
+        # Decision based on the magnitudes of the correlations
+        bits_hat = np.where(np.abs(r1) > np.abs(r0), 1, 0)
 
         return bits_hat
