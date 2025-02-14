@@ -14,7 +14,7 @@ import common
 from auth import PRINT_PREFIX
 from common.env import load_dotenv
 from common.logging import logger
-hostname = "http://localhost:5000"  
+hostname = "http://lelec210x.sipr.ucl.ac.be"
 key = "jNvyuAfUUwf3iZAWF40sqSuW3DHRkjTj8jwDb0-d"
 from .utils import payload_to_melvecs
 import sys
@@ -156,9 +156,10 @@ def main(
             
             logger.info(f"Predictions: {proba_knn}")
             logger.info(f"Prediction: {prediction}")
-            
-            answer = requests.post(f"{hostname}/lelec210x/leaderboard/submit/{key}/{prediction}", timeout=1)
-            
+            prediction_given = prediction[0]
+
+            answer = requests.post(f"{hostname}/lelec210x/leaderboard/submit/{key}/{prediction_given}", timeout=1)
+            print(answer.text)
             json_answer = json.loads(answer.text)
             print(json_answer)
 
