@@ -498,7 +498,7 @@ blocks:
     bus_structure: null
     coordinate: [112, 244.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: zeromq_pub_sink_0
   id: zeromq_pub_sink
   parameters:
