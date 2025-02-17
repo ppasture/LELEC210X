@@ -104,7 +104,7 @@ class AudioUtil:
 
         return (sig, sr)
 
-    def time_shift(audio, shift_limit=0.4) -> Tuple[ndarray, int]:
+    def time_shift(audio, shift_limit=1) -> Tuple[ndarray, int]:
         """
         Shifts the signal to the left or right by some percent. Values at the end are 'wrapped around' to the start of the transformed signal.
 
@@ -131,7 +131,7 @@ class AudioUtil:
         scaled_sig = sig * scaling_factor
         return (scaled_sig, sr)
 
-    def add_noise(audio, sigma=0.05) -> Tuple[ndarray, int]:
+    def add_noise(audio, sigma=0.1) -> Tuple[ndarray, int]:
         """
         Augment the audio signal by adding gaussian noise.
 
@@ -351,10 +351,10 @@ class Feature_vector_DS:
                 aud = AudioUtil.add_bg(aud, self.dataset, num_sources=1, max_ms=self.duration, amplitude_limit=0.04)
                 x += 1
             if aug == "echo":
-                aud = AudioUtil.echo(aud, nechos=2)
+                aud = AudioUtil.echo(aud, nechos=1)
                 x += 1
             if aug == "noise":
-                aud = AudioUtil.add_noise(aud, sigma=0.05)
+                aud = AudioUtil.add_noise(aud, sigma=0.1)
                 x += 1
             if aug == "filter":
                 filt = np.array([1, -1])

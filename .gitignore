@@ -94,3 +94,7 @@ fpga/*/simulation/
 fpga/*/timing/
 fpga/*/*_sim/
 fpga/incremental_db/
+telecom/gr-limesdr-3-10/python/bindings/sink_fpga_python.cc
+telecom/gr-limesdr-3-10/python/bindings/source_fpga_python.cc
+telecom/hands_on_measurements/gr-fsk/apps/decode_capture.grc
+telecom/hands_on_measurements/gr-fsk/apps/eval_limesdr.grc
