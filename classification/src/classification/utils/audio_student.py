@@ -113,8 +113,12 @@ class AudioUtil:
         """
         sig, sr = audio
         sig_len = len(sig)
-        shift_amt = int(random.random() * shift_limit * sig_len)
-        return (np.roll(sig, shift_amt), sr)
+        
+        shift_limit = max(0.0, min(shift_limit, 1.0))
+        shift_amt = int(random.uniform(-shift_limit, shift_limit) * sig_len)
+        shifted_sig = np.roll(sig, shift_amt)
+
+        return (shifted_sig, sr)
 
     def scaling(audio, scaling_limit=10) -> Tuple[ndarray, int]:
         """
@@ -148,7 +152,7 @@ class AudioUtil:
         return (noisy_sig, sr)
 
 
-    def echo(audio, nechos=2) -> Tuple[ndarray, int]:
+    def echo(audio, nechos) -> Tuple[ndarray, int]:
         """
         Add echo to the audio signal by convolving it with an impulse response. The taps are regularly spaced in time and each is twice smaller than the previous one.
 
@@ -157,6 +161,9 @@ class AudioUtil:
         """
         sig, sr = audio
         sig_len = len(sig)
+        if nechos <= 0:
+            return sig, sr
+        
         echo_sig = np.zeros(sig_len)
         echo_sig[0] = 1
         echo_sig[(np.arange(nechos) / nechos * sig_len).astype(int)] = (
@@ -343,35 +350,25 @@ class Feature_vector_DS:
         audio_file = self.dataset[cls_index]
         aud = AudioUtil.open(audio_file)
         aud = AudioUtil.resample(aud, self.sr)
-        aud = AudioUtil.time_shift(aud, self.shift_pct)
         aud = AudioUtil.pad_trunc(aud, self.duration)
-        x = 0
-        if aug != "":
+        if aug != "original":
             if aug == "add_bg":
                 aud = AudioUtil.add_bg(aud, self.dataset, num_sources=1, max_ms=self.duration, amplitude_limit=0.04)
-                x += 1
             if aug == "echo":
-                aud = AudioUtil.echo(aud, nechos=1)
-                x += 1
+                aud = AudioUtil.echo(aud, nechos=2)
             if aug == "noise":
                 aud = AudioUtil.add_noise(aud, sigma=0.1)
-                x += 1
             if aug == "filter":
                 filt = np.array([1, -1])
                 aud = AudioUtil.filter(aud, filt)
-                x += 1
             if aug == "scaling":
                 aud = AudioUtil.scaling(aud, scaling_limit=10)
-                x += 1
-            if aug == "time_shift":
-                aud = AudioUtil.time_shift(aud, shift_limit=0.4)
-                x += 1
+            if aug == "shifting":
+                aud = AudioUtil.time_shift(aud, shift_limit=1)
             for num_str in map(str, range(0, 22)):  # Generate strings "1" to "20"
                 if aug == num_str:   
                     amplitude_limit = int(num_str) * 0.02
                     aud = AudioUtil.add_bg(aud, self.dataset, num_sources=1, max_ms=self.duration, amplitude_limit=amplitude_limit)
-        if (x>1):
-            print("Warning: More than one augmentation applied") 
         return aud
 
     def __getitem__(self, cls_index: Tuple[str, int, str]) -> Tuple[ndarray, int]:
@@ -420,6 +417,6 @@ class Feature_vector_DS:
         self.data_aug = data_aug
         self.data_aug_factor = 1
         if isinstance(self.data_aug, list):
-            self.data_aug_factor += len(self.data_aug)
+            self.data_aug_factor = len(self.data_aug)
         else:
             self.data_aug = [self.data_aug]
