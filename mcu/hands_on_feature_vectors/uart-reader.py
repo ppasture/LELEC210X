@@ -5,6 +5,26 @@ import serial
 from serial.tools import list_ports
 import pickle
 from classification.utils.plots import plot_specgram_textlabel
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.decomposition import PCA
+
+# Define model 
+class PCA_RF_Model:
+    def __init__(self, pca, model):
+        self.pca = pca
+        self.model = model
+
+    def fit(self, X, y):
+        X_pca = self.pca.fit_transform(X)
+        self.model.fit(X_pca, y)
+
+    def predict(self, X):
+        X_pca = self.pca.transform(X)
+        return self.model.predict(X_pca)
+
+    def predict_proba(self, X):
+        X_pca = self.pca.transform(X)
+        return self.model.predict_proba(X_pca)
 
 PRINT_PREFIX = "DF:HEX:"
 FREQ_SAMPLING = 10200
@@ -61,7 +81,7 @@ if __name__ == "__main__":
         msg_counter = 0
 
         # Load the model from pickle file
-        model_rf = pickle.load(open("../../classification/data/models/FINALMODEL.pickle", "rb"))
+        model_rf = pickle.load(open("../../classification/data/models/final_model_with_pca.pickle", "rb"))
         print(f"Model {type(model_rf).__name__} has been loaded from pickle file.\n")
 
         plt.figure(figsize=(8, 6))
