@@ -1,34 +1,10 @@
-import sys
-import os
-classification_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../classification/src/classification"))
-sys.path.append(classification_path)
-from utils.plots import plot_specgram_textlabel
-
-
 import argparse
 import matplotlib.pyplot as plt
 import numpy as np
 import serial
 from serial.tools import list_ports
 import pickle
-
-# Define model 
-class PCA_RF_Model:
-    def __init__(self, pca, model):
-        self.pca = pca
-        self.model = model
-
-    def fit(self, X, y):
-        X_pca = self.pca.fit_transform(X)
-        self.model.fit(X_pca, y)
-
-    def predict(self, X):
-        X_pca = self.pca.transform(X)
-        return self.model.predict(X_pca)
-
-    def predict_proba(self, X):
-        X_pca = self.pca.transform(X)
-        return self.model.predict_proba(X_pca)
+from classification.utils.plots import plot_specgram_textlabel
 
 PRINT_PREFIX = "DF:HEX:"
 FREQ_SAMPLING = 10200
@@ -85,9 +61,8 @@ if __name__ == "__main__":
         msg_counter = 0
 
         # Load the model from pickle file
-        model_rf = pickle.load(open("../../classification/data/models/final_model_with_pca.pickle", "rb"))
+        model_rf = pickle.load(open("../../classification/data/models/FINALMODEL.pickle", "rb"))
         print(f"Model {type(model_rf).__name__} has been loaded from pickle file.\n")
-        print(f"PCA expected components: {model_rf.pca.n_components_}")
 
         plt.figure(figsize=(8, 6))
 
@@ -99,7 +74,9 @@ if __name__ == "__main__":
                 msg_counter += 1
 
                 print(f"MEL Spectrogram #{msg_counter}")
-                fv = melvec[12:].reshape(1, -1)  # Remove the header
+
+                # Normalize and reshape feature vector
+                fv = melvec.reshape(1, -1)
                 fv = fv / np.linalg.norm(fv)
 
                 # Predict the class of the mel vector
@@ -114,7 +91,7 @@ if __name__ == "__main__":
                 log_file.flush()  # Ensure immediate write
                 print(f"Logged: {log_entry.strip()}")
 
-                class_names = model_rf.model.classes_
+                class_names = model_rf.classes_
                 probabilities = np.round(proba[0] * 100, 2)
                 max_len = max(len(name) for name in class_names)
                 class_names_str = " ".join([f"{name:<{max_len}}" for name in class_names])
@@ -124,7 +101,7 @@ if __name__ == "__main__":
 
                 # Plot and save the spectrogram
                 plot_specgram_textlabel(
-                    melvec[12:].reshape((N_MELVECS, MELVEC_LENGTH)).T,
+                    melvec.reshape((N_MELVECS, MELVEC_LENGTH)).T,
                     ax=plt.gca(),
                     is_mel=True,
                     title=f"MEL Spectrogram #{msg_counter}",
