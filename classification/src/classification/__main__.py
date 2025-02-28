@@ -133,35 +133,59 @@ def main(
             logger.debug(f"Reading packets from TCP address: {tcp_address}")
             while True:
                 yield socket.recv(2 * melvec_length * n_melvecs)
-    
+
+    # Load model
+    pca_path = Path("classification/data/models/pca.pickle")
+    rf_model_path = Path("classification/data/models/model.pickle")
+    with pca_path.open("rb") as pca_file:
+        pca = pickle.load(pca_file)
+
+    with rf_model_path.open("rb") as rf_file:
+        model_rf = pickle.load(rf_file)
+
     input_stream = reader()
-    with open('classification/data/models/final_model.pickle', 'rb') as f:
-        m = pickle.load(f)
 
     for msg in input_stream:
         try:
             sender, payload = unwrapper.unwrap_packet(msg)
-            logger.debug(f"From {sender}, received packet: {payload.hex()}")
-            print("Received packet:")
-            print(payload.hex())
+            #logger.debug(f"From {sender}, received packet: {payload.hex()}")
+            #print("Received packet:")
+            #print(payload.hex())
 
-            output.write(PRINT_PREFIX + payload.hex() + "\n")
-            output.flush()
-            melvecs = payload_to_melvecs(payload.hex(), melvec_length, n_melvecs)
-            logger.info(f"Parsed payload into Mel vectors: {melvecs}")
-            melvec = melvecs/np.linalg.norm(melvecs)
-            melvec = melvec.reshape(1, -1)
-            proba_knn = m.predict_proba(melvec)
-            prediction = m.predict(melvec)
+            #output.write(PRINT_PREFIX + payload.hex() + "\n")
+            #output.flush()
+            melvec = payload_to_melvecs(payload.hex(), melvec_length, n_melvecs)
+            #logger.info(f"Parsed payload into Mel vectors: {melvecs}")
+            fv = melvec.reshape(1, -1)
+            melvec = fv/np.linalg.norm(fv)
+
+            melvecs_pca = pca.transform(melvec)
+
+            proba_rf = model_rf.predict_proba(melvecs_pca)[0]
+            prediction_rf = model_rf.predict(melvecs_pca)
             
-            logger.info(f"Predictions: {proba_knn}")
-            logger.info(f"Prediction: {prediction}")
-            prediction_given = prediction[0]
+            sorted_indices = np.argsort(proba_rf)[::-1]
+            best_class = sorted_indices[0]
+            second_best_class = sorted_indices[1]
+            
+            if proba_rf[best_class] >= proba_rf[second_best_class] + 0.05:
+                # Condition met, send the prediction
+                prediction_given = best_class
+                logger.info(f"Accepted Prediction: {prediction_given} (Probability: {proba_rf[best_class]:.2f})")
+                
+                answer = requests.post(f"{hostname}/lelec210x/leaderboard/submit/{key}/{prediction_rf[0]}", timeout=1)
+                print(answer.text)
+                json_answer = json.loads(answer.text)
+                print(json_answer)
+                
+                logger.info(f"Predictions: {proba_rf}")
+                logger.info(f"Prediction: {prediction_rf[0]}")
 
-            answer = requests.post(f"{hostname}/lelec210x/leaderboard/submit/{key}/{prediction_given}", timeout=1)
-            print(answer.text)
-            json_answer = json.loads(answer.text)
-            print(json_answer)
+            else:
+                # Condition not met, do not send
+                logger.info(f"Prediction {best_class} rejected. Probability too close to {second_best_class}.")
+                print(f"Prediction {best_class} rejected: {proba_rf[best_class]:.2f} vs {proba_rf[second_best_class]:.2f}")
+
 
         
         except packet.InvalidPacket as e:
