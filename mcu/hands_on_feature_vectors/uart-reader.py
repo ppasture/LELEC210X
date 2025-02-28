@@ -1,12 +1,16 @@
+import sys
+import os
+classification_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../classification/src/classification"))
+sys.path.append(classification_path)
+from utils.plots import plot_specgram_textlabel
+
+
 import argparse
 import matplotlib.pyplot as plt
 import numpy as np
 import serial
 from serial.tools import list_ports
 import pickle
-from classification.utils.plots import plot_specgram_textlabel
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.decomposition import PCA
 
 # Define model 
 class PCA_RF_Model:
@@ -83,6 +87,7 @@ if __name__ == "__main__":
         # Load the model from pickle file
         model_rf = pickle.load(open("../../classification/data/models/final_model_with_pca.pickle", "rb"))
         print(f"Model {type(model_rf).__name__} has been loaded from pickle file.\n")
+        print(f"PCA expected components: {model_rf.pca.n_components_}")
 
         plt.figure(figsize=(8, 6))
 
@@ -94,9 +99,7 @@ if __name__ == "__main__":
                 msg_counter += 1
 
                 print(f"MEL Spectrogram #{msg_counter}")
-
-                # Normalize and reshape feature vector
-                fv = melvec.reshape(1, -1)
+                fv = melvec[12:].reshape(1, -1)  # Remove the header
                 fv = fv / np.linalg.norm(fv)
 
                 # Predict the class of the mel vector
@@ -111,7 +114,7 @@ if __name__ == "__main__":
                 log_file.flush()  # Ensure immediate write
                 print(f"Logged: {log_entry.strip()}")
 
-                class_names = model_rf.classes_
+                class_names = model_rf.model.classes_
                 probabilities = np.round(proba[0] * 100, 2)
                 max_len = max(len(name) for name in class_names)
                 class_names_str = " ".join([f"{name:<{max_len}}" for name in class_names])
@@ -121,7 +124,7 @@ if __name__ == "__main__":
 
                 # Plot and save the spectrogram
                 plot_specgram_textlabel(
-                    melvec.reshape((N_MELVECS, MELVEC_LENGTH)).T,
+                    melvec[12:].reshape((N_MELVECS, MELVEC_LENGTH)).T,
                     ax=plt.gca(),
                     is_mel=True,
                     title=f"MEL Spectrogram #{msg_counter}",
