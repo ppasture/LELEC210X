@@ -385,7 +385,7 @@ class Feature_vector_DS:
 
         sgram_crop = sgram[:, : self.ncol]
         fv = sgram_crop.flatten()  # feature vector
-        fv /= np.linalg.norm(fv)
+        #fv /= np.linalg.norm(fv) no normalization
         return fv
 
     def display(self, cls_index: Tuple[str, int]):
