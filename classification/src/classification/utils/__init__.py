@@ -2,6 +2,8 @@ import sys
 import os
 common_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../../common/src/common"))
 sys.path.append(common_path)
+classif_path = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+sys.path.append(classif_path)
 from utils.plots import plot_specgram_textlabel
 
 import struct
