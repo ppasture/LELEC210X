@@ -34,6 +34,7 @@ class GroupConfig(BaseModel):
 
 
 class Status(str, Enum):
+    not_submitted = "not_submitted"
     correct = "correct"
     incorrect = "incorrect"
     correct_penalized = "correct_penalized"
@@ -60,7 +61,7 @@ class Guess(str, Enum):
 
 class Answer(BaseModel):
     guess: Guess
-    status: Status = Status.incorrect
+    status: Status = Status.not_submitted
     hide: bool = False
 
 
@@ -501,7 +502,7 @@ class Config(BaseModel):
         current_round = self.rounds_config.get_current_round()
         current_lap = self.rounds_config.get_current_lap()
         current_gain = (
-            -(current_lap // 4) * 3.0
+            -(current_lap // 4) * 5.0
             if self.rounds_config.get_current_round_config().reduce_level
             else 0.0
         )
@@ -527,35 +528,32 @@ class Config(BaseModel):
                     group_config.key, current_round, lap
                 )
 
-                if self.rounds_config.get_current_round_config().only_check_for_presence:
-                    if guess != Guess.nothing:
+                if guess != Guess.nothing:
+                    if self.rounds_config.get_current_round_config().only_check_for_presence:
                         guess = Guess.received
-                        correct = True
+                        status = Status.correct
+                        score += 1
                     else:
-                        correct = False
+                        if guess == correct_answer:
+                            score += 1
+                            status = Status.correct
+                        else:
+                            score -= 0.5
+                            status = Status.incorrect
                 else:
-                    correct = guess == correct_answer
-
-                    if not correct:  # We penalize incorrect guesses
-                        score -= 0.5
-
-                if correct:
-                    status = Status.correct
-                    score += 1.0
-                else:
-                    status = Status.incorrect
+                    status = Status.not_submitted
 
                 if self.rounds_config.is_penalized(
                     group_config.key, current_round, lap
                 ):
                     score -= 0.5  # We penalize guesses outside permitted time
 
-                    if correct:
+                    if status == Status.correct:
                         status = Status.correct_penalized
-                    else:
+                    elif status == Status.incorrect:
                         status = Status.incorrect_penalized
 
-                hide = lap > current_lap
+                hide = (lap > current_lap) or status == Status.not_submitted
 
                 answers.append(Answer(guess=guess, status=status, hide=hide))
 
