@@ -1,90 +1,86 @@
 import os
-import random
 import time
-from src.classification.utils.audio_student import AudioUtil  # Importing AudioUtil for audio operations
+import sounddevice as sd
+import numpy as np
+import wave
+import scipy.io.wavfile as wav
+from src.classification.utils.audio_student import AudioUtil  # Gestion audio
 
-def play_audio_files(directory_path, shuffle=False, pause=0, log_path="classification/history_of_played_sounds.txt"):
-    """
-    Play a selection of .wav audio files located in the specified directory.
-    Specifically, select 20 random files from each class (total: 100 files, if we assume 5 classes),
-    and then play them either sequentially or in random order.
-    Logs the label/class of each played file into a log file.
+def record_audio(duration, sample_rate, output_path):
+    """ Enregistre l'audio du microphone et sauvegarde dans un fichier .wav. """
+    print(f"Enregistrement en cours : {output_path}")
+    recording = sd.rec(int(duration * sample_rate), samplerate=sample_rate, channels=1, dtype=np.int16)
+    sd.wait()  # Attendre la fin de l'enregistrement
 
-    :param directory_path: Directory containing .wav audio files.
-    :param shuffle: Whether to play files in random order.
-    :param pause: Pause duration (in seconds) between consecutive files.
-    :param log_path: File path for storing playback logs.
+    # Sauvegarde du fichier enregistré
+    with wave.open(output_path, 'wb') as wf:
+        wf.setnchannels(1)  # Mono
+        wf.setsampwidth(2)  # 16-bit
+        wf.setframerate(sample_rate)
+        wf.writeframes(recording.tobytes())
+
+    print(f"Enregistrement sauvegardé : {output_path}")
+
+def play_audio_files(directory_path, output_directory, pause=0, log_path="classification/history_of_played_sounds.txt"):
     """
-    # Retrieve all .wav files from the specified directory
+    Joue *tous* les fichiers audio .wav du dossier *dans l'ordre exact* et enregistre simultanément.
+    """
+    if not os.path.exists(output_directory):
+        os.makedirs(output_directory)  # Crée le dossier de sauvegarde s'il n'existe pas
+
     all_audio_files = [f for f in os.listdir(directory_path) if f.endswith(".wav")]
-
+    
     if not all_audio_files:
-        print("No .wav files found in the provided directory.")
+        print("Aucun fichier .wav trouvé.")
         return
 
-    # Group files by class
-    class_groups = {}
-    for audio_file in all_audio_files:
-        label = audio_file.split("_")[0] if "_" in audio_file else "Unknown"
-        if label not in class_groups:
-            class_groups[label] = []
-        class_groups[label].append(audio_file)
+    # 🔹 Trier les fichiers par ordre alphabétique
+    all_audio_files.sort()
 
-    # For each class, randomly select 20 files
-    selected_audio_files = []
-    for label, files in class_groups.items():
-        if len(files) < 20:
-            print(f"Not enough files in class '{label}' to select 20. Found {len(files)} files.")
-            return
-        selected_files = random.sample(files, 20)
-        selected_audio_files.extend(selected_files)
+    print(f"Lecture de {len(all_audio_files)} fichiers avec une pause de {pause}s.")
 
-    # Now we have 100 files (20 per class if we assume 5 classes)
-    # Shuffle if required
-    if shuffle:
-        random.shuffle(selected_audio_files)
-    else:
-        selected_audio_files.sort()
-
-    print(f"Playing files ({len(selected_audio_files)} total) in {'random' if shuffle else 'sequential'} order with a pause of {pause}s.")
-
-    # Open the log file for recording playback details
     with open(log_path, "w") as log_file:
         log_file.write("Index\tLabel/Class\n")
         log_file.write("=" * 30 + "\n")
 
-        for idx, audio_file in enumerate(selected_audio_files, start=1):
+        for idx, audio_file in enumerate(all_audio_files, start=1):
             file_path = os.path.join(directory_path, audio_file)
+            label = audio_file.split("")[0] if "" in audio_file else "Unknown"
+            output_file_path = os.path.join(output_directory, audio_file)  # Même nom de fichier
 
-            # Derive the label/class from the filename (text before the first '_')
-            label = audio_file.split("_")[0] if "_" in audio_file else "Unknown"
-
-            print(f"Now playing: {audio_file} (Label: {label})")
+            print(f"Lecture : {audio_file} (Classe : {label})")
             log_file.write(f"{idx}\t{label}\n")
 
             try:
-                # Load the audio file
+                # Charger et jouer l'audio
                 audio_data = AudioUtil.open(file_path)
+                sample_rate = audio_data[1]  # Fréquence d'échantillonnage
+                duration = len(audio_data[0]) / sample_rate  # Durée de lecture
+                
+                # Jouer le son avec sounddevice pour éviter les problèmes de AudioUtil.play()
+                print(f"Lecture en cours : {file_path}")
+                sd.play(audio_data[0], sample_rate)
+                sd.wait()  # Attendre la fin du son
+                print("Son terminé.")
 
-                # Play the audio file
-                AudioUtil.play(audio_data)
+                # Démarrer l'enregistrement
+                record_audio(duration, sample_rate, output_file_path)
 
-                # Calculate playback duration and add the specified pause
-                playback_time = len(audio_data[0]) / audio_data[1]  # samples / sample_rate
-                time.sleep(playback_time + pause)
+                # Pause après la lecture
+                time.sleep(pause)
             except Exception as error:
-                print(f"Failed to play {audio_file}: {error}")
-                log_file.write(f"{idx}\t{label} - ERROR: {error}\n")
+                print(f"Erreur avec {audio_file} : {error}")
+                log_file.write(f"{idx}\t{label} - ERREUR: {error}\n")
 
-if __name__ == "__main__":
+if _name_ == "_main_":
     import argparse
 
-    parser = argparse.ArgumentParser(description="Audio playback tool for selected .wav files in a directory.")
-    parser.add_argument("--random", action="store_true", help="Enable random playback order.")
-    parser.add_argument("--delay", type=float, default=0, help="Pause duration between playback (default: 0 seconds).")
-    parser.add_argument("--log", type=str, default="classification/data/played_sounds/history_of_played_sounds.txt", help="Path to the log file (default: classification/history_of_played_sounds.txt).")
+    parser = argparse.ArgumentParser(description="Lecture et enregistrement audio simultané.")
+    parser.add_argument("--delay", type=float, default=0, help="Pause entre les sons (par défaut: 0s).")
+    parser.add_argument("--log", type=str, default="src/classification/datasets/played_sounds/history_of_played_sounds.txt", help="Fichier de log.")
+    parser.add_argument("--output", type=str, default="src/classification/datasets/new_dataset", help="Dossier pour sauvegarder les enregistrements.")
 
     args = parser.parse_args()
 
-    audio_folder = 'classification/src/classification/datasets/soundfiles'
-    play_audio_files(audio_folder, args.random, args.delay, args.log)
+    audio_folder = 'src/classification/datasets/soundfiles'
+    play_audio_files(audio_folder, args.output, args.delay, args.log)
