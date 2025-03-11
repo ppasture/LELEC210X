@@ -28,11 +28,13 @@
 #define MELVEC_LENGTH 20
 #define N_MELVECS 20
 
+//#define MY_MAX_PACKET_SIZE 15
+
 // Enable performance measurements
-#define PERF_COUNT 1
+#define PERF_COUNT 0
 
 // Enable debug print
-#define DEBUGP 1
+#define DEBUGP 0
 
 #if (DEBUGP == 1)
 #define DEBUG_PRINT(...) do{ printf(__VA_ARGS__ ); } while( 0 )

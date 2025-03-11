@@ -90,6 +90,7 @@ HAL_StatusTypeDef S2LP_Send(uint8_t *payload, uint16_t pay_len)
 {
 	S2LPStatus radio_status;
 	HAL_StatusTypeDef err;
+	err = S2LP_WakeUp();
 
 	// Flush the Tx FIFO
 	S2LP_Command(CMD_FLUSHTXFIFO, &radio_status);
@@ -163,6 +164,7 @@ HAL_StatusTypeDef S2LP_Send(uint8_t *payload, uint16_t pay_len)
 	while (!packet_sent) {
 		__WFI(); // wait until packet has been fully transmitted
 	}
+	err = S2LP_Sleep();
 
 	DEBUG_PRINT("[S2LP] Packet transmitted!\r\n");
 	return HAL_OK;
@@ -500,6 +502,7 @@ HAL_StatusTypeDef S2LP_Init(SPI_HandleTypeDef *spi_handle)
 		DEBUG_PRINT("[S2LP] Error: radio is not ready after initialization\r\n");
 		return HAL_ERROR;
 	}
+	err = S2LP_Sleep();
 
 	return HAL_OK;
 }

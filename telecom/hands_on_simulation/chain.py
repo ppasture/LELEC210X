@@ -37,8 +37,8 @@ class Chain:
     snr_range: np.ndarray = np.arange(-10, 25)
 
     # Lowpass filter parameters
-    numtaps: int = 100
-    cutoff: float = BIT_RATE * osr_rx / 2.0001  # or 2*BIT_RATE,...
+    numtaps: int = 31
+    cutoff: float = 65e3  # or 2*BIT_RATE,...
 
     # Tx methods
 
@@ -54,7 +54,7 @@ class Chain:
         """
         fd = self.freq_dev  # Frequency deviation, Delta_f
         B = self.bit_rate  # B=1/T
-        h = 2 * fd / B  # Modulation index
+        h = 4 * fd / B  # Modulation index
         R = self.osr_tx  # Oversampling factor
 
         x = np.zeros(len(bits) * R, dtype=np.complex64)
@@ -88,7 +88,7 @@ class Chain:
         """
         raise NotImplementedError
 
-    bypass_cfo_estimation: bool = False
+    bypass_cfo_estimation: bool = True
 
     def cfo_estimation(self, y: np.array) -> float:
         """
@@ -99,7 +99,7 @@ class Chain:
         """
         raise NotImplementedError
 
-    bypass_sto_estimation: bool = False
+    bypass_sto_estimation: bool = True
 
     def sto_estimation(self, y: np.array) -> float:
         """
@@ -158,7 +158,7 @@ class BasicChain(Chain):
 
         R = self.osr_rx
         N = 4
-        Nt = N * R
+        Nt = N*R
         T = 1 / self.bit_rate
 
         blockL = y[:Nt]

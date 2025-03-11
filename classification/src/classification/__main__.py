@@ -14,22 +14,30 @@ import common
 from auth import PRINT_PREFIX
 from common.env import load_dotenv
 from common.logging import logger
-hostname = "http://lelec210x.sipr.ucl.ac.be"
-key = "jNvyuAfUUwf3iZAWF40sqSuW3DHRkjTj8jwDb0-d"
 from .utils import payload_to_melvecs
 import sys
-import os
 
 sys.path.append(os.path.abspath("auth/src"))
 
 from auth import packet
 load_dotenv()
 
+# Server details
+hostname = "http://lelec210x.sipr.ucl.ac.be"
+key = "jNvyuAfUUwf3iZAWF40sqSuW3DHRkjTj8jwDb0-d"
+
+# Categories mapping
+categories = ["gunshot"] #,"fire",,"gunshot""fireworks"
+
+# Create output directory
+output_dir = Path("melvecs")
+output_dir.mkdir(parents=True, exist_ok=True)
+
 def parse_packet(line: str) -> Optional[bytes]:
     """Parse a line into a packet."""
     line = line.strip()
     if line.startswith(PRINT_PREFIX):
-        return bytes.fromhex(line[len(PRINT_PREFIX) :])
+        return bytes.fromhex(line[len(PRINT_PREFIX):])
     return None
 
 def hex_to_bytes(ctx: click.Context, param: click.Parameter, value: str) -> bytes:
@@ -38,50 +46,36 @@ def hex_to_bytes(ctx: click.Context, param: click.Parameter, value: str) -> byte
 
 @click.command()
 @click.option(
-    "-i",
-    "--input",
-    "_input",
-    default=None,
-    type=click.File("r"),
-    help="Where to read the input stream. If not specified, read from TCP address. You can pass '-' to read from stdin.",
+    "-i", "--input", "_input",
+    default=None, type=click.File("r"),
+    help="Where to read the input stream. If not specified, read from TCP address."
 )
 @click.option(
-    "-o",
-    "--output",
-    default="-",
-    type=click.File("w"),
-    help="Where to write the output stream. Default to '-', a.k.a. stdout.",
+    "-o", "--output",
+    default="-", type=click.File("w"),
+    help="Where to write the output stream. Default to stdout."
 )
 @click.option(
     "--serial-port",
-    default=None,
-    envvar="SERIAL_PORT",
-    show_envvar=True,
-    help="If specified, read the packet from the given serial port. E.g., '/dev/tty0'. This takes precedence over `--input` and `--tcp-address` options.",
+    default=None, envvar="SERIAL_PORT", show_envvar=True,
+    help="If specified, read the packet from the given serial port."
 )
 @click.option(
     "--tcp-address",
-    default="tcp://127.0.0.1:10000",
-    envvar="TCP_ADDRESS",
-    show_default=True,
-    show_envvar=True,
-    help="TCP address to be used to read the input stream.",
+    default="tcp://127.0.0.1:10000", envvar="TCP_ADDRESS",
+    show_default=True, show_envvar=True,
+    help="TCP address to be used to read the input stream."
 )
 @click.option(
-    "-k",
-    "--auth-key",
-    default=16 * "00",
-    envvar="AUTH_KEY",
-    callback=hex_to_bytes,
-    show_default=True,
-    show_envvar=True,
-    help="Authentication key (hex string).",
+    "-k", "--auth-key",
+    default=16 * "00", envvar="AUTH_KEY", callback=hex_to_bytes,
+    show_default=True, show_envvar=True,
+    help="Authentication key (hex string)."
 )
 @click.option(
     "--authenticate/--no-authenticate",
-    default=True,
-    is_flag=True,
-    help="Enable / disable authentication, useful for skipping authentication step.",
+    default=True, is_flag=True,
+    help="Enable / disable authentication."
 )
 @common.click.melvec_length
 @common.click.n_melvecs
@@ -100,14 +94,15 @@ def main(
     Parse packets from the MCU, perform authentication, and classify MELVECs contained in payloads.
     """
     logger.debug(f"Unwrapping packets with auth. key: {auth_key.hex()}")
-    
+
     unwrapper = packet.PacketUnwrapper(
         key=auth_key,
         allowed_senders=[0],
         authenticate=authenticate,
     )
-    
+
     def reader() -> Iterator[str]:
+        """Reads packets from serial port, input file, or TCP stream."""
         if serial_port:
             ser = serial.Serial(port=serial_port, baudrate=115200)
             ser.reset_input_buffer()
@@ -134,61 +129,37 @@ def main(
             while True:
                 yield socket.recv(2 * melvec_length * n_melvecs)
 
-    # Load model
-    pca_path = Path("classification/data/models/pca.pickle")
-    rf_model_path = Path("classification/data/models/model.pickle")
-    with pca_path.open("rb") as pca_file:
-        pca = pickle.load(pca_file)
-
-    with rf_model_path.open("rb") as rf_file:
-        model_rf = pickle.load(rf_file)
-
     input_stream = reader()
 
+    # Load the model
+
+    x = 0
     for msg in input_stream:
         try:
+            x += 1
             sender, payload = unwrapper.unwrap_packet(msg)
-            #logger.debug(f"From {sender}, received packet: {payload.hex()}")
-            #print("Received packet:")
-            #print(payload.hex())
+            logger.debug(f"From {sender}, received packet: {payload.hex()}")
+            print("Received packet:")
+            print(payload.hex())
 
-            #output.write(PRINT_PREFIX + payload.hex() + "\n")
-            #output.flush()
-            melvec = payload_to_melvecs(payload.hex(), melvec_length, n_melvecs)
-            #logger.info(f"Parsed payload into Mel vectors: {melvecs}")
-            fv = melvec.reshape(1, -1)
-            melvec = fv/np.linalg.norm(fv)
+            output.write(PRINT_PREFIX + payload.hex() + "\n")
+            output.flush()
 
-            melvecs_pca = pca.transform(melvec)
+            # Convert payload to MELVECs
+            melvecs = payload_to_melvecs(payload.hex(), melvec_length, n_melvecs)
+            logger.info(f"Parsed payload into Mel vectors: {melvecs}")
 
-            proba_rf = model_rf.predict_proba(melvecs_pca)[0]
-            prediction_rf = model_rf.predict(melvecs_pca)
-            
-            sorted_indices = np.argsort(proba_rf)[::-1]
-            best_class = sorted_indices[0]
-            second_best_class = sorted_indices[1]
-            
-            if proba_rf[best_class] >= proba_rf[second_best_class] + 0.05:
-                # Condition met, send the prediction
-                prediction_given = best_class
-                logger.info(f"Accepted Prediction: {prediction_given} (Probability: {proba_rf[best_class]:.2f})")
-                
-                answer = requests.post(f"{hostname}/lelec210x/leaderboard/submit/{key}/{prediction_rf[0]}", timeout=1)
-                print(answer.text)
-                json_answer = json.loads(answer.text)
-                print(json_answer)
-                
-                logger.info(f"Predictions: {proba_rf}")
-                logger.info(f"Prediction: {prediction_rf[0]}")
-
-            else:
-                # Condition not met, do not send
-                logger.info(f"Prediction {best_class} rejected. Probability too close to {second_best_class}.")
-                print(f"Prediction {best_class} rejected: {proba_rf[best_class]:.2f} vs {proba_rf[second_best_class]:.2f}")
+            # Determine category based on x
+            category_index = (x - 1) // 40  # 40 per category
+            if category_index < len(categories):
+                category = categories[category_index]
+                filename = f"{category}_{(x +62 - 1):02d}.npy"
+                filepath = output_dir / filename
+                np.save(filepath, melvecs)
+                logger.info(f"✅ Saved MELVEC: {filepath}")
 
 
-        
         except packet.InvalidPacket as e:
-            logger.error(f"Invalid packet error: {e.args[0]}")
+            logger.error(f"❌ Invalid packet error: {e.args[0]}")
         except Exception as e:
-            logger.exception(f"Unexpected error while processing packet: {e}")
+            logger.exception(f"❌ Unexpected error while processing packet: {e}")

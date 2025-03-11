@@ -1,17 +1,13 @@
 import os
-import random
 import time
 from src.classification.utils.audio_student import AudioUtil  # Importing AudioUtil for audio operations
 
-def play_audio_files(directory_path, shuffle=False, pause=0, log_path="classification/history_of_played_sounds.txt"):
+def play_audio_files(directory_path, pause=0, log_path="classification/history_of_played_sounds.txt"):
     """
-    Play a selection of .wav audio files located in the specified directory.
-    Specifically, select 20 random files from each class (total: 100 files, if we assume 5 classes),
-    and then play them either sequentially or in random order.
-    Logs the label/class of each played file into a log file.
+    Play exactly 40 files per class sequentially from the specified directory.
+    The files are played in alphabetical order within each class.
 
     :param directory_path: Directory containing .wav audio files.
-    :param shuffle: Whether to play files in random order.
     :param pause: Pause duration (in seconds) between consecutive files.
     :param log_path: File path for storing playback logs.
     """
@@ -24,29 +20,26 @@ def play_audio_files(directory_path, shuffle=False, pause=0, log_path="classific
 
     # Group files by class
     class_groups = {}
-    for audio_file in all_audio_files:
+    for audio_file in all_audio_files: 
         label = audio_file.split("_")[0] if "_" in audio_file else "Unknown"
+        if label == "chainsaw" or label == "fire" or label == "fireworks":
+            continue
+
         if label not in class_groups:
             class_groups[label] = []
         class_groups[label].append(audio_file)
-
-    # For each class, randomly select 20 files
+    
+    # Sort files within each class and take the first 40 (if available)
     selected_audio_files = []
-    for label, files in class_groups.items():
-        if len(files) < 20:
-            print(f"Not enough files in class '{label}' to select 20. Found {len(files)} files.")
+    for label, files in sorted(class_groups.items()):  # Sort classes alphabetically
+        files.sort()  # Sort files alphabetically within the class
+        if len(files) < 40:
+            print(f"Not enough files in class '{label}' to select 40. Found {len(files)} files.")
             return
-        selected_files = random.sample(files, 20)
+        selected_files = files[:40]  # Take the first 40 files in alphabetical order
         selected_audio_files.extend(selected_files)
-
-    # Now we have 100 files (20 per class if we assume 5 classes)
-    # Shuffle if required
-    if shuffle:
-        random.shuffle(selected_audio_files)
-    else:
-        selected_audio_files.sort()
-
-    print(f"Playing files ({len(selected_audio_files)} total) in {'random' if shuffle else 'sequential'} order with a pause of {pause}s.")
+    
+    print(f"Playing files ({len(selected_audio_files)} total) sequentially with a pause of {pause}s.")
 
     # Open the log file for recording playback details
     with open(log_path, "w") as log_file:
@@ -80,11 +73,10 @@ if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser(description="Audio playback tool for selected .wav files in a directory.")
-    parser.add_argument("--random", action="store_true", help="Enable random playback order.")
     parser.add_argument("--delay", type=float, default=0, help="Pause duration between playback (default: 0 seconds).")
     parser.add_argument("--log", type=str, default="classification/data/played_sounds/history_of_played_sounds.txt", help="Path to the log file (default: classification/history_of_played_sounds.txt).")
 
     args = parser.parse_args()
 
     audio_folder = 'classification/src/classification/datasets/soundfiles'
-    play_audio_files(audio_folder, args.random, args.delay, args.log)
+    play_audio_files(audio_folder, args.delay, args.log)
