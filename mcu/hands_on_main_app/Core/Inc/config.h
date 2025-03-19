@@ -28,7 +28,7 @@
 #define MELVEC_LENGTH 20
 #define N_MELVECS 20
 
-//#define MY_MAX_PACKET_SIZE 15
+
 
 // Enable performance measurements
 #define PERF_COUNT 0

@@ -37,14 +37,17 @@ void MX_AES_Init(void)
 {
 
   /* USER CODE BEGIN AES_Init 0 */
-
+  __HAL_RCC_AES_CLK_ENABLE();
   /* USER CODE END AES_Init 0 */
 
   /* USER CODE BEGIN AES_Init 1 */
 
+  // only possible configuration for CMAC
+  //hcryp.Init.OperatingMode = CRYP_ALGOMODE_TAG_GENERATION;
+
   /* USER CODE END AES_Init 1 */
   hcryp.Instance = AES;
-  hcryp.Init.DataType = CRYP_DATATYPE_32B;
+  hcryp.Init.DataType = CRYP_DATATYPE_8B;
   hcryp.Init.KeySize = CRYP_KEYSIZE_128B;
   hcryp.Init.OperatingMode = CRYP_ALGOMODE_ENCRYPT;
   hcryp.Init.ChainingMode = CRYP_CHAINMODE_AES_CBC;

@@ -7,60 +7,68 @@
 #include "packet.h"
 #include "main.h"
 #include "utils.h"
+#include <string.h>
+#include "aes.h"
 
-const uint8_t AES_Key[16]  = {
-                            0x00,0x00,0x00,0x00,
-							0x00,0x00,0x00,0x00,
-							0x00,0x00,0x00,0x00,
-							0x00,0x00,0x00,0x00};
+// BUG : VSCode does not recognize the AES macro, so this is a quick fix, that does not impact the code
+#ifndef AES
+#define AES
+#endif
+#include "stm32l4xx_hal_cryp.h"
+#include "stm32l4xx_hal_cryp_ex.h"
 
-void tag_cbc_mac(uint8_t *tag, const uint8_t *msg, size_t msg_len) {
-	// Allocate a buffer of the key size to store the input and result of AES
-	// uint32_t[4] is 4*(32/8)= 16 bytes long
-	uint32_t statew[4] = {0};
-	// state is a pointer to the start of the buffer
-	uint8_t *state = (uint8_t*) statew;
+// BUG : VSCode does not recognize many of the types, such as uint32_t, i couldn't find a fix for this
 
-    const uint8_t *key = AES_Key; // Assuming AES_Key is defined globally as the secret key
+void tag_cbc_mac_hardware(uint8_t *tag, const uint8_t *msg, size_t msg_len) {
+    // Allocate enough space for all blocks
+    __ALIGN_BEGIN static uint8_t *tmp_out = NULL;
 
-    // Initialize the state to 16 zero bytes
-    memset(state, 0, 16);
+    // Calculate number of blocks needed (rounded up)
+    size_t num_blocks = (msg_len + 15) / 16;
+    size_t total_size = num_blocks * 16;
 
-    // Process the message in 16-byte blocks
-    size_t num_blocks = (msg_len + 15) / 16; // Calculate the number of 16-byte blocks
-    for (size_t i = 0; i < num_blocks; i++) {
-        // XOR the current block with the state
-        for (size_t j = 0; j < 16; j++) {
-            if (i * 16 + j < msg_len) {
-                state[j] ^= msg[i * 16 + j];
-            }
-        }
-        // Encrypt the state using AES
-        AES128_encrypt(state, key);
+    // Allocate memory for all blocks
+    tmp_out = malloc(total_size);
+    if (tmp_out == NULL) {
+        Error_Handler();
+        return;
     }
-    // TO DO : Complete the CBC-MAC_AES
 
-    // Copy the result of CBC-MAC-AES to the tag.
-    for (int j=0; j<16; j++) {
-        tag[j] = state[j];
+	// Step 1: Reset the peripheral (but its donne by HAL_CRYP_AESCBC_Encrypt)
+
+    // Step 3: Perform CBC encryption with proper padding
+    if (HAL_CRYP_AESCBC_Encrypt(&hcryp, (uint8_t *)msg, msg_len, tmp_out, 1000) != HAL_OK) {
+        free(tmp_out);
+        Error_Handler();
+        return;
     }
+
+    // Step 4: Copy the last block as the MAC
+    memcpy(tag, tmp_out + ((num_blocks - 1) * 16), 16);
+
+    // Clean up
+    free(tmp_out);
 }
 
 // Assumes payload is already in place in the packet
 int make_packet(uint8_t *packet, size_t payload_len, uint8_t sender_id, uint32_t serial) {
     size_t packet_len = payload_len + PACKET_HEADER_LENGTH + PACKET_TAG_LENGTH;
+    // So is the tag
+	memset(packet + payload_len + PACKET_HEADER_LENGTH, 0, PACKET_TAG_LENGTH);
 
+	// Set the reserved field to 0
 	packet[0] = 0x00;
+	// Set the emitter_id field
 	packet[1] = sender_id;
-	packet[2] = (payload_len >> 8) & 0xFF; // Higher byte
-    packet[3] = payload_len & 0xFF;        // Lower byte
-    packet[4] = (serial >> 24) & 0xFF;     // Most significant byte
-    packet[5] = (serial >> 16) & 0xFF;
-    packet[6] = (serial >> 8) & 0xFF;
-    packet[7] = serial & 0xFF;             // Least significant byte
+	// Set the payload_length field
+	packet[2] = (payload_len >> 8) & 0xFF;
+	packet[3] = payload_len & 0xFF;
+	// Set the packet_serial field
+	packet[4] = (serial >> 24) & 0xFF;
+	packet[5] = (serial >> 16) & 0xFF;
+	packet[6] = (serial >> 8) & 0xFF;
+	packet[7] = serial & 0xFF;
 
-
-	// TO DO :  replace the two previous command by properly
 	//			setting the packet header with the following structure :
 	/***************************************************************************
 	 *    Field       	Length (bytes)      Encoding        Description
@@ -79,10 +87,6 @@ int make_packet(uint8_t *packet, size_t payload_len, uint8_t sender_id, uint32_t
 	 *		 		- and operator (&) with hex value, e.g.to perform 0xFF
 	 *		 	This will be helpful when setting fields that are on multiple bytes.
 	*/
-
-	// For the tag field, you have to calculate the tag. The function call below is correct but
-	// tag_cbc_mac function, calculating the tag, is not implemented.
-    tag_cbc_mac(packet + payload_len + PACKET_HEADER_LENGTH, packet, payload_len + PACKET_HEADER_LENGTH);
-
+	tag_cbc_mac_hardware(packet + payload_len + PACKET_HEADER_LENGTH, packet, payload_len + PACKET_HEADER_LENGTH);
     return packet_len;
 }
