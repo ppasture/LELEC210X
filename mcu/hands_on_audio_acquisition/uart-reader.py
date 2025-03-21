@@ -9,7 +9,7 @@ PRINT_PREFIX = "SND:HEX:"
 FREQ_SAMPLING = 10200
 VAL_MAX_ADC = 4096
 VDD = 3.3
-LABELS = ["garbage"]
+LABELS = ["gunshot"]
 SAMPLES_PER_LABEL = 40
 
 def parse_buffer(line):
@@ -38,7 +38,8 @@ def generate_audio(buf, file_name):
     buf = np.asarray(buf, dtype=np.float64)
     buf = buf - np.mean(buf)
     buf /= max(abs(buf))
-    sf.write(f"../../classification/src/classification/datasets/new_soundfiles/{file_name}.wav", buf, FREQ_SAMPLING)
+    sf.write("audio_files/" + file_name + ".ogg", buf, FREQ_SAMPLING)
+
 
 if __name__ == "__main__":
     argParser = argparse.ArgumentParser()
@@ -67,6 +68,12 @@ if __name__ == "__main__":
 
             file_name = f"{LABELS[label_index]}_{msg_counter % SAMPLES_PER_LABEL:02d}"
             print(f"Acquisition #{msg_counter}: Saving as {file_name}.ogg")
+            if label_index >= len(LABELS):
+                print("Acquisition complete.")
+                break
+
+            file_name = f"{LABELS[label_index]}_{msg_counter % SAMPLES_PER_LABEL:02d}"
+            print(f"Acquisition #{msg_counter}: Saving as {file_name}.ogg")
 
             buffer_size = len(msg)
             times = np.linspace(0, buffer_size - 1, buffer_size) * 1 / FREQ_SAMPLING
@@ -82,7 +89,11 @@ if __name__ == "__main__":
             plt.cla()
 
             generate_audio(msg, file_name)
+            generate_audio(msg, file_name)
             msg_counter += 1
+
+            if msg_counter % SAMPLES_PER_LABEL == 0:
+                label_index += 1
 
             if msg_counter % SAMPLES_PER_LABEL == 0:
                 label_index += 1

@@ -9,6 +9,7 @@ import soundfile as sf
 from numpy import ndarray
 from scipy.signal import fftconvolve
 from scipy import signal
+from scipy.signal import firwin, lfilter
 
 # -----------------------------------------------------------------------------
 """
@@ -135,21 +136,25 @@ class AudioUtil:
         scaled_sig = sig * scaling_factor
         return (scaled_sig, sr)
 
-    def add_noise(audio, sigma=0.1) -> Tuple[ndarray, int]:
+    def add_noise(audio: Tuple[ndarray, int], snr_db: float = 20) -> Tuple[ndarray, int]:
         """
-        Augment the audio signal by adding gaussian noise.
+        Add Gaussian noise to the signal to achieve a desired SNR in dB.
 
-        :param audio: The audio signal as a tuple (signal, sample_rate).
-        :param sigma: Standard deviation of the gaussian noise.
+        :param audio: Tuple (signal, sample_rate)
+        :param snr_db: Desired Signal-to-Noise Ratio in dB (default: 20)
+        :return: Tuple (noisy_signal, sample_rate)
         """
         sig, sr = audio
-
-        ### TO COMPLETE
-        noise = np.random.normal(0, sigma, sig.shape)
-    
-        noisy_sig = sig + noise
-    
-        return (noisy_sig, sr)
+        # Compute signal power
+        signal_power = np.mean(sig**2)
+        # Compute desired noise power for given SNR
+        snr_linear = 10**(snr_db / 10)
+        noise_power = signal_power / snr_linear
+        # Generate noise with this power
+        noise = np.random.normal(0, np.sqrt(noise_power), size=sig.shape)
+        # Add noise to the original signal
+        noisy_signal = sig + noise
+        return noisy_signal, sr
 
 
     def echo(audio, nechos) -> Tuple[ndarray, int]:
@@ -298,7 +303,27 @@ class AudioUtil:
 
         return aug_spec
 
+    def lowpass_filter(audio: Tuple[ndarray, int], cutoff_hz: float = 3000.0, numtaps: int = 101) -> Tuple[ndarray, int]:
+        """
+        Apply a low-pass filter to the audio signal.
 
+        :param audio: Tuple (signal, sample_rate)
+        :param cutoff_hz: Cutoff frequency in Hz
+        :param numtaps: Number of filter taps
+        :return: Tuple (filtered_signal, sample_rate)
+        """
+        sig, sr = audio
+        nyquist = sr / 2
+        norm_cutoff = cutoff_hz / nyquist
+
+        # Create low-pass filter
+        taps = firwin(numtaps, norm_cutoff)
+
+        # Apply the filter using lfilter
+        filtered_sig = lfilter(taps, 1.0, sig)
+
+        return filtered_sig, sr
+        
 class Feature_vector_DS:
     """
     Dataset of Feature vectors.
@@ -339,25 +364,28 @@ class Feature_vector_DS:
         """
         return len(self.dataset) * self.data_aug_factor
 
-    def get_audiosignal(self, cls_index: Tuple[str, int, str]) -> Tuple[ndarray, int]:
+    def get_audiosignal(self, cls_index: Tuple[str, int, str, str]) -> Tuple[ndarray, int]:
         """
         Get temporal signal of i'th item in dataset.
 
         :param cls_index: Class name and index.
         """
         aug = cls_index[2]
+        filtering = cls_index[3]
         cls_index = cls_index[:2]
         audio_file = self.dataset[cls_index]
         aud = AudioUtil.open(audio_file)
         aud = AudioUtil.resample(aud, self.sr)
         aud = AudioUtil.pad_trunc(aud, self.duration)
+        if (filtering == "lowpass"):
+            aud = AudioUtil.lowpass_filter(aud, cutoff_hz=3000)
         if aug != "original":
             if aug == "add_bg":
                 aud = AudioUtil.add_bg(aud, self.dataset, num_sources=1, max_ms=self.duration, amplitude_limit=0.04)
             if aug == "echo":
                 aud = AudioUtil.echo(aud, nechos=2)
             if aug == "noise":
-                aud = AudioUtil.add_noise(aud, sigma=0.1)
+                aud = AudioUtil.add_noise(aud, snr_db=20)
             if aug == "filter":
                 filt = np.array([1, -1])
                 aud = AudioUtil.filter(aud, filt)
@@ -371,7 +399,7 @@ class Feature_vector_DS:
                     aud = AudioUtil.add_bg(aud, self.dataset, num_sources=1, max_ms=self.duration, amplitude_limit=amplitude_limit)
         return aud
 
-    def __getitem__(self, cls_index: Tuple[str, int, str]) -> Tuple[ndarray, int]:
+    def __getitem__(self, cls_index: Tuple[str, int, str, str]) -> Tuple[ndarray, int]:
         """
         Get i'th item in dataset.
 
