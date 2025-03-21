@@ -9,7 +9,7 @@ PRINT_PREFIX = "SND:HEX:"
 FREQ_SAMPLING = 10200
 VAL_MAX_ADC = 4096
 VDD = 3.3
-LABELS = ["gunshot"]
+LABELS = ["garbage"]
 SAMPLES_PER_LABEL = 40
 
 def parse_buffer(line):
@@ -38,7 +38,7 @@ def generate_audio(buf, file_name):
     buf = np.asarray(buf, dtype=np.float64)
     buf = buf - np.mean(buf)
     buf /= max(abs(buf))
-    sf.write(f"../../classification/src/classification/datasets/new_soundfiles/{file_name}.ogg", buf, FREQ_SAMPLING)
+    sf.write(f"../../classification/src/classification/datasets/new_soundfiles/{file_name}.wav", buf, FREQ_SAMPLING)
 
 if __name__ == "__main__":
     argParser = argparse.ArgumentParser()
