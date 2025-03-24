@@ -22,7 +22,7 @@ def play_audio_files(directory_path, pause=0, log_path="classification/history_o
     class_groups = {}
     for audio_file in all_audio_files: 
         label = audio_file.split("_")[0] if "_" in audio_file else "Unknown"
-        if label == "chainsaw" or label == "fire" or label == "fireworks":
+        if label == "fire" or label == "chainsaw" or label == "gunshot":
             continue
 
         if label not in class_groups:

@@ -27,7 +27,7 @@ hostname = "http://lelec210x.sipr.ucl.ac.be"
 key = "jNvyuAfUUwf3iZAWF40sqSuW3DHRkjTj8jwDb0-d"
 
 # Categories mapping
-categories = ["gunshot"] #,"fire",,"gunshot""fireworks"
+categories = ["fireworks"] #,"fire",,"gunshot""fireworks"
 
 # Create output directory
 output_dir = Path("melvecs")
@@ -150,13 +150,11 @@ def main(
             logger.info(f"Parsed payload into Mel vectors: {melvecs}")
 
             # Determine category based on x
-            category_index = (x - 1) // 40  # 40 per category
-            if category_index < len(categories):
-                category = categories[category_index]
-                filename = f"{category}_{(x +62 - 1):02d}.npy"
-                filepath = output_dir / filename
-                np.save(filepath, melvecs)
-                logger.info(f"✅ Saved MELVEC: {filepath}")
+            
+            filename = f"{categories[0]}_{(x-1):02d}.npy"
+            filepath = output_dir / filename
+            np.save(filepath, melvecs)
+            logger.info(f"✅ Saved MELVEC: {filepath}")
 
 
         except packet.InvalidPacket as e:
