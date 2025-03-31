@@ -1,69 +1,69 @@
+#!/usr/bin/env python3
 import argparse
-import matplotlib.pyplot as plt
-import numpy as np
 import serial
-import soundfile as sf
+import threading
+import queue
 from serial.tools import list_ports
 
-FREQ_SAMPLING = 10200
-VAL_MAX_ADC = 4096
-VDD = 3.3
-LABELS = ["garbage"]
-SAMPLES_PER_LABEL = 40
 BUFFER_SIZE = 50000  # 25000 échantillons * 2 octets
+WRITE_BUFFER_LIMIT = 10  # Nombre de paquets à accumuler avant écriture
+WRITE_QUEUE_MAXSIZE = 100  # Limite de la file d'attente pour éviter un débordement
 
-def reader(port=None):
+def reader(port, data_queue):
     ser = serial.Serial(port=port, baudrate=115200)
+    buf = bytearray(BUFFER_SIZE)
     while True:
-        buffer = ser.read(BUFFER_SIZE)
-        if len(buffer) != BUFFER_SIZE:
+        n = ser.readinto(buf)
+        if n != BUFFER_SIZE:
             print("Erreur: paquet incomplet")
             continue
-        dt = np.dtype(np.uint16)
-        dt = dt.newbyteorder("<")  # Little endian
-        buffer_array = np.frombuffer(buffer, dtype=dt)
-        yield buffer_array
+        # On place une copie immuable du buffer dans la file d'attente
+        data_queue.put(bytes(buf))
 
-def generate_audio(buf, file_name):
-    buf = np.asarray(buf, dtype=np.float64)
-    buf = buf - np.mean(buf)
-    buf /= max(abs(buf))
-    sf.write(f"{file_name}.wav", buf, FREQ_SAMPLING)
+def writer(output_file, data_queue):
+    write_buffer = bytearray()
+    msg_counter = 0
+    with open(output_file, "wb") as f:
+        while True:
+            try:
+                msg = data_queue.get(timeout=1)
+            except queue.Empty:
+                continue  # Rien dans la file d'attente, on réessaie
 
-if __name__ == "__main__":
-    argParser = argparse.ArgumentParser()
-    argParser.add_argument("-p", "--port", help="Port for serial communication")
-    args = argParser.parse_args()
-    print("uart-reader launched...\n")
-
-    if args.port is None:
-        print("No port specified, here is a list of serial communication port available")
-        print("================")
-        port = list(list_ports.comports())
-        for p in port:
-            print(p.device)
-        print("================")
-        print("Launch this script with [-p PORT_REF] to access the communication port")
-    else:
-        plt.figure(figsize=(10, 5))
-        input_stream = reader(port=args.port)
-        msg_counter = 0
-        label_index = 0
-
-        for msg in input_stream:
-            if label_index >= len(LABELS):
-                print("Acquisition complete.")
-                break
-
-            file_name = f"{LABELS[label_index]}_{msg_counter % SAMPLES_PER_LABEL:02d}"
-            print(f"Acquisition #{msg_counter}: Saving as {file_name}.wav")
-
-            buffer_size = len(msg)
-            times = np.linspace(0, buffer_size - 1, buffer_size) * 1 / FREQ_SAMPLING
-            voltage_mV = msg * VDD / VAL_MAX_ADC * 1e3
-
-            generate_audio(msg, file_name)
+            write_buffer += msg
             msg_counter += 1
 
-            if msg_counter % SAMPLES_PER_LABEL == 0:
-                label_index += 1
+            if msg_counter % WRITE_BUFFER_LIMIT == 0:
+                f.write(write_buffer)
+                write_buffer = bytearray()
+                print(f"Acquisition #{msg_counter}: écriture groupée")
+            data_queue.task_done()
+
+def main():
+    parser = argparse.ArgumentParser(description="Enregistrement binaire depuis le port série.")
+    parser.add_argument("-p", "--port", help="Port de communication série")
+    parser.add_argument("-o", "--output", help="Nom du fichier binaire de sortie", default="output.bin")
+    args = parser.parse_args()
+
+    if args.port is None:
+        print("Aucun port spécifié. Voici la liste des ports disponibles :")
+        for p in list_ports.comports():
+            print(p.device)
+        print("Lancez ce script avec [-p PORT_REF]")
+        return
+
+    data_queue = queue.Queue(maxsize=WRITE_QUEUE_MAXSIZE)
+    print("Démarrage de l'enregistrement binaire avec lecture/écriture asynchrones...")
+
+    # Démarrer le thread d'écriture
+    writer_thread = threading.Thread(target=writer, args=(args.output, data_queue), daemon=True)
+    writer_thread.start()
+
+    try:
+        # Lancer la lecture dans le thread principal
+        reader(args.port, data_queue)
+    except KeyboardInterrupt:
+        print("Arrêt de l'enregistrement.")
+
+if __name__ == "__main__":
+    main()
