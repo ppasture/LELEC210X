@@ -1,17 +1,11 @@
 Index	Label/Class
 ==============================
-1	fireworks
-2	fireworks
-3	fireworks
-4	fireworks
-5	fireworks
-6	fireworks
-7	fireworks
-8	fireworks
-9	fireworks
-10	fireworks
-11	fireworks
-12	fireworks
-13	fireworks
-14	fireworks
-15	fireworks
+1	fire
+2	fire
+3	fire
+4	fire
+5	fire
+6	fire
+7	fire
+8	fire
+9	fire

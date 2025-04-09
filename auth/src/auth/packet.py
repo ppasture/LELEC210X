@@ -58,7 +58,7 @@ class PacketUnwrapper:
     def unwrap_packet(self, packet):
         """Return (sender, payload), or None if packet is not valid."""
         # Version check, we only know version 0
-        if len(packet) < 1 or packet[0] != 0:
+        if len(packet) < 1 : #or packet[0] != 0
             raise InvalidPacket("Packet empty or wrong version.")
         # Validate min length for header decoding
         if len(packet) < MIN_LEN:
@@ -82,4 +82,4 @@ class PacketUnwrapper:
             if self.senders_last_serial[sender] >= serial:
                 raise InvalidPacket(f"Serial number non-incrementing ({serial}).")
             self.senders_last_serial[sender] = serial
-        return (sender, packet[HEADER_LEN:-TAG_LEN])
+        return (sender, packet[HEADER_LEN:-TAG_LEN], packet[0])
