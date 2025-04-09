@@ -251,7 +251,7 @@ def run_sim(chain: Chain):
     ax.plot(np.arange(len(Cu)), np.abs(Cu))
     ax.grid(True)
     ax.set_title("Correlation")
-
+    """"
     print(Cu)
     print(sum_Cu)
     print(R**2 / sum_Cu)
@@ -260,7 +260,7 @@ def run_sim(chain: Chain):
     print(SNR_th)
     print(SNRs_dB - shift_SNR_filter + shift_SNR_out)
     print(shift_SNR_out)
-    print(shift_SNR_filter)
+    print(shift_SNR_filter)"""
     ### Plot dashboard
 
     fig, ax1 = plt.subplots()
@@ -355,6 +355,7 @@ def run_sim(chain: Chain):
     plt.grid()
     plt.legend()
     plt.show()
+
 
     # RMSE CFO
     #    plt.figure()

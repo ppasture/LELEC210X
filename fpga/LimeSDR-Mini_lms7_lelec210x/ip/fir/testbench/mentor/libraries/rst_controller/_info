@@ -7,15 +7,15 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dD:/Pol/Documents/Courses/LELEC2102/GIT/Git_teachers/golden/fpga/LimeSDR-Mini_lms7_lelec210x/ip/fir/testbench/mentor
+dD:/Pol/Documents/Courses/LELEC2102/GIT/Git_teachers/golden/fpga/LimeSDR-Mini_lms7_lelec210x/ip/fir/testbench/mentor
 valtera_reset_controller
-Z1 !s110 1698826575
+Z0 !s110 1744028923
 !i10b 1
 !s100 z[H_hRO9gO=:^2E3_jWH03
 ILN_BA88_:88<I6>ZE=^aQ0
-Z2 VDg1SIo80bB@j0V0VzS_@n1
-R0
-Z3 w1698826478
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/badou/Documents/University/UniversityCourses/Q7/LELEC210X/LELEC210X/fpga/LimeSDR-Mini_lms7_lelec210x/ip/fir/testbench/mentor
+Z3 w1744028813
 8./../fir_tb_gen_tb/simulation/submodules/altera_reset_controller.v
 F./../fir_tb_gen_tb/simulation/submodules/altera_reset_controller.v
 L0 42
@@ -23,19 +23,19 @@ Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z5 !s108 1698826575.000000
+Z5 !s108 1744028923.000000
 !s107 ./../fir_tb_gen_tb/simulation/submodules/altera_reset_controller.v|
 !s90 -reportprogress|300|./../fir_tb_gen_tb/simulation/submodules/altera_reset_controller.v|-work|rst_controller|
 !i113 1
 Z6 o-work rst_controller
 Z7 tCvgOpt 0
 valtera_reset_synchronizer
-R1
+R0
 !i10b 1
 !s100 oWLYmSO[EOX[G0PgQhZ2=0
 I:Aj@YGTofA2TLm8A8aNGo2
+R1
 R2
-R0
 R3
 8./../fir_tb_gen_tb/simulation/submodules/altera_reset_synchronizer.v
 F./../fir_tb_gen_tb/simulation/submodules/altera_reset_synchronizer.v

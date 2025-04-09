@@ -20,7 +20,7 @@ module lms_dsp (
 	output	[47:0]	fifo_out_wrdata;
 	output		fifo_out_wrreq;
 	input	[15:0]	ppd_cfg_passthrough_len;
-	input	[15:0]	ppd_cfg_threshold;
+	input	[7:0]	ppd_cfg_threshold;
 	input		ppd_cfg_clear_rs;
 	input		ppd_cfg_enable;
 	output	[31:0]	ppd_debug_count;

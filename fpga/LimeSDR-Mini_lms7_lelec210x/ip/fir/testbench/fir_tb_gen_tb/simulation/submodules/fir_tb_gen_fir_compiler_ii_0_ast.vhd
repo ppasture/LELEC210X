@@ -11,9 +11,9 @@ entity fir_tb_gen_fir_compiler_ii_0_ast is
         INWIDTH             : integer := 12;
         OUT_WIDTH_UNTRIMMED : integer := 25;
         BANKINWIDTH         : integer := 0;
-        REM_LSB_BIT_g       : integer := 9;
+        REM_LSB_BIT_g       : integer := 10;
         REM_LSB_TYPE_g      : string := "trunc";
-        REM_MSB_BIT_g       : integer := 4;
+        REM_MSB_BIT_g       : integer := 3;
         REM_MSB_TYPE_g      : string := "trunc";
         PHYSCHANIN          : integer := 2;
         PHYSCHANOUT         : integer := 2;

@@ -12,7 +12,7 @@ class Chain:
 
     # Communication parameters
     bit_rate: float = BIT_RATE
-    freq_dev: float = BIT_RATE / 4
+    freq_dev: float = BIT_RATE / 2
 
     osr_tx: int = 64
     osr_rx: int = 8
@@ -20,10 +20,10 @@ class Chain:
     preamble: np.ndarray = PREAMBLE
     sync_word: np.ndarray = SYNC_WORD
 
-    payload_len: int = 50  # Number of bits per packet
+    payload_len: int = 100  # Number of bits per packet
 
     # Simulation parameters
-    n_packets: int = 500  # Number of sent packets
+    n_packets: int = 1000  # Number of sent packets
 
     # Channel parameters
     sto_val: float = 0
@@ -31,14 +31,14 @@ class Chain:
 
     cfo_val: float = 0
     cfo_range: float = (
-        1000  # defines the CFO range when random (in Hz) #(1000 in old repo)
+        10000  # defines the CFO range when random (in Hz) #(1000 in old repo)
     )
 
     snr_range: np.ndarray = np.arange(-10, 25)
 
     # Lowpass filter parameters
     numtaps: int = 31
-    cutoff: float = 65e3  # or 2*BIT_RATE,...
+    cutoff: float = 75e3  # or 2*BIT_RATE,...
 
     # Tx methods
 
@@ -54,7 +54,7 @@ class Chain:
         """
         fd = self.freq_dev  # Frequency deviation, Delta_f
         B = self.bit_rate  # B=1/T
-        h = 4 * fd / B  # Modulation index
+        h = 2 * fd / B  # Modulation index
         R = self.osr_tx  # Oversampling factor
 
         x = np.zeros(len(bits) * R, dtype=np.complex64)
@@ -88,7 +88,7 @@ class Chain:
         """
         raise NotImplementedError
 
-    bypass_cfo_estimation: bool = True
+    bypass_cfo_estimation: bool = False
 
     def cfo_estimation(self, y: np.array) -> float:
         """
@@ -99,7 +99,7 @@ class Chain:
         """
         raise NotImplementedError
 
-    bypass_sto_estimation: bool = True
+    bypass_sto_estimation: bool = False
 
     def sto_estimation(self, y: np.array) -> float:
         """

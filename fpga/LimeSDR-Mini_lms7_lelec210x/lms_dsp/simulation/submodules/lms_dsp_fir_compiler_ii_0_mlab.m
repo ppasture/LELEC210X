@@ -18,12 +18,12 @@
 %MegaWizard Scaled Coefficient Values
 
 function  output = lms_dsp_fir_compiler_ii_0_mlab(stimulation, bank);
- coef_matrix_in= [0,0,0,0,0,-1,1,0,-3,6,-5,0,11,-25,37,127,37,-25,11,0,-5,6,-3,0,1,-1,0,0,0,0,0];
+ coef_matrix_in= [0,0,0,-1,-2,-1,3,7,6,-5,-19,-19,7,57,106,127,106,57,7,-19,-19,-5,6,7,3,-1,-2,-1,0,0,0];
  INTER_FACTOR  = 1;
  DECI_FACTOR  =  1;
- MSB_RM  = 4;
+ MSB_RM  = 3;
  MSB_TYPE  = 0;
- LSB_RM  = 9;
+ LSB_RM  = 10;
  LSB_TYPE  = 0;
  FIR_WIDTH  = 12 + MSB_RM + LSB_RM;
  OUT_WIDTH  = 12 ;  %12

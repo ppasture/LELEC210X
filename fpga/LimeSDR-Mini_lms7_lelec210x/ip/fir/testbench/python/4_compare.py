@@ -32,7 +32,7 @@ else:
 
 # Output
 nbit = 12
-qbit = 9
+qbit = 8
 output_array = np.fromfile("fpga/LimeSDR-Mini_lms7_lelec210x/ip/fir/testbench/mentor/output_float.txt",sep=",")
 
 def twos_complement(value,bits):

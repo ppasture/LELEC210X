@@ -92,7 +92,7 @@ refer to the applicable agreement for further details.
 		(text "error" (rect 327 99 684 208)(font "Arial" (color 0 0 0)))
 		(text "reset" (rect 243 155 516 323)(font "Arial" (color 128 0 0)(font_size 9)))
 		(text "reset_n" (rect 277 179 596 368)(font "Arial" (color 0 0 0)))
-		(text " fir_tb_gen " (rect 592 200 1256 410)(font "Arial" ))
+		(text " system " (rect 605 200 1258 410)(font "Arial" ))
 		(line (pt 272 32)(pt 352 32)(line_width 1))
 		(line (pt 352 32)(pt 352 200)(line_width 1))
 		(line (pt 272 200)(pt 352 200)(line_width 1))
