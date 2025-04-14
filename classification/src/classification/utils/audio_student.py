@@ -385,7 +385,7 @@ class Feature_vector_DS:
             if aug == "echo":
                 aud = AudioUtil.echo(aud, nechos=2)
             if aug == "noise":
-                aud = AudioUtil.add_noise(aud, snr_db=20)
+                aud = AudioUtil.add_noise(aud, snr_db=10)
             if aug == "filter":
                 filt = np.array([1, -1])
                 aud = AudioUtil.filter(aud, filt)

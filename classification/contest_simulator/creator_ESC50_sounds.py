@@ -170,7 +170,7 @@ if __name__ == "__main__":
         output_file="contest_ESC50_sounds.wav",
         bg_file="../../classification/src/classification/datasets/useless_sounds/background.wav",
         sound_level=0,
-        bg_level=-25,
-        segments_per_class=10,
+        bg_level=-30,
+        segments_per_class=3,
         gunshot_exception=True
     )
