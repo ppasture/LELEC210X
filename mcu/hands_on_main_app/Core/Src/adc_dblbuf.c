@@ -1,3 +1,4 @@
+#include <stdbool.h>
 #include <adc_dblbuf.h>
 #include "config.h"
 #include "main.h"
@@ -19,44 +20,69 @@ static uint32_t packet_cnt = 0;
 
 static volatile int32_t rem_n_bufs = 0;
 
+#define ALPHA 0.55f               // facteur de lissage pour le seuil
+#define ENERGY_MULTIPLIER 1.4f    // facteur multiplicatif du seuil
+
+static int remaining_vectors_to_compute = 0;
+static float avg_energy = 0.0f;
+
 int StartADCAcq(int32_t n_bufs) {
-	rem_n_bufs = n_bufs;
-	cur_melvec = 0;
-	if (rem_n_bufs != 0) {
-		return HAL_ADC_Start_DMA(&hadc1, (uint32_t *)ADCDoubleBuf, 2*ADC_BUF_SIZE);
-	} else {
-		return HAL_OK;
-	}
+    rem_n_bufs = n_bufs;
+    cur_melvec = 0;
+    if (rem_n_bufs != 0) {
+        return HAL_ADC_Start_DMA(&hadc1, (uint32_t *)ADCDoubleBuf, 2*ADC_BUF_SIZE);
+    } else {
+        return HAL_OK;
+    }
 }
 
 int IsADCFinished(void) {
-	return (rem_n_bufs == 0);
+    return (rem_n_bufs == 0);
 }
 
 static void StopADCAcq() {
-	HAL_ADC_Stop_DMA(&hadc1);
+    HAL_ADC_Stop_DMA(&hadc1);
 }
 
 static void print_spectrogram(void) {
 #if (DEBUGP == 1)
-	start_cycle_count();
-	DEBUG_PRINT("Acquisition complete, sending the following FVs\r\n");
-	for(unsigned int j=0; j < N_MELVECS; j++) {
-		DEBUG_PRINT("FV #%u:\t", j+1);
-		for(unsigned int i=0; i < MELVEC_LENGTH; i++) {
-			DEBUG_PRINT("%.2f, ", q15_to_float(mel_vectors[j][i]));
-		}
-		DEBUG_PRINT("\r\n");
-	}
-	stop_cycle_count("Print FV");
+    start_cycle_count();
+    DEBUG_PRINT("Acquisition complete, sending the following FVs\r\n");
+    for(unsigned int j=0; j < N_MELVECS; j++) {
+        DEBUG_PRINT("FV #%u:\t", j+1);
+        for(unsigned int i=0; i < MELVEC_LENGTH; i++) {
+            DEBUG_PRINT("%.2f, ", q15_to_float(mel_vectors[j][i]));
+        }
+        DEBUG_PRINT("\r\n");
+    }
+    stop_cycle_count("Print FV");
 #endif
 }
 
+bool sound_bigger_than_adaptive_threshold(q15_t *buf) {
+    int64_t energy = 0;
+    const int32_t adc_zero = 2048; // Vdd/2 pour un ADC 12 bits
+
+    // Calcul de l'énergie du signal recentré
+    for (int i = 0; i < ADC_BUF_SIZE; i++) {
+        int32_t centered_sample = (int32_t)buf[i] - adc_zero;
+        energy += centered_sample * centered_sample;
+    }
+
+    avg_energy = ALPHA * avg_energy + (1.0f - ALPHA) * (float)energy;
+    float threshold = ENERGY_MULTIPLIER * avg_energy;
+
+    return (energy > threshold);
+}
+
+
+
+
 static void print_encoded_packet(uint8_t *packet) {
 #if (DEBUGP == 1)
-	char hex_encoded_packet[2*PACKET_LENGTH+1];
-	hex_encode(hex_encoded_packet, packet, PACKET_LENGTH);
-	DEBUG_PRINT("DF:HEX:%s\r\n", hex_encoded_packet);
+    char hex_encoded_packet[2*PACKET_LENGTH+1];
+    hex_encode(hex_encoded_packet, packet, PACKET_LENGTH);
+    DEBUG_PRINT("DF:HEX:%s\r\n", hex_encoded_packet);
 #endif
 }
 
@@ -107,49 +133,66 @@ static void encode_packet(uint8_t *packet, uint32_t* packet_cnt) {
 }
 
 static void send_spectrogram() {
-	uint8_t packet[PACKET_LENGTH];
+    uint8_t packet[PACKET_LENGTH];
 
-	start_cycle_count();
-	encode_packet(packet, &packet_cnt);
-	stop_cycle_count("Encode packet");
+    start_cycle_count();
+    encode_packet(packet, &packet_cnt);
+    stop_cycle_count("Encode packet");
 
-	start_cycle_count();
-	S2LP_Send(packet, PACKET_LENGTH);
-	stop_cycle_count("Send packet");
+    start_cycle_count();
+    S2LP_Send(packet, PACKET_LENGTH);
+    stop_cycle_count("Send packet");
 
-	print_encoded_packet(packet);
+    print_encoded_packet(packet);
 }
 
 static void ADC_Callback(int buf_cplt) {
-	if (rem_n_bufs != -1) {
-		rem_n_bufs--;
-	}
-	if (rem_n_bufs == 0) {
-		StopADCAcq();
-	} else if (ADCDataRdy[1-buf_cplt]) {
-		DEBUG_PRINT("Error: ADC Data buffer full\r\n");
-		Error_Handler();
-	}
-	ADCDataRdy[buf_cplt] = 1;
-	//start_cycle_count();
-	Spectrogram_Format((q15_t *)ADCData[buf_cplt]);
-	Spectrogram_Compute((q15_t *)ADCData[buf_cplt], mel_vectors[cur_melvec]);
-	cur_melvec++;
-	//stop_cycle_count("spectrogram");
-	ADCDataRdy[buf_cplt] = 0;
+    if (rem_n_bufs != -1) {
+        rem_n_bufs--;
+    }
 
-	if (rem_n_bufs == 0) {
-		print_spectrogram();
-		send_spectrogram();
-	}
+    if (rem_n_bufs == 0) {
+        StopADCAcq();
+    } else if (ADCDataRdy[1 - buf_cplt]) {
+        DEBUG_PRINT("Error: ADC Data buffer full\r\n");
+        Error_Handler();
+    }
+
+    ADCDataRdy[buf_cplt] = 1;
+
+    // ---- Ajout logique seuil + compteur ----
+    bool process_buffer = false;
+
+    if (remaining_vectors_to_compute > 0) {
+        process_buffer = true;
+        remaining_vectors_to_compute--;
+    } else if (sound_bigger_than_adaptive_threshold((q15_t *)ADCData[buf_cplt])) {
+        process_buffer = true;
+        remaining_vectors_to_compute = N_MELVECS - 1;  // On a déjà 1 melvec ici, on en veut 19 de plus
+    }
+
+    if (process_buffer) {
+        Spectrogram_Format((q15_t *)ADCData[buf_cplt]);
+        Spectrogram_Compute((q15_t *)ADCData[buf_cplt], mel_vectors[cur_melvec]);
+        cur_melvec++;
+    } else {
+        DEBUG_PRINT("Énergie trop faible : buffer ignoré.\r\n");
+    }
+
+    ADCDataRdy[buf_cplt] = 0;
+
+    if (rem_n_bufs == 0 && cur_melvec == N_MELVECS) {
+        print_spectrogram();
+        send_spectrogram();
+    }
 }
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)
 {
-	ADC_Callback(1);
+    ADC_Callback(1);
 }
 
 void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef *hadc)
 {
-	ADC_Callback(0);
+    ADC_Callback(0);
 }
