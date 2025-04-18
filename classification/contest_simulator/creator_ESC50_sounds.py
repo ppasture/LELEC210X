@@ -3,6 +3,12 @@ import os
 import random
 from datetime import timedelta
 
+def normalize_audio_to_target_dbfs(audio_segment, target_dbfs=-1.0):
+    """Normalise un segment à un niveau dBFS donné (par défaut -1.0 dBFS)"""
+    change_in_dBFS = target_dbfs - audio_segment.max_dBFS
+    return audio_segment.apply_gain(change_in_dBFS)
+
+
 def make_5s_gunshot_segment(gunshot_folder):
     """
     Pick exactly 3 random gunshot_xx.wav files from gunshot_folder,
@@ -119,7 +125,10 @@ def concatenate_audio(
     # For each segment, add random silence (with noise) after
     for segment, label in all_segments:
         # Lower volume of main sound
-        segment = segment + sound_level
+        if label == "fire":
+            segment = segment + sound_level + 10  # extra +10 dB for fire
+        else:
+            segment = segment + sound_level
 
         # Add the segment to the final track
         start_time = current_time
