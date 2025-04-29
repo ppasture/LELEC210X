@@ -20,8 +20,8 @@ static uint32_t packet_cnt = 0;
 
 static volatile int32_t rem_n_bufs = 0;
 
-#define ALPHA 0.55f               // facteur de lissage pour le seuil
-#define ENERGY_MULTIPLIER 1.4f    // facteur multiplicatif du seuil
+#define ALPHA 0.3f               // facteur de lissage pour le seuil
+#define ENERGY_MULTIPLIER 1.2f    // facteur multiplicatif du seuil
 
 static int remaining_vectors_to_compute = 0;
 static float avg_energy = 0.0f;
@@ -63,17 +63,25 @@ bool sound_bigger_than_adaptive_threshold(q15_t *buf) {
     int64_t energy = 0;
     const int32_t adc_zero = 2048; // Vdd/2 pour un ADC 12 bits
 
-    // Calcul de l'énergie du signal recentré
-    for (int i = 0; i < ADC_BUF_SIZE; i++) {
-        int32_t centered_sample = (int32_t)buf[i] - adc_zero;
-        energy += centered_sample * centered_sample;
+    int i = 0;
+    while (i < ADC_BUF_SIZE) {
+        // Traitement par paquet de 4 échantillons pour réduire les dépendances et améliorer le pipeline CPU
+        int32_t s0 = (int32_t)buf[i++] - adc_zero;
+        int32_t s1 = (int32_t)buf[i++] - adc_zero;
+        int32_t s2 = (int32_t)buf[i++] - adc_zero;
+        int32_t s3 = (int32_t)buf[i++] - adc_zero;
+
+        energy += (int64_t)s0 * s0 + (int64_t)s1 * s1 + (int64_t)s2 * s2 + (int64_t)s3 * s3;
     }
 
+    // Mise à jour de l'énergie moyenne avec un facteur ALPHA
     avg_energy = ALPHA * avg_energy + (1.0f - ALPHA) * (float)energy;
     float threshold = ENERGY_MULTIPLIER * avg_energy;
 
     return (energy > threshold);
 }
+
+
 
 
 
