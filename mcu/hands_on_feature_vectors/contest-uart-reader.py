@@ -23,10 +23,10 @@ from classification.utils.plots import (
 # ====================================================
 # ===          CONFIGURATION MANUELLE              ===
 # ====================================================
-MODELTYPE = "cnn"      # "rf", "xgb", ou "cnn"
+MODELTYPE = "xgb_new_features"      # "rf", "xgb", "cnn", "xgb_new_features"
 PCA = False            # True ou False
 AUGMENTATION = True  # True ou False
-NORMALISATION = False  # True ou False
+NORMALISATION = True  # True ou False
 
 CONTEST = True         # True => écoute et compare avec ground truth
 RECORDED = False
@@ -49,6 +49,8 @@ FREQ_SAMPLING = 10200
 MELVEC_LENGTH = 20
 N_MELVECS = 20
 
+FINAL_SHAPE = (21, 20) if MODELTYPE == "xgb_new_features" else (20, 20)
+
 dt = np.dtype(np.uint16).newbyteorder("<")
 
 # ====================================================
@@ -63,6 +65,8 @@ def sound_bigger_than_adaptive_threshold(buf):
     avg_energy = ALPHA * avg_energy + (1.0 - ALPHA) * total_energy
     threshold = ENERGY_MULTIPLIER * avg_energy
     return np.any(energies * 20 > threshold)
+
+
 
 def parse_buffer(line):
     line = line.strip()
@@ -208,10 +212,15 @@ if __name__ == "__main__":
                 break
 
             msg_counter += 1
-            melvec = melvec.reshape((N_MELVECS, MELVEC_LENGTH)).T
-            fv = melvec.reshape(1, -1)
+            melvec = melvec.reshape((N_MELVECS, MELVEC_LENGTH)).T  # (20, 20)
 
-            if not sound_bigger_than_adaptive_threshold(melvec):
+            if MODELTYPE == "xgb_new_features":
+                energy_feature = np.sum(melvec, axis=0, keepdims=True)  # (1, 20)
+                melvec = np.vstack([melvec, energy_feature])  # (21, 20)
+
+            fv = melvec.reshape(1, -1)  # (1, 420) if xgb_new_features
+
+            if not sound_bigger_than_adaptive_threshold(melvec[:20, :]):
                 continue
 
             if NORMALISATION:
@@ -247,15 +256,15 @@ if __name__ == "__main__":
             if proba is not None and hasattr(model, "classes_"):
                 class_names = model.classes_
                 class_names_str = ["chainsaw", "fire", "fireworks", "gunshot"]
-                probabilities = np.round(proba[0] * 100, 2)
+                probabilities = np.round(proba * 100, 2)
                 max_len = max(len(name) for name in class_names_str)
-                probabilities_str = " ".join([f"{prob:.2f}%".ljust(max_len) for prob in probabilities])
+                probabilities_str = " ".join([f"{prob:.2f}%".ljust(max_len + 3) for prob in probabilities])
                 textlabel = f"{class_names_str}\n{probabilities_str}\n\nPredicted class: {predicted_class_name}"
             else:
                 textlabel = f"Predicted class: {predicted_class_name}"
 
             plot_specgram_textlabel(
-                melvec.reshape((N_MELVECS, MELVEC_LENGTH)),
+                melvec[:21, :] if MODELTYPE == "xgb_new_features" else melvec[:20, :],
                 ax=plt.gca(),
                 is_mel=True,
                 title=f"MEL Spectrogram #{msg_counter}",

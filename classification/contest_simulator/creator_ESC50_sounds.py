@@ -72,7 +72,7 @@ def concatenate_audio(
     segment_info = []
 
     # Gunshot folder if we do the special exception logic
-    gunshot_folder = "../../classification/src/classification/datasets/useless_sounds"
+    gunshot_folder = "classification/src/classification/datasets/garbage/useless_sounds"
 
     # For each class, collect the correct files from `input_folder`
     for cname in class_names:
@@ -126,7 +126,7 @@ def concatenate_audio(
     for segment, label in all_segments:
         # Lower volume of main sound
         if label == "fire":
-            segment = segment + sound_level + 10  # extra +10 dB for fire
+            segment = segment + sound_level + 20  # extra +10 dB for fire
         else:
             segment = segment + sound_level
 
@@ -139,7 +139,7 @@ def concatenate_audio(
         current_time += len(segment)
 
         # Add a random delay between segments
-        delay_duration = random.randint(1000, 3000)
+        delay_duration = random.randint(3000, 5000) # 2 sec latency + 1-3 sec blank
         background_noise = AudioSegment.from_file(bg_file) + bg_level
         # Make sure background noise is at least 'delay_duration' long
         if len(background_noise) < delay_duration:
@@ -165,7 +165,7 @@ def concatenate_audio(
     print(f"\n✅ Audio file generated: {output_file}")
 
     # Write event log
-    log_path = os.path.join(".", "event_log_ESC50_sounds.txt")
+    log_path = os.path.join("classification/contest_simulator", "event_log_ESC50_sounds.txt")
     with open(log_path, "w") as f:
         f.write("# start_time\tend_time\tlabel\n")
         for start, end, label in segment_info:
@@ -175,11 +175,11 @@ def concatenate_audio(
 # Example usage
 if __name__ == "__main__":
     concatenate_audio(
-        input_folder="../../classification/src/classification/datasets/garbage/soundfiles_ESC50_5sec",
-        output_file="contest_ESC50_sounds.wav",
-        bg_file="../../classification/src/classification/datasets/useless_sounds/background.wav",
+        input_folder="classification/src/classification/datasets/garbage/soundfiles_ESC50_5sec",
+        output_file="classification/contest_simulator/contest_ESC50_sounds.wav",
+        bg_file="classification/src/classification/datasets/background/background.wav",
         sound_level=0,
         bg_level=-30,
-        segments_per_class=3,
+        segments_per_class=5,
         gunshot_exception=True
     )

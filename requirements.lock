@@ -233,10 +233,14 @@ jupyterlab-server==2.27.3
     # via jupyterlab
     # via notebook
 keras==3.9.2
+    # via keras-tuner
     # via scikeras
     # via tensorflow
+keras-tuner==1.4.7
 kiwisolver==1.4.5
     # via matplotlib
+kt-legacy==1.0.5
+    # via keras-tuner
 lazy-loader==0.4
     # via librosa
 libclang==18.1.1
@@ -323,6 +327,7 @@ packaging==24.1
     # via jupyterlab
     # via jupyterlab-server
     # via keras
+    # via keras-tuner
     # via lazy-loader
     # via limits
     # via matplotlib
@@ -406,6 +411,7 @@ referencing==0.35.1
     # via jupyter-events
 requests==2.32.3
     # via jupyterlab-server
+    # via keras-tuner
     # via leaderboard
     # via pooch
     # via tensorflow

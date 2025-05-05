@@ -48,7 +48,7 @@ def concatenate_audio(
     gunshot_exception=False,
 ):
     combined = AudioSegment.silent(duration=0)
-    class_files = ["chainsaw.wav", "fire.wav", "fireworks.wav", "gunshot.wav"]
+    class_files = ["chainsaw_2.wav", "fire_2.wav", "fireworks_2.wav", "gunshot_2.wav"]
     all_segments = []
     segment_info = []  # To log events
 
@@ -81,9 +81,12 @@ def concatenate_audio(
     current_time = 0
 
     for segment, label in all_segments:
-        segment = segment + sound_level
+        if label.split('_')[0] == "fire":
+            segment = segment + sound_level + 10  # extra +10 dB for fire
+        else:
+            segment = segment + sound_level
 
-        delay_duration = random.randint(1000, 3000)
+        delay_duration = random.randint(3000, 5000)  # 2 sec latency + 1-3 sec blank
         delay = AudioSegment.silent(duration=delay_duration)
 
         # Log start & end time of the sound
@@ -114,22 +117,22 @@ def concatenate_audio(
     print(f"\n✅ Fichier audio généré : {output_file}")
 
     # Write event log
-    log_path = os.path.join(".", "event_log_recorded_sounds.txt")
+    log_path = os.path.join("classification/contest_simulator", "event_log_recorded_sounds.txt")
     with open(log_path, "w") as f:
         f.write("# start_time\tend_time\tlabel\n")
         for start, end, label in segment_info:
-            f.write(f"{start}\t{end}\t{label}\n")
+            f.write(f"{start}\t{end}\t{label.split('_')[0]}\n")
     print(f"📄 Log des événements écrit dans : {log_path}")
 
 
 # Example usage
 if __name__ == "__main__":
     concatenate_audio(
-        input_folder="../../classification/src/classification/datasets/",
-        output_file="contest_recorded_sounds.wav",
-        bg_file="../../classification/src/classification/datasets/useless_sounds/background.wav",
+        input_folder="classification/src/classification/datasets/recordings/",
+        output_file="classification/contest_simulator/contest_recorded_sounds.wav",
+        bg_file="classification/src/classification/datasets/background/background_recorded.wav",
         sound_level=0,
-        bg_level=-25,
-        segments_per_class=10,
-        gunshot_exception=True
+        bg_level=-20,
+        segments_per_class=5,
+        gunshot_exception=False
     )
