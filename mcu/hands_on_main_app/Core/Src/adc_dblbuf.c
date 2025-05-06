@@ -20,8 +20,8 @@ static uint32_t packet_cnt = 0;
 
 static volatile int32_t rem_n_bufs = 0;
 
-#define ALPHA 0.3f               // facteur de lissage pour le seuil
-#define ENERGY_MULTIPLIER 1.2f    // facteur multiplicatif du seuil
+#define ALPHA 0.2f               // facteur de lissage pour le seuil
+#define ENERGY_MULTIPLIER 1.10f    // facteur multiplicatif du seuil
 
 static int remaining_vectors_to_compute = 0;
 static float avg_energy = 0.0f;

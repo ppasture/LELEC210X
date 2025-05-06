@@ -15,6 +15,7 @@ import common
 from auth import PRINT_PREFIX
 from common.env import load_dotenv
 from common.logging import logger
+from tensorflow.keras.models import load_model
 hostname = "http://lelec210x.sipr.ucl.ac.be"
 key = "jNvyuAfUUwf3iZAWF40sqSuW3DHRkjTj8jwDb0-d"
 from .utils import payload_to_melvecs
@@ -22,9 +23,9 @@ import sys
 import os
 
 sys.path.append(os.path.abspath("auth/src"))
-
 from auth import packet
 load_dotenv()
+classnames = ["chainsaw", "fire", "fireworks", "gunshot"]
 
 def parse_packet(line: str) -> Optional[bytes]:
     """Parse a line into a packet."""
@@ -136,13 +137,13 @@ def main(
                 yield socket.recv(1 * melvec_length * n_melvecs)
 
     # Load model
-    pca_path = Path("classification/data/models/pca.pickle")
-    rf_model_path = Path("classification/data/models/mod_pca.pickle")
-    with pca_path.open("rb") as pca_file:
-        pca = pickle.load(pca_file)
+    model_path = f"classification/data/models/"
 
-    with rf_model_path.open("rb") as rf_file:
-        model_rf = pickle.load(rf_file)
+    model_path = os.path.join(model_path, "cnn_aug_max.h5")
+    if not os.path.exists(model_path):
+        raise FileNotFoundError(f"Modèle introuvable : {model_path}")
+    model_cnn = load_model(model_path)
+
 
     input_stream = reader()
 
@@ -167,19 +168,27 @@ def main(
             plt.savefig("melvec.png")
             #logger.info(f"Parsed payload into Mel vectors: {melvecs}")
             fv = melvec.reshape(1, -1)
-            melvec = fv/np.linalg.norm(fv)
+
+            # Normalize the feature vector : MAX
+            max_val = np.max(fv)
+            fv = fv / max_val if max_val > 0 else fv
+
+            
+            # Normalize the feature vector : L2
+            #fv = fv / np.linalg.norm(fv, axis=1, keepdims=True)
+            
+
             #plot melvecs
             plt.figure()
             plot_specgram(melvec.reshape((20, 20)),ax=plt.gca(),is_mel=True)
             plt.draw()
             plt.savefig("melvec.png")
 
+            fv = fv.reshape(1, 20, 20, 1)
 
+            proba_rf = model_cnn.predict(fv)[0]
+            prediction_rf = [np.argmax(proba_rf)]
 
-            melvecs_pca = pca.transform(melvec)
-
-            proba_rf = model_rf.predict_proba(melvecs_pca)[0]
-            prediction_rf = model_rf.predict(melvecs_pca)
             
             sorted_indices = np.argsort(proba_rf)[::-1]
             best_class = sorted_indices[0]
@@ -188,12 +197,12 @@ def main(
             
             # Condition met, send the prediction
             prediction_given = best_class
-            logger.info(f"Accepted Prediction: {prediction_given} (Probability: {proba_rf[best_class]:.2f})")
+            logger.info(f"Accepted Prediction: {classnames[prediction_given]} (Probability: {proba_rf[best_class]:.2f})")
             
-            answer = requests.post(f"{hostname}/lelec210x/leaderboard/submit/{key}/{prediction_rf[0]}", timeout=1)
-            print(answer.text)
-            json_answer = json.loads(answer.text)
-            print(json_answer)
+            #answer = requests.post(f"{hostname}/lelec210x/leaderboard/submit/{key}/{prediction_rf[0]}", timeout=1)
+            #print(answer.text)
+            #json_answer = json.loads(answer.text)
+            #print(json_answer)
             
             logger.info(f"Predictions: {proba_rf}")
             logger.info(f"Prediction: {prediction_rf[0]}")
