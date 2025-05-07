@@ -8,10 +8,10 @@
 // ADC parameters
 #define ADC_BUF_SIZE SAMPLES_PER_MELVEC
 
-
 int StartADCAcq(int32_t n_bufs);
 int IsADCFinished(void);
 
 extern ADC_HandleTypeDef hadc1;
+extern ADC_HandleTypeDef hadc2;
 
 #endif /* INC_ADC_DBLBUF_H_ */

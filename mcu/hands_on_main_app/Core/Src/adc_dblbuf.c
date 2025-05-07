@@ -1,4 +1,5 @@
 #include <stdbool.h>
+#include <stdint.h>
 #include <adc_dblbuf.h>
 #include "config.h"
 #include "main.h"
@@ -20,8 +21,8 @@ static uint32_t packet_cnt = 0;
 
 static volatile int32_t rem_n_bufs = 0;
 
-#define ALPHA 0.2f               // facteur de lissage pour le seuil
-#define ENERGY_MULTIPLIER 1.10f    // facteur multiplicatif du seuil
+#define ALPHA 0.0f               // facteur de lissage pour le seuil
+#define ENERGY_MULTIPLIER 0.0f    // facteur multiplicatif du seuil
 
 static int remaining_vectors_to_compute = 0;
 static float avg_energy = 0.0f;
@@ -43,7 +44,27 @@ int IsADCFinished(void) {
 static void StopADCAcq() {
     HAL_ADC_Stop_DMA(&hadc1);
 }
+// Seuil de tension brut ADC (à ajuster selon ta résolution et tension de référence)
+uint32_t seuil = 40;
 
+// Fonction pour lire la tension du condensateur via l'ADC
+uint32_t Read_capacitor_voltage()
+{
+    HAL_ADC_Start(&hadc2);
+    HAL_ADC_PollForConversion(&hadc2, HAL_MAX_DELAY);
+
+    uint32_t value = HAL_ADC_GetValue(&hadc2);
+    HAL_ADC_Stop(&hadc2);
+
+    return value;
+}
+
+// Fonction pour vérifier si l'énergie est suffisante
+bool HasEnoughEnergy()
+{
+    uint32_t value = Read_capacitor_voltage();
+    return value >= seuil;
+}
 static void print_spectrogram(void) {
 #if (DEBUGP == 1)
     start_cycle_count();
@@ -172,11 +193,13 @@ static void ADC_Callback(int buf_cplt) {
     bool process_buffer = false;
 
     if (remaining_vectors_to_compute > 0) {
-        process_buffer = true;
-        remaining_vectors_to_compute--;
-    } else if (sound_bigger_than_adaptive_threshold((q15_t *)ADCData[buf_cplt])) {
-        process_buffer = true;
-        remaining_vectors_to_compute = N_MELVECS - 1;  // On a déjà 1 melvec ici, on en veut 19 de plus
+            process_buffer = true;
+            remaining_vectors_to_compute--;
+    } else if (HasEnoughEnergy()) {
+        if(sound_bigger_than_adaptive_threshold((q15_t *)ADCData[buf_cplt])){
+            process_buffer = true;
+            remaining_vectors_to_compute = N_MELVECS - 1;  // On a déjà 1 melvec ici, on en veut 19 de plus
+        }
     }
 
     if (process_buffer) {
