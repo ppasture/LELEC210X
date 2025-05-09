@@ -591,7 +591,7 @@ unsigned device_handler_fpga::set_gain(int device_number, bool direction, int ch
         const uint16_t AGC_REG3 = 0x040A;
         const uint16_t AGC_REG4 = 0x040C;
 
-        const uint16_t AGC_K = 1000;
+        const uint16_t AGC_K = 1216;
         const uint16_t AGC_ADESIRED = 76;
         const uint8_t AGC_MODE = 0;
         const uint8_t AGC_AVG = 0;

@@ -139,24 +139,19 @@ def main(
     # Load model
     model_path = f"classification/data/models/"
 
-    model_path = os.path.join(model_path, "cnn_aug_max.h5")
-    if not os.path.exists(model_path):
-        raise FileNotFoundError(f"Modèle introuvable : {model_path}")
-    model_cnn = load_model(model_path)
+    normalization = "l2" # "l2" or "max"
+    new_model_path = os.path.join(model_path, "cnn_newguns_nonéquilibré_l2.h5")
+    if not os.path.exists(new_model_path):
+        raise FileNotFoundError(f"Modèle introuvable : {new_model_path}")
+    model_cnn = load_model(new_model_path)
 
+    
 
     input_stream = reader()
 
     for msg in input_stream:
         try:
             sender, payload, shift = unwrapper.unwrap_packet(msg)
-            #logger.debug(f"From {sender}, received packet: {payload.hex()}")
-            #print("Received packet:")
-            #print(payload.hex())
-
-            #output.write(PRINT_PREFIX + payload.hex() + "\n")
-            #output.flush()
-            print(shift)
             melvec = payload_to_melvecs(payload.hex(), melvec_length, n_melvecs)
 
             # Appliquer la démultiplication (multiplication par 2^shift)
@@ -166,16 +161,15 @@ def main(
             plot_specgram(melvec.reshape((20, 20)).T,ax=plt.gca(),is_mel=True)
             plt.draw()
             plt.savefig("melvec.png")
-            #logger.info(f"Parsed payload into Mel vectors: {melvecs}")
             fv = melvec.reshape(1, -1)
 
             # Normalize the feature vector : MAX
-            max_val = np.max(fv)
-            fv = fv / max_val if max_val > 0 else fv
-
+            if normalization == "max":
+                max_val = np.max(fv)
+                fv = fv / max_val if max_val > 0 else fv
             
-            # Normalize the feature vector : L2
-            #fv = fv / np.linalg.norm(fv, axis=1, keepdims=True)
+            if normalization == "l2":
+                fv = fv / np.linalg.norm(fv, axis=1, keepdims=True)
             
 
             #plot melvecs
@@ -186,26 +180,30 @@ def main(
 
             fv = fv.reshape(1, 20, 20, 1)
 
-            proba_rf = model_cnn.predict(fv)[0]
-            prediction_rf = [np.argmax(proba_rf)]
+            probas = model_cnn.predict(fv)[0]
+            prediction = [np.argmax(probas)]
 
             
-            sorted_indices = np.argsort(proba_rf)[::-1]
+            sorted_indices = np.argsort(probas)[::-1]
             best_class = sorted_indices[0]
             second_best_class = sorted_indices[1]
+            third_best_class = sorted_indices[2]
+            fourth_best_class = sorted_indices[3]
             
-            
-            # Condition met, send the prediction
             prediction_given = best_class
-            logger.info(f"Accepted Prediction: {classnames[prediction_given]} (Probability: {proba_rf[best_class]:.2f})")
+            # Condition met, send the prediction
+            if best_class == 2 and probas[3] > 0.3:
+                prediction_given = 3 # on donne "gunshot" 
+                logger.info(f"Changed prediction: {classnames[prediction_given]} (Probability: {probas[prediction_given]:.2f})")
+            else:
+                logger.info(f"Accepted Prediction: {classnames[prediction_given]} (Probability: {probas[prediction_given]:.2f})")
             
             #answer = requests.post(f"{hostname}/lelec210x/leaderboard/submit/{key}/{prediction_rf[0]}", timeout=1)
             #print(answer.text)
             #json_answer = json.loads(answer.text)
             #print(json_answer)
             
-            logger.info(f"Predictions: {proba_rf}")
-            logger.info(f"Prediction: {prediction_rf[0]}")
+            logger.info(f"Predictions: {[round(p * 100, 2) for p in probas]}")
 
         
         except packet.InvalidPacket as e:
