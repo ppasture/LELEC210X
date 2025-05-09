@@ -42,7 +42,7 @@ blocks:
     label: ''
     'true': '1'
     type: int
-    value: '0'
+    value: '1'
   states:
     bus_sink: false
     bus_source: false
@@ -62,7 +62,7 @@ blocks:
     start: '1'
     step: '1'
     stop: '254'
-    value: '7'
+    value: '3'
     widget: counter_slider
   states:
     bus_sink: false
@@ -266,7 +266,7 @@ blocks:
     start: '0'
     step: '1'
     stop: '73'
-    value: '10'
+    value: '50'
     widget: counter_slider
   states:
     bus_sink: false

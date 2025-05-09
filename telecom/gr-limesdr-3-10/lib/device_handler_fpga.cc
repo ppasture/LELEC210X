@@ -553,60 +553,94 @@ double device_handler_fpga::set_digital_filter(int device_number,
 
     return digital_bandw;
 }
+
 unsigned device_handler_fpga::set_gain(int device_number, bool direction, int channel, unsigned gain_dB)
 {
-    constexpr unsigned MAX_ALLOWED_GAIN = 73;
-    constexpr uint16_t REG_AGC_K         = 0x0408;
-    constexpr uint16_t REG_AGC_ADESIRED  = 0x0409;
-    constexpr uint16_t REG_AGC_MODE_AVG  = 0x040A;
-    constexpr uint16_t REG_AGC_CONTROL   = 0x040C;
-
-    // Vérification des limites autorisées
-    if (gain_dB > MAX_ALLOWED_GAIN)
+    if (gain_dB > 73)
     {
         close_all_devices();
-        throw std::invalid_argument("device_handler_fpga::set_gain(): gain must be <= 73 dB.");
+        throw std::invalid_argument("device_handler_fpga::set_gain(): valid gain range is [0, 73] dB.");
     }
 
-    GR_LOG_INFO(d_logger, "device_handler_fpga::set_gain(): Initialisation AGC + Gain manuel.");
+    GR_LOG_INFO(d_logger, "INFO: device_handler_fpga::set_gain(): Starting gain adjustment");
 
-    auto clear_sums = [this](int dev) {
-        set_dspcfg_clear_rs(dev, 1);
-        set_dspcfg_clear_rs(dev, 0);
+    // Clear running sums before changing gain
+    auto clear_running_sums = [this](int device_number) {
+        std::cout << "Clearing running sums..." << std::endl;
+        uint32_t short_sum = get_dspcfg_short_sum(device_number);
+        uint32_t long_sum = get_dspcfg_long_sum(device_number);
+        std::cout << "Actual : Short = " << short_sum << " /  Long = " << long_sum << std::endl;
+
+        set_dspcfg_clear_rs(device_number, 1);
+
+        short_sum = get_dspcfg_short_sum(device_number);
+        long_sum = get_dspcfg_long_sum(device_number);
+        std::cout << "After Clear : Short = " << short_sum << " /  Long = " << long_sum << std::endl;
     };
 
-    clear_sums(device_number);
+    clear_running_sums(device_number);
 
-    lms_device_t* dev = get_device(device_number);
+    lms_device_t* device = device_handler_fpga::getInstance().get_device(device_number);
 
-    // Configuration AGC
-    const uint16_t agc_k = 512;      // loop gain
-    const uint16_t a_target = 60;    // target signal level
-    const uint8_t agc_mode = 0;      // AGC mode = automatic
-    const uint8_t agc_avg = 0;       // minimal averaging
+    bool activateAGC = true;
 
-    LMS_WriteLMSReg(dev, REG_AGC_K, agc_k);
-    LMS_WriteLMSReg(dev, REG_AGC_ADESIRED, a_target << 4);
-    LMS_WriteLMSReg(dev, REG_AGC_MODE_AVG, (agc_mode << 12) | agc_avg);
-    LMS_WriteLMSReg(dev, REG_AGC_CONTROL, 0xBB); // activate AGC
+    if (activateAGC)
+    {
+        const uint16_t AGC_REG1 = 0x0408;
+        const uint16_t AGC_REG2 = 0x0409;
+        const uint16_t AGC_REG3 = 0x040A;
+        const uint16_t AGC_REG4 = 0x040C;
 
-    // Application du gain manuel
-    LMS_SetGaindB(dev, direction, channel, gain_dB);
+        const uint16_t AGC_K = 1000;
+        const uint16_t AGC_ADESIRED = 76;
+        const uint8_t AGC_MODE = 0;
+        const uint8_t AGC_AVG = 0;
 
-    unsigned gain_measured = 0;
-    LMS_GetGaindB(dev, direction, channel, &gain_measured);
+        LMS_WriteLMSReg(device, AGC_REG1, AGC_K);
+        LMS_WriteLMSReg(device, AGC_REG2, (AGC_ADESIRED << 4));
+        LMS_WriteLMSReg(device, AGC_REG3, (AGC_MODE << 12) | (AGC_AVG));
+        LMS_WriteLMSReg(device, AGC_REG4, 187); // AGC enabled
 
-    std::string dir_str = direction ? "TX" : "RX";
-    GR_LOG_INFO(d_logger, boost::format("Gain [%s] CH%d défini à : %d dB.") % dir_str % channel % gain_measured);
+        // Lecture pour vérification
+        uint16_t reg_check;
+        LMS_ReadLMSReg(device, AGC_REG1, &reg_check);
+        std::cout << "AGC_REG1 check: " << reg_check << std::endl;
+        LMS_ReadLMSReg(device, AGC_REG2, &reg_check);
+        std::cout << "AGC_REG2 check: " << reg_check << std::endl;
+        LMS_ReadLMSReg(device, AGC_REG3, &reg_check);
+        std::cout << "AGC_REG3 check: " << reg_check << std::endl;
+        LMS_ReadLMSReg(device, AGC_REG4, &reg_check);
+        std::cout << "AGC_REG4 check: " << reg_check << std::endl;
+    }
+    else
+    {
+        // Désactiver l'AGC si nécessaire
+        const uint16_t AGC_REG1 = 0x0408;
+        const uint16_t AGC_REG2 = 0x0409;
+        const uint16_t AGC_REG3 = 0x040A;
+        LMS_WriteLMSReg(device, AGC_REG1, 0);
+        LMS_WriteLMSReg(device, AGC_REG2, 0);
+        LMS_WriteLMSReg(device, AGC_REG3, (2 << 12)); // default manual mode
+    }
 
-    uint32_t s_sum = get_dspcfg_short_sum(device_number);
-    uint32_t l_sum = get_dspcfg_long_sum(device_number);
-    std::cout << "Running sums : short = " << s_sum << " / long = " << l_sum << std::endl;
+    // Fixer le gain manuellement en plus de l'AGC si besoin
+    LMS_SetGaindB(device, direction, channel, gain_dB);
 
-    return gain_measured;
+    unsigned gain_value = 0;
+    LMS_GetGaindB(device, direction, channel, &gain_value);
+
+    std::string s_dir[2] = { "RX", "TX" };
+    GR_LOG_INFO(d_logger, boost::format("Set gain [%s] CH%d: %d dB.") % s_dir[direction] % channel % gain_value);
+
+    // Nettoyage après réglage
+    set_dspcfg_clear_rs(device_number, 0);
+
+    uint32_t short_sum = get_dspcfg_short_sum(device_number);
+    uint32_t long_sum = get_dspcfg_long_sum(device_number);
+    std::cout << "Running : Short = " << short_sum << " /  Long = " << long_sum << std::endl;
+
+    return gain_value;
 }
-
-
 void device_handler_fpga::set_nco(int device_number,
                              bool direction,
                              int channel,
